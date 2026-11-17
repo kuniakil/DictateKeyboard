@@ -16,16 +16,23 @@ jobs:
           distribution: temurin
           java-version: "21"
 
-      - name: Accept Android SDK licenses
+      - name: Install Android NDK and CMake
         run: |
-          SDK_MANAGER=$(find "${ANDROID_HOME:-/usr/local/lib/android/sdk}/cmdline-tools" -name sdkmanager -type f | head -n 1)
+          SDK_ROOT="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          SDK_MANAGER=$(find "$SDK_ROOT/cmdline-tools" -name sdkmanager -type f | head -n 1)
+          NDK_VER=$(grep "^ndk " gradle/tools.versions.toml | sed -E "s/.*\"(.*)\".*/\1/")
+          CMAKE_VER=$(grep "^cmake " gradle/tools.versions.toml | sed -E "s/.*\"(.*)\".*/\1/")
           yes | "$SDK_MANAGER" --licenses >/dev/null || true
+          "$SDK_MANAGER" "ndk;${NDK_VER}" "cmake;${CMAKE_VER}"
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
       - name: Fetch sherpa-onnx native libraries
         run: bash tools/fetch-sherpa-onnx.sh
+
+      - name: Build Bergamot native library
+        run: bash tools/bergamot/build-android.sh
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug --no-daemon
