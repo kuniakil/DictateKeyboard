@@ -294,6 +294,65 @@ Nextcloud `文件/` 內有 `app-debug.apk`（174 MB，2026-11-17 03:30）與 `ba
 
 > **待辦提醒**：這是本專案唯一「遺失即永久損失」的資產。zh-TW 完成後應優先回頭處理。
 
+### 1.6 分支架構的最終定案（2026-11-20 已實作）
+
+#### 我們比上游多的東西，分兩塊
+
+| 塊 | 內容 | 能否進上游 PR |
+|---|---|---|
+| **A. GitHub build apk** | 5 個 commit，**全部只動 `.github/workflows/build-apk.yml` 一個檔案**（+36 → +71 行） | ❌ **不能**。作者已明確拒絕過（PR #286：「Dictate is distributed through Google Play, and that is deliberate」—— 不要社群 APK 分發，會繞過 Play 的自動更新與簽章驗證） |
+| **B. 我們的 docs** | `docs/zh-TW-setup.md`（+79，繁中設定指南） | ⚠️ 可保留但**須重新包裝**成給作者看的 `docs/zh-TW-ui-contribution.md` |
+
+#### 關鍵教訓：基底不同步會讓 PR diff 被汙染
+
+實測「若直接拿 fork 的 `main` 開 PR」會看到的 diff：
+
+```
+git diff upstream/main origin/main   →  20 個檔案, +190 / -305
+```
+
+其中 **16 個是上游 Kotlin 檔案** —— 那不是我們改的，而是**上游那 4 個 commit 的反向差異**（我們的 `main` 基底停在 2026-11-17）。
+作者看到會以為「這個人在刪我的程式碼」→ **這種 PR 必被關閉**。
+
+✅ **已修正**：`main` 已 merge `upstream/main`，現在 diff 只剩 **2 個純新增檔案**。
+
+#### 最終架構
+
+```
+upstream/main ──┬──► feat/zh-tw-ui   開發中（基底 = upstream/main + 我們的 CI + 工作表 + [未來: zh-TW 改動]）
+                 │
+                 ├──► main            我們的發行分支（= upstream/main + 我們的 CI + docs）→ Actions 在此出 APK
+                 │
+                 └──► pr/zh-tw-ui      提 PR 用（Phase E1 建立，只含在地化改動）
+```
+
+**日常運作**
+1. 在 `feat/zh-tw-ui` 開發 → 定期 `git merge upstream/main`（解衝突）
+2. 要出 APK → 在 `feat/zh-tw-ui` 觸發 Actions（tag 帶分支名，不會蓋掉 main 的資產）
+3. 要提 PR → 從 `upstream/main` 切 `pr/zh-tw-ui`，只 checkout 在地化改動 → 對上游開 PR
+4. 作者合併 → 我們 `git merge upstream/main` 回來 → 維護負擔從「維護 2547 條翻譯」降級為「例行 merge」
+
+> 📌 作者合併後**仍需跟上游** —— GitHub 的 fork 不會自動同步。我們的長期維護負擔從
+> 「每個上游 commit 都要重做翻譯」降級為「定期 merge 上游」，這才是提 PR 的真正收益。
+
+#### ⚠️ 已修正的 Release tag 撞名問題
+
+兩條分支 `projectVersionName` 都是 `6.4.0` → workflow 的 `TAG="v${VERSION}-apk"` 相同 →
+**在分支上跑 Actions 會 `--clobber` 掉 main 的 Release 資產**。
+
+✅ 已修正（commit `82739341` / cherry-pick `7843e539`）：
+
+```bash
+BRANCH="${GITHUB_REF_NAME:-main}"
+TAG="v${VERSION}-apk"
+if [ "$BRANCH" != "main" ]; then
+  SAFE_BRANCH=$(echo "$BRANCH" | sed 's/[^A-Za-z0-9._-]/-/g')
+  TAG="v${VERSION}-apk-${SAFE_BRANCH}"
+fi
+```
+
+實測：`main` → `v6.4.0-apk`（既有資產不動）／`feat/zh-tw-ui` → `v6.4.0-apk-feat-zh-tw-ui`
+
 ---
 
 ## Part 2 — 計畫（2026-11-20 修訂版）

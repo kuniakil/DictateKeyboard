@@ -20,9 +20,12 @@
 | `upstream` | `DevEmperor/DictateKeyboard`（上游） | 追蹤上游更新、PR 的目標 |
 
 分支：
-- `main` = fork 的原樣（上游 2026-11-17 狀態 + 6 個 CI/docs commit）。**不要直接拿它開 PR** —— 那 6 個 commit 會汙染 diff。
+- `main` = 我們的**發行分支** = `upstream/main` + 我們的 CI workflow + docs。**已 merge 上游 2026-11-18**（diff vs 上游只剩 2 個純新增檔案）。Actions 在此出正式 APK。
 - `feat/zh-tw-ui` = **當前工作分支**，基底 `upstream/main` + 我們的 CI workflow + 工作表。← 現在在這裡
 - `pr/zh-tw-ui` = 提 PR 用的乾淨分支（Phase E1 才建立），由 `upstream/main` 拉出後只帶在地化改動。
+
+⚠️ **不要拿 `main` 或 `feat/zh-tw-ui` 直接開 PR** —— 兩者都含 `build-apk.yml`（作者已明確拒絕過，見 PR #286）。
+提 PR 必須走 `pr/zh-tw-ui` 剝離流程。
 
 ## 硬規則
 
