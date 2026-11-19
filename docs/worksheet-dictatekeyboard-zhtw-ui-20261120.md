@@ -241,6 +241,59 @@ Nextcloud `文件/` 內有 `app-debug.apk`（174 MB，2026-11-17 03:30）與 `ba
 | **編譯方式** | 沿用 Actions（`build-apk.yml` 已驗證 `workflow_dispatch` 可用），不變 |
 | **網頁版的定位** | 只用於最後向作者開 issue / 提 PR（PR 描述要貼截圖，本來就得上網頁版編輯） |
 
+### 1.5 簽章金鑰在哪？（決定未來能否覆蓋升級）
+
+#### 位置
+
+**不在 repo 裡、不會被 clone 回來。** 它只存在於 **GitHub Secret**：
+
+| 項目 | 值（實查） |
+|---|---|
+| Secret 名稱 | `ANDROID_DEBUG_KEYSTORE_B64` |
+| 建立時間 | 2026-11-17T04:36:06Z（`c89b926` 那個 commit 當下） |
+| 更新時間 | 2026-11-17T04:36:25Z |
+| 存放處 | GitHub Actions Secrets（`repos/kuniakil/DictateKeyboard/actions/secrets`） |
+| repo 內是否有簽章檔 | ❌ 無。`git log --all --diff-filter=A` 只找到 `keystore.properties.template` |
+| `.gitignore` | 已排除 `*.jks` / `*.keystore` / `keystore.properties`（第 55–57 行） |
+
+#### 簽名一致的機制（為什麼每次 build 出來的 APK 都能覆蓋升級）
+
+```
+1. build-apk.yml「Restore fixed debug keystore」步驟
+     printf "%s" "$KEYSTORE_B64" | base64 -d > ~/.android/debug.keystore
+     （每次 CI 都從 secret 還原同一把金鑰到同一個路徑）
+2. app/build.gradle.kts 的 debug buildType **沒有指定 signingConfig**
+     → Gradle 自動採用預設的 ~/.android/debug.keystore
+3. 結果：每次 Actions build 產出的 debug APK 簽名完全一致
+   → 手機上可直接覆蓋安裝，App 設定（API Key、Custom words、學詞庫…）全部保留
+```
+
+> 註：`keystore.properties.template` 是**上游給 Play 發行用的 upload key** 模板，與我們這把 debug 金鑰是**兩把不同的鑰匙**，別搞混。上游的 upload key 不在我們手上，也不該有。
+
+#### ⚠️ 風險：金鑰是單點故障，且零備份
+
+**GitHub Secret 是不可逆的（write-only）** —— 實測 `GET /actions/secrets/{name}/value` 回 **404 Not Found**（該端點對一般 token 不開放讀取）。
+
+且已查證：
+- 本機**沒有**任何副本（`find ~ -maxdepth 6 -name "*.keystore" -o -name "*.jks"` → 只找到 OneDrive 的無關檔案）
+- Nextcloud `文件/` **沒有**任何簽章檔
+- `~/.android/` **不存在**
+
+**若金鑰遺失**（GitHub 帳號被鎖 / secret 被誤刪 / 無法登入）：
+→ 只能重新產生一把新金鑰 → 簽名不一致 → **手機上必須 uninstall 重裝** → **App 內所有設定與自訂詞庫全毀**
+→ 且既有 `v6.4.0-apk` Release 資產的簽章將無法再生產。
+
+#### 使用者決策（2026-11-20）
+
+**暫緩建立備份，先做 zh-TW 主線。** 之後若要補，指定存放位置為：**只放本機（不離開這台 Mac）**。
+
+補備份的做法（需另開 workflow 事後刪除）：
+1. 臨時加一支 workflow：還原金鑰 → 加密（用一個只有我們知道的 passphrase）→ 上傳成 Release asset 或 `workflow_dispatch` artifact
+2. 本機下載後解密存到 `~/DictateKeyboard-secrets/`
+3. 刪除該臨時 workflow
+
+> **待辦提醒**：這是本專案唯一「遺失即永久損失」的資產。zh-TW 完成後應優先回頭處理。
+
 ---
 
 ## Part 2 — 計畫（2026-11-20 修訂版）

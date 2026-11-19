@@ -49,6 +49,16 @@ gh workflow run build-apk.yml --ref feat/zh-tw-ui
 ⚠️ `build-apk.yml` 會 `gh release upload --clobber` 到 `v6.4.0-apk` → **覆蓋既有 Release 資產**。
 手機上裝的就是那個（Nextcloud `文件/app-debug.apk`）。動手前先備份 asset。
 
+## 🔑 簽章金鑰（單點故障，零備份）
+
+金鑰**不在 repo 裡、不會被 clone 回來**，只存在於 GitHub Secret `ANDROID_DEBUG_KEYSTORE_B64`。
+GitHub Secret 不可逆讀取（API 回 404），且**本機與 Nextcloud 都沒有任何副本**。
+
+遺失的後果：無法再生產相同簽章 → 手機上必須 uninstall 重裝 → **App 設定與自訂詞庫全毀**。
+
+使用者的指示：**暫緩補備份，先做 zh-TW；之後要補時只放本機**（`~/DictateKeyboard-secrets/`）。
+→ 詳見工作表 1.5 節（含補備份的做法）。
+
 ## 與上游互動的關鍵背景
 
 - 上游翻譯由**作者自己用 AI 批次生成**，每個功能 commit 同步更新全部 20 個 locale（同一 SHA）。
