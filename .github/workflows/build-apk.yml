@@ -1,0 +1,71 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Install Android NDK and CMake
+        run: |
+          SDK_ROOT="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          SDK_MANAGER=$(find "$SDK_ROOT/cmdline-tools" -name sdkmanager -type f | head -n 1)
+          NDK_VER=$(grep "^ndk " gradle/tools.versions.toml | sed -E "s/.*\"(.*)\".*/\1/")
+          CMAKE_VER=$(grep "^cmake " gradle/tools.versions.toml | sed -E "s/.*\"(.*)\".*/\1/")
+          yes | "$SDK_MANAGER" --licenses >/dev/null || true
+          "$SDK_MANAGER" "ndk;${NDK_VER}" "cmake;${CMAKE_VER}"
+
+      - name: Restore fixed debug keystore
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_DEBUG_KEYSTORE_B64 }}
+        run: |
+          mkdir -p "$HOME/.android"
+          printf "%s" "$KEYSTORE_B64" | base64 -d > "$HOME/.android/debug.keystore"
+          keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android >/dev/null
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Fetch sherpa-onnx native libraries
+        run: bash tools/fetch-sherpa-onnx.sh
+
+      - name: Build Bergamot native library
+        run: bash tools/bergamot/build-android.sh
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DictateKeyboard-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
+      - name: Publish APK to GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(grep "^projectVersionName=" gradle.properties | cut -d= -f2 | tr -d "[:space:]")
+          TAG="v${VERSION}-apk"
+          APK_FILE=$(ls app/build/outputs/apk/debug/*.apk | head -n 1)
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$APK_FILE" --clobber
+          else
+            gh release create "$TAG" "$APK_FILE" \
+              --title "DictateKeyboard v${VERSION} (APK)" \
+              --notes "Auto-built Debug APK with fixed signing keystore."
+          fi
