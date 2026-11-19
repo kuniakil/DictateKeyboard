@@ -60,12 +60,20 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(grep "^projectVersionName=" gradle.properties | cut -d= -f2 | tr -d "[:space:]")
+          BRANCH="${GITHUB_REF_NAME:-main}"
           TAG="v${VERSION}-apk"
+          # On a side branch, tag the release with the branch so a branch build
+          # never clobbers the main branch's release asset.
+          if [ "$BRANCH" != "main" ]; then
+            SAFE_BRANCH=$(echo "$BRANCH" | sed 's/[^A-Za-z0-9._-]/-/g')
+            TAG="v${VERSION}-apk-${SAFE_BRANCH}"
+          fi
           APK_FILE=$(ls app/build/outputs/apk/debug/*.apk | head -n 1)
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$APK_FILE" --clobber
           else
             gh release create "$TAG" "$APK_FILE" \
               --title "DictateKeyboard v${VERSION} (APK)" \
-              --notes "Auto-built Debug APK with fixed signing keystore."
+              --notes "Auto-built Debug APK with fixed signing keystore." \
+              --target "$BRANCH"
           fi
