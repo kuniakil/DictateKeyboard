@@ -9,6 +9,51 @@
 
 ---
 
+## Part 0 — 交接說明（新 session 從這裡開始）
+
+### 當前狀態（2026-11-20 結束時）
+
+| 項目 | 狀態 |
+|---|---|
+| 本機 repo | ✅ `~/DictateKeyboard`（origin = 我們的 fork，upstream = 上游） |
+| 當前分支 | `feat/zh-tw-ui`（工作區乾淨，已與 `origin/feat/zh-tw-ui` 同步） |
+| `main` | ✅ 已 merge `upstream/main`（diff vs 上游只剩 2 個純新增檔案） |
+| Phase A | ✅ A0/A1/A2 完成；⬜ A3（給作者的說明文件）、A4（Actions 實跑驗證）未做 |
+| Phase B–F | ⬜ 全部未開始 |
+| 工作區 | 乾淨，無未提交改動 |
+
+### 下一步（建議順序）
+
+**Step 1 — 先做「最小可行 zh-TW」驗證鏈路**（不要一開始就翻 2547 條）
+
+理由：我們**從未在真機驗證過** `values-zh-rTW` 的目錄命名與 zh-Hant fallback 行為。
+若命名或 fallback 跟預期不同（實質風險），要在只翻幾十條時就發現，而不是翻了 2547 條才發現。
+
+```
+B0  產出只含約 30–50 條核心字串的 values-zh-rTW/strings.xml（可從 base 挑 settings/dictate 常用字）
+C1  OtherScreen.kt 的 tag 清單加 "zh-TW"（1 行）
+A4  gh workflow run build-apk.yml --ref feat/zh-tw-ui
+C3  裝機實測：設定 → 其他 → 語言 → 選「繁體中文」→ 確認 UI 立即切換、截圖
+```
+
+驗證通過 → 再回頭補完 2547 條（Phase B 全量）+ wear（69 條）。
+
+**Step 2 — 補完全量翻譯**（Phase B 全量 → Phase D 用語校訂）
+
+**Step 3 — 提 issue → 提 PR**（Phase E）
+
+### 三個不要重新踩的坑
+
+1. **不要拿 `main` 或 `feat/zh-tw-ui` 直接開 PR** —— 含 `build-apk.yml`，作者已明確拒絕過（PR #286）。必須走 `pr/zh-tw-ui` 剝離流程。
+2. **不要用 `values-zh-rCN` 當翻譯基底** —— 會變「二手 AI 轉譯」，與上游未來自做的 zh-TW 打架。基底是英文 base。
+3. **不要在未同步上游的情況下切分支開 PR** —— 基底落後會讓 diff 出現 16 個上游 Kotlin 檔案的「反向差異」，作者會以為你在刪他的程式碼。merge 上游後再切。
+
+### 本 session 已完成的調查（別重做）
+
+Part 1 的全部內容都經實查驗證過 —— 上游 locale 結構、app 語言選擇器位置與機制、2547 strings / 11 plurals / 36 條缺漏 / 1614 條 comment 指引、zh-Hant fallback 規則、簽章金鑰位置與單點故障風險、2026-11-17 全程網頁版操作的查證、Release tag 撞名修正。
+
+---
+
 ## Part 1 — 調查結果（2026-11-20 實查）
 
 ### 1.1 三個決定性發現
