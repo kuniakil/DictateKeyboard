@@ -36,6 +36,26 @@ jobs:
           printf "%s" "$KEYSTORE_B64" | base64 -d > "$HOME/.android/debug.keystore"
           keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android >/dev/null
 
+      - name: Diagnose signing key
+        run: |
+          echo "HOME=$HOME"
+          env | grep -i -E "^ANDROID" || echo "(無 ANDROID_* 變數)"
+          echo "--- ~/.android 內容 ---"
+          ls -la "$HOME/.android" 2>&1 || true
+          echo "--- 還原回來的金鑰：別名 + 憑證指紋 ---"
+          keytool -list -v -keystore "$HOME/.android/debug.keystore" -storepass android \
+            | grep -E "Alias name:|Entry type:|SHA256:|SHA-256:" | head -20
+          echo "--- AGP 預設會選哪一把？ ---"
+          ./gradlew :app:signingReport --no-daemon 2>&1 \
+            | grep -E "Variant: debug|Config:|Store:|Alias:|SHA-256:|SHA256:" | head -20
+          echo "--- 加上 injected signing 參數後呢？ ---"
+          ./gradlew :app:signingReport --no-daemon \
+            -Pandroid.injected.signing.store.file="$HOME/.android/debug.keystore" \
+            -Pandroid.injected.signing.store.password=android \
+            -Pandroid.injected.signing.key.alias=androiddebugkey \
+            -Pandroid.injected.signing.key.password=android 2>&1 \
+            | grep -E "Variant: debug|Config:|Store:|Alias:|SHA-256:|SHA256:" | head -20
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
@@ -46,7 +66,14 @@ jobs:
         run: bash tools/bergamot/build-android.sh
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon
+        env:
+          ANDROID_USER_HOME: $HOME/.android
+        run: |
+          ./gradlew assembleDebug --no-daemon \
+            -Pandroid.injected.signing.store.file="$HOME/.android/debug.keystore" \
+            -Pandroid.injected.signing.store.password=android \
+            -Pandroid.injected.signing.key.alias=androiddebugkey \
+            -Pandroid.injected.signing.key.password=android
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
