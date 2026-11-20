@@ -1223,238 +1223,238 @@
     <string name="about__privacy_policy__summary" comment="Preference summary">本專案的隱私權政策</string>
     <string name="about__project_license__title" comment="Preference title">專案授權</string>
     <string name="about__project_license__summary" comment="Preference summary">{app_name} 依 {license_name} 授權</string>
-    <string name="about__project_license__error_license_text_failed" comment="Error text for license text loading failure">Error: Failed to load license text.\n-&gt; Reason: {error_message}</string>
-    <string name="about__project_license__error_reason_asset_manager_null" comment="Error text if asset manager is null">Asset manager reference is null</string>
-    <string name="about__third_party_licenses__title" comment="Preference title">Third-party licenses</string>
-    <string name="about__third_party_licenses__summary" comment="Preference summary">Licenses of the third-party libraries included in this app</string>
-    <string name="about__data_attributions__title" comment="Preference title for the screen listing licenses of bundled/downloaded data and on-device models">Data &amp; model attributions</string>
-    <string name="about__data_attributions__summary" comment="Preference summary listing what the attributions screen covers">Licenses for the on-device models, dictionaries and language data</string>
+    <string name="about__project_license__error_license_text_failed" comment="Error text for license text loading failure">錯誤：無法載入授權條款文字。\n-&gt; 原因：{error_message}</string>
+    <string name="about__project_license__error_reason_asset_manager_null" comment="Error text if asset manager is null">資源管理程式參照為 null</string>
+    <string name="about__third_party_licenses__title" comment="Preference title">第三方授權</string>
+    <string name="about__third_party_licenses__summary" comment="Preference summary">這個應用程式所包含之第三方函式庫的授權</string>
+    <string name="about__data_attributions__title" comment="Preference title for the screen listing licenses of bundled/downloaded data and on-device models">資料與模型來源</string>
+    <string name="about__data_attributions__summary" comment="Preference summary listing what the attributions screen covers">裝置端模型、字典與語言資料的授權</string>
 
     <!-- Setup UI strings -->
-    <string name="setup__title" comment="Title of Setup">Welcome!</string>
-    <string name="setup__intro_message" comment="Short intro message welcoming new users">Welcome to {app_name}! Let\'s get you ready to dictate in just a few quick steps — no technical knowledge needed.</string>
-    <string name="setup__footer__privacy_policy" comment="Privacy policy label for URL">Privacy policy</string>
-    <string name="setup__footer__repository" comment="Repository label for URL">Repository</string>
-    <string name="setup__nav_back" comment="Setup wizard: go to the previous step">Back</string>
-    <string name="setup__nav_next" comment="Setup wizard: go to the next, already-reached step">Next</string>
+    <string name="setup__title" comment="Title of Setup">歡迎！</string>
+    <string name="setup__intro_message" comment="Short intro message welcoming new users">歡迎使用 {app_name}！用幾個簡單步驟就能開始語音輸入 —— 不需要任何技術知識。</string>
+    <string name="setup__footer__privacy_policy" comment="Privacy policy label for URL">隱私權政策</string>
+    <string name="setup__footer__repository" comment="Repository label for URL">程式碼倉庫</string>
+    <string name="setup__nav_back" comment="Setup wizard: go to the previous step">上一步</string>
+    <string name="setup__nav_next" comment="Setup wizard: go to the next, already-reached step">下一步</string>
 
-    <string name="setup__enable_ime__title">Enable {app_name}</string>
-    <string name="setup__enable_ime__description">Android requires that every custom keyboard is separately enabled before you can use it. Open the System <i>Language &amp; Input</i> Settings, there enable “{app_name}”.</string>
-    <string name="setup__enable_ime__open_settings_btn">Open System Settings</string>
+    <string name="setup__enable_ime__title">啟用 {app_name}</string>
+    <string name="setup__enable_ime__description">Android 要求每個自訂鍵盤都必須分別啟用才能使用。開啟系統的 &lt;i&gt;語言與輸入&lt;/i&gt; 設定，在其中啟用「{app_name}」。</string>
+    <string name="setup__enable_ime__open_settings_btn">開啟系統設定</string>
 
-    <string name="setup__select_ime__title">Select {app_name}</string>
-    <string name="setup__select_ime__description">{app_name} is now enabled in your system. To actively use it, switch to {app_name} by selecting it in the input selector dialog!</string>
-    <string name="setup__select_ime__switch_keyboard_btn">Switch Keyboard</string>
+    <string name="setup__select_ime__title">選擇 {app_name}</string>
+    <string name="setup__select_ime__description">{app_name} 已在你的系統中啟用。要實際使用它，請在輸入法選擇器中選取 {app_name}！</string>
+    <string name="setup__select_ime__switch_keyboard_btn">切換鍵盤</string>
 
-    <string name="setup__grant_notification_permission__title">Allow notifications</string>
-    <string name="setup__grant_notification_permission__description">As of Android 13, apps must ask before they show notifications. Dictate Keyboard shows one while the floating button records, while a speech model downloads and while your watch dictates through the phone, and it opens a crash report if the app crashes. You can change this at any time in the system settings.</string>
-    <string name="setup__grant_notification_permission__btn">Grant Permission</string>
+    <string name="setup__grant_notification_permission__title">允許通知</string>
+    <string name="setup__grant_notification_permission__description">從 Android 13 開始，應用程式必須先詢問才能顯示通知。Dictate Keyboard 會在浮動按鈕錄音、語音模型下載，以及你的手錶透過手機進行語音輸入時顯示一則通知；若應用程式當機，也會開啟錯誤報告。你隨時可以在系統設定中變更。</string>
+    <string name="setup__grant_notification_permission__btn">授予權限</string>
 
     <!-- Setup: connect an AI provider (Dictate onboarding for non-technical users) -->
-    <string name="setup__provider__title">Choose how Dictate transcribes</string>
+    <string name="setup__provider__title">選擇 Dictate 的轉錄方式</string>
     <!-- The two-track choice shown first: buy credit in the app, or bring your own provider key.
          Both are fully supported and the wording must not push either way. -->
-    <string name="setup__provider__choose_intro">Dictate turns your speech into text with an AI service. Two ways suit most people — and if you\'d rather not use a cloud service at all, there are two more below.</string>
-    <string name="setup__provider__choice_cloud_title">Buy credit in the app</string>
-    <string name="setup__provider__choice_cloud_body">Dictate Cloud: no account anywhere, no API key. You buy dictation minutes through Google Play and they never expire. The convenient way — and somewhat more expensive than going to a provider directly.</string>
-    <string name="setup__provider__choice_cloud_btn">Show credit packs</string>
-    <string name="setup__provider__choice_own_title">Use your own AI provider</string>
-    <string name="setup__provider__choice_own_body">Create a key with a provider of your choice — Groq is free for everyday dictation. You keep your own account and pay the provider directly at their prices. Takes about two minutes.</string>
-    <string name="setup__provider__choice_own_btn">Set up my own key</string>
-    <string name="setup__provider__back_to_choice">Back to all options</string>
+    <string name="setup__provider__choose_intro">Dictate 透過 AI 服務把你的語音轉成文字。有兩種方式適合大多數人 —— 若你完全不想使用雲端服務，下面還有另外兩種。</string>
+    <string name="setup__provider__choice_cloud_title">在應用程式內購買點數</string>
+    <string name="setup__provider__choice_cloud_body">Dictate Cloud：不需要任何帳號，也不需要 API 金鑰。你透過 Google Play 購買語音輸入分鐘，且永不會過期。這是最方便的做法 —— 價格也比直接向服務商購買稍高。</string>
+    <string name="setup__provider__choice_cloud_btn">顯示點數方案</string>
+    <string name="setup__provider__choice_own_title">使用你自己的 AI 服務商</string>
+    <string name="setup__provider__choice_own_body">在你選的服務商建立一把金鑰 —— Groq 的一般日常語音輸入是免費的。你保有自己的帳戶，直接依對方的價格付款。大約需要兩分鐘。</string>
+    <string name="setup__provider__choice_own_btn">設定我自己的金鑰</string>
+    <string name="setup__provider__back_to_choice">回到全部選項</string>
     <!-- The two quieter ways below the cards: on-device and a server of the user's own. Both have
          worked for releases but were invisible here, which is what issue #273 is about. -->
-    <string name="setup__provider__more_ways" comment="Small heading above the two quieter setup options">Rather not use a cloud service?</string>
-    <string name="setup__provider__choice_local_title">On your device, offline</string>
-    <string name="setup__provider__choice_local_body">Download a speech model once. No account, no costs, and no audio ever leaves your phone.</string>
-    <string name="setup__provider__choice_server_title">Your own server</string>
-    <string name="setup__provider__choice_server_body">Point Dictate at a speech server you run yourself, or any OpenAI-compatible endpoint.</string>
-    <string name="setup__provider__local_intro">Speech recognition then runs on your phone: nothing is sent anywhere, and it works without a connection. Pick one model to download now — you can add or change models later.</string>
-    <string name="setup__provider__local_recommended" comment="Note under the first offered on-device model">Recommended for your language</string>
-    <string name="setup__provider__local_bigger" comment="Note under the second offered on-device model">More accurate, but a much bigger download</string>
-    <string name="setup__provider__local_download_btn">Download model</string>
-    <string name="setup__provider__local_use_btn" comment="Button on an on-device model that is already downloaded">Use this model</string>
-    <string name="setup__provider__local_all_models">Show all models</string>
-    <string name="setup__provider__intro">Dictate turns your speech into text with the help of an online AI service. To use it, you need your own personal key for such a service.</string>
-    <string name="setup__provider__what_is_key">An API key is like a personal password that lets Dictate use the service for you. Creating one is free and takes about two minutes.</string>
-    <string name="setup__provider__recommended">We recommend <b>Groq</b> — it\'s fast and free for everyday dictation.</string>
-    <string name="setup__provider__steps_groq">1. Tap the button below to open Groq.\n2. Sign in with Google or your email address.\n3. Tap “Create API Key”, give it any name, and confirm.\n4. Copy the key (it begins with “gsk_”).\n5. Come back here and tap “Paste API key” below.</string>
-    <string name="setup__provider__steps_generic">1. Tap the button below to open {provider}.\n2. Create an account if you don\'t have one yet.\n3. Create a new API key and copy it.\n4. Come back here and tap “Paste API key” below.</string>
-    <string name="setup__provider__open_btn" comment="{provider} is the provider name, e.g. Groq">Open {provider} &amp; create a key</string>
-    <string name="setup__provider__paste_btn">Paste API key</string>
-    <string name="setup__provider__clipboard_empty">Your clipboard looks empty. Copy your key on the provider\'s page first, then tap “Paste API key” again.</string>
-    <string name="setup__provider__key_detected" comment="{key} is the masked key, e.g. gsk_…AB12">Key added: {key} ✓</string>
-    <string name="setup__provider__enter_manually">Or type the key manually</string>
-    <string name="setup__provider__key_field">Paste your API key here</string>
-    <string name="setup__provider__save_btn">Save &amp; continue</string>
-    <string name="setup__provider__skip_btn">Set up later</string>
-    <string name="setup__provider__other_provider">Use a different AI provider</string>
-    <string name="setup__provider__other_provider_hint">Advanced: pick another service instead of Groq. You\'ll need an API key from that provider.</string>
+    <string name="setup__provider__more_ways" comment="Small heading above the two quieter setup options">不想用雲端服務？</string>
+    <string name="setup__provider__choice_local_title">在你的裝置上，離線</string>
+    <string name="setup__provider__choice_local_body">下載一次語音模型。不需帳號、不需費用，音訊也永遠不會離開你的手機。</string>
+    <string name="setup__provider__choice_server_title">你自己的伺服器</string>
+    <string name="setup__provider__choice_server_body">把 Dictate 指向你自己架設的語音伺服器，或任何相容於 OpenAI 的端點。</string>
+    <string name="setup__provider__local_intro">接著語音辨識會在你的手機上執行：內容不會送到任何地方，沒有連線也能運作。現在選一個模型下載 —— 之後隨時可以新增或更換模型。</string>
+    <string name="setup__provider__local_recommended" comment="Note under the first offered on-device model">推薦給你的語言</string>
+    <string name="setup__provider__local_bigger" comment="Note under the second offered on-device model">更準確，但下載量大很多</string>
+    <string name="setup__provider__local_download_btn">下載模型</string>
+    <string name="setup__provider__local_use_btn" comment="Button on an on-device model that is already downloaded">使用這個模型</string>
+    <string name="setup__provider__local_all_models">顯示所有模型</string>
+    <string name="setup__provider__intro">Dictate 透過線上 AI 服務把你的語音轉成文字。要使用它，你需要一把該服務的專屬金鑰。</string>
+    <string name="setup__provider__what_is_key">API 金鑰就像一組專屬密碼，讓 Dictate 能代你使用該服務。建立金鑰是免費的，大約兩分鐘。</string>
+    <string name="setup__provider__recommended">我們推薦 &lt;b&gt;Groq&lt;/b&gt; —— 速度快，日常語音輸入免費。</string>
+    <string name="setup__provider__steps_groq">1. 點擊下方按鈕開啟 Groq。\n2. 以 Google 或電子郵件地址登入。\n3. 點一下「Create API Key」，取任意名稱並確認。\n4. 複製金鑰（開頭是「gsk_」）。\n5. 回到這裡，點擊下方的「貼上 API 金鑰」。</string>
+    <string name="setup__provider__steps_generic">1. 點擊下方按鈕開啟 {provider}。\n2. 若你還沒有帳號，請先建立。\n3. 建立一把新的 API 金鑰並複製。\n4. 回到這裡，點擊下方的「貼上 API 金鑰」。</string>
+    <string name="setup__provider__open_btn" comment="{provider} is the provider name, e.g. Groq">開啟 {provider} 並建立金鑰</string>
+    <string name="setup__provider__paste_btn">貼上 API 金鑰</string>
+    <string name="setup__provider__clipboard_empty">你的剪貼簿看起來是空的。請先在服務商的頁面上複製金鑰，再點一次「貼上 API 金鑰」。</string>
+    <string name="setup__provider__key_detected" comment="{key} is the masked key, e.g. gsk_…AB12">已加入金鑰：{key} ✓</string>
+    <string name="setup__provider__enter_manually">或手動輸入金鑰</string>
+    <string name="setup__provider__key_field">把你的 API 金鑰貼在這裡</string>
+    <string name="setup__provider__save_btn">儲存並繼續</string>
+    <string name="setup__provider__skip_btn">稍後設定</string>
+    <string name="setup__provider__other_provider">使用其他 AI 服務商</string>
+    <string name="setup__provider__other_provider_hint">進階：改選其他服務而非 Groq。你需要該服務商提供的 API 金鑰。</string>
 
-    <string name="setup__finish_up__title">You\'re all set!</string>
-    <string name="setup__finish_up__description_p1">{app_name} is ready. Switch to it with the keyboard switcher, tap the microphone, and start speaking.</string>
-    <string name="setup__finish_up__description_p2">You can change languages, the AI provider and everything else anytime in the settings. If you ever run into a problem or have an idea, reach out from the about screen!</string>
-    <string name="setup__finish_up__add_key_hint">Tip: you haven\'t added an AI key yet. Add one anytime in Settings → Dictate → AI providers to start dictating.</string>
-    <string name="setup__finish_up__finish_btn">Start using Dictate</string>
-    <string name="setup__floating_button__btn" comment="Onboarding button that opens the floating-button settings">Set up the floating button</string>
-    <string name="setup__floating_button__title" comment="Title of the optional floating-button onboarding step">Dictate anywhere (optional)</string>
-    <string name="setup__floating_button__intro" comment="Explanation on the optional floating-button onboarding step">The floating button puts a small dictation bubble over any app, so you can speak into any text field without switching keyboards.</string>
-    <string name="setup__floating_button__accessibility_note" comment="Transparency note about the accessibility service the floating button relies on">To do this, {app_name} uses Android\'s accessibility settings — that\'s how the bubble can show over other apps and insert the transcribed text for you. The next screen guides you through enabling it.</string>
-    <string name="setup__floating_button__optional_note" comment="Reassurance that the floating button is optional">This is completely optional — skip it if you just want to use {app_name} as a full keyboard. You can always set it up later in the settings.</string>
-    <string name="setup__floating_button__skip_btn" comment="Button to skip the optional floating-button step">Skip — I\'ll use the keyboard</string>
+    <string name="setup__finish_up__title">一切就緒！</string>
+    <string name="setup__finish_up__description_p1">{app_name} 已經準備好了。用鍵盤切換器切換過去，點一下麥克風，然後開始說話。</string>
+    <string name="setup__finish_up__description_p2">語言、AI 服務商以及其他所有設定，你隨時都可以在設定中變更。若遇到問題或有新想法，歡迎從關於畫面與我們聯絡！</string>
+    <string name="setup__finish_up__add_key_hint">小提醒：你還沒加入 AI 金鑰。可隨時在 設定 → Dictate → AI 服務商 中加入一把，就能開始語音輸入。</string>
+    <string name="setup__finish_up__finish_btn">開始使用 Dictate</string>
+    <string name="setup__floating_button__btn" comment="Onboarding button that opens the floating-button settings">設定浮動按鈕</string>
+    <string name="setup__floating_button__title" comment="Title of the optional floating-button onboarding step">到處都能 Dictate（選用）</string>
+    <string name="setup__floating_button__intro" comment="Explanation on the optional floating-button onboarding step">浮動按鈕會在任何應用程式上顯示一個小小的語音輸入氣泡，讓你不必切換鍵盤就能對任何文字欄位說話。</string>
+    <string name="setup__floating_button__accessibility_note" comment="Transparency note about the accessibility service the floating button relies on">為了做到這件事，{app_name} 會使用 Android 的無障礙設定 —— 氣泡就是靠它才能顯示在其他應用程式之上，並替你插入轉錄出來的文字。下一個畫面會引導你開啟它。</string>
+    <string name="setup__floating_button__optional_note" comment="Reassurance that the floating button is optional">這完全是可以省略的 —— 若你只想把 {app_name} 當成完整鍵盤使用，可以跳過。你隨時都能在設定中補做。</string>
+    <string name="setup__floating_button__skip_btn" comment="Button to skip the optional floating-button step">略過 —— 我要用鍵盤</string>
 
     <!-- Physical keyboard -->
-    <string name="physical_keyboard__title">Physical keyboard</string>
-    <string name="physical_keyboard__system_settings__title">Physical keyboard settings</string>
-    <string name="physical_keyboard__system_settings__summary">Layouts, keyboard shortcuts and modifier keys</string>
-    <string name="physical_keyboard__system_settings__summary_not_attached">Only available when keyboard is attached</string>
-    <string name="physical_keyboard__show_on_screen_keyboard__title">Show on-screen keyboard</string>
-    <string name="physical_keyboard__show_on_screen_keyboard__summary">Show on-screen keyboard while using physical keyboard</string>
+    <string name="physical_keyboard__title">實體鍵盤</string>
+    <string name="physical_keyboard__system_settings__title">實體鍵盤設定</string>
+    <string name="physical_keyboard__system_settings__summary">配置、鍵盤快速鍵與輔助鍵</string>
+    <string name="physical_keyboard__system_settings__summary_not_attached">僅在連接鍵盤時可用</string>
+    <string name="physical_keyboard__show_on_screen_keyboard__title">顯示螢幕鍵盤</string>
+    <string name="physical_keyboard__show_on_screen_keyboard__summary">使用實體鍵盤時同時顯示螢幕鍵盤</string>
 
     <!-- Back up & Restore -->
-    <string name="backup_and_restore__title">Back up &amp; Restore</string>
-    <string name="backup_and_restore__back_up__title">Back up data</string>
-    <string name="backup_and_restore__back_up__summary">Generate a backup archive of preferences and customizations</string>
-    <string name="backup_and_restore__back_up__destination">Select backup destination</string>
-    <string name="backup_and_restore__back_up__destination_file_sys">Local file system</string>
-    <string name="backup_and_restore__back_up__destination_share_intent">Third-party app via share menu</string>
-    <string name="backup_and_restore__back_up__files">Select what to back up</string>
-    <string name="backup_and_restore__back_up__files_jetpref_datastore">Preferences</string>
-    <string name="backup_and_restore__back_up__files_provider_credentials">API keys and passwords</string>
-    <string name="backup_and_restore__back_up__credentials_warning">This archive contains your API keys and passwords in plain text, along with your Dictate Cloud credit — anyone you give it to can dictate at your expense. Do not pass it on, and if you already have, change the key at your provider. Whatever else is ticked below travels with it, including your transcription history and your clipboard.</string>
-    <string name="backup_and_restore__back_up__credentials_excluded_note">This archive carries no API keys, passwords or Dictate Cloud credit, so it can be passed on — but it will not restore yours either. Whatever else is ticked below is still in it, including your transcription history and your clipboard.</string>
-    <string name="backup_and_restore__back_up__personal_content_note">This archive carries no API keys or passwords, but it does carry what is ticked below — your transcription history with any kept recordings, your clipboard, your prompts and the words the keyboard has learned from you.</string>
-    <string name="backup_and_restore__back_up__encrypted_note">This archive is encrypted with your password, and everything ticked below can only be restored with it. If you forget the password, nobody can restore this backup — not even you.</string>
-    <string name="backup_and_restore__back_up__password">Password protection</string>
-    <string name="backup_and_restore__back_up__password_enabled">Encrypt with a password</string>
-    <string name="backup_and_restore__back_up__password_too_short">At least {count} characters</string>
-    <string name="backup_and_restore__back_up__password_mismatch">The passwords do not match</string>
-    <string name="backup_and_restore__password">Password</string>
-    <string name="backup_and_restore__password_repeat">Repeat password</string>
-    <string name="backup_and_restore__back_up__files_dictate_prompts">Saved rewording prompts</string>
-    <string name="backup_and_restore__back_up__files_personal_dictionary">Personal dictionary and learned words</string>
-    <string name="backup_and_restore__back_up__files_ime_keyboard">Keyboard extensions</string>
-    <string name="backup_and_restore__back_up__files_ime_spelling">Spelling extensions / dictionaries</string>
-    <string name="backup_and_restore__back_up__files_ime_theme">Theme extensions</string>
-    <string name="backup_and_restore__back_up__files_clipboard_history">Clipboard history</string>
-    <string name="backup_and_restore__back_up__files_clipboard_history__clipboard_text_items">Text items</string>
-    <string name="backup_and_restore__back_up__files_clipboard_history__clipboard_image_items">Images</string>
-    <string name="backup_and_restore__back_up__files_clipboard_history__clipboard_video_items">Videos</string>
-    <string name="backup_and_restore__back_up__success">Successfully exported backup archive!</string>
-    <string name="backup_and_restore__back_up__failure">Failed to export backup archive: {error_message}</string>
-    <string name="backup_and_restore__restore__title">Restore data</string>
-    <string name="backup_and_restore__restore__summary">Restore preferences and customizations from a backup archive</string>
-    <string name="backup_and_restore__restore__files">Select what to restore</string>
-    <string name="backup_and_restore__restore__metadata">Selected backup archive</string>
-    <string name="backup_and_restore__restore__metadata_warn_different_version">This backup archive was generated in another version than current, which is generally supported. Be aware though that minor issues can occur or some preferences may not get transferred properly due to feature differences.</string>
-    <string name="backup_and_restore__restore__metadata_warn_different_vendor">This backup archive was generated in a third-party app, which is generally not supported. Data losses may occur, restore at your own risk!</string>
-    <string name="backup_and_restore__restore__metadata_note_no_credentials">This backup archive contains no API keys or passwords. Everything else is restored. Merging keeps the keys already on this device; erasing removes them — including a Dictate Cloud recovery code, which cannot be typed back in.</string>
-    <string name="backup_and_restore__restore__encrypted">This backup archive is protected with a password. Enter it to see what the archive contains.</string>
-    <string name="backup_and_restore__restore__unlock">Unlock</string>
-    <string name="backup_and_restore__restore__wrong_password">Wrong password</string>
-    <string name="backup_and_restore__restore__encrypted_unreadable">This archive cannot be opened. It is damaged, or it was made by a newer version of Dictate.</string>
-    <string name="backup_and_restore__restore__metadata_error_invalid_metadata">This backup archive contains invalid metadata. Either it has been corrupted or poorly modified. Restoring from this archive is not possible, please select another one.</string>
-    <string name="backup_and_restore__restore__metadata_error_nothing_to_restore">This backup archive does not contain any files to restore, please select another one.</string>
-    <string name="backup_and_restore__restore__mode">Restore mode</string>
-    <string name="backup_and_restore__restore__mode_merge">Merge with current data</string>
-    <string name="backup_and_restore__restore__mode_erase_and_overwrite">Erase and overwrite current data</string>
-    <string name="backup_and_restore__restore__success">Successfully restored data!</string>
-    <string name="backup_and_restore__restore__failure">Failed to restore data: {error_message}</string>
+    <string name="backup_and_restore__title">備份與還原</string>
+    <string name="backup_and_restore__back_up__title">備份資料</string>
+    <string name="backup_and_restore__back_up__summary">產生偏好設定與自訂內容的備份壓縮檔</string>
+    <string name="backup_and_restore__back_up__destination">選擇備份目的地</string>
+    <string name="backup_and_restore__back_up__destination_file_sys">本機檔案系統</string>
+    <string name="backup_and_restore__back_up__destination_share_intent">透過分享選單傳給第三方應用程式</string>
+    <string name="backup_and_restore__back_up__files">選擇要備份的內容</string>
+    <string name="backup_and_restore__back_up__files_jetpref_datastore">偏好設定</string>
+    <string name="backup_and_restore__back_up__files_provider_credentials">API 金鑰與密碼</string>
+    <string name="backup_and_restore__back_up__credentials_warning">這個壓縮檔以明文包含你的 API 金鑰與密碼，以及你的 Dictate Cloud 點數 —— 任何拿到它的人都能用你的名義進行語音輸入並由你付費。請不要轉交；若你已經轉交，請到服務商那裡更換金鑰。下面勾選的其他內容也會一併包含在內，包括你的轉錄紀錄與剪貼簿。</string>
+    <string name="backup_and_restore__back_up__credentials_excluded_note">這個壓縮檔不含 API 金鑰、密碼或 Dictate Cloud 點數，因此可以轉交 —— 但它也不會還原你的那些內容。下面勾選的其他內容仍在其中，包括你的轉錄紀錄與剪貼簿。</string>
+    <string name="backup_and_restore__back_up__personal_content_note">這個壓縮檔不含 API 金鑰或密碼，但包含下面勾選的內容 —— 你的轉錄紀錄（含保留的錄音）、你的剪貼簿、你的提示，以及鍵盤從你這裡學到的字詞。</string>
+    <string name="backup_and_restore__back_up__encrypted_note">這個壓縮檔已用你的密碼加密，下面勾選的所有內容只能用這個密碼還原。若你忘記密碼，就沒有人能還原這個備份 —— 包括你自己。</string>
+    <string name="backup_and_restore__back_up__password">密碼保護</string>
+    <string name="backup_and_restore__back_up__password_enabled">以密碼加密</string>
+    <string name="backup_and_restore__back_up__password_too_short">至少 {count} 個字元</string>
+    <string name="backup_and_restore__back_up__password_mismatch">兩次輸入的密碼不一致</string>
+    <string name="backup_and_restore__password">密碼</string>
+    <string name="backup_and_restore__password_repeat">再次輸入密碼</string>
+    <string name="backup_and_restore__back_up__files_dictate_prompts">已儲存的改寫提示</string>
+    <string name="backup_and_restore__back_up__files_personal_dictionary">個人字典與已學習的字詞</string>
+    <string name="backup_and_restore__back_up__files_ime_keyboard">鍵盤擴充功能</string>
+    <string name="backup_and_restore__back_up__files_ime_spelling">拼字擴充功能／字典</string>
+    <string name="backup_and_restore__back_up__files_ime_theme">佈景主題擴充功能</string>
+    <string name="backup_and_restore__back_up__files_clipboard_history">剪貼簿紀錄</string>
+    <string name="backup_and_restore__back_up__files_clipboard_history__clipboard_text_items">文字項目</string>
+    <string name="backup_and_restore__back_up__files_clipboard_history__clipboard_image_items">圖片</string>
+    <string name="backup_and_restore__back_up__files_clipboard_history__clipboard_video_items">影片</string>
+    <string name="backup_and_restore__back_up__success">備份壓縮檔已成功匯出！</string>
+    <string name="backup_and_restore__back_up__failure">無法匯出備份壓縮檔：{error_message}</string>
+    <string name="backup_and_restore__restore__title">還原資料</string>
+    <string name="backup_and_restore__restore__summary">從備份壓縮檔還原偏好設定與自訂內容</string>
+    <string name="backup_and_restore__restore__files">選擇要還原的內容</string>
+    <string name="backup_and_restore__restore__metadata">已選取的備份壓縮檔</string>
+    <string name="backup_and_restore__restore__metadata_warn_different_version">這個備份壓縮檔是在與目前不同的版本中產生的，一般而言仍可支援。但請注意，功能差異可能造成些微問題，或使部分偏好設定無法正確轉移。</string>
+    <string name="backup_and_restore__restore__metadata_warn_different_vendor">這個備份壓縮檔是由第三方應用程式產生的，一般而言並不支援。可能會發生資料遺失，請自行承擔風險進行還原！</string>
+    <string name="backup_and_restore__restore__metadata_note_no_credentials">這個備份壓縮檔不含 API 金鑰或密碼，其他內容都會還原。合併會保留這台裝置上既有的金鑰；覆蓋則會移除它們 —— 包括 Dictate Cloud 的復原碼，而那組碼無法重新輸入。</string>
+    <string name="backup_and_restore__restore__encrypted">這個備份壓縮檔受密碼保護。請輸入密碼以查看壓縮檔內容。</string>
+    <string name="backup_and_restore__restore__unlock">解鎖</string>
+    <string name="backup_and_restore__restore__wrong_password">密碼錯誤</string>
+    <string name="backup_and_restore__restore__encrypted_unreadable">無法開啟這個壓縮檔。它可能已損毀，或是由較新版本的 Dictate 產生。</string>
+    <string name="backup_and_restore__restore__metadata_error_invalid_metadata">這個備份壓縮檔含有無效的中繼資料。它可能已損毀或遭到不當修改。無法從這個壓縮檔還原，請改選另一個。</string>
+    <string name="backup_and_restore__restore__metadata_error_nothing_to_restore">這個備份壓縮檔沒有可還原的檔案，請改選另一個。</string>
+    <string name="backup_and_restore__restore__mode">還原模式</string>
+    <string name="backup_and_restore__restore__mode_merge">與目前資料合併</string>
+    <string name="backup_and_restore__restore__mode_erase_and_overwrite">清除並覆蓋目前資料</string>
+    <string name="backup_and_restore__restore__success">資料已成功還原！</string>
+    <string name="backup_and_restore__restore__failure">無法還原資料：{error_message}</string>
 
     <!-- Crash Dialog strings -->
-    <string name="crash_dialog__title" comment="Title of crash dialog">Dictate error report</string>
-    <string name="crash_dialog__description" comment="Description of crash dialog">Sorry for the inconvenience, but Dictate has crashed due to an unexpected error.</string>
-    <string name="crash_dialog__report_instructions" comment="Issue tracker report instructions for the crash dialog. The %s placeholder is the name of the crash report template and always in English/LTR.">If you wish to report this error, first check out the issue tracker on GitHub if your crash has not already been reported.\nIf it hasn\'t, copy the generated crash log and open a new issue. Use the \"%s\" template and fill out the description, the steps to reproduce, and paste the generated crash log at the end. This helps in making Dictate better and more stable for everyone. Thank you!</string>
+    <string name="crash_dialog__title" comment="Title of crash dialog">Dictate 錯誤報告</string>
+    <string name="crash_dialog__description" comment="Description of crash dialog">很抱歉造成不便，Dictate 因為未預期的錯誤而當機了。</string>
+    <string name="crash_dialog__report_instructions" comment="Issue tracker report instructions for the crash dialog. The %s placeholder is the name of the crash report template and always in English/LTR.">若你想回報這個錯誤，請先確認 GitHub 上的問題追蹤系統是否已經有人回報過你的當機。\n若尚未回報，請複製產生的當機紀錄並開啟新的 issue。使用「%s」範本，填寫問題描述、重現步驟，並將產生的當機紀錄貼在最後。這能讓 Dictate 對所有人都更好、更穩定。感謝你！</string>
     <string name="crash_dialog__bug_report_template" comment="Name of the template to use in the GitHub issue tracker (is always in English)" translatable="false">Crash report</string>
-    <string name="crash_dialog__copy_to_clipboard" comment="Label of Copy to clipboard button in crash dialog">Copy to system clipboard</string>
-    <string name="crash_dialog__copy_to_clipboard_success" comment="Label of Copy to clipboard success message in crash dialog">Copied to system clipboard</string>
-    <string name="crash_dialog__copy_to_clipboard_failure" comment="Label of Copy to clipboard failure message in crash dialog">Cannot copy to system clipboard: Clipboard manager instance not found</string>
-    <string name="crash_dialog__open_issue_tracker" comment="Label of Open issue tracker button in crash dialog">Open issue tracker (github.com)</string>
-    <string name="crash_dialog__close" comment="Label of Close button in crash dialog">Close</string>
-    <string name="crash_notification_channel__title" comment="Title of crash notification channel">Dictate error reports</string>
-    <string name="crash_once_notification__title" comment="Title of the notification for a single crash">Dictate has stopped working…</string>
-    <string name="crash_once_notification__body" comment="Body of the notification for a single crash">Tap to view error details</string>
-    <string name="crash_multiple_notification__title" comment="Title of the notification for consecutive crashes">Dictate seems to stop working repeatedly…</string>
-    <string name="crash_multiple_notification__body" comment="Body of the notification for consecutive crashes">Falling back to previous keyboard to stop infinite crash loop. Tap to view error details</string>
+    <string name="crash_dialog__copy_to_clipboard" comment="Label of Copy to clipboard button in crash dialog">複製到系統剪貼簿</string>
+    <string name="crash_dialog__copy_to_clipboard_success" comment="Label of Copy to clipboard success message in crash dialog">已複製到系統剪貼簿</string>
+    <string name="crash_dialog__copy_to_clipboard_failure" comment="Label of Copy to clipboard failure message in crash dialog">無法複製到系統剪貼簿：找不到剪貼簿管理程式實例</string>
+    <string name="crash_dialog__open_issue_tracker" comment="Label of Open issue tracker button in crash dialog">開啟問題追蹤系統（github.com）</string>
+    <string name="crash_dialog__close" comment="Label of Close button in crash dialog">關閉</string>
+    <string name="crash_notification_channel__title" comment="Title of crash notification channel">Dictate 錯誤報告</string>
+    <string name="crash_once_notification__title" comment="Title of the notification for a single crash">Dictate 已停止運作…</string>
+    <string name="crash_once_notification__body" comment="Body of the notification for a single crash">點一下以查看錯誤詳情</string>
+    <string name="crash_multiple_notification__title" comment="Title of the notification for consecutive crashes">Dictate 似乎不斷停止運作…</string>
+    <string name="crash_multiple_notification__body" comment="Body of the notification for consecutive crashes">已切回先前的鍵盤以中止無限當機循環。點一下以查看錯誤詳情</string>
 
 
     <!-- Text editing panel strings -->
-    <string name="editing__back_to_keyboard" comment="Content description of the ABC key in the text editing panel">Back to the keyboard</string>
+    <string name="editing__back_to_keyboard" comment="Content description of the ABC key in the text editing panel">回到鍵盤</string>
 
     <!-- Clipboard strings -->
-    <string name="clipboard__header_title">Clipboard</string>
-    <string name="clipboard__search_placeholder" comment="Hint inside the clipboard search field">Search your clips</string>
-    <string name="clipboard__search_no_results" comment="Shown when no clip contains what was typed">No clip contains that</string>
-    <string name="clipboard__disabled__title">Clipboard history is currently disabled</string>
-    <string name="clipboard__disabled__message">{app_name}\'s clipboard history allows you to quickly store and access text and images you copy, with the ability to pin items, configure automatic clean-up and set a maximum item limit.</string>
-    <string name="clipboard__disabled__enable_button">Enable clipboard history</string>
-    <string name="clipboard__empty__title">Your clipboard is empty</string>
-    <string name="clipboard__empty__message">Once you copy text clips or images they will show up here.</string>
-    <string name="clipboard__locked__title">Your clipboard is locked</string>
-    <string name="clipboard__locked__message">To access your clipboard history, please first unlock your device.</string>
-    <string name="clipboard__group_pinned">Pinned</string>
-    <string name="clipboard__group_recent">Recent</string>
-    <string name="clipboard__group_other">Other</string>
-    <string name="clipboard__item_description_email">Email</string>
-    <string name="clipboard__item_description_url">URL</string>
-    <string name="clipboard__item_description_phone">Phone</string>
-    <string name="clip__clear_history">Clear history</string>
-    <string name="clip__unpin_item">Unpin item</string>
-    <string name="clip__pin_item">Pin item</string>
-    <string name="clip__delete_item">Delete</string>
-    <string name="clip__paste_item">Paste</string>
-    <string name="clip__back_to_text_input">Back to text input</string>
-    <string name="clip__cant_paste">This app doesn\'t allow pasting this content.</string>
-    <string name="clipboard__cleared_primary_clip">Cleared primary clip</string>
-    <string name="clipboard__cleared_history">Cleared history</string>
-    <string name="clipboard__cleared_full_history">Cleared full history</string>
-    <string name="clipboard__confirm_clear_unfiltered_history__message">Are you sure you want to clear your full clipboard history? This will affect all items, except pinned ones.</string>
-    <string name="clipboard__confirm_clear_filtered_history__message">Are you sure you want to clear your clipboard history? This will affect all currently filtered items, except pinned ones.</string>
-    <string name="settings__clipboard__title">Clipboard</string>
-    <string name="pref__clipboard__use_internal_clipboard__label">Use internal clipboard</string>
-    <string name="pref__clipboard__use_internal_clipboard__summary">Use an internal clipboard instead of the system clipboard</string>
-    <string name="pref__clipboard__sync_from_system_clipboard__label">Sync from system clipboard</string>
-    <string name="pref__clipboard__sync_to_system_clipboard__label">Sync to system clipboard</string>
-    <string name="pref__clipboard__group_clipboard_suggestion__label">Clipboard suggestions</string>
-    <string name="pref__clipboard__strip_tracking_params__label" comment="Preference title">Remove tracking from links</string>
-    <string name="pref__clipboard__strip_tracking_params__summary" comment="Preference summary">Strips utm_, si, fbclid and the like when pasting</string>
-    <string name="pref__clipboard__trim_on_copy__label" comment="Preference title, keep short">Trim when copying</string>
-    <string name="pref__clipboard__trim_on_copy__summary" comment="Preference summary, keep short (one line)">Drops spaces and line breaks at both ends</string>
-    <string name="pref__clipboard__suggestion_enabled__label" comment="Preference title">Clipboard content suggestions</string>
-    <string name="pref__clipboard__suggestion_enabled__summary" comment="Preference summary">Suggest previously copied clipboard content</string>
-    <string name="pref__clipboard__suggestion_show_extracted__label" comment="Preference title (switch) in the group Clipboard suggestions, keep short (one line): whether the links, email addresses and phone numbers found inside a copied text are also offered as suggestions of their own, next to the whole text">Links, emails and numbers</string>
-    <string name="pref__clipboard__num_history_grid_columns__label">Number of grid columns</string>
-    <string name="pref__clipboard__history_pinned_on_top__label" comment="Preference title">Pinned items on top</string>
-    <string name="pref__clipboard__suggestion_timeout__label" comment="Preference title; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__summary` and is the first part">Limit clipboard suggestions to</string>
-    <string name="pref__clipboard__suggestion_timeout__summary" comment="Preference summary; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__label` and is the second part">Items copied within the last {v} s</string>
-    <string name="pref__clipboard__group_clipboard_history__label">Clipboard history</string>
-    <string name="pref__clipboard__enable_clipboard_history__label">Enable clipboard history</string>
-    <string name="pref__clipboard__enable_clipboard_history__summary">Retain clipboard items for quick access</string>
-    <string name="pref__clipboard__clean_up_old__label">Clean up old items</string>
-    <string name="pref__clipboard__clean_up_after__label">Clean up old items after</string>
-    <string name="pref__clipboard__auto_clean_sensitive__label">Auto clean sensitive items</string>
-    <string name="pref__clipboard__auto_clean_sensitive_after__label">Auto clean sensitive items after</string>
-    <string name="pref__clipboard__limit_history_size__label">Limit history size</string>
-    <string name="pref__clipboard__max_history_size__label">Max history size</string>
-    <string name="pref__clipboard__history_hide_on_paste__label">Hide history on paste</string>
-    <string name="pref__clipboard__history_hide_on_next_text_field__label">Hide history on next text field</string>
-    <string name="pref__clipboard__clear_primary_clip_affects_history_if_unpinned__label">Clearing clip affects history</string>
-    <string name="pref__clipboard__clear_primary_clip_affects_history_if_unpinned__summary">Clearing the primary clip also removes it from the history, if not pinned</string>
-    <string name="send_to_clipboard__unknown_error">An unknown error occurred. Please try again!</string>
-    <string name="send_to_clipboard__type_not_supported_error">This media type is not supported.</string>
-    <string name="send_to_clipboard__description__copied_image_to_clipboard">Copied below image to clipboard.</string>
+    <string name="clipboard__header_title">剪貼簿</string>
+    <string name="clipboard__search_placeholder" comment="Hint inside the clipboard search field">搜尋你的剪貼內容</string>
+    <string name="clipboard__search_no_results" comment="Shown when no clip contains what was typed">沒有包含該內容的剪貼項目</string>
+    <string name="clipboard__disabled__title">剪貼簿紀錄目前已停用</string>
+    <string name="clipboard__disabled__message">{app_name} 的剪貼簿紀錄可讓你快速儲存與取用所複製的文字和圖片，還能釘選項目、設定自動清理，並限制項目數量上限。</string>
+    <string name="clipboard__disabled__enable_button">啟用剪貼簿紀錄</string>
+    <string name="clipboard__empty__title">你的剪貼簿是空的</string>
+    <string name="clipboard__empty__message">一旦你複製文字或圖片，它們就會出現在這裡。</string>
+    <string name="clipboard__locked__title">你的剪貼簿已鎖定</string>
+    <string name="clipboard__locked__message">若要存取你的剪貼簿紀錄，請先解鎖裝置。</string>
+    <string name="clipboard__group_pinned">已釘選</string>
+    <string name="clipboard__group_recent">最近使用</string>
+    <string name="clipboard__group_other">其他</string>
+    <string name="clipboard__item_description_email">電子郵件</string>
+    <string name="clipboard__item_description_url">網址</string>
+    <string name="clipboard__item_description_phone">電話</string>
+    <string name="clip__clear_history">清除紀錄</string>
+    <string name="clip__unpin_item">取消釘選</string>
+    <string name="clip__pin_item">釘選</string>
+    <string name="clip__delete_item">刪除</string>
+    <string name="clip__paste_item">貼上</string>
+    <string name="clip__back_to_text_input">回到文字輸入</string>
+    <string name="clip__cant_paste">這個應用程式不允許貼上這段內容。</string>
+    <string name="clipboard__cleared_primary_clip">已清除主要剪貼項目</string>
+    <string name="clipboard__cleared_history">已清除紀錄</string>
+    <string name="clipboard__cleared_full_history">已清除完整紀錄</string>
+    <string name="clipboard__confirm_clear_unfiltered_history__message">你確定要清除完整的剪貼簿紀錄嗎？這會影響所有項目，但已釘選的除外。</string>
+    <string name="clipboard__confirm_clear_filtered_history__message">你確定要清除剪貼簿紀錄嗎？這會影響目前篩選出的所有項目，但已釘選的除外。</string>
+    <string name="settings__clipboard__title">剪貼簿</string>
+    <string name="pref__clipboard__use_internal_clipboard__label">使用內建剪貼簿</string>
+    <string name="pref__clipboard__use_internal_clipboard__summary">使用內建剪貼簿而非系統剪貼簿</string>
+    <string name="pref__clipboard__sync_from_system_clipboard__label">從系統剪貼簿同步</string>
+    <string name="pref__clipboard__sync_to_system_clipboard__label">同步到系統剪貼簿</string>
+    <string name="pref__clipboard__group_clipboard_suggestion__label">剪貼簿建議</string>
+    <string name="pref__clipboard__strip_tracking_params__label" comment="Preference title">移除連結中的追蹤參數</string>
+    <string name="pref__clipboard__strip_tracking_params__summary" comment="Preference summary">貼上時移除 utm_、si、fbclid 等參數</string>
+    <string name="pref__clipboard__trim_on_copy__label" comment="Preference title, keep short">複製時去除空白</string>
+    <string name="pref__clipboard__trim_on_copy__summary" comment="Preference summary, keep short (one line)">去除兩端的空格與換行</string>
+    <string name="pref__clipboard__suggestion_enabled__label" comment="Preference title">剪貼簿內容建議</string>
+    <string name="pref__clipboard__suggestion_enabled__summary" comment="Preference summary">建議你先前複製過的剪貼簿內容</string>
+    <string name="pref__clipboard__suggestion_show_extracted__label" comment="Preference title (switch) in the group Clipboard suggestions, keep short (one line): whether the links, email addresses and phone numbers found inside a copied text are also offered as suggestions of their own, next to the whole text">連結、郵件與數字</string>
+    <string name="pref__clipboard__num_history_grid_columns__label">格線欄位數</string>
+    <string name="pref__clipboard__history_pinned_on_top__label" comment="Preference title">釘選項目置頂</string>
+    <string name="pref__clipboard__suggestion_timeout__label" comment="Preference title; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__summary` and is the first part">剪貼簿建議僅限</string>
+    <string name="pref__clipboard__suggestion_timeout__summary" comment="Preference summary; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__label` and is the second part">最近 {v} 秒內複製的項目</string>
+    <string name="pref__clipboard__group_clipboard_history__label">剪貼簿紀錄</string>
+    <string name="pref__clipboard__enable_clipboard_history__label">啟用剪貼簿紀錄</string>
+    <string name="pref__clipboard__enable_clipboard_history__summary">保留剪貼項目以便快速取用</string>
+    <string name="pref__clipboard__clean_up_old__label">清理舊項目</string>
+    <string name="pref__clipboard__clean_up_after__label">多久後清理舊項目</string>
+    <string name="pref__clipboard__auto_clean_sensitive__label">自動清理敏感項目</string>
+    <string name="pref__clipboard__auto_clean_sensitive_after__label">多久後自動清理敏感項目</string>
+    <string name="pref__clipboard__limit_history_size__label">限制紀錄大小</string>
+    <string name="pref__clipboard__max_history_size__label">紀錄大小上限</string>
+    <string name="pref__clipboard__history_hide_on_paste__label">貼上後隱藏紀錄</string>
+    <string name="pref__clipboard__history_hide_on_next_text_field__label">切換到下一個文字欄位時隱藏紀錄</string>
+    <string name="pref__clipboard__clear_primary_clip_affects_history_if_unpinned__label">清除剪貼項目會影響紀錄</string>
+    <string name="pref__clipboard__clear_primary_clip_affects_history_if_unpinned__summary">清除主要剪貼項目時，若未釘選也會一併從紀錄中移除</string>
+    <string name="send_to_clipboard__unknown_error">發生未知的錯誤。請再試一次！</string>
+    <string name="send_to_clipboard__type_not_supported_error">不支援這種媒體類型。</string>
+    <string name="send_to_clipboard__description__copied_image_to_clipboard">已將下方的圖片複製到剪貼簿。</string>
 
 
     <!-- Devtools strings -->
-    <string name="devtools__title" comment="Title of Devtools screen. Translators: treat this string as 'Developer tools' for translation, except a similar short term is available for your language.">Devtools</string>
-    <string name="devtools__enabled__label" comment="Label of Enable developer tools in Devtools">Enable developer tools</string>
-    <string name="devtools__enabled__summary" comment="Summary of Enable developer tools in Devtools">Tools specifically designed for debugging and troubleshooting</string>
-    <string name="devtools__show_primary_clip__label" comment="Label of Show primary clip in Devtools">Show primary clip</string>
-    <string name="devtools__show_primary_clip__summary" comment="Summary of Show primary clip in Devtools">Overlays the current primary clip of the clipboard</string>
-    <string name="devtools__show_input_state_overlay__label" comment="Label of Show input cache overlay in Devtools">Show input state overlay</string>
-    <string name="devtools__show_input_state_overlay__summary" comment="Summary of Show input cache overlay in Devtools">Overlays the current input state for debugging</string>
-    <string name="devtools__show_spelling_overlay__label" comment="Label of Show spelling overlay in Devtools">Show spelling overlay</string>
-    <string name="devtools__show_spelling_overlay__summary" comment="Summary of Show spelling overlay in Devtools">Overlays the current spelling results for debugging</string>
+    <string name="devtools__title" comment="Title of Devtools screen. Translators: treat this string as 'Developer tools' for translation, except a similar short term is available for your language.">開發者工具</string>
+    <string name="devtools__enabled__label" comment="Label of Enable developer tools in Devtools">啟用開發者工具</string>
+    <string name="devtools__enabled__summary" comment="Summary of Enable developer tools in Devtools">專為除錯與問題排查而設計的工具</string>
+    <string name="devtools__show_primary_clip__label" comment="Label of Show primary clip in Devtools">顯示主要剪貼項目</string>
+    <string name="devtools__show_primary_clip__summary" comment="Summary of Show primary clip in Devtools">以浮層顯示剪貼簿目前的主要項目</string>
+    <string name="devtools__show_input_state_overlay__label" comment="Label of Show input cache overlay in Devtools">顯示輸入狀態浮層</string>
+    <string name="devtools__show_input_state_overlay__summary" comment="Summary of Show input cache overlay in Devtools">以浮層顯示目前的輸入狀態以便除錯</string>
+    <string name="devtools__show_spelling_overlay__label" comment="Label of Show spelling overlay in Devtools">顯示拼字浮層</string>
+    <string name="devtools__show_spelling_overlay__summary" comment="Summary of Show spelling overlay in Devtools">以浮層顯示目前的拼字結果以便除錯</string>
     <string name="devtools__show_inline_autofill_overlay__label">Show inline autofill overlay</string>
     <string name="devtools__show_inline_autofill_overlay__summary">Overlays the current inline autofill results for debugging</string>
     <string name="devtools__show_key_touch_boundaries__label" comment="Label of Show key touch boundaries in Devtools">Show key touch boundaries</string>
