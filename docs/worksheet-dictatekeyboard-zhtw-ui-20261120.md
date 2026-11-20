@@ -145,7 +145,7 @@ ListPreference(
 | `values-zh-rCN/strings.xml` | **2513 strings + 11 plurals** |
 | zh-rCN 缺的條目 | **36 條**（全是最新 learned-words 功能，11/13 才加入） |
 | plurals 缺漏 | 0 |
-| base 帶 `comment="..."` 翻譯指引的條目 | **1614 條** |
+| base 帶 `comment="..."` 翻譯指引的條目 | **約 1614～1618 條**（2026-11-20 複查：`grep -o ' comment="'` = 1618，行數計 1617；上游持續變動，**以 B5 驗證腳本輸出為準**）。`<string ` 出現 2547 次（行數計 2546） |
 | zh-rCN 帶 `comment="..."` 的條目 | 544 條（上游翻譯時**有丟掉 comment 屬性**） |
 | placeholder（`{app_name}` / `%1$s` / `{count}`）不一致數 | **0** ✅ |
 | `wear/src/main/res/values/strings.xml` | **69 strings** |
@@ -158,6 +158,8 @@ ListPreference(
 |---|---|---|
 | **作者積極維護** | 20 個 | ar, bg, ca, cs, de, es, fr, hu, in, it, ja, lv-rLV, nl, pl, pt-rBR, pt, ru, tr, uk, zh-rCN |
 | **FlorisBoard 遺留、作者未維護** | 20 個 | bs(68條), eo(705), no(480), mk(17), ckb, fi, hr, iw, ku, nds-DE, sk, sl, sr, sv, zgh, da, el, et-rEE, lv-rLV… |
+
+> ⚠️ 2026-11-20 複查更正：實際 `values-*` 目錄比下表多，另有 `ast-rES`、`sq-rAL`、`ur-rPK`、`et-rEE`、`fa`；其中 `ast` / `sq` / `ur` / `et` **有資源目錄但不在 picker 清單**。且 `lv-rLV` 屬積極維護，下表誤列於遺留側。→ 上游並不要求 picker 與資源目錄一致，可作為 PR 論述。
 
 實測 `values-bs` = 68 strings、`values-mk` = 17 strings、`values-eo` = 480、`values-no` = 480，**`dictate__` 前綴條目數 = 0** → 這些語言在 picker 裡可選，但 Dictate 功能本身完全沒翻譯。
 
@@ -502,11 +504,15 @@ git push origin pr/zh-tw-ui
       git commit -m "ci: add manual Android Debug APK build workflow"
       ```
       結果與 5 次 cherry-pick 等價，但**歷史乾淨、且 PR 剝離時只需排除 1 個檔案**。
+- ℹ️ **注意**：`docs/zh-TW-setup.md` 只存在於 `main`，**`feat/zh-tw-ui` 上沒有**。要引用前先 `git checkout origin/main -- docs/zh-TW-setup.md`；E1b 的 PR 檔案清單不得帶入。
+- ℹ️ **B5 補充**：`app/lint.xml` 把 `ExtraTranslation` 設為 warning，lint 不保證擋住缺漏 → 驗證要靠自寫的 key／placeholder 比對腳本，不靠 lint。
+- ℹ️ **同步上游**：B2 開工前先 `git merge upstream/main`（上游 `strings.xml` 11 月改了 30 次），並以當下 base 重算基準數字。
 - [ ] **A3** 建 `docs/zh-TW-ui-contribution.md`（給作者看的說明；未來 PR 會帶上去）
 - [ ] **A4** 確認 Actions 可出 APK：`gh workflow run build-apk.yml --ref feat/zh-tw-ui`
-      ⚠️ 該 workflow 會 `gh release upload --clobber` 到 `v6.4.0-apk` → **會覆蓋既有 Release 資產**，
-      而手機上裝的就是那個（Nextcloud `文件/app-debug.apk`，2026-11-17 03:30 下載）→
-      **動手前先備份既有 asset**（見 Phase C2）
+      ✅ 2026-11-20 修正：tag 撞名已修（`7843e539`）。在 `feat/zh-tw-ui` 跑會發到
+      `v6.4.0-apk-feat-zh-tw-ui`，**不會**動 `v6.4.0-apk`（舊版，仍指向 `e4c41fe`）。
+      只有在 `main` 上跑才會 `--clobber` 掉 `v6.4.0-apk`。無需特別備份。
+      ℹ️ debug 版 applicationId 有 `.debug` 後綴，與 Play 版是兩個獨立 App，設定需另外輸入。
 
 ### 2.3 Phase B — 翻譯（D3：基底由英文翻）
 
@@ -525,8 +531,14 @@ git push origin pr/zh-tw-ui
 
 #### 流程
 
+- [ ] **B0** 最小可行驗證（先於 B1–B6；目的：證明 `values-zh-rTW` 命名與 fallback 可用）
+  - 建 `app/src/main/res/values-zh-rTW/strings.xml`，只含約 40 條：`pref__other__settings_language__label`、設定首頁標題、Dictate 主要頁面標題、含 `%1$s` / `{app_name}` 的字串、1 個 plural
+  - 保留 `comment` 屬性與 placeholder；其餘未翻條目**刻意不放**（用來驗證退回英文）
+  - 驗收：`xmllint --noout` 通過
+- [ ] **B0b** 建驗證腳本 `tools/check-l10n.py`：比對 key 集合、placeholder、`comment` 保留數、plurals（B5 的前置；基準數字以其輸出為準）
 - [ ] **B1** 建立台灣用語 glossary（英文 → 台灣繁中），以 1.3 對照表為底
 - [ ] **B2** 批次翻譯 `values/strings.xml` → `values-zh-rTW/strings.xml`
+  - 執行方式：由 agent 分批直接翻（每批約 100–200 條），每批過 `tools/check-l10n.py`，不使用外部翻譯 API
   - 輸入：英文原文 + `comment="..."` 翻譯指引（1614 條）
   - **必須保留**：`comment` 屬性、placeholder（`{app_name}` / `%1$s` / `{count}`）、XML 轉義
   - 輸出結構與 base 完全對齊（2547 strings + 11 plurals）
@@ -548,13 +560,14 @@ git push origin pr/zh-tw-ui
   - `FlorisLocale.fromTag("zh-TW")` 會解析成 `Locale("zh","TW")` ✅
   - 顯示名稱由 `locale.displayName()` 產生，無需自訂
   - `FlorisAppActivity.kt:101-105` 已監聽 `prefs.other.settingsLanguage` 並即時 `createConfigurationContext` → **不需重啟 App 即生效**
-- [ ] **C2** 本機建置 APK（若可行）或走 Actions 出 APK
+- [ ] **C2** 走 Actions 出 APK（本機未確認有 Android SDK，不採本機建置）
   - 我們的 `build-apk.yml` 是 `workflow_dispatch` 手動觸發 ✅
-  - **注意**：該 workflow 會把 APK 發到 `v6.4.0-apk` Release 並 `--clobber` → 會覆蓋既有 Release 資產，需先確認可接受
+  - 分支建置發到 `v6.4.0-apk-<分支名>`，不會覆蓋 `v6.4.0-apk`（已修正，見 A4）
 - [ ] **C3** 裝機實測（證據鏈起點）
   - [ ] App → 設定 → 其他 → 語言 → 選「繁體中文」→ 確認 UI 立即切換
   - [ ] 走查：設定首頁 / Dictate / providers / prompts / backup / learned words / wear 設定
   - [ ] 確認無殘留英文、placeholder 顯示正常（`%1$s` 插值）、無崩潰
+  - [ ] **B0 階段驗收**：選繁中後，已翻條目顯示繁中、未翻條目退回英文、無崩潰；順便記錄 picker 顯示名稱（如「Chinese (Taiwan)」或「中文（台灣）」）
 - [ ] **C4** **產出證據（截圖集）**
   - 語言選擇器（含 "繁體中文（台灣）" 選項）
   - 設定首頁（繁中）
@@ -632,9 +645,10 @@ git push origin pr/zh-tw-ui
 
 1. `values-zh-rTW/strings.xml`（完整成品，供他直接採用）
 2. **台灣用語 glossary**（英文 → 台灣繁中的對照表，機器可讀，如 JSON/YAML）
-3. **轉換流程說明**：若他的 AI 批次流程已能從英文 base 生 zh-rCN，那麼只要在流程末端加一個「zh-rCN → zh-TW + glossary 校正」步驟，就能得到與 base 同步的 zh-TW。
-   - **關鍵優勢：不需要他改流程架構，只加一個後處理步驟。**
-   - 我們交付 glossary + 後處理腳本，他只要在 CI 加一行。
+3. **翻譯 prompt／流程說明**：他的 AI 批次流程是「英文 base → 各 locale」，與 D3 同源。我們交付「zh-TW 翻譯 prompt（內含 glossary 與台灣用語規則）」，他只要在批次流程多加一個 locale 目標，就能得到與 base 同步的 zh-TW。
+   - **關鍵優勢：不需要他改流程架構，只多一個 locale + 一份 glossary。**
+   - ⚠️ 2026-11-20 修正：原寫「zh-rCN → zh-TW 後處理腳本」與 D3（不從 zh-rCN 轉）矛盾，已改為英文 base 直譯。
+   - 另附自動驗證腳本（B5：key／placeholder 比對），可接進他的流程。
 
 > ⚠️ 若他回覆「我自己用 AI 翻就好」（依 1.1 發現 2 這可能性不低），則：
 > - 我們仍保有自己 fork 的 zh-TW 版本（對我們自己有用）
@@ -658,7 +672,7 @@ git push origin pr/zh-tw-ui
 | **分支污染**（高） | 我們的 6 個 CI commit 若混進 PR，diff 會被汙染 → 作者可能直接關閉 | 2.1：單分支開發 + 提 PR 前剝離（`pr/zh-tw-ui`）；E1c 有明確驗證點 |
 | **翻譯品質／一致性**（中） | 2547 條從零翻，可能有前後不一致（同一概念不同譯法） | glossary 先行（B1）；複查階段（D1–D3）；我們有 `zh-TW-setup.md` 的既有慣用語可沿用 |
 | **作者自己翻**（中） | 依 1.1 發現 2，他的模型就是自己 + AI 生成 | 交付 glossary（AI 不會自動知道台灣慣用語）；主要目標是我們自己拿到繁中介面，非必被接受 |
-| **Release 資產被覆蓋**（低） | 我們的 `build-apk.yml` 會 `gh release upload --clobber` 到 `v6.4.0-apk` | C2 前先確認；若要保留原版，先備份 asset |
+| **Release 資產被覆蓋**（極低） | 僅在 `main` 上跑 workflow 才會 `--clobber` `v6.4.0-apk`；分支已用獨立 tag | 不要在 `main` 上隨手觸發 |
 | **PR #97 的先例**（低） | 社群翻譯 PR 曾被無留言關閉 | 先開 issue 建立關係（D4）；且 2.7 的交付型態與 #97（純檔案）不同 |
 | **`values-zh-rTW` 涵蓋範圍**（低） | `zh-rTW` 隱含 script=Hant，但 **zh-HK / zh-MO 不會匹配** | 跟上游全用 legacy `r<REGION>` 命名（`zh-rCN` / `ko-KR` / `pt-BR` / `lv-LV`）的慣例一致 → 先用 `values-zh-rTW`；取捨在 E2b 跟作者談 |
 | **上游 Kotlin 碼衝突**（低） | 改 `OtherScreen.kt` 會與上游未來改動衝突 | 已驗證上游那 4 個 commit 都没動 `OtherScreen.kt`；E1d 提 PR 前 rebase |
