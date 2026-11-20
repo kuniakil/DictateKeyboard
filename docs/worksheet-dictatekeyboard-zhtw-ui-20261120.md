@@ -22,9 +22,11 @@
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
 | Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對，並建置乾淨圖床分支 `assets/zh-tw-screenshots`） |
 | Phase E | 🔄 **E1a–E1e、E2a、E2b 已完成** —— 已於 #483 留言並開立 [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)，目前 **E2c 等待作者回覆**（`pr/zh-tw-ui` 已就緒，尚未開 PR） |
+| 🚨 **PR 開立狀態** | ⚠️ **尚未開立 PR** —— 上游目前只有 **Issue `#492`** 與 `#483` 的留言，**沒有我們的 Pull Request**。<br>實查（2026-11-20）：`gh search prs --repo DevEmperor/DictateKeyboard "Traditional"` → 0；`gh api "search/issues?q=repo:DevEmperor/DictateKeyboard+is:pr+author:kuniakil"` → `total_count = 0`；上游 PR 總數 38 筆無 ours。<br>`pr/zh-tw-ui`（`e952b131`）**已推到我們的 fork**，diff 乾淨（4 檔），PR 文案＝`docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3** → 隨時可開。 |
 | 簽章金鑰與 `main` | ✅ **`main` 已同步固定簽章 workflow**（`6a5a8112`）；**金鑰已加密匯出並備份至本機 `~/DictateKeyboard-secrets/debug.keystore`**（SHA-256 驗證通過，臨時分支與 run 已刪除） |
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
 | 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
+| 2026-11-20 三次複查 | ✅ 已完成，**5 項落差已修正**（重點：確認**上游尚無我們的 PR**；清單見下方「三次複查修正」表） |
 
 ### 🔵 當前階段（2026-11-20，上游已接洽 → 等待 `DevEmperor` 回覆 `#492`）
 
@@ -35,7 +37,7 @@
 | **簽章備份與 `main` 同步** | ✅ 完成（`main` commit `6a5a8112` 不觸發 CI、`v6.4.0-apk` 未動；本機備份 `~/DictateKeyboard-secrets/debug.keystore` 雜湊驗證通過） |
 | **A3 + E1a–E1e** 貢獻指南、草稿與乾淨分支 `pr/zh-tw-ui` | ✅ 完成（嚴格 4 檔，`e952b131` 已推 `origin/pr/zh-tw-ui`） |
 | **E2a + E2b** #483 留言 + 開立新 Issue `#492` | ✅ 完成（[#483 留言](https://github.com/DevEmperor/DictateKeyboard/issues/483#issuecomment-7030540460) ＋ [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492) 含 6 張對照截圖） |
-| **E2c → E3 / F** 等待作者回覆後開 PR 或收尾 | ⏳ **交棒給下個 session**（見下方決策表） |
+| **E2c → E3 / F** 等待作者回覆後開 PR 或收尾 | ⏳ **交棒給下個 session**（見下方決策表）。⚠️ 複查確認：**上游仍無我們的 PR**，`pr/zh-tw-ui` 已就緒待命 |
 
 ### 🧭 作者回覆後的應對決策表（下個 session 接手指南）
 
@@ -92,6 +94,10 @@
 
 ### 下一步（建議順序）
 
+> ✅ **2026-11-20 複查：本節的 Step 1–3 已全部完成**（B0 → C1 → A4/C2 → C3 → Phase B 全量 → Phase D → Phase E 至 E2b）。
+> **當前唯一下一步 = 等作者回覆 `#492`（E2c）→ 開 PR（E1f / E3a）**。
+> 下方 Step 1–3 保留作為**歷史決策脈絡**，不再是待辦。
+
 **Step 1 — 先做「最小可行 zh-TW」驗證鏈路**（不要一開始就翻 2547 條）
 
 理由：我們**從未在真機驗證過** `values-zh-rTW` 的目錄命名與 zh-Hant fallback 行為。
@@ -125,6 +131,20 @@ C3  裝機實測：設定 → 其他 → 語言 → 選「繁體中文」→ 確
 | 9 | 「台灣使用者今天看到英文」與「加 picker 條目」被混為一談 | 新增 **2.4.1**：兩層論述拆開（系統語言命中 vs in-app 選擇器），E2b 開 issue 用得上 |
 
 > 複查當下（2026-11-20）另確認：上游 `values-zh-rCN` 仍是唯一中文目錄、issue #483 仍 OPEN / 0 回覆、`minSdk=26`（≥24，script-aware fallback 保證成立）。
+
+### 2026-11-20 三次複查修正（後續 session，本節為權威）
+
+> **觸發**：使用者回頭查 `~/kubernetes/TODO.md` 與 Dify 知識庫，確認「是否真的提了 PR」。
+
+| # | 落差 | 修正位置 |
+|---|---|---|
+| 10 | **狀態不明：上游到底有沒有我們的 PR？** → 實查確認**沒有**。`gh api "search/issues?q=repo:DevEmperor/DictateKeyboard+is:pr+author:kuniakil"` → `total_count = 0`；`gh search prs --repo DevEmperor/DictateKeyboard "Traditional"` → 0；上游 PR 總數 38 筆無 ours；`gh pr list -R kuniakil/DictateKeyboard` → 空。上游只有 **Issue `#492`** 與 `#483` 留言 | Part 0 新增「🚨 **PR 開立狀態**」列；E2c、E1f 各加註；E2c→E3 階段列加註 |
+| 11 | **A4 checkbox 未勾**（實際被 C2 涵蓋，run `44668198901` success） | A4 勾選並註明「被 C2 涵蓋（N/A）」 |
+| 12 | **B5「lint 無 MissingTranslation」未勾**（實際由 Actions `assembleDebug` / `aapt2` 資源合併驗證涵蓋） | B5 補勾並註明驗證來源 |
+| 13 | **C3「wear 設定走查」未勾**（實際採 B3 方案②，限制說明已寫入 issue 與 contribution.md） | C3 補勾並註明限制說明位置 |
+| 14 | **Part 4 Q5「TODO.md 不在 repo 內 → 應刪除」** → 已找到：`~/kubernetes/TODO.md`（第 52–65 行），且 P1 的 Kotlin 修正**早已寫入**（第 56 行） | Q5 改為「✅ 已結案」，並載明 TODO.md 確切位置 |
+
+> 📌 **同步更新**：`~/kubernetes/TODO.md` 的 P1 狀態已由「進行中」改為「✅ 已完成（截至 E2）／⏳ 等作者回覆 #492 後開 PR」。
 
 ### 三個不要重新踩的坑
 
@@ -635,7 +655,9 @@ git push origin pr/zh-tw-ui
 - ℹ️ **B5 補充**：`app/lint.xml` 把 `ExtraTranslation` 設為 warning，lint 不保證擋住缺漏 → 驗證要靠自寫的 key／placeholder 比對腳本，不靠 lint。
 - ℹ️ **同步上游**：B2 開工前先 `git merge upstream/main`（上游 `strings.xml` 11 月改了 30 次），並以當下 base 重算基準數字。
 - [x] **A3** 建 `docs/zh-TW-ui-contribution.md`（給作者看的說明；未來 PR 會帶上去）
-- [ ] **A4** 確認 Actions 可出 APK（**無改動的冒煙測試**）：`gh workflow run build-apk.yml --ref feat/zh-tw-ui`
+- [x] **A4** 確認 Actions 可出 APK（**無改動的冒煙測試**）：`gh workflow run build-apk.yml --ref feat/zh-tw-ui`
+      ✅ **2026-11-20 補勾：被 C2 涵蓋**（N/A）—— C2 run `44668198901` 已 success，等同驗證「Actions 這條路本身通不通」；
+      若 C2 失敗才需回頭補跑 A4 判斷歸屬。**未另外執行無改動冒煙測試。**
       ✅ 2026-11-20 修正：tag 撞名已修（`7843e539`）。在 `feat/zh-tw-ui` 跑會發到
       `v6.4.0-apk-feat-zh-tw-ui`，**不會**動 `v6.4.0-apk`（舊版，仍指向 `e4c41fe`）。
       只有在 `main` 上跑才會 `--clobber` 掉 `v6.4.0-apk`。**無需特別備份 asset。**
@@ -691,7 +713,10 @@ git push origin pr/zh-tw-ui
   - [x] placeholder 逐條比對，mismatch = 0（基準：base vs zh-rCN 實測為 0）
   - [x] `comment` 屬性保留數 **= base 的當下 comment 數**（動態比對；實查 `app` = 1618 / 1618、`wear` = 0 / 0）
   - [x] XML 合法（`xmllint`）
-  - [ ] lint 無 `MissingTranslation`（本機無 JDK/Android SDK；改由 Actions `assembleDebug` / `aapt2` 資源合併驗證）
+  - [x] lint 無 `MissingTranslation`（本機無 JDK/Android SDK；改由 Actions `assembleDebug` / `aapt2` 資源合併驗證）
+        ✅ **2026-11-20 補勾**：C2 run `44668198901`（`assembleDebug` + `aapt2` 資源合併）已 success，
+        且 APK 內 `resources.arsc` 已解析確認 zh-TW chunk 正確掛載（見 Part 0「APK 層級的資源驗證」）
+        → 資源合併層級的 `MissingTranslation` 已被 Actions 建置驗證涵蓋。
   - [x] wear 模組同樣跑一次 `tools/check-l10n.py`（`--strict` 通過）
 - [x] **B6** 台灣用語複查（掃描殘留大陸用語，歸零；並統一 `長壓` → `長按`、修正 `024` 未譯片段與錯字）
 
@@ -713,7 +738,9 @@ git push origin pr/zh-tw-ui
 - [x] **C3** 裝機實測（證據鏈起點）
   - [x] App → 設定 → 其他 → 語言 → 選「中文 (台灣)」→ 確認 UI 立即切換
   - [x] 走查：設定首頁 / Dictate / providers / 佈景主題 / 剪貼簿 / 使用者字典 / learned words
-  - [ ] **wear 設定走查**：⚠️ wear 跟的是**手錶系統語言**，不跟手機 in-app 選擇器（見 1.2.1）→ 本輪略過實錶走查，於 issue/PR 說明此限制（採用 B3 方案②）
+  - [x] **wear 設定走查**：⚠️ wear 跟的是**手錶系統語言**，不跟手機 in-app 選擇器（見 1.2.1）→ 本輪略過實錶走查，於 issue/PR 說明此限制（採用 B3 方案②）
+        ✅ **2026-11-20 補勾**：採用 B3 方案② —— 資源檔已交付（69/69 條），限制說明已寫入 `#492` issue 與 `docs/zh-TW-ui-contribution.md`（PR 會一併帶上）。
+        若日後拿到實錶、且手錶系統語言可設為 zh-TW，可再補實錶截圖（見 Part 0 情境 4）。
   - [x] 確認無殘留英文、placeholder 顯示正常（`%1$s` / `{v}` 插值）、無崩潰
   - [x] **B0 階段驗收（= B0 的正式驗收點，見 2.0.1）**：全量繁中實測通過，無崩潰；picker 顯示名稱實測為 **`中文 (台灣)`**
 - [x] **C4** **產出證據（截圖集）**（已存於 Nextcloud `/mnt/kuniaki/文件/DictateKeyboard`，共 12 張，隱私已檢查無外洩）
@@ -771,6 +798,7 @@ git push origin pr/zh-tw-ui
 - [x] **E1d** rebase 到最新 `upstream/main`（已於最新 `upstream/main` `84adfa99` 上切出，無新 commit）
 - [x] **E1e** 推上去：`git push origin pr/zh-tw-ui`（推到**我們的 fork**）
 - [ ] **E1f** 開 PR：compare `DevEmperor:main` ← `kuniakil:pr/zh-tw-ui`（⚠️ 待 E2 issue 討論後再執行；文案見 `docs/upstream-outreach-drafts-20261120.md`）
+  - ⚠️ **2026-11-20 複查：尚未執行**。分支已就緒（`origin/pr/zh-tw-ui` = `e952b131`，基於 `upstream/main` `84adfa99`，diff 嚴格 4 檔，無需 rebase）。
 
 #### E2 — 先在 issue #483 留言建立連結
 
@@ -787,6 +815,8 @@ git push origin pr/zh-tw-ui
   2. 我們已做好的 zh-TW 介面 + **實機截圖證據**（三語並列 3 張 + 語言選擇器 + Dictate 設定 + 已學習的字詞，共 6 張）
   3. 我們的維護方案（見 2.7，`docs/zh-TW-ui-contribution.md`）
 - [ ] **E2c** 等待作者回應（作者活躍，issue 與 PR 都有回覆；他的習慣是先談再收；回應後的對策見 Part 0「作者回覆後的應對決策表」）
+  - ⚠️ **2026-11-20 複查：上游目前沒有我們的 PR**（`author:kuniakil` 的 PR 數 = 0；上游 PR 總數 38 筆無 ours）。只有 Issue `#492` + `#483` 留言。
+  - 📌 若 2 週內無回覆 → 依 Part 0 情境 7 處理（維持 fork 自用、推進 Phase F、或在 `#492` 禮貌 ping 一次）。
 
 #### E3 — 提 PR
 
@@ -853,7 +883,7 @@ git push origin pr/zh-tw-ui
 | Q2 | 分支 | ✅ **開分支，專供未來提 PR**；採單分支 + 提 PR 前剝離（2.1） |
 | Q3 | 執行順序 | ✅ **自己先做 → 證明可用 → 提 issue → 提 PR 附證據**（D4） |
 | Q4 | wear（69 條） | ✅ 一併做（B3），但排在主 App 之後。⚠️ 補充（2026-11-20 複查）：wear 資源跟**手錶系統語言**，不跟手機 in-app 選擇器 → B3 前先定驗證方式（見 1.2.1） |
-| Q5 | TODO.md 的 P1 條目 | ⬜ 待更新（原文「零衝突不改 Kotlin 碼」需更正為「需動 `OtherScreen.kt` 一行」）<br>⚠️ **2026-11-20 複查：`TODO.md` 不在本 repo 內**（`ls TODO.md docs/TODO.md` → 不存在）→ 需先確認它在哪裡（可能是 repo 外的私人文件），否則本項無法執行、應刪除 |
+| Q5 | TODO.md 的 P1 條目 | ✅ **已結案（2026-11-20 補勾）**<br>**TODO.md 位置已確認**：不在本 repo，而在 **`~/kubernetes/TODO.md`**（第 52–65 行的 DictateKeyboard 區塊）。<br>「零衝突不改 Kotlin 碼」的錯誤假設**早已修正並寫入** `~/kubernetes/TODO.md` 第 56 行（明載需動 `OtherScreen.kt` 一行）→ 本項實質工作已完成。<br>（同日亦已把該處 P1 狀態由「進行中」更新為「✅ 已完成（截至 E2）／⏳ 等作者回覆 #492 後開 PR」。） |
 | Q6 | 驗證腳本檔名 | ✅ **統一為 `tools/check-l10n.py`**（2026-11-20 複查；原 CLAUDE.md 的 `tools/check_zh_tw.py` 已同步更正） |
 | Q7 | Release 資產備份 | ✅ **不必備份**（2026-11-20 複查）：分支建置已用獨立 tag `v6.4.0-apk-<分支名>`，不會動 `v6.4.0-apk`；只有刻意在 `main` 上跑才會 clobber。CLAUDE.md 的舊警告已同步移除 |
 
@@ -950,4 +980,4 @@ gh issue view 483 -R DevEmperor/DictateKeyboard --json state,comments --jq '{s:.
 
 ---
 
-*本文件由 Claude Code 撰寫，數據皆為 2026-11-20 實查。Part 2 於同日依使用者決策（D1–D4）修訂，並於同日第二次 review 補上 9 項落差修正（見 Part 0「2026-11-20 二次複查修正」）。*
+*本文件由 Claude Code 撰寫，數據皆為 2026-11-20 實查。Part 2 於同日依使用者決策（D1–D4）修訂，並於同日第二次 review 補上 9 項落差修正（見 Part 0「2026-11-20 二次複查修正」），第三次 review 再補上 5 項（見 Part 0「2026-11-20 三次複查修正」；其中確認**上游尚無我們的 PR**，僅有 Issue #492）。*

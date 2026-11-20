@@ -1,6 +1,10 @@
 # CLAUDE.md — DictateKeyboard 繁體中文（zh-TW）在地化
 
-本 repo 是 `DevEmperor/DictateKeyboard` 的 fork。**目前唯一的進行中工作：新增繁體中文（台灣）介面。**
+本 repo 是 `DevEmperor/DictateKeyboard` 的 fork。
+
+> **⚠️ 當前狀態（2026-11-20）**：**繁體中文（台灣）介面已全部完成**（app 2547 strings + 11 plurals、wear 69 條、台灣用語校訂、實機驗收、雲端出包、簽章備份）。
+> **上游互動停在「等作者回覆」**：已於 [#483](https://github.com/DevEmperor/DictateKeyboard/issues/483) 留言並開立 Issue **[#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)**，**PR 尚未開立**（上游 `author:kuniakil` 的 PR 數 = 0）。
+> **下一步 = 等作者回覆 → 開 PR**（分支 `pr/zh-tw-ui` 已就緒，文案用 `docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3**）。詳見工作表 Part 0「作者回覆後的應對決策表」（情境 1–7）。
 
 > 相同內容另有 `AGENTS.md`（給 opencode / Antigravity 用）。兩份內容同步。
 
@@ -24,8 +28,10 @@
 
 分支：
 - `main` = 我們的**發行分支** = `upstream/main` + 我們的 CI workflow + docs。**已 merge 上游 2026-11-18**（diff vs 上游只剩 2 個純新增檔案）。Actions 在此出正式 APK。
-- `feat/zh-tw-ui` = **當前工作分支**，基底 `upstream/main` + 我們的 CI workflow + 工作表。← 現在在這裡
-- `pr/zh-tw-ui` = 提 PR 用的乾淨分支（Phase E1 才建立），由 `upstream/main` 拉出後只帶在地化改動。
+- `feat/zh-tw-ui` = **當前工作分支**，基底 `upstream/main` + 我們的 CI workflow + 工作表 + 工具鏈。← 現在在這裡
+- `pr/zh-tw-ui` = **提 PR 用的乾淨分支（已就緒）**，`e952b131`，基於 `upstream/main` `84adfa99`，`git diff upstream/main --stat` 嚴格只有 4 檔：
+  `app/.../values-zh-rTW/strings.xml`、`wear/.../values-zh-rTW/strings.xml`、`OtherScreen.kt`（1 行）、`docs/zh-TW-ui-contribution.md`。已推 `origin`。
+- `assets/zh-tw-screenshots` = 圖床分支（`465ad80a`），6 張截圖供 `#492` / PR 引用。
 
 ⚠️ **不要拿 `main` 或 `feat/zh-tw-ui` 直接開 PR** —— 兩者都含 `build-apk.yml`（作者已明確拒絕過，見 PR #286）。
 提 PR 必須走 `pr/zh-tw-ui` 剝離流程。
@@ -43,11 +49,15 @@
 ## 驗證（不可腦補）
 
 ```bash
-# 資源 key 集合與 placeholder 必須與 base 完全對齊
-python3 tools/check-l10n.py    # 待建立（Phase B0b/B5；app + wear 兩個模組）
+# 資源 key 集合與 placeholder 必須與 base 完全對齊（app + wear 兩個模組）
+python3 tools/check-l10n.py --strict --module all
+# → app 2547 strings + 11 plurals（comment 1618 條）/ wear 69 strings 全對齊
 
-# lint
-./gradlew :app:lintDebug        # 需本機 JDK 21 + Android SDK
+# XML 合法性
+xmllint --noout app/src/main/res/values-zh-rTW/strings.xml wear/src/main/res/values-zh-rTW/strings.xml
+
+# lint（需本機 JDK 21 + Android SDK；本機無 → 走 Actions）
+./gradlew :app:lintDebug
 
 # 雲端編譯（Actions）
 gh workflow run build-apk.yml --ref feat/zh-tw-ui
@@ -67,12 +77,16 @@ gh workflow run build-apk.yml --ref feat/zh-tw-ui
 
 - 上游翻譯由**作者自己用 AI 批次生成**，每個功能 commit 同步更新全部 20 個 locale（同一 SHA）。
   → 靜態 zh-TW 檔案必然漂移 → **交付物要含「glossary + 後處理轉換器」**，而非只有檔案。
-- 上游 open issue **#483「Dictation in traditional chinese」**（0 回覆）= 我們的切入點。
-- 作者的習慣：**先開 issue 談，再收 PR**。README 也這樣寫。
+- 上游 issue **#483「Dictation in traditional chinese」** —— 我們**已留言**（含繁中 STT 解法 + 指向 #492）：https://github.com/DevEmperor/DictateKeyboard/issues/483#issuecomment-7030540460
+- 上游 issue **#492「Traditional Chinese (zh-TW) UI translation」** —— 我們**已開立**（含 6 張對照截圖）：https://github.com/DevEmperor/DictateKeyboard/issues/492
+  - **🚨 PR 尚未開立**（上游 `author:kuniakil` 的 PR 數 = 0）→ 現在卡在 **E2c 等作者回覆**。
+- 作者的習慣：**先開 issue 談，再收 PR**。README 也這樣寫；PR #442 明確寫「please open an issue」。
 - 社群翻譯 PR 有被關閉的先例（PR #97），但社群 PR 被合併的先例也有（#223/#216/#168/#167）。
 
 ## 相關文件
 
-- `docs/worksheet-dictatekeyboard-zhtw-ui-20261120.md` — 主工作表
+- `docs/worksheet-dictatekeyboard-zhtw-ui-20261120.md` — **主工作表**（Part 0 交接說明是進度權威來源）
+- `docs/upstream-outreach-drafts-20261120.md` — `#483` / `#492` / **Draft 3（PR 文案）**
+- `docs/zh-TW-ui-contribution.md` — 給作者的說明（會隨 PR 帶上）
 - `docs/opentypeless-and-dictatekeyboard-stt-tuning-20261117.md` — 繁中 STT/潤色調校（Mac OpenTypeless + 本 fork 雲端編譯實戰）
 - `docs/zh-TW-setup.md` — 繁中 App 設定指南（已存在於 fork）
