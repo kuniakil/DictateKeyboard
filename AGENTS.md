@@ -35,7 +35,7 @@ Fork 的兩個目的：
 
 ---
 
-## 🌿 Repo 拓撲
+## 🌿 Repo 拓撲（雙層單向架構：`pr/*` 獨立功能分支 ＋ `main` 自用整合主幹）
 
 | remote | 指向 | 用途 |
 |---|---|---|
@@ -44,12 +44,18 @@ Fork 的兩個目的：
 
 | 分支 | 角色 | 能直接開 PR？ |
 |---|---|---|
-| `main` | 我們的**發行分支** = `upstream/main` + 我們的 CI + docs。已 merge 上游 2026-11-18（diff vs 上游只剩 2 個純新增檔案）。Actions 在此出正式 APK | ❌ 含 `build-apk.yml` |
-| `feat/zh-tw-ui` | **當前工作分支**，基底 `upstream/main` + CI + 工作表 | ❌ 同上 |
-| `pr/zh-tw-ui` | **提 PR 用（已就緒）**，`e952b131`，基於 `upstream/main` `84adfa99`，diff 嚴格 4 檔（app XML / wear XML / `OtherScreen.kt` 1 行 / `docs/zh-TW-ui-contribution.md`） | ✅ |
+| `main` | **自用全功能整合主幹（Integration Branch）** = `upstream/main` + 我們的 CI（`build-apk.yml`）+ 翻譯工具鏈（`l10n/`、`tools/`）+ 工作表/文件 + 所有自用功能（已合入 `feat/zh-tw-ui` 繁中 UI）。Actions 直接在此出全功能繁中 APK（`v6.4.0-apk`）；上游升版時直接在此 `git fetch upstream && git merge upstream/main` | ❌ 含 `build-apk.yml` 與多項自用內容 |
+| `pr/<feature>`（目前：`pr/zh-tw-ui`） | **提 PR 專用乾淨分支（Topic Branches）**，一律從 `upstream/main` 切出，嚴格只含單一功能改動（不含 CI、不含工作表、不含其他功能）。`pr/zh-tw-ui`（`e952b131`）基於 `upstream/main` `84adfa99`，diff 嚴格 4 檔（app XML / wear XML / `OtherScreen.kt` 1 行 / `docs/zh-TW-ui-contribution.md`）。做完後單向 `git merge pr/<feature>` 進 `main` 即可自用，無需等作者回覆；各功能獨立提 PR | ✅ |
+| `feat/zh-tw-ui` | 階段性開發分支（已於 2026-11-20 合併入 `main`；歷史 Release `v6.4.0-apk-feat-zh-tw-ui` 指向此分支，日常作業已轉回 `main`） | ❌ 同 `main` |
 | `assets/zh-tw-screenshots` | 圖床分支（`465ad80a`），6 張截圖供 `#492` / PR 引用 | — |
 
-⚠️ **不要拿 `main` 或 `feat/zh-tw-ui` 直接開 PR** —— 作者已明確拒絕過社群提供的 APK 建置流程（上游 PR #286：「Dictate is distributed through Google Play, and that is deliberate」）。提 PR 必須走 `pr/zh-tw-ui` 剝離流程。
+**日常流向（嚴格單向：`upstream/main` ➔ `pr/<feature>` ➔ `main`）**：
+1. 做新改進：一律從 `upstream/main` 切 `pr/<feature>` 開發（與其他功能完全隔離）。
+2. 自用出包：切回 `main`，執行 `git merge pr/<feature>` 合入自用主幹後直接由 `main` 觸發 Actions（**禁止**把 `main` 反向合回或 rebase 到 `pr/<feature>`）。
+3. 翻譯生成檔例外：`l10n/` 與 `tools/` 留在 `main`，改詞時在 `main` 跑完生成腳本，再以 `git checkout pr/zh-tw-ui && git checkout main -- <那 4 個目標檔>` 同步到 PR 分支。
+4. 上游升版：`git fetch upstream && git checkout main && git merge upstream/main`（保留所有自用功能）；仍在審核中的 `pr/*` 僅在需要對齊時才執行 `git rebase upstream/main`。
+
+⚠️ **不要拿 `main` 或 `feat/zh-tw-ui` 直接開 PR** —— 作者已明確拒絕過社群提供的 APK 建置流程（上游 PR #286：「Dictate is distributed through Google Play, and that is deliberate」）。提 PR 必須由乾淨的 `pr/<feature>`（如 `pr/zh-tw-ui`）開立。
 
 ---
 
@@ -87,13 +93,12 @@ xmllint --noout app/src/main/res/values-zh-rTW/strings.xml wear/src/main/res/val
 # lint（需本機 JDK 21 + Android SDK；本機無 → 走 Actions）
 ./gradlew :app:lintDebug
 
-# 雲端編譯（Actions）
-gh workflow run build-apk.yml --ref feat/zh-tw-ui
+# 雲端編譯（Actions：日常於 main 出自用全功能繁中 APK）
+gh workflow run build-apk.yml --ref main -R kuniakil/DictateKeyboard
 ```
 
-⚠️ Release 資產：**在分支上跑不會覆蓋 `v6.4.0-apk`**（已修：分支用獨立 tag `v6.4.0-apk-<分支名>`）。
-只有**刻意在 `main` 上跑**才會 `--clobber` 掉 `v6.4.0-apk`（= 手機上裝的那個）→ 不要在 `main` 上隨手觸發。
-（2026-11-20 複查修正：舊版「動手前先備份既有 asset」的說法已過時。）
+⚠️ Release 資產：在 **`main`** 上跑會更新正式自用版 `v6.4.0-apk`（現在已含完整繁中 UI 與所有合入的功能）；若在側分支上跑則會發布到獨立 tag `v6.4.0-apk-<分支名>`，不會覆蓋 `v6.4.0-apk`。
+（2026-11-20 複查與架構升級同步：`main` 已合併 `feat/zh-tw-ui`，成為全功能繁中整合主幹。）
 
 ---
 

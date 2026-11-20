@@ -26,15 +26,14 @@
 | `origin` | `kuniakil/DictateKeyboard`（我們的 fork） | 推送分支、開 PR 的來源 |
 | `upstream` | `DevEmperor/DictateKeyboard`（上游） | 追蹤上游更新、PR 的目標 |
 
-分支：
-- `main` = 我們的**發行分支** = `upstream/main` + 我們的 CI workflow + docs。**已 merge 上游 2026-11-18**（diff vs 上游只剩 2 個純新增檔案）。Actions 在此出正式 APK。
-- `feat/zh-tw-ui` = **當前工作分支**，基底 `upstream/main` + 我們的 CI workflow + 工作表 + 工具鏈。← 現在在這裡
-- `pr/zh-tw-ui` = **提 PR 用的乾淨分支（已就緒）**，`e952b131`，基於 `upstream/main` `84adfa99`，`git diff upstream/main --stat` 嚴格只有 4 檔：
-  `app/.../values-zh-rTW/strings.xml`、`wear/.../values-zh-rTW/strings.xml`、`OtherScreen.kt`（1 行）、`docs/zh-TW-ui-contribution.md`。已推 `origin`。
+分支（**雙層單向架構：`pr/*` 獨立功能分支 ＋ `main` 自用整合主幹**）：
+- `main` = **自用全功能整合主幹（Integration Branch）** = `upstream/main` + 我們的 CI workflow + 翻譯工具鏈（`l10n/`、`tools/`）+ 工作表/文件 + 所有自用功能（已於 2026-11-20 合併 `feat/zh-tw-ui` 繁中 UI）。Actions 在此出正式全功能繁中 APK（`v6.4.0-apk`）；上游升版直接在此 `git fetch upstream && git merge upstream/main`。← 現在在這裡
+- `pr/<feature>`（目前：`pr/zh-tw-ui`）= **提 PR 專用乾淨分支（Topic Branches）**，一律從 `upstream/main` 切出，單一功能隔離。`pr/zh-tw-ui`（`e952b131`）基於 `upstream/main` `84adfa99`，`git diff upstream/main --stat` 嚴格只有 4 檔：`app/.../values-zh-rTW/strings.xml`、`wear/.../values-zh-rTW/strings.xml`、`OtherScreen.kt`（1 行）、`docs/zh-TW-ui-contribution.md`。已推 `origin`。做完新功能可單向 `git merge pr/<feature>` 進 `main` 自用，不必等作者回覆；**嚴禁**將 `main` 反向合回或 rebase 進 `pr/*`。
+- `feat/zh-tw-ui` = 階段性開發分支（已於 2026-11-20 合併入 `main`；歷史 Release `v6.4.0-apk-feat-zh-tw-ui` 指向此分支）。
 - `assets/zh-tw-screenshots` = 圖床分支（`465ad80a`），6 張截圖供 `#492` / PR 引用。
 
 ⚠️ **不要拿 `main` 或 `feat/zh-tw-ui` 直接開 PR** —— 兩者都含 `build-apk.yml`（作者已明確拒絕過，見 PR #286）。
-提 PR 必須走 `pr/zh-tw-ui` 剝離流程。
+提 PR 必須由從 `upstream/main` 切出的乾淨 `pr/<feature>`（如 `pr/zh-tw-ui`）開立。
 
 ## 硬規則
 
@@ -59,13 +58,12 @@ xmllint --noout app/src/main/res/values-zh-rTW/strings.xml wear/src/main/res/val
 # lint（需本機 JDK 21 + Android SDK；本機無 → 走 Actions）
 ./gradlew :app:lintDebug
 
-# 雲端編譯（Actions）
-gh workflow run build-apk.yml --ref feat/zh-tw-ui
+# 雲端編譯（Actions：日常於 main 出自用全功能繁中 APK）
+gh workflow run build-apk.yml --ref main -R kuniakil/DictateKeyboard
 ```
 
-⚠️ Release 資產：**在分支上跑不會覆蓋 `v6.4.0-apk`**（已修：分支用獨立 tag `v6.4.0-apk-<分支名>`）。
-只有**刻意在 `main` 上跑**才會 `--clobber` 掉 `v6.4.0-apk`（= 手機上裝的那個，Nextcloud `文件/app-debug.apk`）→ 不要在 `main` 上隨手觸發。
-（此說明已與工作表 A4 同步，2026-11-20 複查修正。）
+⚠️ Release 資產：在 **`main`** 上跑會更新正式自用版 `v6.4.0-apk`（現在已含完整繁中 UI 與所有合入的功能）；若在側分支上跑則會發布到獨立 tag `v6.4.0-apk-<分支名>`，不會覆蓋 `v6.4.0-apk`（Nextcloud `文件/app-debug.apk`）。
+（此說明已與工作表 1.6／2.1 節及 2026-11-20 架構升級同步。）
 
 ## 🔑 簽章金鑰（已固定並完成本機備份）
 

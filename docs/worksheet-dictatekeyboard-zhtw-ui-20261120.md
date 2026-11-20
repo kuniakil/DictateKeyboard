@@ -16,8 +16,8 @@
 | 項目 | 狀態 |
 |---|---|
 | 本機 repo | ✅ `~/DictateKeyboard`（origin = 我們的 fork，upstream = 上游） |
-| 當前分支 | `feat/zh-tw-ui`（Phase B 全量翻譯 + wear + Phase D 台灣用語校訂已完成） |
-| `main` | ✅ 已 merge `upstream/main`（diff vs 上游只剩 2 個純新增檔案） |
+| 當前分支 | `main`（✅ **2026-11-20 架構升級**：已合併 `feat/zh-tw-ui`，升級為「自用全功能整合主幹」= `upstream/main` + CI + `l10n/` 工具鏈 + 工作表 + 繁中 UI） |
+| PR 專用分支 | `pr/zh-tw-ui`（`e952b131`，基於 `upstream/main` `84adfa99`，嚴格 4 檔乾淨 diff；未來新功能比照從 `upstream/main` 獨立切 `pr/<feature>`，並單向 `merge` 回 `main` 自用） |
 | Phase A | ✅ A0/A1/A2/A3 完成（`docs/zh-TW-ui-contribution.md` 已建立） |
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
 | Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對，並建置乾淨圖床分支 `assets/zh-tw-screenshots`） |
@@ -70,10 +70,10 @@
 | **情境 2：要收 PR，但希望只改資源檔 + `OtherScreen.kt`，不要 `docs/zh-TW-ui-contribution.md`** | 調整 `pr/zh-tw-ui` 後開 **E3** PR | 在 `pr/zh-tw-ui` 執行 `git rm docs/zh-TW-ui-contribution.md && git commit --amend --no-edit && git push --force-with-lease origin pr/zh-tw-ui`，再將 glossary / prompt 規則直接貼進 PR 內文即可。 |
 | **情境 3：只願先收資源層 `values-zh-rTW/`，暫不改 `OtherScreen.kt`** | 調整 `pr/zh-tw-ui` 後開 PR | 從 `pr/zh-tw-ui` revert `OtherScreen.kt`（保留 `app/` 與 `wear/` 的 `values-zh-rTW/strings.xml`），確保 `git diff upstream/main --stat` 只剩 2 個 XML 檔後提 PR；我們自己的 `feat/zh-tw-ui` 仍保留 `OtherScreen.kt` 供自用。 |
 | **情境 4：要求更換沒有左下角 AccuBattery 電流數字的截圖** | 補拍乾淨截圖覆蓋圖床 | 關閉 AccuBattery 浮動電流監控重拍同 6 張圖，推送覆蓋 `assets/zh-tw-screenshots` 分支（同一檔名，`#492` 與 PR 圖片會自動更新），再通知作者。 |
-| **情境 5：回覆「我自己用 AI 批次流程重新產生 `values-zh-rTW`，謝謝你的 glossary」** | 關閉互動、視同達成目標 | 若他已採納 glossary 並加入 `values-zh-rTW`：感謝他、關閉 `#492`；等上游 commit 進來後，將 `feat/zh-tw-ui` merge `upstream/main` 並持續用自己的 APK 或追隨上游（不需再人工維護 2547 條）。 |
-| **情境 6：對特定用語、標點或目錄命名（如 `values-zh-rTW` vs `values-b+zh+Hant`）提出調整意見** | 修改 `l10n/` → 重建 → 更新 `pr/zh-tw-ui` | 先在 `feat/zh-tw-ui` 修改 `l10n/translations/*.json`（或資料夾結構）並重跑 `python3 tools/build-zh-tw-strings.py --strict && python3 tools/check-l10n.py --strict`，再把產出同步到 `pr/zh-tw-ui` 推上。 |
-| **情境 7：超過 2 週未獲任何回覆** | 保持 fork 自用並推進 Phase F | 在 `#492` 禮貌 ping 一次或維持靜默；我們的 `feat/zh-tw-ui` 與 `main` 皆已具備固定簽章雲端出包能力，可定期 `git merge upstream/main` 同步新功能，並獨立推進 **F1**（繁中 prompt 投稿）、**F2**（倉頡字根顯示 + `zh-TW-*` 預設貨幣 `yen`→`dollar`）。 |
-| **收尾備忘（PR 合併後）** | 清理圖床與更新 `main` | 若 `#492` 與 PR 已結案，可視需要保留或刪除 `assets/zh-tw-screenshots`（建議保留，避免已關閉的 issue/PR 破圖），並將 `upstream/main` merge 回 `main` 與 `feat/zh-tw-ui`。 |
+| **情境 5：回覆「我自己用 AI 批次流程重新產生 `values-zh-rTW`，謝謝你的 glossary」** | 關閉互動、視同達成目標 | 若他已採納 glossary 並加入 `values-zh-rTW`：感謝他、關閉 `#492`；等上游 commit 進來後，將 `main` merge `upstream/main` 並持續用自己的 APK 或追隨上游（不需再人工維護 2547 條）。 |
+| **情境 6：對特定用語、標點或目錄命名（如 `values-zh-rTW` vs `values-b+zh+Hant`）提出調整意見** | 修改 `l10n/` → 重建 → 更新 `pr/zh-tw-ui` | 先在 `main` 修改 `l10n/translations/*.json`（或資料夾結構）並重跑 `python3 tools/build-zh-tw-strings.py --strict && python3 tools/check-l10n.py --strict`，再把產出同步到 `pr/zh-tw-ui` 推上（`git checkout pr/zh-tw-ui && git checkout main -- <目標檔>`）。 |
+| **情境 7：超過 2 週未獲任何回覆** | 保持 fork 自用並推進 Phase F | 在 `#492` 禮貌 ping 一次或維持靜默；我們的 `main` 已整合繁中 UI 與固定簽章雲端出包能力，可定期 `git merge upstream/main` 同步新功能，並從 `upstream/main` 獨立切 `pr/*` 推進 **F1**（繁中 prompt 投稿）、**F2**（倉頡字根顯示 + `zh-TW-*` 預設貨幣 `yen`→`dollar`）後單向 `merge` 回 `main`。 |
+| **收尾備忘（PR 合併後）** | 清理圖床與更新 `main` | 若 `#492` 與 PR 已結案，可視需要保留或刪除 `assets/zh-tw-screenshots`（建議保留，避免已關閉的 issue/PR 破圖），並將 `upstream/main` merge 回 `main`。 |
 
 ### C2 建置結果（2026-11-20）
 
@@ -506,21 +506,29 @@ git diff upstream/main origin/main   →  20 個檔案, +190 / -305
 
 ✅ **已修正**：`main` 已 merge `upstream/main`，現在 diff 只剩 **2 個純新增檔案**。
 
-#### 最終架構
+#### 最終架構（2026-11-20 升級定案：Topic Branches `pr/*` ＋ Self-Use Integration Branch `main`）
 
-```
-upstream/main ──┬──► feat/zh-tw-ui   開發中（基底 = upstream/main + 我們的 CI + 工作表 + [未來: zh-TW 改動]）
-                 │
-                 ├──► main            我們的發行分支（= upstream/main + 我們的 CI + docs）→ Actions 在此出 APK
-                 │
-                 └──► pr/zh-tw-ui      提 PR 用（Phase E1 建立，只含在地化改動）
+```text
+                  ┌──► pr/zh-tw-ui          （功能 1：嚴格 4 檔 ──► 獨立向作者提 PR #1）
+                  │
+upstream/main ────┼──► pr/<feature-2>       （功能 2：獨立功能 ──► 獨立向作者提 PR #2）
+ (作者原版)        │
+      │           └──► pr/<feature-3>       （功能 3：獨立功能 ──► 獨立向作者提 PR #3）
+      │                     │
+      │ (作者升版時 merge)    │ (做完後單向 merge 進 main，不等作者回覆即可自用)
+      ▼                     ▼
+  我們的 main  ◄────────────┘
+ (自用全功能整合主幹 = upstream/main + CI + l10n/工具鏈 + 工作表 + 所有已合入功能 ──► 直接跑 Actions 出 APK)
 ```
 
-**日常運作**
-1. 在 `feat/zh-tw-ui` 開發 → 定期 `git merge upstream/main`（解衝突）
-2. 要出 APK → 在 `feat/zh-tw-ui` 觸發 Actions（tag 帶分支名，不會蓋掉 main 的資產）
-3. 要提 PR → 從 `upstream/main` 切 `pr/zh-tw-ui`，只 checkout 在地化改動 → 對上游開 PR
-4. 作者合併 → 我們 `git merge upstream/main` 回來 → 維護負擔從「維護 2547 條翻譯」降級為「例行 merge」
+> ℹ️ **2026-11-20 演進說明**：初期階段（Phase A–E）曾以 `feat/zh-tw-ui` 作為開發分支、`main` 留作英文鏡像；待繁中 UI 驗收完成並準備擴展多個獨立改進（如 F2 貨幣符號 / 倉頡字根）後，已於同日將 `feat/zh-tw-ui` 合併入 `main`，正式定案為 **「`pr/*` 各自從 `upstream/main` 切出獨立提 PR ＋ 單向 `merge` 回 `main` 自用整合」** 的兩層架構。
+
+**日常運作（方向永遠單向：`upstream/main` ➔ `pr/<feature>` ➔ `main`）**
+1. **做新改進**：一律從 `upstream/main` 切出乾淨分支 `git checkout -b pr/<feature> upstream/main`（彼此完全隔離，不含 CI 與工作表）。
+2. **立即自用出包**：切回 `main`，執行 `git merge pr/<feature>` 把功能收進自用主幹，直接在 `main` 觸發 Actions 出含全部功能的繁中 APK（`v6.4.0-apk`）。**嚴禁**把 `main` 反向合回或 rebase 到 `pr/<feature>`。
+3. **翻譯生成檔同步**：`l10n/` 與 `tools/` 工具鏈留在 `main`；若需修改繁中用語，先在 `main` 跑生成腳本，再以 `git checkout pr/zh-tw-ui && git checkout main -- <目標 4 檔>` 同步到 PR 分支。
+4. **上游升版**：執行 `git fetch upstream && git checkout main && git merge upstream/main`，Git 三方合併會自動把上游新版融合進來並保留我們的所有功能；尚在審核中的 `pr/*` 僅在需要對齊上游時執行 `git rebase upstream/main`。
+5. **作者合併後**：該功能的 `pr/<feature>` 可功成身退刪除；`main` 下次 `merge upstream/main` 即自動對齊，維護負擔降為例行 merge。
 
 > 📌 作者合併後**仍需跟上游** —— GitHub 的 fork 不會自動同步。我們的長期維護負擔從
 > 「每個上游 commit 都要重做翻譯」降級為「定期 merge 上游」，這才是提 PR 的真正收益。
@@ -576,7 +584,15 @@ fi
 
 **硬規則**：第 5 步（C3 的「B0 階段驗收」）**未通過前，不得進入第 7 步（B2 全量）**。
 
-### 2.1 分支策略（D2 的落實）
+### 2.1 分支策略（D2 的落實 → 2026-11-20 升級為 `pr/*` + `main` 雙層架構）
+
+> **📌 2026-11-20 架構升級定案**：
+> Phase A–E 初期採用「單分支 `feat/zh-tw-ui` + 提 PR 前剝離 `pr/zh-tw-ui`」；待繁中 UI 驗收完成並準備獨立開發多個改進（F1–F3 等）後，已將 `feat/zh-tw-ui` 合併進 **`main`**，正式改採業界標準的 **「`pr/*` 獨立主題分支 ＋ `main` 自用整合主幹」** 雙層架構（完整拓撲見 1.6 節）：
+> - **新功能開發與提 PR**：一律從 `upstream/main` 切出 `pr/<feature>`（如 `pr/zh-tw-ui`、`pr/fix-zhtw-currency`），互不干擾、各自獨立對上游開 PR。
+> - **自用全功能出包**：做完的功能以 `git checkout main && git merge pr/<feature>` 單向合進 `main`（**絕不**把 `main` 反向 merge/rebase 回 `pr/*`），並直接於 `main` 觸發 Actions 出 APK。
+> - **上游升級**：在 `main` 執行 `git fetch upstream && git merge upstream/main`，Git 三方合併自動保留所有自用功能；尚待審核的 `pr/*` 視需要 `git rebase upstream/main`。
+>
+> （以下保留 Phase A 當時的歷史策略設計與指令紀錄供查考。）
 
 #### 問題
 
@@ -898,7 +914,7 @@ git push origin pr/zh-tw-ui
 | # | 事項 | 決策 |
 |---|---|---|
 | Q1 | 翻譯基底 | ✅ **由英文 base 翻**（理由見 2.3：與上游 AI 批次流程同源，相容性高） |
-| Q2 | 分支 | ✅ **開分支，專供未來提 PR**；採單分支 + 提 PR 前剝離（2.1） |
+| Q2 | 分支 | ✅ **2026-11-20 升級為「`pr/*` 獨立主題分支 ＋ `main` 自用整合主幹」雙層架構**（見 1.6、2.1 節）：初期採單分支 `feat/zh-tw-ui` + 剝離出 `pr/zh-tw-ui`；同日已將 `feat/zh-tw-ui` 併回 `main` 作為全功能整合主幹，未來每個新功能直接從 `upstream/main` 切乾淨 `pr/<feature>` 分支獨立開發與提 PR，並單向 `merge` 回 `main` 自用 |
 | Q3 | 執行順序 | ✅ **自己先做 → 證明可用 → 提 issue → 提 PR 附證據**（D4） |
 | Q4 | wear（69 條） | ✅ 一併做（B3），但排在主 App 之後。⚠️ 補充（2026-11-20 複查）：wear 資源跟**手錶系統語言**，不跟手機 in-app 選擇器 → B3 前先定驗證方式（見 1.2.1） |
 | Q5 | TODO.md 的 P1 條目 | ✅ **已結案（2026-11-20 補勾）**<br>**TODO.md 位置已確認**：不在本 repo，而在 **`~/kubernetes/TODO.md`**（第 52–65 行的 DictateKeyboard 區塊）。<br>「零衝突不改 Kotlin 碼」的錯誤假設**早已修正並寫入** `~/kubernetes/TODO.md` 第 56 行（明載需動 `OtherScreen.kt` 一行）→ 本項實質工作已完成。<br>（同日亦已把該處 P1 狀態由「進行中」更新為「✅ 已完成（截至 E2）／⏳ 等作者回覆 #492 後開 PR」。） |
