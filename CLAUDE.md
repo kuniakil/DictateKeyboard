@@ -4,7 +4,7 @@
 
 > **⚠️ 當前狀態（2026-11-20）**：**繁體中文（台灣）介面已全部完成**（app 2547 strings + 11 plurals、wear 69 條、台灣用語校訂、實機驗收、雲端出包、簽章備份）。
 > **上游互動停在「等作者回覆」**：已於 [#483](https://github.com/DevEmperor/DictateKeyboard/issues/483) 留言並開立 Issue **[#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)**，**PR 尚未開立**（上游 `author:kuniakil` 的 PR 數 = 0）。
-> **下一步 = 等作者回覆 → 開 PR**（分支 `pr/zh-tw-ui` 已就緒，文案用 `docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3**）。詳見工作表 Part 0「作者回覆後的應對決策表」（情境 1–7）。
+> **📌 已定案（2026-11-20）：不搶先開 PR，等作者回覆。** 分支 `pr/zh-tw-ui` 維持待命，作者回覆歡迎時再開（文案 = `docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3**）。等待期間推進 Phase F。詳見工作表 Part 0「📌 2026-11-20 決策」節與「作者回覆後的應對決策表」（情境 1–7）。
 
 > 相同內容另有 `AGENTS.md`（給 opencode / Antigravity 用）。兩份內容同步。
 

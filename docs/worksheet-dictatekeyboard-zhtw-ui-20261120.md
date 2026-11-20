@@ -21,7 +21,7 @@
 | Phase A | ✅ A0/A1/A2/A3 完成（`docs/zh-TW-ui-contribution.md` 已建立） |
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
 | Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對，並建置乾淨圖床分支 `assets/zh-tw-screenshots`） |
-| Phase E | 🔄 **E1a–E1e、E2a、E2b 已完成** —— 已於 #483 留言並開立 [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)，目前 **E2c 等待作者回覆**（`pr/zh-tw-ui` 已就緒，尚未開 PR） |
+| Phase E | 🔄 **E1a–E1e、E2a、E2b 已完成** —— 已於 #483 留言並開立 [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)，目前 **E2c 等待作者回覆**（`pr/zh-tw-ui` 已就緒待命）。📌 **2026-11-20 決策：不搶先開 PR，等作者回覆**（見 Part 0 決策節） |
 | 🚨 **PR 開立狀態** | ⚠️ **尚未開立 PR** —— 上游目前只有 **Issue `#492`** 與 `#483` 的留言，**沒有我們的 Pull Request**。<br>實查（2026-11-20）：`gh search prs --repo DevEmperor/DictateKeyboard "Traditional"` → 0；`gh api "search/issues?q=repo:DevEmperor/DictateKeyboard+is:pr+author:kuniakil"` → `total_count = 0`；上游 PR 總數 38 筆無 ours。<br>`pr/zh-tw-ui`（`e952b131`）**已推到我們的 fork**，diff 乾淨（4 檔），PR 文案＝`docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3** → 隨時可開。 |
 | 簽章金鑰與 `main` | ✅ **`main` 已同步固定簽章 workflow**（`6a5a8112`）；**金鑰已加密匯出並備份至本機 `~/DictateKeyboard-secrets/debug.keystore`**（SHA-256 驗證通過，臨時分支與 run 已刪除） |
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
@@ -37,7 +37,23 @@
 | **簽章備份與 `main` 同步** | ✅ 完成（`main` commit `6a5a8112` 不觸發 CI、`v6.4.0-apk` 未動；本機備份 `~/DictateKeyboard-secrets/debug.keystore` 雜湊驗證通過） |
 | **A3 + E1a–E1e** 貢獻指南、草稿與乾淨分支 `pr/zh-tw-ui` | ✅ 完成（嚴格 4 檔，`e952b131` 已推 `origin/pr/zh-tw-ui`） |
 | **E2a + E2b** #483 留言 + 開立新 Issue `#492` | ✅ 完成（[#483 留言](https://github.com/DevEmperor/DictateKeyboard/issues/483#issuecomment-7030540460) ＋ [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492) 含 6 張對照截圖） |
-| **E2c → E3 / F** 等待作者回覆後開 PR 或收尾 | ⏳ **交棒給下個 session**（見下方決策表）。⚠️ 複查確認：**上游仍無我們的 PR**，`pr/zh-tw-ui` 已就緒待命 |
+| **E2c → E3 / F** 等待作者回覆後開 PR 或收尾 | ⏳ **交棒給下個 session**（見下方決策表）。⚠️ 複查確認：**上游仍無我們的 PR**，`pr/zh-tw-ui` 已就緒待命。📌 **已決定不搶先開 PR**（見上方決策節） |
+
+### 📌 2026-11-20 決策：**不搶先開 PR，等作者回覆**
+
+> **使用者決策（2026-11-20）**：既然已經開了 Issue `#492`，就**等作者回覆**，**不主動搶先開 PR**。
+>
+> **理由**（有實據，非憑空）：
+> 1. 上游 README 明寫「The best way to help right now is to **open an issue**」→ 我們已經照做。
+> 2. PR **#442** 被關閉時作者留言：「Nobody has asked for it so far, so I won't build it without a need. **If you want it, please open an issue**」→ 他要的是「先談」這個動作本身。
+> 3. 作者的既有習慣是**先開 issue 談、再收 PR**（PR #286 / #442 都是關閉但附完整理由）。
+> 4. **PR #97 的關閉有干擾因素**（基底大改版致 PR 失效）→ 提早提 PR 的「被關閉」機率，未必反映他對社群翻譯的態度，反而浪費一次機會。
+>
+> **因此**：
+> - **E1f / E3a 維持未執行**，且**不再作為待決項反覆糾結** —— 不是「還沒決定」，是「已決定不主動開」。
+> - `pr/zh-tw-ui`（`e952b131`）維持**待命**狀態（不 rebase、不改動），作者一旦回覆歡迎，隨時 5 分鐘內可開（見情境 1）。
+> - **不主動 ping**（不留言催覆）—— 保持禮貌與低頻，僅在 **2 週後**（2026-12-04 之後）若仍無回覆，才考慮一次禮貌追蹤（情境 7）。
+> - 等待期間**推進 Phase F**（F1–F4），不空轉。
 
 ### 🧭 作者回覆後的應對決策表（下個 session 接手指南）
 
@@ -95,7 +111,7 @@
 ### 下一步（建議順序）
 
 > ✅ **2026-11-20 複查：本節的 Step 1–3 已全部完成**（B0 → C1 → A4/C2 → C3 → Phase B 全量 → Phase D → Phase E 至 E2b）。
-> **當前唯一下一步 = 等作者回覆 `#492`（E2c）→ 開 PR（E1f / E3a）**。
+> **當前唯一下一步 = 等作者回覆 `#492`（E2c）**。⚠️ **2026-11-20 決策：不搶先開 PR**（已開 issue 就等回覆，見 Part 0「📌 2026-11-20 決策」節）；等待期間推進 Phase F。
 > 下方 Step 1–3 保留作為**歷史決策脈絡**，不再是待辦。
 
 **Step 1 — 先做「最小可行 zh-TW」驗證鏈路**（不要一開始就翻 2547 條）
@@ -799,6 +815,7 @@ git push origin pr/zh-tw-ui
 - [x] **E1e** 推上去：`git push origin pr/zh-tw-ui`（推到**我們的 fork**）
 - [ ] **E1f** 開 PR：compare `DevEmperor:main` ← `kuniakil:pr/zh-tw-ui`（⚠️ 待 E2 issue 討論後再執行；文案見 `docs/upstream-outreach-drafts-20261120.md`）
   - ⚠️ **2026-11-20 複查：尚未執行**。分支已就緒（`origin/pr/zh-tw-ui` = `e952b131`，基於 `upstream/main` `84adfa99`，diff 嚴格 4 檔，無需 rebase）。
+  - 📌 **2026-11-20 使用者決策：已決定「不搶先開 PR，等作者回覆 #492」** → 本項**不是待決項**，是刻意不執行。作者回覆歡迎時才執行（見 Part 0 決策表情境 1）。
 
 #### E2 — 先在 issue #483 留言建立連結
 
@@ -816,7 +833,8 @@ git push origin pr/zh-tw-ui
   3. 我們的維護方案（見 2.7，`docs/zh-TW-ui-contribution.md`）
 - [ ] **E2c** 等待作者回應（作者活躍，issue 與 PR 都有回覆；他的習慣是先談再收；回應後的對策見 Part 0「作者回覆後的應對決策表」）
   - ⚠️ **2026-11-20 複查：上游目前沒有我們的 PR**（`author:kuniakil` 的 PR 數 = 0；上游 PR 總數 38 筆無 ours）。只有 Issue `#492` + `#483` 留言。
-  - 📌 若 2 週內無回覆 → 依 Part 0 情境 7 處理（維持 fork 自用、推進 Phase F、或在 `#492` 禮貌 ping 一次）。
+  - 📌 **2026-11-20 決策：已開 issue 就等回覆，不主動開 PR、不主動 ping**
+  - 📌 若 2 週內無回覆（**2026-12-04** 之後）→ 依 Part 0 情境 7 處理（維持 fork 自用、推進 Phase F、或在 `#492` 禮貌 ping 一次）。
 
 #### E3 — 提 PR
 
