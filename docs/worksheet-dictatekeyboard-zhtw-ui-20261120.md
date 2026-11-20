@@ -662,8 +662,8 @@ git push origin pr/zh-tw-ui
   - ⚠️ **基準數字以本腳本輸出為準**：`grep -o ' comment="'` 會把「XML 註解裡出現的同樣字面文字」也算進去 —— base 兩種算法都是 1618（1614 條在 `<string>`、4 條在 `<plurals>`），但我們的 zh-rTW 檔頭註解裡有 `comment="..."` 這段字 → grep 會算成 42、script 算 41（41 才對）
   - ⚠️ **檔名已統一為 `tools/check-l10n.py`**（2026-11-20 複查修正；原 CLAUDE.md 寫的 `tools/check_zh_tw.py` 已改）。理由：要同時驗 app + wear 兩個模組，名字得是通用的。
   - **基準數字一律動態取自當下的 base**（不要寫死任何數字 —— 上游還在動，`strings.xml` 11 月改了 30 次）。輸出為準。
-- [ ] **B1** 建立台灣用語 glossary（英文 → 台灣繁中），以 1.3 對照表為底
-- [ ] **B2** 批次翻譯 `values/strings.xml` → `values-zh-rTW/strings.xml`
+- [x] **B1** 建立台灣用語 glossary（英文 → 台灣繁中），以 1.3 對照表為底（已建立 `l10n/glossary-zh-tw.json`）
+- [ ] **B2** 批次翻譯 `values/strings.xml` → `values-zh-rTW/strings.xml`（進行中）
   - 執行方式：由 agent 分批直接翻（每批約 100–200 條），每批過 `tools/check-l10n.py`，不使用外部翻譯 API
   - 輸入：英文原文 + `comment="..."` 翻譯指引（1614 條）
   - **必須保留**：`comment` 屬性、placeholder（`{app_name}` / `%1$s` / `{count}`）、XML 轉義
@@ -672,7 +672,7 @@ git push origin pr/zh-tw-ui
   - ⚠️ **wear 的資源跟「手錶系統語言」，不跟手機 App 的 in-app 語言選擇器**（見 1.2.1，wear 模組無任何 Locale/Configuration 覆寫）
   - **開工前先決定驗證方式**：① 手錶系統語言設為 zh-TW 實測；或 ② 放棄 wear 截圖，只交付資源檔並在 PR 說明中標註此限制
   - 若走 ①，截圖須標註「手錶系統語言 = 繁體中文（台灣）」，避免誤導作者
-- [ ] **B4** `strings_dont_translate.xml`（32 條）**不翻**
+- [x] **B4** `strings_dont_translate.xml`（32 條）**不翻**（已確認原封不動，且 `values-zh-rTW/` 不建立同名檔案）
 - [ ] **B5** 驗證：
   - [ ] key 集合與 base 完全一致（當下 base 的 string + plurals 全數；數字動態取，不得寫死 2547 / 11）
   - [ ] placeholder 逐條比對，mismatch = 0（基準：base vs zh-rCN 實測為 0）

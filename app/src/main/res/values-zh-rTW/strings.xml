@@ -1239,7 +1239,7 @@
     <string name="setup__nav_next" comment="Setup wizard: go to the next, already-reached step">下一步</string>
 
     <string name="setup__enable_ime__title">啟用 {app_name}</string>
-    <string name="setup__enable_ime__description">Android 要求每個自訂鍵盤都必須分別啟用才能使用。開啟系統的 &lt;i&gt;語言與輸入&lt;/i&gt; 設定，在其中啟用「{app_name}」。</string>
+    <string name="setup__enable_ime__description">Android 要求每個自訂鍵盤都必須分別啟用才能使用。開啟系統的 <i>語言與輸入</i> 設定，在其中啟用「{app_name}」。</string>
     <string name="setup__enable_ime__open_settings_btn">開啟系統設定</string>
 
     <string name="setup__select_ime__title">選擇 {app_name}</string>
@@ -1277,7 +1277,7 @@
     <string name="setup__provider__local_all_models">顯示所有模型</string>
     <string name="setup__provider__intro">Dictate 透過線上 AI 服務把你的語音轉成文字。要使用它，你需要一把該服務的專屬金鑰。</string>
     <string name="setup__provider__what_is_key">API 金鑰就像一組專屬密碼，讓 Dictate 能代你使用該服務。建立金鑰是免費的，大約兩分鐘。</string>
-    <string name="setup__provider__recommended">我們推薦 &lt;b&gt;Groq&lt;/b&gt; —— 速度快，日常語音輸入免費。</string>
+    <string name="setup__provider__recommended">我們推薦 <b>Groq</b> —— 速度快，日常語音輸入免費。</string>
     <string name="setup__provider__steps_groq">1. 點擊下方按鈕開啟 Groq。\n2. 以 Google 或電子郵件地址登入。\n3. 點一下「Create API Key」，取任意名稱並確認。\n4. 複製金鑰（開頭是「gsk_」）。\n5. 回到這裡，點擊下方的「貼上 API 金鑰」。</string>
     <string name="setup__provider__steps_generic">1. 點擊下方按鈕開啟 {provider}。\n2. 若你還沒有帳號，請先建立。\n3. 建立一把新的 API 金鑰並複製。\n4. 回到這裡，點擊下方的「貼上 API 金鑰」。</string>
     <string name="setup__provider__open_btn" comment="{provider} is the provider name, e.g. Groq">開啟 {provider} 並建立金鑰</string>
@@ -1686,165 +1686,165 @@
     <string name="enum__display_language_names_in__native_locale__description" comment="Enum value description">應用程式與鍵盤介面中的語言名稱，會以該語言自身的語系顯示</string>
 
     <string name="enum__emoji_history_update_strategy__auto_sort_prepend" comment="Enum value label">自動排序（前置）</string>
-    <string name="enum__emoji_history_update_strategy__auto_sort_prepend__description" comment="Enum value description">Automatically reorder emojis on emoji usage. New emojis are added to the start.</string>
-    <string name="enum__emoji_history_update_strategy__auto_sort_append" comment="Enum value label">Auto sort (append)</string>
-    <string name="enum__emoji_history_update_strategy__auto_sort_append__description" comment="Enum value description">Automatically reorder emojis on emoji usage. New emojis are added to the end.</string>
-    <string name="enum__emoji_history_update_strategy__manual_sort_prepend" comment="Enum value label">Manual sort (prepend)</string>
-    <string name="enum__emoji_history_update_strategy__manual_sort_prepend__description" comment="Enum value description">Do not automatically reorder emojis on emoji usage. New emojis are added to the start.</string>
-    <string name="enum__emoji_history_update_strategy__manual_sort_append" comment="Enum value label">Manual sort (append)</string>
-    <string name="enum__emoji_history_update_strategy__manual_sort_append__description" comment="Enum value description">Do not automatically reorder emojis on emoji usage. New emojis are added to the end.</string>
+    <string name="enum__emoji_history_update_strategy__auto_sort_prepend__description" comment="Enum value description">使用表情符號時自動重新排序。新的表情符號會加在最前面。</string>
+    <string name="enum__emoji_history_update_strategy__auto_sort_append" comment="Enum value label">自動排序（後置）</string>
+    <string name="enum__emoji_history_update_strategy__auto_sort_append__description" comment="Enum value description">使用表情符號時自動重新排序。新的表情符號會加在最後面。</string>
+    <string name="enum__emoji_history_update_strategy__manual_sort_prepend" comment="Enum value label">手動排序（前置）</string>
+    <string name="enum__emoji_history_update_strategy__manual_sort_prepend__description" comment="Enum value description">使用表情符號時不自動重新排序。新的表情符號會加在最前面。</string>
+    <string name="enum__emoji_history_update_strategy__manual_sort_append" comment="Enum value label">手動排序（後置）</string>
+    <string name="enum__emoji_history_update_strategy__manual_sort_append__description" comment="Enum value description">使用表情符號時不自動重新排序。新的表情符號會加在最後面。</string>
 
-    <string name="enum__emoji_skin_tone__default" comment="Enum value label">{emoji} Default skin tone</string>
-    <string name="enum__emoji_skin_tone__light_skin_tone" comment="Enum value label">{emoji} Light skin tone</string>
-    <string name="enum__emoji_skin_tone__medium_light_skin_tone" comment="Enum value label">{emoji} Medium light skin tone</string>
-    <string name="enum__emoji_skin_tone__medium_skin_tone" comment="Enum value label">{emoji} Medium skin tone</string>
-    <string name="enum__emoji_skin_tone__medium_dark_skin_tone" comment="Enum value label">{emoji} Medium dark skin tone</string>
-    <string name="enum__emoji_skin_tone__dark_skin_tone" comment="Enum value label">{emoji} Dark skin tone</string>
+    <string name="enum__emoji_skin_tone__default" comment="Enum value label">{emoji} 預設膚色</string>
+    <string name="enum__emoji_skin_tone__light_skin_tone" comment="Enum value label">{emoji} 淺膚色</string>
+    <string name="enum__emoji_skin_tone__medium_light_skin_tone" comment="Enum value label">{emoji} 中淺膚色</string>
+    <string name="enum__emoji_skin_tone__medium_skin_tone" comment="Enum value label">{emoji} 中等膚色</string>
+    <string name="enum__emoji_skin_tone__medium_dark_skin_tone" comment="Enum value label">{emoji} 中深膚色</string>
+    <string name="enum__emoji_skin_tone__dark_skin_tone" comment="Enum value label">{emoji} 深膚色</string>
 
-    <string name="enum__emoji_hair_style__default" comment="Enum value label">{emoji} Default hair</string>
-    <string name="enum__emoji_hair_style__red_hair" comment="Enum value label">{emoji} Red hair</string>
-    <string name="enum__emoji_hair_style__curly_hair" comment="Enum value label">{emoji} Curly hair</string>
-    <string name="enum__emoji_hair_style__white_hair" comment="Enum value label">{emoji} White hair</string>
-    <string name="enum__emoji_hair_style__bald" comment="Enum value label">{emoji} Bald</string>
+    <string name="enum__emoji_hair_style__default" comment="Enum value label">{emoji} 預設髮型</string>
+    <string name="enum__emoji_hair_style__red_hair" comment="Enum value label">{emoji} 紅髮</string>
+    <string name="enum__emoji_hair_style__curly_hair" comment="Enum value label">{emoji} 捲髮</string>
+    <string name="enum__emoji_hair_style__white_hair" comment="Enum value label">{emoji} 白髮</string>
+    <string name="enum__emoji_hair_style__bald" comment="Enum value label">{emoji} 光頭</string>
 
-    <string name="enum__emoji_suggestion_type__leading_colon">Leading colon</string>
-    <string name="enum__emoji_suggestion_type__leading_colon__description" comment="Keep the :emoji_name while translating, this is a syntax guide">Suggest emojis using the :emoji_name syntax</string>
-    <string name="enum__emoji_suggestion_type__inline_text">Inline text</string>
-    <string name="enum__emoji_suggestion_type__inline_text__description">Suggest emojis simply by typing the emoji name as a word</string>
+    <string name="enum__emoji_suggestion_type__leading_colon">開頭加上冒號</string>
+    <string name="enum__emoji_suggestion_type__leading_colon__description" comment="Keep the :emoji_name while translating, this is a syntax guide">使用 :emoji_name 語法建議表情符號</string>
+    <string name="enum__emoji_suggestion_type__inline_text">直接輸入文字</string>
+    <string name="enum__emoji_suggestion_type__inline_text__description">只要把表情符號名稱當成一個字打出來就會建議</string>
 
-    <string name="enum__extended_actions_placement__above_candidates" comment="Enum value label">Above candidates</string>
-    <string name="enum__extended_actions_placement__above_candidates__description" comment="Enum value description">Places the extended actions row between the app UI and the candidate row</string>
-    <string name="enum__extended_actions_placement__below_candidates" comment="Enum value label">Below candidates</string>
-    <string name="enum__extended_actions_placement__below_candidates__description" comment="Enum value description">Places the extended actions row between the candidate row and the text keyboard</string>
-    <string name="enum__extended_actions_placement__overlay_app_ui" comment="Enum value label">Overlay app UI</string>
-    <string name="enum__extended_actions_placement__overlay_app_ui__description" comment="Enum value description">Places the extended actions row as an overlay above the app UI, without affecting the resulting keyboard UI height. Note that this placement may cause the app input field to be partially overdrawn</string>
+    <string name="enum__extended_actions_placement__above_candidates" comment="Enum value label">候選字上方</string>
+    <string name="enum__extended_actions_placement__above_candidates__description" comment="Enum value description">把延伸動作列放在應用程式介面與候選字列之間</string>
+    <string name="enum__extended_actions_placement__below_candidates" comment="Enum value label">候選字下方</string>
+    <string name="enum__extended_actions_placement__below_candidates__description" comment="Enum value description">把延伸動作列放在候選字列與文字鍵盤之間</string>
+    <string name="enum__extended_actions_placement__overlay_app_ui" comment="Enum value label">覆蓋應用程式介面</string>
+    <string name="enum__extended_actions_placement__overlay_app_ui__description" comment="Enum value description">把延伸動作列以浮層方式放在應用程式介面之上，不影響最終鍵盤介面的高度。請注意，這種配置可能會讓應用程式的輸入欄位被部分遮蓋</string>
 
-    <string name="enum__haptic_vibration_mode__use_vibrator_directly" comment="Enum value label">Use vibrator directly</string>
-    <string name="enum__haptic_vibration_mode__use_vibrator_directly__description" comment="Enum value description">{app_name} directly interacts with the default hardware vibrator. This gives more control over duration and strength of a vibration, but the vibration may not be as smooth and optimized as using the haptic feedback interface</string>
-    <string name="enum__haptic_vibration_mode__use_haptic_feedback_interface" comment="Enum value label">Use haptic feedback interface</string>
-    <string name="enum__haptic_vibration_mode__use_haptic_feedback_interface__description" comment="Enum value description">{app_name} uses the haptic feedback interface to trigger a predefined vibration sequence for key presses. This may work exceptionally well on some devices, but completely fail or perform very poorly on others</string>
+    <string name="enum__haptic_vibration_mode__use_vibrator_directly" comment="Enum value label">直接使用震動器</string>
+    <string name="enum__haptic_vibration_mode__use_vibrator_directly__description" comment="Enum value description">{app_name} 直接與預設的硬體震動器互動。這能更精確控制震動的時間與強度，但震動可能不如使用觸覺回饋介面那樣平順與最佳化</string>
+    <string name="enum__haptic_vibration_mode__use_haptic_feedback_interface" comment="Enum value label">使用觸覺回饋介面</string>
+    <string name="enum__haptic_vibration_mode__use_haptic_feedback_interface__description" comment="Enum value description">{app_name} 使用觸覺回饋介面觸發預先定義好的按鍵震動序列。這在某些裝置上效果極佳，但在另一些裝置上可能完全失效或表現很差</string>
 
-    <string name="enum__key_hint_mode__accent_priority" comment="Enum value label">Accent is prioritized</string>
-    <string name="enum__key_hint_mode__accent_priority__description" comment="Enum value description">The initial character selected after long press is always the primary accent, or the hint symbol if no primary accent is available</string>
-    <string name="enum__key_hint_mode__hint_priority" comment="Enum value label">Hint is prioritized</string>
-    <string name="enum__key_hint_mode__hint_priority__description" comment="Enum value description">The initial character selected after long press is always the hint symbol, or the primary accent if no hint symbol is available</string>
-    <string name="enum__key_hint_mode__smart_priority" comment="Enum value label">Smart prioritization</string>
-    <string name="enum__key_hint_mode__smart_priority__description" comment="Enum value description">The initial character selected after long press is dynamically decided to be either the primary accent or the hint symbol, based on the current language and layout</string>
+    <string name="enum__key_hint_mode__accent_priority" comment="Enum value label">優先顯示帶調符號</string>
+    <string name="enum__key_hint_mode__accent_priority__description" comment="Enum value description">長按後最初選取的字元永遠是主要帶調符號，若沒有主要帶調符號則是提示符號</string>
+    <string name="enum__key_hint_mode__hint_priority" comment="Enum value label">優先顯示提示符號</string>
+    <string name="enum__key_hint_mode__hint_priority__description" comment="Enum value description">長按後最初選取的字元永遠是提示符號，若沒有提示符號則是主要帶調符號</string>
+    <string name="enum__key_hint_mode__smart_priority" comment="Enum value label">智慧判斷優先</string>
+    <string name="enum__key_hint_mode__smart_priority__description" comment="Enum value description">長按後最初選取的字元會依當下的語言與配置，動態決定是主要帶調符號或提示符號</string>
 
-    <string name="enum__incognito_display_mode__replace_shared_actions_toggle" comment="Enum value label">Replace shared actions toggle icon with the incognito indicator</string>
-    <string name="enum__incognito_display_mode__display_behind_keyboard" comment="Enum value label">Display the incognito indicator behind the keyboard</string>
+    <string name="enum__incognito_display_mode__replace_shared_actions_toggle" comment="Enum value label">以無痕指示取代共用動作切換圖示</string>
+    <string name="enum__incognito_display_mode__display_behind_keyboard" comment="Enum value label">在鍵盤後方顯示無痕指示</string>
 
-    <string name="enum__incognito_mode__force_off" comment="Enum value label">Force off</string>
-    <string name="enum__incognito_mode__force_off__description" comment="Enum value description">Incognito mode will always be disabled, regardless of the target app\'s passed options. The incognito quick action in the Smartbar will not be available with this option.</string>
-    <string name="enum__incognito_mode__force_on" comment="Enum value label">Force on</string>
-    <string name="enum__incognito_mode__force_on__description" comment="Enum value description">Incognito mode will always be enabled, regardless of the target app\'s passed options. The incognito quick action in the Smartbar will not be available with this option.</string>
-    <string name="enum__incognito_mode__dynamic_on_off" comment="Enum value label">Dynamically on/off</string>
-    <string name="enum__incognito_mode__dynamic_on_off__description" comment="Enum value description">Recommended option. Incognito mode will be dynamically enabled or disabled either through the target app\'s passed options or by manually toggling it through the incognito quick action in the Smartbar.</string>
+    <string name="enum__incognito_mode__force_off" comment="Enum value label">強制關閉</string>
+    <string name="enum__incognito_mode__force_off__description" comment="Enum value description">無痕模式一律停用，不論目標應用程式傳入的選項為何。選用此選項時，智慧列中的無痕快速動作將無法使用。</string>
+    <string name="enum__incognito_mode__force_on" comment="Enum value label">強制開啟</string>
+    <string name="enum__incognito_mode__force_on__description" comment="Enum value description">無痕模式一律啟用，不論目標應用程式傳入的選項為何。選用此選項時，智慧列中的無痕快速動作將無法使用。</string>
+    <string name="enum__incognito_mode__dynamic_on_off" comment="Enum value label">動態開關</string>
+    <string name="enum__incognito_mode__dynamic_on_off__description" comment="Enum value description">推薦選項。無痕模式會依目標應用程式傳入的選項，或透過智慧列的無痕快速動作手動切換，而動態開啟或關閉。</string>
 
-    <string name="enum__input_feedback_activation_mode__audio_respect_system_settings" comment="Enum value label">Dynamically play sounds for input events, depending on system settings</string>
-    <string name="enum__input_feedback_activation_mode__audio_ignore_system_settings" comment="Enum value label">Always play sounds for input events, regardless of system settings</string>
-    <string name="enum__input_feedback_activation_mode__haptic_respect_system_settings" comment="Enum value label">Dynamically vibrate for input events, depending on system settings</string>
-    <string name="enum__input_feedback_activation_mode__haptic_ignore_system_settings" comment="Enum value label">Always vibrate for input events, regardless of system settings</string>
+    <string name="enum__input_feedback_activation_mode__audio_respect_system_settings" comment="Enum value label">依系統設定動態播放輸入音效</string>
+    <string name="enum__input_feedback_activation_mode__audio_ignore_system_settings" comment="Enum value label">不論系統設定為何，一律播放輸入音效</string>
+    <string name="enum__input_feedback_activation_mode__haptic_respect_system_settings" comment="Enum value label">依系統設定動態震動</string>
+    <string name="enum__input_feedback_activation_mode__haptic_ignore_system_settings" comment="Enum value label">不論系統設定為何，一律震動</string>
 
-    <string name="enum__input_shift_state__unshifted" comment="Enum value label">Unshifted</string>
-    <string name="enum__input_shift_state__shifted_manual" comment="Enum value label">Shifted (manual)</string>
-    <string name="enum__input_shift_state__shifted_automatic" comment="Enum value label">Shifted (automatic)</string>
-    <string name="enum__input_shift_state__caps_lock" comment="Enum value label">Caps lock</string>
+    <string name="enum__input_shift_state__unshifted" comment="Enum value label">未按 Shift</string>
+    <string name="enum__input_shift_state__shifted_manual" comment="Enum value label">已按 Shift（手動）</string>
+    <string name="enum__input_shift_state__shifted_automatic" comment="Enum value label">已按 Shift（自動）</string>
+    <string name="enum__input_shift_state__caps_lock" comment="Enum value label">Caps Lock</string>
 
-    <string name="enum__ime_window_mode__fixed" comment="Enum value label">Fixed</string>
-    <string name="enum__ime_window_mode__floating" comment="Enum value label">Floating</string>
+    <string name="enum__ime_window_mode__fixed" comment="Enum value label">固定</string>
+    <string name="enum__ime_window_mode__floating" comment="Enum value label">浮動</string>
 
-    <string name="enum__keyboard_mode__characters" comment="Enum value label">Characters</string>
-    <string name="enum__keyboard_mode__symbols" comment="Enum value label">Symbols</string>
-    <string name="enum__keyboard_mode__symbols2" comment="Enum value label">Symbols 2</string>
-    <string name="enum__keyboard_mode__numeric" comment="Enum value label">Numeric</string>
-    <string name="enum__keyboard_mode__numeric_advanced" comment="Enum value label">Numeric advanced</string>
-    <string name="enum__keyboard_mode__phone" comment="Enum value label">Phone</string>
-    <string name="enum__keyboard_mode__phone2" comment="Enum value label">Phone 2</string>
+    <string name="enum__keyboard_mode__characters" comment="Enum value label">字元</string>
+    <string name="enum__keyboard_mode__symbols" comment="Enum value label">符號</string>
+    <string name="enum__keyboard_mode__symbols2" comment="Enum value label">符號 2</string>
+    <string name="enum__keyboard_mode__numeric" comment="Enum value label">數字</string>
+    <string name="enum__keyboard_mode__numeric_advanced" comment="Enum value label">數字（進階）</string>
+    <string name="enum__keyboard_mode__phone" comment="Enum value label">電話</string>
+    <string name="enum__keyboard_mode__phone2" comment="Enum value label">電話 2</string>
 
-    <string name="enum__landscape_input_ui_mode__never_show" comment="Enum value label">Never show</string>
-    <string name="enum__landscape_input_ui_mode__always_show" comment="Enum value label">Always show</string>
-    <string name="enum__landscape_input_ui_mode__dynamically_show" comment="Enum value label">Dynamically show</string>
+    <string name="enum__landscape_input_ui_mode__never_show" comment="Enum value label">一律不顯示</string>
+    <string name="enum__landscape_input_ui_mode__always_show" comment="Enum value label">一律顯示</string>
+    <string name="enum__landscape_input_ui_mode__dynamically_show" comment="Enum value label">動態顯示</string>
 
-    <string name="enum__shape_corner__top_start" comment="Enum value label">Top start</string>
-    <string name="enum__shape_corner__top_end" comment="Enum value label">Top end</string>
-    <string name="enum__shape_corner__bottom_end" comment="Enum value label">Bottom end</string>
-    <string name="enum__shape_corner__bottom_start" comment="Enum value label">Bottom start</string>
+    <string name="enum__shape_corner__top_start" comment="Enum value label">上側起點</string>
+    <string name="enum__shape_corner__top_end" comment="Enum value label">上側終點</string>
+    <string name="enum__shape_corner__bottom_end" comment="Enum value label">下側終點</string>
+    <string name="enum__shape_corner__bottom_start" comment="Enum value label">下側起點</string>
 
-    <string name="enum__smartbar_layout__suggestions_only" comment="Enum value label">Suggestions only</string>
-    <string name="enum__smartbar_layout__suggestions_only__description" comment="Enum value description">Shows only the candidate row, without any action row/toggle or sticky action</string>
-    <string name="enum__smartbar_layout__actions_only" comment="Enum value label">Actions only</string>
-    <string name="enum__smartbar_layout__actions_only__description" comment="Enum value description">Shows only the actions row, without the candidate row or an explicit sticky action</string>
-    <string name="enum__smartbar_layout__suggestions_action_shared" comment="Enum value label">Suggestions &amp; Actions shared</string>
-    <string name="enum__smartbar_layout__suggestions_action_shared__description" comment="Enum value description">Shared toggleable candidate and actions row, with sticky action</string>
-    <string name="enum__smartbar_layout__suggestions_actions_extended" comment="Enum value label">Suggestions &amp; Actions extended</string>
-    <string name="enum__smartbar_layout__suggestions_actions_extended__description" comment="Enum value description">Static candidate row and additional toggleable action row, with sticky action</string>
+    <string name="enum__smartbar_layout__suggestions_only" comment="Enum value label">只有建議</string>
+    <string name="enum__smartbar_layout__suggestions_only__description" comment="Enum value description">只顯示候選字列，不含任何動作列／切換或常駐動作</string>
+    <string name="enum__smartbar_layout__actions_only" comment="Enum value label">只有動作</string>
+    <string name="enum__smartbar_layout__actions_only__description" comment="Enum value description">只顯示動作列，不含候選字列或明確的常駐動作</string>
+    <string name="enum__smartbar_layout__suggestions_action_shared" comment="Enum value label">建議與動作共用</string>
+    <string name="enum__smartbar_layout__suggestions_action_shared__description" comment="Enum value description">可切換的候選字與動作共用一列，並帶有常駐動作</string>
+    <string name="enum__smartbar_layout__suggestions_actions_extended" comment="Enum value label">建議與動作延伸</string>
+    <string name="enum__smartbar_layout__suggestions_actions_extended__description" comment="Enum value description">靜態的候選字列加上額外的可切換動作列，並帶有常駐動作</string>
 
-    <string name="enum__snygg_level__basic" comment="Enum value label">Basic</string>
-    <string name="enum__snygg_level__basic__description" comment="Enum value description">Only color properties are shown, properties and rules are translated.</string>
-    <string name="enum__snygg_level__advanced" comment="Enum value label">Advanced</string>
-    <string name="enum__snygg_level__advanced__description" comment="Enum value description">All properties are shown, properties and rules are translated.</string>
-    <string name="enum__snygg_level__developer" comment="Enum value label">Developer</string>
-    <string name="enum__snygg_level__developer__description" comment="Enum value description">All properties are shown, properties and rules are displayed as written in the stylesheet file itself.</string>
+    <string name="enum__snygg_level__basic" comment="Enum value label">基本</string>
+    <string name="enum__snygg_level__basic__description" comment="Enum value description">只顯示顏色屬性，屬性與規則會被轉換。</string>
+    <string name="enum__snygg_level__advanced" comment="Enum value label">進階</string>
+    <string name="enum__snygg_level__advanced__description" comment="Enum value description">顯示所有屬性，屬性與規則會被轉換。</string>
+    <string name="enum__snygg_level__developer" comment="Enum value label">開發者</string>
+    <string name="enum__snygg_level__developer__description" comment="Enum value description">顯示所有屬性，屬性與規則會照樣式表檔案中的原樣呈現。</string>
 
-    <string name="enum__space_bar_mode__nothing" comment="Enum value label">No label</string>
-    <string name="enum__space_bar_mode__current_language" comment="Enum value label">Current language</string>
+    <string name="enum__space_bar_mode__nothing" comment="Enum value label">不顯示標籤</string>
+    <string name="enum__space_bar_mode__current_language" comment="Enum value label">目前語言</string>
     <string name="enum__space_bar_mode__space_bar_key" comment="Enum value label">␣</string>
-    <string name="enum__space_bar_mode__transcription_provider" comment="Enum value label: the space bar shows the name of the active transcription provider, e.g. Groq">Transcription provider</string>
+    <string name="enum__space_bar_mode__transcription_provider" comment="Enum value label: the space bar shows the name of the active transcription provider, e.g. Groq">轉錄服務</string>
 
-    <string name="enum__spelling_language_mode__use_system_languages" comment="Enum value label">Use system languages</string>
-    <string name="enum__spelling_language_mode__use_keyboard_subtypes" comment="Enum value label">Use keyboard subtypes</string>
+    <string name="enum__spelling_language_mode__use_system_languages" comment="Enum value label">使用系統語言</string>
+    <string name="enum__spelling_language_mode__use_keyboard_subtypes" comment="Enum value label">使用鍵盤子類型</string>
 
-    <string name="enum__swipe_action__no_action" comment="Enum value label">No action</string>
-    <string name="enum__swipe_action__cycle_to_previous_keyboard_mode" comment="Enum value label">Cycle to previous keyboard mode</string>
-    <string name="enum__swipe_action__cycle_to_next_keyboard_mode" comment="Enum value label">Cycle to next keyboard mode</string>
-    <string name="enum__swipe_action__delete_character" comment="Enum value label">Delete character before cursor</string>
-    <string name="enum__swipe_action__delete_characters_precisely" comment="Enum value label">Delete characters precisely</string>
-    <string name="enum__swipe_action__delete_word" comment="Enum value label">Delete word before cursor</string>
-    <string name="enum__swipe_action__delete_words_precisely" comment="Enum value label">Delete words precisely</string>
-    <string name="enum__swipe_action__hide_keyboard" comment="Enum value label">Hide keyboard</string>
-    <string name="enum__swipe_action__insert_space" comment="Enum value label">Insert space</string>
-    <string name="enum__swipe_action__move_cursor_up" comment="Enum value label">Move cursor up</string>
-    <string name="enum__swipe_action__move_cursor_down" comment="Enum value label">Move cursor down</string>
-    <string name="enum__swipe_action__move_cursor_left" comment="Enum value label">Move cursor left</string>
-    <string name="enum__swipe_action__move_cursor_right" comment="Enum value label">Move cursor right</string>
-    <string name="enum__swipe_action__move_cursor_start_of_line" comment="Enum value label">Move cursor to start of line</string>
-    <string name="enum__swipe_action__move_cursor_end_of_line" comment="Enum value label">Move cursor to end of line</string>
-    <string name="enum__swipe_action__move_cursor_start_of_page" comment="Enum value label">Move cursor to start of page</string>
-    <string name="enum__swipe_action__move_cursor_end_of_page" comment="Enum value label">Move cursor to end of page</string>
-    <string name="enum__swipe_action__switch_to_clipboard_context" comment="Enum value label">Open clipboard manager/history</string>
-    <string name="enum__swipe_action__switch_to_editing_context" comment="Enum value label">Open text editing panel</string>
-    <string name="enum__swipe_action__switch_to_media_context" comment="Enum value label">Open emoji panel</string>
+    <string name="enum__swipe_action__no_action" comment="Enum value label">不執行動作</string>
+    <string name="enum__swipe_action__cycle_to_previous_keyboard_mode" comment="Enum value label">切換到上一個鍵盤模式</string>
+    <string name="enum__swipe_action__cycle_to_next_keyboard_mode" comment="Enum value label">切換到下一個鍵盤模式</string>
+    <string name="enum__swipe_action__delete_character" comment="Enum value label">刪除游標前的字元</string>
+    <string name="enum__swipe_action__delete_characters_precisely" comment="Enum value label">精確刪除字元</string>
+    <string name="enum__swipe_action__delete_word" comment="Enum value label">刪除游標前的字</string>
+    <string name="enum__swipe_action__delete_words_precisely" comment="Enum value label">精確刪除字</string>
+    <string name="enum__swipe_action__hide_keyboard" comment="Enum value label">隱藏鍵盤</string>
+    <string name="enum__swipe_action__insert_space" comment="Enum value label">插入空格</string>
+    <string name="enum__swipe_action__move_cursor_up" comment="Enum value label">游標上移</string>
+    <string name="enum__swipe_action__move_cursor_down" comment="Enum value label">游標下移</string>
+    <string name="enum__swipe_action__move_cursor_left" comment="Enum value label">游標左移</string>
+    <string name="enum__swipe_action__move_cursor_right" comment="Enum value label">游標右移</string>
+    <string name="enum__swipe_action__move_cursor_start_of_line" comment="Enum value label">游標移到行首</string>
+    <string name="enum__swipe_action__move_cursor_end_of_line" comment="Enum value label">游標移到行尾</string>
+    <string name="enum__swipe_action__move_cursor_start_of_page" comment="Enum value label">游標移到文字開頭</string>
+    <string name="enum__swipe_action__move_cursor_end_of_page" comment="Enum value label">游標移到文字結尾</string>
+    <string name="enum__swipe_action__switch_to_clipboard_context" comment="Enum value label">開啟剪貼簿管理／紀錄</string>
+    <string name="enum__swipe_action__switch_to_editing_context" comment="Enum value label">開啟文字編輯面板</string>
+    <string name="enum__swipe_action__switch_to_media_context" comment="Enum value label">開啟表情符號面板</string>
     <string name="enum__swipe_action__shift" comment="Enum value label">Shift</string>
-    <string name="enum__swipe_action__redo" comment="Enum value label">Redo</string>
-    <string name="enum__swipe_action__undo" comment="Enum value label">Undo</string>
-    <string name="enum__swipe_action__select_characters_precisely" comment="Enum value label">Select characters precisely</string>
-    <string name="enum__swipe_action__select_words_precisely" comment="Enum value label">Select words precisely</string>
-    <string name="enum__swipe_action__show_input_method_picker" comment="Enum value label">Show input method picker</string>
-    <string name="enum__swipe_action__switch_to_prev_keyboard" comment="Enum value label">Switch to previous keyboard</string>
-    <string name="enum__swipe_action__switch_to_prev_subtype" comment="Enum value label">Switch to previous subtype</string>
-    <string name="enum__swipe_action__switch_to_next_subtype" comment="Enum value label">Switch to next subtype</string>
-    <string name="enum__swipe_action__toggle_smartbar_visibility" comment="Enum value label">Toggle smartbar visibility</string>
-    <string name="enum__swipe_action__toggle_compact_layout" comment="Enum value label">Toggle compact layout</string>
+    <string name="enum__swipe_action__redo" comment="Enum value label">重做</string>
+    <string name="enum__swipe_action__undo" comment="Enum value label">復原</string>
+    <string name="enum__swipe_action__select_characters_precisely" comment="Enum value label">精確選取字元</string>
+    <string name="enum__swipe_action__select_words_precisely" comment="Enum value label">精確選取字</string>
+    <string name="enum__swipe_action__show_input_method_picker" comment="Enum value label">顯示輸入法選擇器</string>
+    <string name="enum__swipe_action__switch_to_prev_keyboard" comment="Enum value label">切換到上一個鍵盤</string>
+    <string name="enum__swipe_action__switch_to_prev_subtype" comment="Enum value label">切換到上一個子類型</string>
+    <string name="enum__swipe_action__switch_to_next_subtype" comment="Enum value label">切換到下一個子類型</string>
+    <string name="enum__swipe_action__toggle_smartbar_visibility" comment="Enum value label">切換智慧列顯示</string>
+    <string name="enum__swipe_action__toggle_compact_layout" comment="Enum value label">切換緊湊版面</string>
 
-    <string name="enum__theme_mode__always_day" comment="Enum value label">Always day</string>
-    <string name="enum__theme_mode__always_night" comment="Enum value label">Always night</string>
-    <string name="enum__theme_mode__follow_system" comment="Enum value label">Follow system</string>
-    <string name="enum__theme_mode__follow_time" comment="Enum value label">Follow time</string>
+    <string name="enum__theme_mode__always_day" comment="Enum value label">一律日間</string>
+    <string name="enum__theme_mode__always_night" comment="Enum value label">一律夜間</string>
+    <string name="enum__theme_mode__follow_system" comment="Enum value label">跟隨系統</string>
+    <string name="enum__theme_mode__follow_time" comment="Enum value label">跟隨時間</string>
 
-    <string name="enum__utility_key_action__switch_to_emojis" comment="Enum value label">Switch to emojis</string>
-    <string name="enum__utility_key_action__switch_language" comment="Enum value label">Switch language</string>
-    <string name="enum__utility_key_action__switch_keyboard_app" comment="Enum value label">Switch keyboard app</string>
-    <string name="enum__utility_key_action__dynamic_switch_language_emojis" comment="Enum value label">Dynamic: Switch to emojis / Switch language</string>
+    <string name="enum__utility_key_action__switch_to_emojis" comment="Enum value label">切換到表情符號</string>
+    <string name="enum__utility_key_action__switch_language" comment="Enum value label">切換語言</string>
+    <string name="enum__utility_key_action__switch_keyboard_app" comment="Enum value label">切換鍵盤應用程式</string>
+    <string name="enum__utility_key_action__dynamic_switch_language_emojis" comment="Enum value label">動態：切換到表情符號／切換語言</string>
 
     <!-- Unit strings (symbols) -->
-    <string name="unit__hours__symbol" translatable="false">{v} h</string>
-    <string name="unit__minutes__symbol" translatable="false">{v} m</string>
-    <string name="unit__seconds__symbol" translatable="false">{v} s</string>
-    <string name="unit__milliseconds__symbol" translatable="false">{v} ms</string>
+    <string name="unit__hours__symbol" translatable="false">{v} 小時</string>
+    <string name="unit__minutes__symbol" translatable="false">{v} 分鐘</string>
+    <string name="unit__seconds__symbol" translatable="false">{v} 秒</string>
+    <string name="unit__milliseconds__symbol" translatable="false">{v} 毫秒</string>
     <string name="unit__percent__symbol" translatable="false">{v}%</string>
     <string name="unit__display_pixel__symbol" translatable="false">{v} dp</string>
-    <string name="unit__display_pixel_per_seconds__symbol" translatable="false">{v} dp/s</string>
+    <string name="unit__display_pixel_per_seconds__symbol" translatable="false">{v} dp/秒</string>
 
     <!-- Unit strings (written words) -->
     <plurals name="unit__hours__written">
@@ -1881,50 +1881,50 @@
 
     <!-- Dictate floating button / accessibility service (issue #88) -->
     <string name="dictate__accessibility_service_label" comment="Name of the Dictate accessibility service, shown in the system accessibility settings list">Dictate 浮動按鈕</string>
-    <string name="dictate__accessibility_service_summary" comment="Short one-line summary of the accessibility service in the system settings">Show a floating button to dictate into any text field.</string>
-    <string name="dictate__accessibility_service_description" comment="Full disclosure shown in the system accessibility settings explaining what the service does and why">Dictate uses this service to power the floating dictation button. When enabled, it detects when a text field is focused in any app — so the button can appear — and inserts your transcribed speech into that field. Dictate only reads the focused field to place your text at the cursor; it does not collect, store or share other screen content.</string>
-    <string name="dictate__overlay_notification_channel" comment="Name of the notification channel for the floating-button recording notification">Floating dictation button</string>
-    <string name="dictate__overlay_notification_recording" comment="Text of the ongoing notification shown while the floating button is recording">Recording — tap the floating button to transcribe</string>
-    <string name="dictate__overlay_notification_working" comment="Text shown in the notification while the floating-button dictation is being transcribed">Transcribing…</string>
+    <string name="dictate__accessibility_service_summary" comment="Short one-line summary of the accessibility service in the system settings">顯示浮動按鈕，把語音輸入到任何文字欄位。</string>
+    <string name="dictate__accessibility_service_description" comment="Full disclosure shown in the system accessibility settings explaining what the service does and why">Dictate 使用這項服務來驅動浮動語音輸入按鈕。啟用後，它會偵測任何應用程式中文字欄位是否取得焦點 —— 讓按鈕得以出現 —— 並把你轉錄出來的語音插入該欄位。Dictate 只會讀取取得焦點的欄位，以便把文字放在游標位置；它不會收集、儲存或分享其他畫面內容。</string>
+    <string name="dictate__overlay_notification_channel" comment="Name of the notification channel for the floating-button recording notification">浮動語音輸入按鈕</string>
+    <string name="dictate__overlay_notification_recording" comment="Text of the ongoing notification shown while the floating button is recording">錄音中 —— 點一下浮動按鈕即可轉錄</string>
+    <string name="dictate__overlay_notification_working" comment="Text shown in the notification while the floating-button dictation is being transcribed">轉錄中…</string>
     <string name="dictate__floating_button_title" comment="Title of the floating-button settings screen">浮動按鈕</string>
     <string name="dictate__floating_button_enable_title" comment="Master toggle for the floating dictation button">浮動語音輸入按鈕</string>
-    <string name="dictate__floating_button_enable_summary" comment="Summary under the floating-button master toggle">Show a floating button to dictate into any app, even when another keyboard is active.</string>
+    <string name="dictate__floating_button_enable_summary" comment="Summary under the floating-button master toggle">顯示浮動按鈕，即使其他鍵盤正在使用，也能把語音輸入到任何應用程式。</string>
     <string name="dictate__floating_button_permission_group" comment="Group title for the accessibility-permission setup">設定</string>
     <string name="dictate__floating_button_service_title" comment="Row that leads to the system accessibility settings">無障礙服務</string>
-    <string name="dictate__floating_button_service_enabled" comment="Status when the accessibility service is on">Enabled · tap to open system settings</string>
-    <string name="dictate__floating_button_service_disabled" comment="Status when the accessibility service is off">Not enabled yet · tap to set up</string>
-    <string name="dictate__floating_button_disclosure_title" comment="Title of the prominent-disclosure dialog before enabling the accessibility service">Enable the floating button</string>
-    <string name="dictate__floating_button_disclosure_message" comment="Prominent disclosure shown before sending the user to the accessibility settings">To show the floating button, Dictate needs the accessibility service. It detects when a text field is focused in any app — so the button can appear — and inserts your transcribed speech into that field. Dictate only reads the focused field to place your text; it does not collect, store or share other screen content.\n\nOn the next screen, find “Dictate floating button” and turn it on.</string>
-    <string name="dictate__floating_button_disclosure_continue" comment="Confirm button that opens the system accessibility settings">Open settings</string>
+    <string name="dictate__floating_button_service_enabled" comment="Status when the accessibility service is on">已啟用 · 點一下開啟系統設定</string>
+    <string name="dictate__floating_button_service_disabled" comment="Status when the accessibility service is off">尚未啟用 · 點一下進行設定</string>
+    <string name="dictate__floating_button_disclosure_title" comment="Title of the prominent-disclosure dialog before enabling the accessibility service">啟用浮動按鈕</string>
+    <string name="dictate__floating_button_disclosure_message" comment="Prominent disclosure shown before sending the user to the accessibility settings">為了顯示浮動按鈕，Dictate 需要無障礙服務。它會偵測任何應用程式中文字欄位是否取得焦點 —— 讓按鈕得以出現 —— 並把你轉錄出來的語音插入該欄位。Dictate 只會讀取取得焦點的欄位，以便把文字放在游標位置；它不會收集、儲存或分享其他畫面內容。\n\n在下一個畫面中，找到「Dictate 浮動按鈕」並開啟它。</string>
+    <string name="dictate__floating_button_disclosure_continue" comment="Confirm button that opens the system accessibility settings">開啟設定</string>
     <string name="dictate__floating_button_mic_title" comment="Row to grant the microphone permission for the floating button">麥克風權限</string>
-    <string name="dictate__floating_button_mic_summary" comment="Summary of the microphone row when the permission is missing">Required to record your voice · tap to grant</string>
+    <string name="dictate__floating_button_mic_summary" comment="Summary of the microphone row when the permission is missing">錄製你的聲音時必須使用 · 點一下授予權限</string>
     <string name="dictate__floating_button_show_when_title" comment="Setting title: in which situation the floating dictation button appears; opens a list of three choices">顯示時機</string>
-    <string name="dictate__floating_button_show_when_field" comment="Choice: the floating button appears as soon as a text field is focused, even before any keyboard opens">As soon as a text field is selected</string>
-    <string name="dictate__floating_button_show_when_keyboard" comment="Choice: the floating button appears only while an on-screen keyboard (any keyboard) is open">Only while a keyboard is open</string>
-    <string name="dictate__floating_button_show_when_dictate_keyboard" comment="Choice: like “as soon as a text field is selected”, and also while the Dictate keyboard itself is open (normally hidden then, as it has its own mic key)">Also with the Dictate keyboard</string>    <string name="dictate__floating_button_apps_title" comment="Row that opens the per-app visibility screen for the floating button">應用程式顯示範圍</string>
-    <string name="dictate__floating_button_apps_summary_all" comment="Summary of the app-visibility row when no filter is set">In every app</string>
-    <string name="dictate__floating_button_apps_summary_only" comment="Summary of the app-visibility row in allow-list mode; {n} is the number of chosen apps">Only in {n} apps</string>
-    <string name="dictate__floating_button_apps_summary_except" comment="Summary of the app-visibility row in block-list mode; {n} is the number of chosen apps">Everywhere except {n} apps</string>
-    <string name="dictate__floating_button_apps_scope_all" comment="App-visibility mode: no filter">Every app</string>
-    <string name="dictate__floating_button_apps_scope_only" comment="App-visibility mode: allow-list">Only the apps below</string>
-    <string name="dictate__floating_button_apps_scope_except" comment="App-visibility mode: block-list">Every app except those below</string>
-    <string name="dictate__floating_button_apps_note" comment="Note explaining what the app filter does and does not hide">The button is never drawn over an app you leave out, and Dictate does not read its text fields. An app that objects to accessibility services as such will still notice the service is switched on.</string>
+    <string name="dictate__floating_button_show_when_field" comment="Choice: the floating button appears as soon as a text field is focused, even before any keyboard opens">選取文字欄位時立即顯示</string>
+    <string name="dictate__floating_button_show_when_keyboard" comment="Choice: the floating button appears only while an on-screen keyboard (any keyboard) is open">只在鍵盤開啟時顯示</string>
+    <string name="dictate__floating_button_show_when_dictate_keyboard" comment="Choice: like “as soon as a text field is selected”, and also while the Dictate keyboard itself is open (normally hidden then, as it has its own mic key)">Dictate 鍵盤也顯示</string>    <string name="dictate__floating_button_apps_title" comment="Row that opens the per-app visibility screen for the floating button">應用程式顯示範圍</string>
+    <string name="dictate__floating_button_apps_summary_all" comment="Summary of the app-visibility row when no filter is set">在所有應用程式中</string>
+    <string name="dictate__floating_button_apps_summary_only" comment="Summary of the app-visibility row in allow-list mode; {n} is the number of chosen apps">只在 {n} 個應用程式中</string>
+    <string name="dictate__floating_button_apps_summary_except" comment="Summary of the app-visibility row in block-list mode; {n} is the number of chosen apps">除了 {n} 個應用程式之外的所有地方</string>
+    <string name="dictate__floating_button_apps_scope_all" comment="App-visibility mode: no filter">每個應用程式</string>
+    <string name="dictate__floating_button_apps_scope_only" comment="App-visibility mode: allow-list">只有下列應用程式</string>
+    <string name="dictate__floating_button_apps_scope_except" comment="App-visibility mode: block-list">除了下列應用程式之外的每個應用程式</string>
+    <string name="dictate__floating_button_apps_note" comment="Note explaining what the app filter does and does not hide">按鈕絕不會畫在你排除的應用程式上，Dictate 也不會讀取它的文字欄位。不過，對無障礙服務本身有疑慮的應用程式，仍會察覺這項服務已開啟。</string>
     <string name="dictate__floating_button_apps_list_title" comment="Header above the app list in the app-visibility screen">應用程式</string>
-    <string name="dictate__floating_button_apps_search" comment="Placeholder in the app-visibility search field">Search apps</string>
-    <string name="dictate__floating_button_apps_none" comment="Shown when no installed app matches the search; {search_term} is what was typed">No app found for “{search_term}”</string>
+    <string name="dictate__floating_button_apps_search" comment="Placeholder in the app-visibility search field">搜尋應用程式</string>
+    <string name="dictate__floating_button_apps_none" comment="Shown when no installed app matches the search; {search_term} is what was typed">找不到符合「{search_term}」的應用程式</string>
     <string name="dictate__floating_button_design_title" comment="Title of the floating-button visual style picker">按鈕樣式</string>
-    <string name="dictate__floating_button_design_ring" comment="Floating-button style option: compact ring">Ring</string>
-    <string name="dictate__floating_button_design_ring_summary" comment="Description of the ring floating-button style">Compact circle with a ring that animates while recording and transcribing.</string>
-    <string name="dictate__floating_button_design_pill" comment="Floating-button style option: expanding pill">Pill</string>
-    <string name="dictate__floating_button_design_pill_summary" comment="Description of the pill floating-button style">Expands while active to show a timer and a live waveform.</string>
-    <string name="dictate__floating_button_design_orb" comment="Floating-button style option: glowing orb">Orb</string>
-    <string name="dictate__floating_button_design_orb_summary" comment="Description of the orb floating-button style">A solid orb that glows and pulses with your voice while recording.</string>
-    <string name="dictate__floating_button_design_cloud" comment="Floating-button style option: fluid cloud orb">Cloud</string>
-    <string name="dictate__floating_button_design_cloud_summary" comment="Description of the cloud floating-button style">A fluid cloud orb that flows and responds to your voice while recording.</string>
+    <string name="dictate__floating_button_design_ring" comment="Floating-button style option: compact ring">環</string>
+    <string name="dictate__floating_button_design_ring_summary" comment="Description of the ring floating-button style">緊湊的圓形外加一圈會在錄音與轉錄時跳動的動畫。</string>
+    <string name="dictate__floating_button_design_pill" comment="Floating-button style option: expanding pill">藥丸</string>
+    <string name="dictate__floating_button_design_pill_summary" comment="Description of the pill floating-button style">啟用時會展開，顯示計時器與即時波形。</string>
+    <string name="dictate__floating_button_design_orb" comment="Floating-button style option: glowing orb">球體</string>
+    <string name="dictate__floating_button_design_orb_summary" comment="Description of the orb floating-button style">一顆實心的球，錄音時會隨你的聲音發光與脈動。</string>
+    <string name="dictate__floating_button_design_cloud" comment="Floating-button style option: fluid cloud orb">雲朵</string>
+    <string name="dictate__floating_button_design_cloud_summary" comment="Description of the cloud floating-button style">一顆流動的雲朵球，錄音時會隨你的聲音流動與回應。</string>
     <string name="dictate__floating_button_design_aurora">Aurora</string>
-    <string name="dictate__floating_button_design_aurora_summary">Light moving inside a sphere; it stirs while recording and churns while working</string>
+    <string name="dictate__floating_button_design_aurora_summary">光在球體內流動；錄音時會翻湧，運作時會攪動</string>
     <string name="dictate__floating_button_design_lattice" comment="Floating-button style option: a sphere built from dots">Lattice</string>
-    <string name="dictate__floating_button_design_lattice_summary" comment="Description of the lattice floating-button style">A sphere of dots that wires itself while idle, ripples with your voice and twists while working</string>
+    <string name="dictate__floating_button_design_lattice_summary" comment="Description of the lattice floating-button style">由光點構成的球體，閒置時會自行串連、隨你的聲音泛起漣漪，並在運作時扭轉</string>
     <string name="dictate__floating_button_size_title" comment="Title of the floating-button size picker">按鈕大小</string>
     <string name="dictate__floating_button_size_small" comment="Floating-button size option">Small</string>
     <string name="dictate__floating_button_size_medium" comment="Floating-button size option">Medium</string>
