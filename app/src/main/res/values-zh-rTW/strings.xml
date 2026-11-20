@@ -1848,32 +1848,32 @@
 
     <!-- Unit strings (written words) -->
     <plurals name="unit__hours__written">
-        <item quantity="one">{v} hour</item>
-        <item quantity="other">{v} hours</item>
+        <item quantity="one">{v} 小時</item>
+        <item quantity="other">{v} 小時</item>
     </plurals>
     <plurals name="unit__minutes__written">
-        <item quantity="one">{v} minute</item>
-        <item quantity="other">{v} minutes</item>
+        <item quantity="one">{v} 分鐘</item>
+        <item quantity="other">{v} 分鐘</item>
     </plurals>
     <plurals name="unit__seconds__written">
-        <item quantity="one">{v} second</item>
-        <item quantity="other">{v} seconds</item>
+        <item quantity="one">{v} 秒</item>
+        <item quantity="other">{v} 秒</item>
     </plurals>
     <plurals name="unit__items__written">
-        <item quantity="one">{v} item</item>
-        <item quantity="other">{v} items</item>
+        <item quantity="one">{v} 個項目</item>
+        <item quantity="other">{v} 個項目</item>
     </plurals>
     <plurals name="unit__characters__written">
-        <item quantity="one">{v} character</item>
-        <item quantity="other">{v} characters</item>
+        <item quantity="one">{v} 個字元</item>
+        <item quantity="other">{v} 個字元</item>
     </plurals>
     <plurals name="unit__words__written">
-        <item quantity="one">{v} word</item>
-        <item quantity="other">{v} words</item>
+        <item quantity="one">{v} 個字</item>
+        <item quantity="other">{v} 個字</item>
     </plurals>
     <plurals name="unit__candidates__written">
-        <item quantity="one">{v} candidate</item>
-        <item quantity="other">{v} candidates</item>
+        <item quantity="one">{v} 個候選字</item>
+        <item quantity="other">{v} 個候選字</item>
     </plurals>
 
     <!-- ============================== Dictate ============================== -->
@@ -2171,13 +2171,13 @@
     <string name="dictate__providers_test_transcribe" comment="Button that sends a short bundled speech sample through the selected transcription model">測試轉錄</string>
     <string name="dictate__providers_check_no_key" comment="Shown when a test is started before an API key has been entered">請先輸入你的 API 金鑰。</string>
     <plurals name="dictate__providers_check_credentials_ok" comment="Successful connection test at a provider with a live model catalog. {count} is the number of models it returned.">
-        <item quantity="one">Credentials verified · {count} model</item>
-        <item quantity="other">Credentials verified · {count} models</item>
+        <item quantity="one">憑證驗證成功 · {count} 個模型</item>
+        <item quantity="other">憑證驗證成功 · {count} 個模型</item>
     </plurals>
     <string name="dictate__providers_check_credentials_ok_nocount" comment="Successful connection test at a provider whose model list ships with the app, so no model count was learned from the network">憑證驗證成功</string>
     <plurals name="dictate__providers_check_endpoint_ok" comment="Successful connection test at a server that asks for no key at all, such as a local Ollama. {count} is the number of models it returned.">
-        <item quantity="one">Server reached · {count} model</item>
-        <item quantity="other">Server reached · {count} models</item>
+        <item quantity="one">已連線至伺服器 · {count} 個模型</item>
+        <item quantity="other">已連線至伺服器 · {count} 個模型</item>
     </plurals>
     <string name="dictate__providers_check_credentials_untested" comment="Second line after a successful connection test, saying what was not checked">尚未測試轉錄。</string>
     <string name="dictate__providers_check_transcription_ok" comment="Successful transcription test: the provider returned a transcript for the sample">轉錄驗證成功</string>
@@ -2302,8 +2302,8 @@
     <string name="dictate__model_picker_search" comment="Hint for the model search / free-text field">搜尋或輸入模型 ID</string>
     <string name="dictate__model_picker_loading" comment="Status while fetching the model catalog">載入模型中…</string>
     <plurals name="dictate__model_picker_count" comment="Status showing how many models match. {count} is a number.">
-        <item quantity="one">{count} model</item>
-        <item quantity="other">{count} models</item>
+        <item quantity="one">{count} 個模型</item>
+        <item quantity="other">{count} 個模型</item>
     </plurals>
     <string name="dictate__model_picker_refresh" comment="Button that fetches the live model catalog from the provider">重新整理</string>
     <string name="dictate__model_picker_use_custom" comment="Option to use the typed text as a model id. {model} is the typed text.">使用「{model}」</string>
@@ -2329,486 +2329,486 @@
     <string name="dictate__local_model_notif_title_multi" comment="Ongoing download notification title for several downloads. {count} is a number.">正在下載 {count} 個模型</string>
     <string name="dictate__local_model_none_selected" comment="Summary on the on-device provider row when no model is downloaded/selected yet">尚未下載任何模型</string>
     <string name="dictate__local_model_delete_confirm" comment="Confirmation question before deleting a downloaded model. {model} is the model name.">確定要刪除「{model}」嗎？之後隨時可以重新下載。</string>
-    <string name="dictate__local_model_not_installed_error" comment="Error shown when trying to dictate with the on-device provider but no model is downloaded">No on-device model downloaded</string>
+    <string name="dictate__local_model_not_installed_error" comment="Error shown when trying to dictate with the on-device provider but no model is downloaded">尚未下載裝置端模型</string>
     <plurals name="dictate__local_model_languages" comment="How many languages an on-device model covers, shown under its name when there are too many to name one by one (issue #406). {count} is a number; it is never below six, because up to five are listed instead.">
-        <item quantity="one">{count} language</item>
-        <item quantity="other">{count} languages</item>
+        <item quantity="one">{count} 種語言</item>
+        <item quantity="other">{count} 種語言</item>
     </plurals>
-    <string name="dictate__local_model_family_installed" comment="Shown under a model family (Whisper, Kroko) in the on-device picker when some of its variants are downloaded. Both {count} and {total} are numbers.">{count} of {total} installed</string>
-    <string name="dictate__local_model_family_open" comment="Spoken action label for the row that opens a model family (Whisper, Kroko) and shows the variants inside it">Show variants</string>
-    <string name="dictate__fallback_title" comment="Label of the drop-down under the provider list in the Transcription dialog (AI providers): the provider that takes over a dictation when the transcription provider cannot do it — the on-device engine or another set-up provider. Also the screen-reader name of the detour icon shown next to a fallback provider's name while it transcribes. Keep it short.">Fallback</string>
-    <string name="dictate__fallback_off" comment="The Fallback setting's value when no provider takes over">Off</string>
-    <string name="dictate__fallback_hint" comment="One line under the Fallback drop-down, saying when the chosen provider takes over. 'Reached' as in: no connection could be made at all; a provider that is merely slow keeps the dictation.">Takes over a dictation when the transcription provider can’t be reached.</string>
-    <string name="dictate__providers_transcription_with_fallback" comment="Summary of the Transcription row under AI providers when a fallback is set: {provider} is the transcription provider, {fallback} the one that takes over when it cannot be reached (e.g. 'Home server · Fallback: OpenRouter'). The word must match the Fallback label.">{provider} · Fallback: {fallback}</string>
+    <string name="dictate__local_model_family_installed" comment="Shown under a model family (Whisper, Kroko) in the on-device picker when some of its variants are downloaded. Both {count} and {total} are numbers.">已安裝 {count} / {total} 個</string>
+    <string name="dictate__local_model_family_open" comment="Spoken action label for the row that opens a model family (Whisper, Kroko) and shows the variants inside it">顯示變體</string>
+    <string name="dictate__fallback_title" comment="Label of the drop-down under the provider list in the Transcription dialog (AI providers): the provider that takes over a dictation when the transcription provider cannot do it — the on-device engine or another set-up provider. Also the screen-reader name of the detour icon shown next to a fallback provider's name while it transcribes. Keep it short.">備援</string>
+    <string name="dictate__fallback_off" comment="The Fallback setting's value when no provider takes over">關閉</string>
+    <string name="dictate__fallback_hint" comment="One line under the Fallback drop-down, saying when the chosen provider takes over. 'Reached' as in: no connection could be made at all; a provider that is merely slow keeps the dictation.">當主要轉錄服務商無法連線時自動接手語音輸入。</string>
+    <string name="dictate__providers_transcription_with_fallback" comment="Summary of the Transcription row under AI providers when a fallback is set: {provider} is the transcription provider, {fallback} the one that takes over when it cannot be reached (e.g. 'Home server · Fallback: OpenRouter'). The word must match the Fallback label.">{provider} · 備援：{fallback}</string>
 
     <!-- Dictate recording settings -->
-    <string name="dictate__recording_group" comment="Group title for recording-related settings">Recording</string>
-    <string name="dictate__audio_focus_title" comment="Setting: pause other apps' audio while recording">Pause other audio</string>
-    <string name="dictate__audio_focus_summary" comment="Summary for the audio focus setting">Pause music and other apps while recording</string>
-    <string name="dictate__bluetooth_mic_title" comment="Setting: use a Bluetooth microphone">Bluetooth microphone</string>
-    <string name="dictate__bluetooth_mic_summary" comment="Summary for the Bluetooth mic setting">Record through a connected Bluetooth headset when available</string>
-    <string name="dictate__audio_source_title" comment="Title of the audio input source setting">Audio input source</string>
-    <string name="dictate__audio_source_default" comment="Audio source option: the default microphone">Default microphone</string>
-    <string name="dictate__audio_source_default_summary" comment="Summary for the default microphone audio source">Standard mic, with the phone\'s built-in audio processing</string>
-    <string name="dictate__audio_source_voice_recognition" comment="Audio source option: voice recognition">Voice recognition</string>
-    <string name="dictate__audio_source_voice_recognition_summary" comment="Summary for the voice-recognition audio source">Tuned for speech with less processing — try this if transcription is inaccurate</string>
-    <string name="dictate__audio_source_unprocessed" comment="Audio source option: unprocessed/raw">Unprocessed (raw)</string>
-    <string name="dictate__audio_source_unprocessed_summary" comment="Summary for the unprocessed audio source">No processing at all; falls back to Voice recognition if your phone doesn\'t support it</string>
-    <string name="dictate__audio_source_voice_communication" comment="Label for the voice communication audio source">Voice communication</string>
-    <string name="dictate__audio_source_voice_communication_summary" comment="Summary for the voice communication audio source">Highest mic priority — works when another app uses the mic, but may lower accuracy.</string>
-    <string name="dictate__keep_screen_awake_title" comment="Setting: keep the screen on while recording">Keep screen awake</string>
-    <string name="dictate__keep_screen_awake_summary" comment="Summary for the keep-screen-awake setting">Prevent the screen from turning off while recording</string>
-    <string name="dictate__push_to_talk_title" comment="Setting: hold the mic to record instead of tapping twice (issue #235)">Hold to record</string>
-    <string name="dictate__push_to_talk_summary" comment="Summary for the hold-to-record setting while it is on">Press and hold the mic, release to send</string>
-    <string name="dictate__push_to_talk_summary_off" comment="Summary while hold-to-record is off, naming the long-press shortcut it would replace">Off — holding the mic transcribes an audio file instead</string>
-    <string name="dictate__push_to_talk_slide_cancel" comment="Hint on the recording bar while holding the mic: slide towards it to discard">Slide to cancel</string>
-    <string name="dictate__recording_animation_title" comment="Setting: how the recording indicator moves">Recording indicator</string>
-    <string name="dictate__recording_animation_static_label" comment="Option: no animation">No animation</string>
-    <string name="dictate__recording_animation_static_description" comment="Option description">Stays a solid red dot while recording</string>
-    <string name="dictate__recording_animation_pulse_label" comment="Option: steady pulse">Pulsing</string>
-    <string name="dictate__recording_animation_pulse_description" comment="Option description">Pulses at a steady rate</string>
-    <string name="dictate__recording_animation_level_label" comment="Option: reacts to microphone level">Follows your voice (Dot)</string>
-    <string name="dictate__recording_animation_level_description" comment="Option description">Reacts to the microphone level, showing that the mic is picking you up</string>
-    <string name="dictate__recording_animation_wave_label" comment="Option: live waveform">Follows your voice (Wave)</string>
-    <string name="dictate__recording_animation_wave_description" comment="Option description">Draws the last seconds as a live waveform, so you can see when you have gone quiet</string>
-    <string name="dictate__skip_silent_title" comment="Setting: skip transcribing recordings that contain no speech">Skip silent recordings</string>
-    <string name="dictate__skip_silent_summary" comment="Summary for the skip-silent-recordings setting">Avoid ghost text and wasted API calls on silent audio</string>
-    <string name="dictate__trim_silent_gaps_title" comment="Setting: cut long pauses out of a recording before uploading it (issue #232)">Trim long pauses</string>
-    <string name="dictate__trim_silent_gaps_summary" comment="Summary for the trim-long-pauses setting">Cut long pauses out before sending — faster upload, lower cost</string>
-    <string name="dictate__speed_up_title" comment="Setting: send the recording faster than it was spoken, at unchanged pitch (issue #272)">Speed up audio</string>
-    <string name="dictate__speed_up_off" comment="Slider value label when the speed-up is off (1.0x)">Off</string>
+    <string name="dictate__recording_group" comment="Group title for recording-related settings">錄音</string>
+    <string name="dictate__audio_focus_title" comment="Setting: pause other apps' audio while recording">暫停其他音訊</string>
+    <string name="dictate__audio_focus_summary" comment="Summary for the audio focus setting">錄音時暫停音樂與其他應用程式的聲音</string>
+    <string name="dictate__bluetooth_mic_title" comment="Setting: use a Bluetooth microphone">藍牙麥克風</string>
+    <string name="dictate__bluetooth_mic_summary" comment="Summary for the Bluetooth mic setting">若有連線的藍牙耳機，優先透過其麥克風錄音</string>
+    <string name="dictate__audio_source_title" comment="Title of the audio input source setting">音訊輸入來源</string>
+    <string name="dictate__audio_source_default" comment="Audio source option: the default microphone">預設麥克風</string>
+    <string name="dictate__audio_source_default_summary" comment="Summary for the default microphone audio source">標準麥克風，使用手機內建的音訊處理</string>
+    <string name="dictate__audio_source_voice_recognition" comment="Audio source option: voice recognition">語音辨識</string>
+    <string name="dictate__audio_source_voice_recognition_summary" comment="Summary for the voice-recognition audio source">針對語音最佳化且較少音訊處理 —— 若轉錄不準確可嘗試此項</string>
+    <string name="dictate__audio_source_unprocessed" comment="Audio source option: unprocessed/raw">未處理（原始）</string>
+    <string name="dictate__audio_source_unprocessed_summary" comment="Summary for the unprocessed audio source">完全不經處理；若手機不支援則退回「語音辨識」</string>
+    <string name="dictate__audio_source_voice_communication" comment="Label for the voice communication audio source">語音通話</string>
+    <string name="dictate__audio_source_voice_communication_summary" comment="Summary for the voice communication audio source">最高麥克風優先權 —— 即使其他應用程式正在使用麥克風也能錄音，但準確度可能略降。</string>
+    <string name="dictate__keep_screen_awake_title" comment="Setting: keep the screen on while recording">保持螢幕喚醒</string>
+    <string name="dictate__keep_screen_awake_summary" comment="Summary for the keep-screen-awake setting">錄音期間防止螢幕自動關閉</string>
+    <string name="dictate__push_to_talk_title" comment="Setting: hold the mic to record instead of tapping twice (issue #235)">按住錄音</string>
+    <string name="dictate__push_to_talk_summary" comment="Summary for the hold-to-record setting while it is on">按住麥克風開始錄音，放開即傳送</string>
+    <string name="dictate__push_to_talk_summary_off" comment="Summary while hold-to-record is off, naming the long-press shortcut it would replace">關閉 —— 長按麥克風會改為轉錄音訊檔案</string>
+    <string name="dictate__push_to_talk_slide_cancel" comment="Hint on the recording bar while holding the mic: slide towards it to discard">滑動以取消</string>
+    <string name="dictate__recording_animation_title" comment="Setting: how the recording indicator moves">錄音指示器</string>
+    <string name="dictate__recording_animation_static_label" comment="Option: no animation">無動畫</string>
+    <string name="dictate__recording_animation_static_description" comment="Option description">錄音時保持為固定的紅點</string>
+    <string name="dictate__recording_animation_pulse_label" comment="Option: steady pulse">脈衝</string>
+    <string name="dictate__recording_animation_pulse_description" comment="Option description">以固定頻率脈動閃爍</string>
+    <string name="dictate__recording_animation_level_label" comment="Option: reacts to microphone level">跟隨聲音（圓點）</string>
+    <string name="dictate__recording_animation_level_description" comment="Option description">依麥克風音量變化縮放，讓你確認麥克風有收到聲音</string>
+    <string name="dictate__recording_animation_wave_label" comment="Option: live waveform">跟隨聲音（波形）</string>
+    <string name="dictate__recording_animation_wave_description" comment="Option description">將最近幾秒的聲音繪製成即時波形，方便看出何時停頓安靜</string>
+    <string name="dictate__skip_silent_title" comment="Setting: skip transcribing recordings that contain no speech">略過無聲錄音</string>
+    <string name="dictate__skip_silent_summary" comment="Summary for the skip-silent-recordings setting">避免無聲錄音產生幽靈文字並浪費 API 呼叫</string>
+    <string name="dictate__trim_silent_gaps_title" comment="Setting: cut long pauses out of a recording before uploading it (issue #232)">修剪長停頓</string>
+    <string name="dictate__trim_silent_gaps_summary" comment="Summary for the trim-long-pauses setting">傳送前剪除過長的靜音停頓 —— 上傳更快、費用更省</string>
+    <string name="dictate__speed_up_title" comment="Setting: send the recording faster than it was spoken, at unchanged pitch (issue #272)">加快音訊速度</string>
+    <string name="dictate__speed_up_off" comment="Slider value label when the speed-up is off (1.0x)">關閉</string>
     <string name="dictate__speed_up_value" comment="Slider value label for the playback rate. {rate} is a number like 1.5">{rate}×</string>
-    <string name="dictate__speed_up_summary_off" comment="Summary for the speed-up setting when it is off">Sent at the speed you spoke it</string>
-    <string name="dictate__speed_up_summary" comment="Summary for the speed-up setting. {percent} is a whole number like 33">Same words, same pitch — about {percent} % less audio to pay for</string>
-    <string name="dictate__speed_up_summary_caution" comment="Summary for the speed-up setting at rates where accuracy suffers. {percent} is a whole number like 50">About {percent} % less audio to pay for, but this fast the words are harder to recognise</string>
-    <string name="dictate__paragraph_split_title" comment="Setting: break long plain transcripts into paragraphs at sentence boundaries (issue #225)">Break into paragraphs</string>
-    <string name="dictate__paragraph_split_off" comment="Slider value label when paragraph splitting is off (0)">Off</string>
-    <string name="dictate__paragraph_split_value" comment="Slider value label: after how many words a paragraph break may start. {n} is the word count">After {n} words</string>
-    <string name="dictate__drop_final_full_stop_title" comment="Setting: leave the full stop off the end of a dictation that is a single sentence (issue #468). Full stop = the sentence-ending period">Leave off the final full stop</string>
-    <string name="dictate__drop_final_full_stop_summary" comment="Summary for the final-full-stop setting: it only applies to a dictation of one sentence; with several sentences every punctuation mark stays">Only when a dictation is a single sentence; several sentences keep every mark</string>
-    <string name="dictate__seam_case_title" comment="Setting (issue #476): the first letter of a dictation is written small or as a capital to fit where it lands in the text — speech services capitalise every dictation as if it began a sentence">Match the first letter to the sentence</string>
-    <string name="dictate__seam_case_summary" comment="Summary for the first-letter setting: small when the dictation goes into the middle of a sentence, a capital after a sentence ends">Lower case in the middle of a sentence, a capital after its end</string>
+    <string name="dictate__speed_up_summary_off" comment="Summary for the speed-up setting when it is off">以你說話的原速傳送</string>
+    <string name="dictate__speed_up_summary" comment="Summary for the speed-up setting. {percent} is a whole number like 33">保留原詞與音調 —— 約減少 {percent}% 的付費音訊長度</string>
+    <string name="dictate__speed_up_summary_caution" comment="Summary for the speed-up setting at rates where accuracy suffers. {percent} is a whole number like 50">約減少 {percent}% 的付費音訊長度，但此倍速下辨識準確度可能會下降</string>
+    <string name="dictate__paragraph_split_title" comment="Setting: break long plain transcripts into paragraphs at sentence boundaries (issue #225)">自動分段</string>
+    <string name="dictate__paragraph_split_off" comment="Slider value label when paragraph splitting is off (0)">關閉</string>
+    <string name="dictate__paragraph_split_value" comment="Slider value label: after how many words a paragraph break may start. {n} is the word count">滿 {n} 字後</string>
+    <string name="dictate__drop_final_full_stop_title" comment="Setting: leave the full stop off the end of a dictation that is a single sentence (issue #468). Full stop = the sentence-ending period">省略單句結尾句點</string>
+    <string name="dictate__drop_final_full_stop_summary" comment="Summary for the final-full-stop setting: it only applies to a dictation of one sentence; with several sentences every punctuation mark stays">僅在單句語音輸入時生效；若包含多個句子則會保留所有標點符號</string>
+    <string name="dictate__seam_case_title" comment="Setting (issue #476): the first letter of a dictation is written small or as a capital to fit where it lands in the text — speech services capitalise every dictation as if it began a sentence">配合句中位置調整首字母大小寫</string>
+    <string name="dictate__seam_case_summary" comment="Summary for the first-letter setting: small when the dictation goes into the middle of a sentence, a capital after a sentence ends">插入句中時改為小寫，接在句尾之後則保留大寫</string>
 
-    <string name="dictate__realtime_title" comment="Setting: real-time streaming transcription">Real-time transcription</string>
-    <string name="dictate__realtime_summary" comment="Explanation shown inside the real-time transcription dialog">Transcribes while you speak instead of after you stop, for providers that support it</string>
-    <string name="dictate__realtime_mode_off" comment="Real-time transcription: the feature is switched off">Off</string>
-    <string name="dictate__realtime_mode_live" comment="Real-time transcription: the streamed words appear in the text field as they arrive">Show the text while I speak</string>
-    <string name="dictate__realtime_mode_at_end" comment="Real-time transcription: the words are transcribed while speaking but only inserted once the recording is stopped">Show the text only when I stop</string>
-    <string name="dictate__providers_field_realtime_model" comment="Label for the real-time streaming model picker">Real-time model</string>
-    <string name="dictate__providers_custom_realtime" comment="Switch label: a self-hosted server that supports realtime streaming (#249)">Real-time streaming</string>
-    <string name="dictate__providers_custom_realtime_summary" comment="Explains what the server must support for realtime streaming">This server speaks the OpenAI realtime protocol at /v1/realtime</string>
-    <string name="dictate__providers_custom_warm_up" comment="Switch label: ping a sleeping self-hosted server early so it can wake up (#189)">Wake up early</string>
-    <string name="dictate__providers_custom_warm_up_summary" comment="Explains the early wake-up request, sent when a recording starts (transcription) or a rewording is coming">Pings this server early so a sleeping machine has time to start</string>
-    <string name="dictate__providers_realtime_model_default" comment="Marks the provider's default real-time model in the picker">Default</string>
-    <string name="dictate__longform_title" comment="Setting: long-form segmented dictation">Long-form dictation</string>
-    <string name="dictate__longform_summary" comment="Summary for the long-form dictation setting">Transcribe long dictations in the background, part by part while you keep talking — tap Next during recording to send the current part, so there is no long wait at the end.</string>
-    <string name="dictate__longform_autosplit_title" comment="Setting: use Silero VAD and Smart Turn to auto-cut a long-form segment">Smart auto-split</string>
-    <string name="dictate__longform_autosplit_summary" comment="Summary for Smart Turn auto-split">Silero detects pauses, then Smart Turn checks whether your thought is complete. Continued silence uses the maximum pause as a fallback.</string>
-    <string name="dictate__longform_autosplit_threshold_title" comment="Setting: maximum silence before an incomplete Smart Turn prediction is overridden">Maximum pause</string>
-    <string name="dictate__longform_pause_length_title" comment="Slider label when Smart Turn is off: the silence after which a segment is cut">Pause length</string>
-    <string name="dictate__longform_autosplit_value" comment="Slider value for the pause length. {seconds} is a number like 2.0">{seconds} s</string>
-    <string name="dictate__smart_turn_title" comment="Checkbox: enable on-device Smart Turn semantic segmentation">Smart Turn segmentation</string>
-    <string name="dictate__smart_turn_summary" comment="Summary for the Smart Turn checkbox; ~8 MB model downloaded on demand">Cut at completed thoughts with an on-device model, not just at pauses. Downloads about 8 MB.</string>
-    <string name="dictate__smart_turn_downloading" comment="Shown while the Smart Turn model downloads. {percent} is 0-100">Downloading model… {percent}%</string>
-    <string name="dictate__smart_turn_download_failed" comment="Shown when the Smart Turn model download failed">Download failed — tap to retry.</string>
-    <string name="dictate__longform_mode_off" comment="Long-form mode: disabled">Off</string>
-    <string name="dictate__longform_mode_off_summary" comment="Summary for the off long-form mode">Transcribe once at the end (default).</string>
-    <string name="dictate__longform_mode_manual" comment="Long-form mode: manual Next button only">Next button</string>
-    <string name="dictate__longform_mode_manual_summary" comment="Summary for the manual long-form mode">Send each part with the Next button while recording.</string>
-    <string name="dictate__instant_recording_title" comment="Setting: start recording when the keyboard opens">Instant recording</string>
-    <string name="dictate__instant_recording_summary" comment="Summary for the instant recording setting">Start recording automatically when the keyboard opens</string>
-    <string name="dictate__instant_recording_mode_off" comment="Instant recording: the feature is switched off">Off</string>
-    <string name="dictate__instant_recording_mode_always" comment="Instant recording: start recording whenever the keyboard opens on a text field">Every time the keyboard opens</string>
-    <string name="dictate__instant_recording_mode_after_switch" comment="Instant recording: start recording only when the user has just switched to this keyboard from another one">Only after switching to {app_name}</string>
-    <string name="dictate__instant_recording_in_numeric" comment="Checkbox inside the instant-recording dialog: whether it also starts in number-only fields (phone, PIN, date)">Also in number fields</string>
-    <string name="dictate__instant_recording_skip_numeric_title" comment="Setting: don't auto-start recording on number-only fields">Skip number fields</string>
-    <string name="dictate__instant_recording_skip_numeric_summary" comment="Summary: instant recording won't auto-start on number/phone/PIN fields">Don\'t auto-start on number, phone or PIN fields</string>
-    <string name="dictate__instant_recording_info_title" comment="Title of the dialog shown when enabling instant recording">Heads up</string>
-    <string name="dictate__instant_recording_info_message" comment="Message of the dialog shown when enabling instant recording, explaining the trade-off with interrupted-recording recovery">While instant recording is on, recovering an interrupted recording is turned off — every time the keyboard opens it starts a fresh recording instead. Turn instant recording off again to get the recovery prompt back.</string>
-    <string name="dictate__output_group" comment="Group title for output-behavior settings">Output</string>
-    <string name="dictate__auto_enter_title" comment="Setting: press Enter after a transcription">Auto-enter</string>
-    <string name="dictate__auto_enter_summary" comment="Summary for the auto-enter setting">Press Enter automatically after a transcription is inserted</string>
-    <string name="dictate__instant_output_title" comment="Setting: insert the whole transcription at once">Instant output</string>
-    <string name="dictate__instant_output_summary" comment="Summary for the instant output setting">Insert the whole text at once; turn off to type it out gradually</string>
-    <string name="dictate__output_speed_title" comment="Setting: speed of the typing-out animation">Typing speed</string>
+    <string name="dictate__realtime_title" comment="Setting: real-time streaming transcription">即時轉錄</string>
+    <string name="dictate__realtime_summary" comment="Explanation shown inside the real-time transcription dialog">若服務商支援，會在你說話時同步轉錄，而不需等到停止錄音</string>
+    <string name="dictate__realtime_mode_off" comment="Real-time transcription: the feature is switched off">關閉</string>
+    <string name="dictate__realtime_mode_live" comment="Real-time transcription: the streamed words appear in the text field as they arrive">說話時即時顯示文字</string>
+    <string name="dictate__realtime_mode_at_end" comment="Real-time transcription: the words are transcribed while speaking but only inserted once the recording is stopped">僅在停止錄音後顯示文字</string>
+    <string name="dictate__providers_field_realtime_model" comment="Label for the real-time streaming model picker">即時模型</string>
+    <string name="dictate__providers_custom_realtime" comment="Switch label: a self-hosted server that supports realtime streaming (#249)">即時串流</string>
+    <string name="dictate__providers_custom_realtime_summary" comment="Explains what the server must support for realtime streaming">此伺服器在 /v1/realtime 支援 OpenAI 即時協定</string>
+    <string name="dictate__providers_custom_warm_up" comment="Switch label: ping a sleeping self-hosted server early so it can wake up (#189)">提前喚醒</string>
+    <string name="dictate__providers_custom_warm_up_summary" comment="Explains the early wake-up request, sent when a recording starts (transcription) or a rewording is coming">提前向這台伺服器發送 Ping 請求，讓休眠中的機器有時間啟動</string>
+    <string name="dictate__providers_realtime_model_default" comment="Marks the provider's default real-time model in the picker">預設</string>
+    <string name="dictate__longform_title" comment="Setting: long-form segmented dictation">長篇語音輸入</string>
+    <string name="dictate__longform_summary" comment="Summary for the long-form dictation setting">在你持續說話時於背景分段轉錄長篇內容 —— 錄音期間點「下一段」即可先送出目前段落，結束時不需久候。</string>
+    <string name="dictate__longform_autosplit_title" comment="Setting: use Silero VAD and Smart Turn to auto-cut a long-form segment">智慧自動分段</string>
+    <string name="dictate__longform_autosplit_summary" comment="Summary for Smart Turn auto-split">由 Silero 偵測停頓，再由 Smart Turn 判斷語意是否已完整結束；若持續靜音，則以最長停頓時間為上限切段。</string>
+    <string name="dictate__longform_autosplit_threshold_title" comment="Setting: maximum silence before an incomplete Smart Turn prediction is overridden">最長停頓</string>
+    <string name="dictate__longform_pause_length_title" comment="Slider label when Smart Turn is off: the silence after which a segment is cut">停頓長度</string>
+    <string name="dictate__longform_autosplit_value" comment="Slider value for the pause length. {seconds} is a number like 2.0">{seconds} 秒</string>
+    <string name="dictate__smart_turn_title" comment="Checkbox: enable on-device Smart Turn semantic segmentation">Smart Turn 語意切段</string>
+    <string name="dictate__smart_turn_summary" comment="Summary for the Smart Turn checkbox; ~8 MB model downloaded on demand">使用裝置端模型在語意告一段落處切段，而不只是看停頓時間。需下載約 8 MB 模型。</string>
+    <string name="dictate__smart_turn_downloading" comment="Shown while the Smart Turn model downloads. {percent} is 0-100">正在下載模型… {percent}%</string>
+    <string name="dictate__smart_turn_download_failed" comment="Shown when the Smart Turn model download failed">下載失敗 —— 點一下重試。</string>
+    <string name="dictate__longform_mode_off" comment="Long-form mode: disabled">關閉</string>
+    <string name="dictate__longform_mode_off_summary" comment="Summary for the off long-form mode">結束後一次完成轉錄（預設）。</string>
+    <string name="dictate__longform_mode_manual" comment="Long-form mode: manual Next button only">「下一段」按鈕</string>
+    <string name="dictate__longform_mode_manual_summary" comment="Summary for the manual long-form mode">錄音期間透過「下一段」按鈕手動分段送出。</string>
+    <string name="dictate__instant_recording_title" comment="Setting: start recording when the keyboard opens">開啟即錄音</string>
+    <string name="dictate__instant_recording_summary" comment="Summary for the instant recording setting">鍵盤開啟時自動開始錄音</string>
+    <string name="dictate__instant_recording_mode_off" comment="Instant recording: the feature is switched off">關閉</string>
+    <string name="dictate__instant_recording_mode_always" comment="Instant recording: start recording whenever the keyboard opens on a text field">每次開啟鍵盤時</string>
+    <string name="dictate__instant_recording_mode_after_switch" comment="Instant recording: start recording only when the user has just switched to this keyboard from another one">僅在切換至 {app_name} 後</string>
+    <string name="dictate__instant_recording_in_numeric" comment="Checkbox inside the instant-recording dialog: whether it also starts in number-only fields (phone, PIN, date)">數字欄位也啟用</string>
+    <string name="dictate__instant_recording_skip_numeric_title" comment="Setting: don't auto-start recording on number-only fields">略過數字欄位</string>
+    <string name="dictate__instant_recording_skip_numeric_summary" comment="Summary: instant recording won't auto-start on number/phone/PIN fields">不要在數字、電話或 PIN 碼欄位自動開始錄音</string>
+    <string name="dictate__instant_recording_info_title" comment="Title of the dialog shown when enabling instant recording">提醒</string>
+    <string name="dictate__instant_recording_info_message" comment="Message of the dialog shown when enabling instant recording, explaining the trade-off with interrupted-recording recovery">開啟「開啟即錄音」期間，系統會停用「恢復中斷錄音」功能 —— 因為每次打開鍵盤都會直接開始一段新錄音。若要恢復該提示，只要將「開啟即錄音」關閉即可。</string>
+    <string name="dictate__output_group" comment="Group title for output-behavior settings">輸出</string>
+    <string name="dictate__auto_enter_title" comment="Setting: press Enter after a transcription">自動按 Enter</string>
+    <string name="dictate__auto_enter_summary" comment="Summary for the auto-enter setting">插入轉錄文字後自動按下 Enter</string>
+    <string name="dictate__instant_output_title" comment="Setting: insert the whole transcription at once">立即完整輸出</string>
+    <string name="dictate__instant_output_summary" comment="Summary for the instant output setting">一次插入整段文字；關閉則改為逐字打出</string>
+    <string name="dictate__output_speed_title" comment="Setting: speed of the typing-out animation">打字速度</string>
     <string name="dictate__output_speed_value" comment="Value label for the typing speed slider">{v}</string>
-    <string name="dictate__resend_button_title" comment="Setting: show a resend button on failure">Resend button</string>
-    <string name="dictate__resend_button_summary" comment="Summary for the resend button setting">If transcription fails, show a button to retry with the same recording</string>
-    <string name="dictate__haptic_feedback_title" comment="Setting: vibrate on dictation state changes">Haptic feedback</string>
-    <string name="dictate__haptic_feedback_summary" comment="Summary for the haptic feedback setting">Vibrate on record start/stop, when a transcription is ready, and on rewording.</string>
-    <string name="dictate__remember_last_dictation_title" comment="Setting: keep the last dictation so it can be re-inserted">Remember last dictation</string>
-    <string name="dictate__remember_last_dictation_summary" comment="Summary explaining the re-insert safety net">Keep your last dictation so the floating button can undo it and the classic layout can re-insert it.</string>
+    <string name="dictate__resend_button_title" comment="Setting: show a resend button on failure">重新傳送按鈕</string>
+    <string name="dictate__resend_button_summary" comment="Summary for the resend button setting">若轉錄失敗，顯示按鈕以使用同一段錄音重試</string>
+    <string name="dictate__haptic_feedback_title" comment="Setting: vibrate on dictation state changes">觸覺回饋</string>
+    <string name="dictate__haptic_feedback_summary" comment="Summary for the haptic feedback setting">開始／停止錄音、轉錄完成及改寫時震動提示。</string>
+    <string name="dictate__remember_last_dictation_title" comment="Setting: keep the last dictation so it can be re-inserted">記住最後一次語音輸入</string>
+    <string name="dictate__remember_last_dictation_summary" comment="Summary explaining the re-insert safety net">保留最近一次語音輸入的內容，讓浮動按鈕可以復原，經典版面也能重新插入。</string>
 
     <!-- Dictate main screen pipeline groups -->
-    <string name="dictate__transcription_group" comment="Group title for the transcription (speech-to-text) stage on the main Dictate screen">Transcription (speech → text)</string>
-    <string name="dictate__formatting_title" comment="Title for the formatting &amp; vocabulary settings sub-screen">Formatting &amp; vocabulary</string>
-    <string name="dictate__formatting_menu_summary" comment="One-line summary for the formatting hub entry on the Dictate settings landing page">Style prompt, custom words, replacements</string>
-    <string name="dictate__recording_menu_summary" comment="One-line summary for the recording hub entry on the Dictate settings landing page">Real-time, audio source, instant recording</string>
-    <string name="dictate__output_menu_summary" comment="One-line summary for the output hub entry on the Dictate settings landing page">Auto-enter, typing speed, resend</string>
-    <string name="dictate__layout_title" comment="Title of the dictation layout settings category (how the dictation keyboard looks)">Dictation layout</string>
-    <string name="dictate__layout_menu_summary" comment="One-line summary for the dictation layout hub entry on the Dictate settings landing page">Classic layout and keyboard appearance</string>
+    <string name="dictate__transcription_group" comment="Group title for the transcription (speech-to-text) stage on the main Dictate screen">轉錄（語音 → 文字）</string>
+    <string name="dictate__formatting_title" comment="Title for the formatting &amp; vocabulary settings sub-screen">格式與詞彙</string>
+    <string name="dictate__formatting_menu_summary" comment="One-line summary for the formatting hub entry on the Dictate settings landing page">風格提示、自訂詞彙、替換規則</string>
+    <string name="dictate__recording_menu_summary" comment="One-line summary for the recording hub entry on the Dictate settings landing page">即時轉錄、音訊來源、開啟即錄音</string>
+    <string name="dictate__output_menu_summary" comment="One-line summary for the output hub entry on the Dictate settings landing page">自動按 Enter、打字速度、重新傳送</string>
+    <string name="dictate__layout_title" comment="Title of the dictation layout settings category (how the dictation keyboard looks)">語音輸入版面</string>
+    <string name="dictate__layout_menu_summary" comment="One-line summary for the dictation layout hub entry on the Dictate settings landing page">經典版面與鍵盤外觀</string>
 
     <!-- Dictate language selection -->
-    <string name="dictate__languages_group" comment="Group title for dictation language settings (no longer a hub group; the languages row now lives under the Transcription group)">Languages</string>
-    <string name="dictate__languages_title" comment="Setting: pick which dictation languages to cycle through">Transcription languages</string>
-    <string name="dictate__languages_summary" comment="Explanation on the language picker screen">Pick the languages you dictate in. Switch between them quickly from the recording bar.</string>
-    <string name="dictate__language_detect" comment="Language option: let the model auto-detect the spoken language">Detect automatically</string>
-    <string name="dictate__languages_selected_title" comment="Row/dialog title: the languages the user dictates in, listed by name under it; tapping opens a dialog with every language and a checkbox each">Selected languages</string>
-    <string name="dictate__languages_active_title" comment="Row/dialog title to pick the currently active transcription language">Active language</string>
-    <string name="dictate__languages_follow_keyboard" comment="Switch title: the dictation language follows the keyboard language">Follow the keyboard language</string>
-    <string name="dictate__languages_follow_keyboard_summary" comment="Switch summary. Only languages chosen under “Selected languages” are switched to. Must fit two lines">Switches dictation too, if the language is selected</string>
+    <string name="dictate__languages_group" comment="Group title for dictation language settings (no longer a hub group; the languages row now lives under the Transcription group)">語言</string>
+    <string name="dictate__languages_title" comment="Setting: pick which dictation languages to cycle through">轉錄語言</string>
+    <string name="dictate__languages_summary" comment="Explanation on the language picker screen">選擇你進行語音輸入的語言。錄音時可從錄音列快速切換。</string>
+    <string name="dictate__language_detect" comment="Language option: let the model auto-detect the spoken language">自動偵測</string>
+    <string name="dictate__languages_selected_title" comment="Row/dialog title: the languages the user dictates in, listed by name under it; tapping opens a dialog with every language and a checkbox each">已選取的語言</string>
+    <string name="dictate__languages_active_title" comment="Row/dialog title to pick the currently active transcription language">目前使用的語言</string>
+    <string name="dictate__languages_follow_keyboard" comment="Switch title: the dictation language follows the keyboard language">跟隨鍵盤語言</string>
+    <string name="dictate__languages_follow_keyboard_summary" comment="Switch summary. Only languages chosen under “Selected languages” are switched to. Must fit two lines">若該語言已在選取清單中，一併切換轉錄語言</string>
 
     <!-- Dictate prompt selection (system & style prompt: none / predefined / custom) -->
-    <string name="dictate__prompt_selection_none" comment="Prompt option: do not send any prompt">None</string>
-    <string name="dictate__prompt_selection_predefined" comment="Prompt option: use Dictate's built-in default prompt">Default</string>
-    <string name="dictate__prompt_selection_custom" comment="Prompt option: use a custom user-written prompt">Custom</string>
+    <string name="dictate__prompt_selection_none" comment="Prompt option: do not send any prompt">無</string>
+    <string name="dictate__prompt_selection_predefined" comment="Prompt option: use Dictate's built-in default prompt">預設</string>
+    <string name="dictate__prompt_selection_custom" comment="Prompt option: use a custom user-written prompt">自訂</string>
 
     <!-- Dictate style prompt (biases the transcription towards proper punctuation/casing) -->
-    <string name="dictate__style_prompt_title" comment="Setting: punctuation/style prompt for transcription">Punctuation &amp; style</string>
-    <string name="dictate__style_prompt_custom_title" comment="Label for the custom style prompt field">Custom style prompt</string>
-    <string name="dictate__style_prompt_custom_placeholder" comment="Placeholder for the custom style prompt field">e.g. Hello. Thank you very much.</string>
-    <string name="dictate__style_prompt_info_title" comment="Row that reveals the built-in default style prompt">View default example</string>
-    <string name="dictate__style_prompt_info_description" comment="Explanation shown above the default style prompt example">This example sentence is sent with each transcription to nudge the model towards correct capitalization and punctuation. It adapts automatically to the language you dictate in.</string>
-    <string name="dictate__style_prompt_info_none" comment="Shown in the style-prompt info box for a language that has no example sentence, so none is sent (issue #275)">This language has no example sentence yet, so none is sent. The transcription still follows the language you selected.</string>
+    <string name="dictate__style_prompt_title" comment="Setting: punctuation/style prompt for transcription">標點與風格</string>
+    <string name="dictate__style_prompt_custom_title" comment="Label for the custom style prompt field">自訂風格提示</string>
+    <string name="dictate__style_prompt_custom_placeholder" comment="Placeholder for the custom style prompt field">例如：你好，非常謝謝你。</string>
+    <string name="dictate__style_prompt_info_title" comment="Row that reveals the built-in default style prompt">檢視預設範例</string>
+    <string name="dictate__style_prompt_info_description" comment="Explanation shown above the default style prompt example">每次轉錄都會一併送出這段範例句，引導模型使用正確的大小寫與標點符號。它會依你選擇的語音輸入語言自動調整。</string>
+    <string name="dictate__style_prompt_info_none" comment="Shown in the style-prompt info box for a language that has no example sentence, so none is sent (issue #275)">此語言尚未提供範例句，因此不會送出範例。轉錄仍會依你選取的語言進行。</string>
 
     <!-- Dictate custom words / vocabulary (appended to the transcription prompt, roadmap 11.12) -->
-    <string name="dictate__custom_words_title" comment="Setting: custom vocabulary added to the transcription prompt so names/jargon are spelled correctly">Custom words</string>
-    <string name="dictate__custom_words_summary_empty" comment="Summary shown when no custom words are set">Add names or technical terms to spell correctly</string>
-    <string name="dictate__custom_words_placeholder" comment="Placeholder listing example custom words, comma-separated">e.g. FlorisBoard, Kubernetes, Renée, OAuth, Anthropic</string>
-    <string name="dictate__custom_words_summary" comment="Summary on the custom words row once words are set. Placeholders: how many words, the estimated token cost, and the budget the speech model reads.">{count} words · about {tokens} of {budget} tokens</string>
-    <string name="dictate__custom_words_budget_info" comment="Info card shown once the word list uses most of the prompt budget. Placeholders: the budget and the estimated tokens in use.">Every word here travels with every dictation, and the speech model reads only about {budget} tokens of context. Your list is using about {tokens}.</string>
-    <string name="dictate__custom_words_budget_over" comment="Warning card shown when the word list is longer than the speech model can read. Placeholders: how many words still reach the model, and how many there are in total.">Your list is longer than the speech model reads. About {fits} of your {count} words reach it; the rest are sent with every dictation and ignored. For a longer vocabulary use custom mappings — they are exact, work offline and cost nothing.</string>
-    <string name="dictate__custom_words_import" comment="Row that opens a file picker to import a word list">Import a word list</string>
-    <string name="dictate__custom_words_export" comment="Row that saves the word list as a text file">Export the word list</string>
+    <string name="dictate__custom_words_title" comment="Setting: custom vocabulary added to the transcription prompt so names/jargon are spelled correctly">自訂詞彙</string>
+    <string name="dictate__custom_words_summary_empty" comment="Summary shown when no custom words are set">新增專有名詞或技術術語以確保拼寫正確</string>
+    <string name="dictate__custom_words_placeholder" comment="Placeholder listing example custom words, comma-separated">例如：FlorisBoard, Kubernetes, Renée, OAuth, Anthropic</string>
+    <string name="dictate__custom_words_summary" comment="Summary on the custom words row once words are set. Placeholders: how many words, the estimated token cost, and the budget the speech model reads.">{count} 個詞彙 · 約使用 {tokens} / {budget} tokens</string>
+    <string name="dictate__custom_words_budget_info" comment="Info card shown once the word list uses most of the prompt budget. Placeholders: the budget and the estimated tokens in use.">這裡的每個詞彙每次語音輸入都會一併送出，而語音模型大約只會讀取 {budget} 個 tokens 的上下文。你的清單目前已使用約 {tokens} 個 tokens。</string>
+    <string name="dictate__custom_words_budget_over" comment="Warning card shown when the word list is longer than the speech model can read. Placeholders: how many words still reach the model, and how many there are in total.">你的清單長度超過語音模型可讀取的上限。{count} 個詞彙中約有 {fits} 個能送達模型；其餘的雖然每次都會送出，但會被模型忽略。若需要更長的詞彙表，請改用「自訂替換規則」—— 精準、離線運作且不耗費額度。</string>
+    <string name="dictate__custom_words_import" comment="Row that opens a file picker to import a word list">匯入詞彙清單</string>
+    <string name="dictate__custom_words_export" comment="Row that saves the word list as a text file">匯出詞彙清單</string>
     <string name="dictate__custom_words_export_filename" comment="Default file name for the word list export">dictate_words.txt</string>
-    <string name="dictate__custom_words_import_title" comment="Title of the dialog shown before an imported word list is written">Import a word list</string>
-    <string name="dictate__custom_words_import_fitting" comment="Import dialog: how many new words from the file fit into the list. Placeholder inserts the count.">{count} new words from this file fit in your list.</string>
-    <string name="dictate__custom_words_import_known" comment="Import dialog: how many words were already in the list. Placeholder inserts the count.">{count} were already in it.</string>
-    <string name="dictate__custom_words_import_nofit" comment="Import dialog: how many words were left out because the prompt budget is full, and why. Placeholders: the count and the token budget.">{count} were left out — the speech model reads only about {budget} tokens of context, so they would have been sent with every dictation and ignored.</string>
-    <string name="dictate__custom_words_import_unusable" comment="Import dialog: how many lines held nothing usable. Placeholder inserts the count.">{count} lines held nothing to spell and were skipped.</string>
-    <string name="dictate__custom_words_import_truncated" comment="Import dialog: the file was longer than the app reads. Placeholder inserts the entry limit.">Only the first {count} entries of the file were read.</string>
-    <string name="dictate__custom_words_import_also_dictionary" comment="Checkbox in the import dialog: also write the words into the personal typing dictionary">Also add them to the personal dictionary</string>
-    <string name="dictate__custom_words_import_also_dictionary_summary" comment="Explains the difference between the two lists, because an import is where people expect one to do both">This list only tells the speech model how to spell a word. The personal dictionary is what the keyboard uses while you type — it has no length limit, so every word in the file goes in, not only the ones that fit above.</string>
-    <string name="dictate__custom_words_import_empty" comment="Toast when the chosen file held no usable words at all">No words found in that file</string>
-    <string name="dictate__custom_words_import_done" comment="Toast after words were added. Placeholder inserts how many.">Added {count} words</string>
-    <string name="dictate__custom_words_import_done_dictionary" comment="Toast after words were added to both lists. Placeholders: how many reached the speech vocabulary and how many the personal dictionary.">Added {count} words, and {dict} to your personal dictionary</string>
-    <string name="dictate__file_unreadable" comment="Toast when a chosen file could not be read">That file could not be read</string>
-    <string name="dictate__file_export_done" comment="Toast after a file was written successfully">File saved</string>
-    <string name="dictate__file_export_failed" comment="Toast when a file could not be written">Could not write that file</string>
+    <string name="dictate__custom_words_import_title" comment="Title of the dialog shown before an imported word list is written">匯入詞彙清單</string>
+    <string name="dictate__custom_words_import_fitting" comment="Import dialog: how many new words from the file fit into the list. Placeholder inserts the count.">此檔案中有 {count} 個新詞彙可放進你的清單。</string>
+    <string name="dictate__custom_words_import_known" comment="Import dialog: how many words were already in the list. Placeholder inserts the count.">其中 {count} 個已經在清單裡。</string>
+    <string name="dictate__custom_words_import_nofit" comment="Import dialog: how many words were left out because the prompt budget is full, and why. Placeholders: the count and the token budget.">另有 {count} 個未加入 —— 語音模型僅讀取約 {budget} 個 tokens 的上下文，放進去也會在每次語音輸入時被忽略。</string>
+    <string name="dictate__custom_words_import_unusable" comment="Import dialog: how many lines held nothing usable. Placeholder inserts the count.">有 {count} 行沒有可用的拼寫詞彙，已略過。</string>
+    <string name="dictate__custom_words_import_truncated" comment="Import dialog: the file was longer than the app reads. Placeholder inserts the entry limit.">僅讀取了檔案的前 {count} 筆項目。</string>
+    <string name="dictate__custom_words_import_also_dictionary" comment="Checkbox in the import dialog: also write the words into the personal typing dictionary">同時加入個人字典</string>
+    <string name="dictate__custom_words_import_also_dictionary_summary" comment="Explains the difference between the two lists, because an import is where people expect one to do both">這份清單只負責告訴語音模型某個詞怎麼拼；「個人字典」則是鍵盤打字時使用的詞庫 —— 它沒有長度限制，所以檔案裡的每一個詞都會寫入，不只限於上方可容納的數量。</string>
+    <string name="dictate__custom_words_import_empty" comment="Toast when the chosen file held no usable words at all">該檔案中找不到任何詞彙</string>
+    <string name="dictate__custom_words_import_done" comment="Toast after words were added. Placeholder inserts how many.">已新增 {count} 個詞彙</string>
+    <string name="dictate__custom_words_import_done_dictionary" comment="Toast after words were added to both lists. Placeholders: how many reached the speech vocabulary and how many the personal dictionary.">已新增 {count} 個詞彙，並將 {dict} 個加入個人字典</string>
+    <string name="dictate__file_unreadable" comment="Toast when a chosen file could not be read">無法讀取該檔案</string>
+    <string name="dictate__file_export_done" comment="Toast after a file was written successfully">檔案已儲存</string>
+    <string name="dictate__file_export_failed" comment="Toast when a file could not be written">無法寫入該檔案</string>
 
     <!-- Dictate custom mappings: deterministic find-and-replace on the transcript (issue #129) -->
-    <string name="dictate__mappings_title" comment="Title of the custom find-and-replace mappings screen">Custom mappings</string>
-    <string name="dictate__mappings_entry_summary" comment="Summary on the row that opens the mappings screen">Find-and-replace rules applied to the transcript</string>
-    <string name="dictate__mappings_group" comment="Group title on the mappings screen">Replacement rules</string>
-    <string name="dictate__mappings_empty_title" comment="Shown when no mapping rules exist yet">No mappings yet</string>
-    <string name="dictate__mappings_empty_summary" comment="Summary when no mapping rules exist">Add a rule to auto-replace words or phrases in every transcript — exact, no AI tokens.</string>
-    <string name="dictate__mappings_add" comment="Button to add a new mapping rule">Add mapping</string>
-    <string name="dictate__mappings_opt_wholeword" comment="Tag: rule matches whole words only">Whole word</string>
-    <string name="dictate__mappings_opt_substring" comment="Tag: rule matches anywhere, including inside words">Anywhere</string>
-    <string name="dictate__mappings_opt_casesensitive" comment="Tag: rule is case-sensitive">Case-sensitive</string>
-    <string name="dictate__mappings_opt_caseinsensitive" comment="Tag: rule ignores case">Ignores case</string>
-    <string name="dictate__mappings_editor_title" comment="Title of the add/edit mapping dialog">Mapping</string>
-    <string name="dictate__mappings_field_from" comment="Label for the text to search for">Replace</string>
-    <string name="dictate__mappings_field_from_placeholder" comment="Placeholder for the search text">e.g. github</string>
-    <string name="dictate__mappings_field_to" comment="Label for the replacement text">With</string>
-    <string name="dictate__mappings_field_to_placeholder" comment="Placeholder for the replacement text">e.g. GitHub</string>
-    <string name="dictate__mappings_wholeword_title" comment="Toggle: match whole words only">Whole word only</string>
-    <string name="dictate__mappings_wholeword_summary" comment="Summary for the whole-word toggle">Only replace standalone words, not matches inside longer words.</string>
-    <string name="dictate__mappings_matchcase_title" comment="Toggle: case-sensitive matching">Match case</string>
-    <string name="dictate__mappings_matchcase_summary" comment="Summary for the match-case toggle">Only replace when the capitalization matches exactly.</string>
-    <string name="dictate__mappings_import" comment="Menu option that imports find-and-replace rules from a file">Import rules</string>
-    <string name="dictate__mappings_export" comment="Menu option that saves the find-and-replace rules as a file">Export rules</string>
+    <string name="dictate__mappings_title" comment="Title of the custom find-and-replace mappings screen">自訂替換規則</string>
+    <string name="dictate__mappings_entry_summary" comment="Summary on the row that opens the mappings screen">套用到轉錄結果的尋找與取代規則</string>
+    <string name="dictate__mappings_group" comment="Group title on the mappings screen">替換規則</string>
+    <string name="dictate__mappings_empty_title" comment="Shown when no mapping rules exist yet">尚無替換規則</string>
+    <string name="dictate__mappings_empty_summary" comment="Summary when no mapping rules exist">新增規則，在每次轉錄後自動替換特定字詞或片語 —— 精準比對，不消耗 AI tokens。</string>
+    <string name="dictate__mappings_add" comment="Button to add a new mapping rule">新增規則</string>
+    <string name="dictate__mappings_opt_wholeword" comment="Tag: rule matches whole words only">完整字詞</string>
+    <string name="dictate__mappings_opt_substring" comment="Tag: rule matches anywhere, including inside words">任何位置</string>
+    <string name="dictate__mappings_opt_casesensitive" comment="Tag: rule is case-sensitive">區分大小寫</string>
+    <string name="dictate__mappings_opt_caseinsensitive" comment="Tag: rule ignores case">不分大小寫</string>
+    <string name="dictate__mappings_editor_title" comment="Title of the add/edit mapping dialog">替換規則</string>
+    <string name="dictate__mappings_field_from" comment="Label for the text to search for">取代</string>
+    <string name="dictate__mappings_field_from_placeholder" comment="Placeholder for the search text">例如：github</string>
+    <string name="dictate__mappings_field_to" comment="Label for the replacement text">替換為</string>
+    <string name="dictate__mappings_field_to_placeholder" comment="Placeholder for the replacement text">例如：GitHub</string>
+    <string name="dictate__mappings_wholeword_title" comment="Toggle: match whole words only">僅限完整字詞</string>
+    <string name="dictate__mappings_wholeword_summary" comment="Summary for the whole-word toggle">只替換獨立的完整字詞，不替換較長單字內部的片段。</string>
+    <string name="dictate__mappings_matchcase_title" comment="Toggle: case-sensitive matching">區分大小寫</string>
+    <string name="dictate__mappings_matchcase_summary" comment="Summary for the match-case toggle">僅在大小寫完全相符時才進行替換。</string>
+    <string name="dictate__mappings_import" comment="Menu option that imports find-and-replace rules from a file">匯入規則</string>
+    <string name="dictate__mappings_export" comment="Menu option that saves the find-and-replace rules as a file">匯出規則</string>
     <string name="dictate__mappings_export_filename" comment="Default file name for the mapping rules export">dictate_mappings.tsv</string>
-    <string name="dictate__mappings_import_title" comment="Title of the dialog shown before imported rules are written">Import rules</string>
-    <string name="dictate__mappings_import_message" comment="Import dialog: how many new rules the file holds. Placeholder inserts the count.">{count} new rules from this file. Add them to your list?</string>
-    <string name="dictate__mappings_import_known" comment="Import dialog: how many rules were already in the list. Placeholder inserts the count.">{count} were already in it.</string>
-    <string name="dictate__mappings_import_unusable" comment="Import dialog: how many lines named no replacement. Placeholder inserts the count.">{count} lines named no replacement and were skipped.</string>
-    <string name="dictate__mappings_import_format" comment="Import dialog: the file format the importer expects">One rule per line: what is heard, a tab, what it should become.</string>
-    <string name="dictate__mappings_import_empty" comment="Toast when the chosen file held no usable rules">No rules found in that file</string>
-    <string name="dictate__mappings_import_done" comment="Toast after rules were added. Placeholder inserts how many.">Added {count} rules</string>
+    <string name="dictate__mappings_import_title" comment="Title of the dialog shown before imported rules are written">匯入規則</string>
+    <string name="dictate__mappings_import_message" comment="Import dialog: how many new rules the file holds. Placeholder inserts the count.">此檔案包含 {count} 條新規則，要加入你的清單嗎？</string>
+    <string name="dictate__mappings_import_known" comment="Import dialog: how many rules were already in the list. Placeholder inserts the count.">其中 {count} 條已經在清單裡。</string>
+    <string name="dictate__mappings_import_unusable" comment="Import dialog: how many lines named no replacement. Placeholder inserts the count.">有 {count} 行未指定替換內容，已略過。</string>
+    <string name="dictate__mappings_import_format" comment="Import dialog: the file format the importer expects">每行一條規則：聽到的詞、Tab 分隔字元、要替換成的內容。</string>
+    <string name="dictate__mappings_import_empty" comment="Toast when the chosen file held no usable rules">該檔案中找不到可用的規則</string>
+    <string name="dictate__mappings_import_done" comment="Toast after rules were added. Placeholder inserts how many.">已新增 {count} 條規則</string>
 
     <!-- Dictate rewording (AI) settings -->
-    <string name="dictate__rewording_group" comment="Group title for the rewording (AI editing) stage on the main Dictate screen">Rewording (AI editing)</string>
-    <string name="dictate__rewording_title" comment="Title of the rewording settings screen">Rewording (AI)</string>
-    <string name="dictate__reasoning_effort_title" comment="Title of the reasoning-effort setting (only affects reasoning models like o-series/GPT-5/Grok)">Reasoning effort</string>
-    <string name="dictate__reasoning_effort_off" comment="Reasoning-effort option: send nothing, so the default of the provider applies (which may be thinking)">Provider default</string>
-    <string name="dictate__reasoning_effort_none" comment="Reasoning-effort option: ask the model not to think at all (sends reasoning_effort none)">No thinking</string>
-    <string name="dictate__reasoning_effort_off_summary" comment="Summary for the off reasoning-effort option">Provider default — leave off for non-reasoning models</string>
-    <string name="dictate__reasoning_effort_minimal" comment="Reasoning-effort option: minimal">Minimal</string>
-    <string name="dictate__reasoning_effort_minimal_summary" comment="Summary for minimal reasoning effort">Fastest, least thinking</string>
-    <string name="dictate__reasoning_effort_low" comment="Reasoning-effort option: low">Low</string>
-    <string name="dictate__reasoning_effort_low_summary" comment="Summary for low reasoning effort">Less thinking, faster</string>
-    <string name="dictate__reasoning_effort_medium" comment="Reasoning-effort option: medium">Medium</string>
-    <string name="dictate__reasoning_effort_medium_summary" comment="Summary for medium reasoning effort">Balanced thinking and speed</string>
-    <string name="dictate__reasoning_effort_high" comment="Reasoning-effort option: high">High</string>
-    <string name="dictate__reasoning_effort_xhigh" comment="Reasoning-effort option above high, the provider word xhigh (OpenAI, xAI, DeepSeek)">Extra high</string>
-    <string name="dictate__reasoning_effort_max" comment="Reasoning-effort option: the provider word max, the most thinking a model offers">Maximum</string>
-    <string name="dictate__reasoning_effort_app_default" comment="Reasoning-effort option: the default, when the app itself sends a value for this model; {name} is that value, e.g. No thinking">{name} (default)</string>
-    <string name="dictate__reasoning_effort_high_summary" comment="Summary for high reasoning effort">Most thinking, slower</string>
-    <string name="dictate__reasoning_effort_custom" comment="Reasoning-effort option: a user-entered custom value">Custom</string>
-    <string name="dictate__stats_title" comment="Title of the dictation statistics screen">Statistics</string>
-    <string name="dictate__stats_menu_summary" comment="Summary for the statistics entry in Dictate settings">Words, time saved, streak and more</string>
+    <string name="dictate__rewording_group" comment="Group title for the rewording (AI editing) stage on the main Dictate screen">改寫（AI 編輯）</string>
+    <string name="dictate__rewording_title" comment="Title of the rewording settings screen">改寫（AI）</string>
+    <string name="dictate__reasoning_effort_title" comment="Title of the reasoning-effort setting (only affects reasoning models like o-series/GPT-5/Grok)">推理深度</string>
+    <string name="dictate__reasoning_effort_off" comment="Reasoning-effort option: send nothing, so the default of the provider applies (which may be thinking)">服務商預設</string>
+    <string name="dictate__reasoning_effort_none" comment="Reasoning-effort option: ask the model not to think at all (sends reasoning_effort none)">不進行思考</string>
+    <string name="dictate__reasoning_effort_off_summary" comment="Summary for the off reasoning-effort option">服務商預設值 —— 非推理模型請維持此設定</string>
+    <string name="dictate__reasoning_effort_minimal" comment="Reasoning-effort option: minimal">極簡</string>
+    <string name="dictate__reasoning_effort_minimal_summary" comment="Summary for minimal reasoning effort">最快，最少思考</string>
+    <string name="dictate__reasoning_effort_low" comment="Reasoning-effort option: low">低</string>
+    <string name="dictate__reasoning_effort_low_summary" comment="Summary for low reasoning effort">較少思考，速度較快</string>
+    <string name="dictate__reasoning_effort_medium" comment="Reasoning-effort option: medium">中</string>
+    <string name="dictate__reasoning_effort_medium_summary" comment="Summary for medium reasoning effort">平衡思考與速度</string>
+    <string name="dictate__reasoning_effort_high" comment="Reasoning-effort option: high">高</string>
+    <string name="dictate__reasoning_effort_xhigh" comment="Reasoning-effort option above high, the provider word xhigh (OpenAI, xAI, DeepSeek)">極高</string>
+    <string name="dictate__reasoning_effort_max" comment="Reasoning-effort option: the provider word max, the most thinking a model offers">最高</string>
+    <string name="dictate__reasoning_effort_app_default" comment="Reasoning-effort option: the default, when the app itself sends a value for this model; {name} is that value, e.g. No thinking">{name}（預設）</string>
+    <string name="dictate__reasoning_effort_high_summary" comment="Summary for high reasoning effort">最多思考，速度較慢</string>
+    <string name="dictate__reasoning_effort_custom" comment="Reasoning-effort option: a user-entered custom value">自訂</string>
+    <string name="dictate__stats_title" comment="Title of the dictation statistics screen">統計資料</string>
+    <string name="dictate__stats_menu_summary" comment="Summary for the statistics entry in Dictate settings">字數、節省時間、連續天數等資訊</string>
     <!-- Transcription history / activity log (issue #140) -->
-    <string name="dictate__history_title" comment="Title of the transcription history screen and in-keyboard panel">History</string>
-    <string name="dictate__history_original" comment="Label above the raw transcript, shown when a prompt rewrote it">Original</string>
-    <string name="dictate__history_result" comment="Label above the text produced by a prompt">Result</string>
-    <string name="dictate__history_hold_for_original" comment="Hint in the history panel: long-press a row to insert the raw transcript">hold for original</string>
-    <string name="dictate__history_menu_summary" comment="Summary for the history entry in Dictate settings">Replay, re-insert and manage past dictations</string>
-    <string name="dictate__history_empty" comment="Shown when no dictations have been recorded yet">No dictations yet — your recent dictations will appear here.</string>
-    <string name="dictate__history_enable_title" comment="Toggle: capture finished dictations into the history">Keep a history</string>
-    <string name="dictate__history_enable_summary" comment="Short summary for the keep-a-history toggle">Log dictations to re-insert or review later.</string>
-    <string name="dictate__history_audio_title" comment="Toggle: also keep the source audio of each dictation">Keep audio</string>
-    <string name="dictate__history_audio_summary" comment="Short summary for the keep-audio toggle">Replay and re-transcribe (~1.9 MB/min).</string>
-    <string name="dictate__history_retention_title" comment="Row + dialog title for the history storage limits">Storage limits</string>
-    <string name="dictate__history_max_entries_title" comment="Retention setting: how many entries to keep">Maximum entries</string>
-    <string name="dictate__history_max_age_title" comment="Retention setting: auto-delete entries older than N days">Auto-delete after</string>
-    <string name="dictate__history_audio_budget_title" comment="Retention setting: total storage budget for retained audio">Audio storage limit</string>
-    <string name="dictate__history_age_days" comment="Retention value. {days} is a number of days">{days} days</string>
-    <string name="dictate__history_age_never" comment="Retention value: keep entries forever">No limit</string>
-    <string name="dictate__history_failed" comment="Placeholder text for a logged dictation whose transcription failed; its audio can be re-transcribed">Transcription failed — re-transcribe to retry</string>
-    <string name="dictate__history_search" comment="Placeholder in the history search field">Search history</string>
-    <string name="dictate__history_disk_usage" comment="Disk-usage line on the history screen. {size} is a file size like 12.3 MB">Retained audio: {size}</string>
-    <string name="dictate__history_audio_missing" comment="Shown when a stored recording can no longer be played back">Recording is no longer available.</string>
-    <string name="dictate__history_copied" comment="Toast confirmation after copying a transcript">Copied to clipboard</string>
-    <string name="dictate__history_play" comment="Accessibility description for the play/stop recording button">Play recording</string>
-    <string name="dictate__history_copy" comment="Accessibility description for the copy transcript button">Copy transcript</string>
-    <string name="dictate__history_delete" comment="Accessibility description for the delete entry button">Delete entry</string>
-    <string name="dictate__history_clear_title" comment="Title of the clear-history confirmation dialog">Clear history?</string>
-    <string name="dictate__history_clear_message" comment="Body of the clear-history confirmation dialog">This permanently deletes all history entries and any retained audio.</string>
-    <string name="dictate__history_clear_confirm" comment="Confirm button that clears the whole history">Clear all</string>
-    <string name="dictate__history_export_title" comment="Title of the folder-export dialog on the history screen">Export to a folder</string>
-    <string name="dictate__history_export_summary" comment="Intro line of the folder-export dialog">Every new dictation is also written into this folder as a plain text file, the moment it is finished.</string>
-    <string name="dictate__history_export_folder" comment="Label above the chosen export folder">Folder</string>
-    <string name="dictate__history_export_folder_unset" comment="Shown in place of the folder name when no export folder has been chosen">Not set</string>
-    <string name="dictate__history_export_folder_unavailable" comment="Shown when the export folder can no longer be written to (permission revoked, storage removed, restored backup)">Folder unavailable — pick it again</string>
-    <string name="dictate__history_export_choose" comment="Button that opens the folder picker for the first time">Choose folder</string>
-    <string name="dictate__history_export_change" comment="Button that opens the folder picker to swap the export folder">Change</string>
-    <string name="dictate__history_export_disconnect" comment="Button that stops the folder export and gives up access to the folder">Disconnect</string>
-    <string name="dictate__history_export_audio_title" comment="Toggle: also write the recording next to the exported transcript">Also export the recording</string>
-    <string name="dictate__history_export_audio_summary" comment="Summary of the export-the-recording toggle when it can be used">Saves the audio next to the transcript.</string>
-    <string name="dictate__history_export_audio_needs_retention" comment="Summary of the export-the-recording toggle while Keep audio is off, which leaves no recording to export">Needs “Keep audio” to be switched on.</string>
-    <string name="dictate__history_export_all" comment="Button that writes the whole history into the export folder in one pass">Export everything now</string>
-    <string name="dictate__history_export_all_summary" comment="Explains what the export-everything button is for">Writes every dictation that is not in the folder yet — the ones from before you picked it, and any the app could not write while the folder was unreachable.</string>
-    <string name="dictate__history_export_all_result" comment="Summary after an export-everything run. {written}, {skipped} and {failed} are counts">{written} written, {skipped} already there, {failed} failed</string>
-    <string name="dictate__history_export_last_failure" comment="Warning that a dictation could not be written to the folder. {when} is a relative time like 5 minutes ago">A write failed {when}. “Export everything now” puts what is missing back.</string>
-    <string name="dictate__history_export_warning_title" comment="Title of the dialog shown before the export folder is picked for the first time">What lands there</string>
-    <string name="dictate__history_export_warning_message" comment="Body of the dialog shown before the export folder is picked for the first time">The folder will hold the text of every dictation you make from now on, and the recordings too if you switch that on. Anything that syncs it — a cloud client, a backup tool, another app — carries those transcripts off this device.\n\nDictate keeps writing until you disconnect the folder, and it never deletes from it: entries that drop out of the history stay in the folder. Password and incognito fields are never recorded, and so are never exported.</string>
-    <string name="dictate__history_export_needs_history" comment="Shown when the export is opened while the history is switched off">Folder export writes what the history records, so the history has to be switched on for it.</string>
-    <string name="dictate__history_export_enable_history" comment="Button that switches the history on from the export dialog">Turn on history</string>
-    <string name="dictate__history_export_pick_failed" comment="Toast shown when Android refused write access to the picked folder">Could not get write access to that folder</string>
-    <string name="dictate__stats_empty" comment="Shown on the statistics screen before any dictation exists">No dictations yet — your stats will appear here once you start dictating.</string>
-    <string name="dictate__stats_time_saved" comment="Label of the hero time-saved statistic">Time saved</string>
-    <string name="dictate__stats_time_saved_sub" comment="Subtitle under the time-saved figure">vs. typing on a keyboard</string>
-    <string name="dictate__stats_dictations" comment="Stat card label: number of dictations">Dictations</string>
-    <string name="dictate__stats_words" comment="Stat card label: total words transcribed">Words</string>
-    <string name="dictate__stats_chars" comment="Stat card label: total characters transcribed">Characters</string>
-    <string name="dictate__stats_spoken" comment="Stat card label: total time spent speaking">Time spoken</string>
-    <string name="dictate__stats_avg_words" comment="Stat card label: average words per dictation">Avg words / dictation</string>
-    <string name="dictate__stats_pace" comment="Stat card label: speaking pace">Speaking pace</string>
-    <string name="dictate__stats_pace_unit" comment="Unit abbreviation for speaking pace (words per minute)">wpm</string>
-    <string name="dictate__stats_rewordings" comment="Stat card label: number of AI rewordings applied">Rewordings</string>
-    <string name="dictate__stats_streak" comment="Stat card label: consecutive-day dictation streak">Day streak</string>
-    <string name="dictate__stats_streak_best" comment="Sub-label showing the best day streak; %d is the number">Best: %d</string>
-    <string name="dictate__stats_activity" comment="Title of the 7-day activity chart">Last 7 days</string>
-    <string name="dictate__stats_since" comment="Caption showing when tracking started; %s is a date">Tracking since %s</string>
-    <string name="dictate__stats_reset" comment="Button to reset all statistics">Reset statistics</string>
-    <string name="dictate__stats_reset_confirm_title" comment="Reset-statistics confirmation dialog title">Reset statistics?</string>
-    <string name="dictate__stats_reset_confirm_msg" comment="Reset-statistics confirmation dialog message">This permanently clears all your dictation statistics and can\'t be undone.</string>
-    <string name="dictate__stats_share" comment="Button to share your statistics">Share</string>
+    <string name="dictate__history_title" comment="Title of the transcription history screen and in-keyboard panel">紀錄</string>
+    <string name="dictate__history_original" comment="Label above the raw transcript, shown when a prompt rewrote it">原文</string>
+    <string name="dictate__history_result" comment="Label above the text produced by a prompt">結果</string>
+    <string name="dictate__history_hold_for_original" comment="Hint in the history panel: long-press a row to insert the raw transcript">長按可插入原文</string>
+    <string name="dictate__history_menu_summary" comment="Summary for the history entry in Dictate settings">重播、重新插入與管理過去的語音輸入</string>
+    <string name="dictate__history_empty" comment="Shown when no dictations have been recorded yet">尚無語音輸入紀錄 —— 你最近的語音輸入會顯示在這裡。</string>
+    <string name="dictate__history_enable_title" comment="Toggle: capture finished dictations into the history">保留紀錄</string>
+    <string name="dictate__history_enable_summary" comment="Short summary for the keep-a-history toggle">記錄語音輸入內容，以便日後重新插入或檢視。</string>
+    <string name="dictate__history_audio_title" comment="Toggle: also keep the source audio of each dictation">保留音訊</string>
+    <string name="dictate__history_audio_summary" comment="Short summary for the keep-audio toggle">可重播與重新轉錄（約 1.9 MB/分鐘）。</string>
+    <string name="dictate__history_retention_title" comment="Row + dialog title for the history storage limits">儲存上限</string>
+    <string name="dictate__history_max_entries_title" comment="Retention setting: how many entries to keep">最多保留筆數</string>
+    <string name="dictate__history_max_age_title" comment="Retention setting: auto-delete entries older than N days">自動刪除天數</string>
+    <string name="dictate__history_audio_budget_title" comment="Retention setting: total storage budget for retained audio">音訊儲存空間上限</string>
+    <string name="dictate__history_age_days" comment="Retention value. {days} is a number of days">{days} 天</string>
+    <string name="dictate__history_age_never" comment="Retention value: keep entries forever">無限制</string>
+    <string name="dictate__history_failed" comment="Placeholder text for a logged dictation whose transcription failed; its audio can be re-transcribed">轉錄失敗 —— 可重新轉錄以重試</string>
+    <string name="dictate__history_search" comment="Placeholder in the history search field">搜尋紀錄</string>
+    <string name="dictate__history_disk_usage" comment="Disk-usage line on the history screen. {size} is a file size like 12.3 MB">已保留音訊：{size}</string>
+    <string name="dictate__history_audio_missing" comment="Shown when a stored recording can no longer be played back">找不到這段已儲存的錄音。</string>
+    <string name="dictate__history_copied" comment="Toast confirmation after copying a transcript">已複製到剪貼簿</string>
+    <string name="dictate__history_play" comment="Accessibility description for the play/stop recording button">播放錄音</string>
+    <string name="dictate__history_copy" comment="Accessibility description for the copy transcript button">複製轉錄內容</string>
+    <string name="dictate__history_delete" comment="Accessibility description for the delete entry button">刪除項目</string>
+    <string name="dictate__history_clear_title" comment="Title of the clear-history confirmation dialog">清除紀錄嗎？</string>
+    <string name="dictate__history_clear_message" comment="Body of the clear-history confirmation dialog">這會永久刪除所有歷史紀錄及任何保留的音訊。</string>
+    <string name="dictate__history_clear_confirm" comment="Confirm button that clears the whole history">全部清除</string>
+    <string name="dictate__history_export_title" comment="Title of the folder-export dialog on the history screen">匯出到資料夾</string>
+    <string name="dictate__history_export_summary" comment="Intro line of the folder-export dialog">每次新的語音輸入完成後，也會立即以純文字檔形式寫入這個資料夾。</string>
+    <string name="dictate__history_export_folder" comment="Label above the chosen export folder">資料夾</string>
+    <string name="dictate__history_export_folder_unset" comment="Shown in place of the folder name when no export folder has been chosen">尚未設定</string>
+    <string name="dictate__history_export_folder_unavailable" comment="Shown when the export folder can no longer be written to (permission revoked, storage removed, restored backup)">無法存取資料夾 —— 請重新選取</string>
+    <string name="dictate__history_export_choose" comment="Button that opens the folder picker for the first time">選擇資料夾</string>
+    <string name="dictate__history_export_change" comment="Button that opens the folder picker to swap the export folder">變更</string>
+    <string name="dictate__history_export_disconnect" comment="Button that stops the folder export and gives up access to the folder">中斷連結</string>
+    <string name="dictate__history_export_audio_title" comment="Toggle: also write the recording next to the exported transcript">同時匯出錄音</string>
+    <string name="dictate__history_export_audio_summary" comment="Summary of the export-the-recording toggle when it can be used">將音訊檔儲存在轉錄文字檔旁邊。</string>
+    <string name="dictate__history_export_audio_needs_retention" comment="Summary of the export-the-recording toggle while Keep audio is off, which leaves no recording to export">需要開啟「保留音訊」才能使用。</string>
+    <string name="dictate__history_export_all" comment="Button that writes the whole history into the export folder in one pass">立即全部匯出</string>
+    <string name="dictate__history_export_all_summary" comment="Explains what the export-everything button is for">將所有尚未在資料夾內的語音輸入寫入 —— 包含你選取資料夾前的紀錄，以及先前資料夾無法存取時漏寫的項目。</string>
+    <string name="dictate__history_export_all_result" comment="Summary after an export-everything run. {written}, {skipped} and {failed} are counts">已寫入 {written} 筆，{skipped} 筆已存在，{failed} 筆失敗</string>
+    <string name="dictate__history_export_last_failure" comment="Warning that a dictation could not be written to the folder. {when} is a relative time like 5 minutes ago">{when}有一筆寫入失敗。點「立即全部匯出」可補齊遺漏項目。</string>
+    <string name="dictate__history_export_warning_title" comment="Title of the dialog shown before the export folder is picked for the first time">會寫入哪些內容</string>
+    <string name="dictate__history_export_warning_message" comment="Body of the dialog shown before the export folder is picked for the first time">從現在起，這個資料夾會保存你每次語音輸入的文字；若你開啟了匯出錄音，也會一併保存音訊檔。任何會同步此資料夾的程式 —— 如雲端硬碟用戶端、備份工具或其他應用程式 —— 都會把這些轉錄內容帶離這台裝置。\n\n在你中斷連結之前，Dictate 會持續寫入，且永遠不會從資料夾刪除任何檔案：即使紀錄因上限而從 App 內移除，仍會留在資料夾中。密碼與無痕欄位永遠不會被記錄，因此也不會被匯出。</string>
+    <string name="dictate__history_export_needs_history" comment="Shown when the export is opened while the history is switched off">資料夾匯出寫入的是紀錄中的內容，因此必須先開啟紀錄功能才能使用。</string>
+    <string name="dictate__history_export_enable_history" comment="Button that switches the history on from the export dialog">開啟紀錄</string>
+    <string name="dictate__history_export_pick_failed" comment="Toast shown when Android refused write access to the picked folder">無法取得該資料夾的寫入權限</string>
+    <string name="dictate__stats_empty" comment="Shown on the statistics screen before any dictation exists">尚無語音輸入紀錄 —— 開始使用語音輸入後，統計資料就會顯示在這裡。</string>
+    <string name="dictate__stats_time_saved" comment="Label of the hero time-saved statistic">節省時間</string>
+    <string name="dictate__stats_time_saved_sub" comment="Subtitle under the time-saved figure">相較於使用鍵盤打字</string>
+    <string name="dictate__stats_dictations" comment="Stat card label: number of dictations">語音輸入次數</string>
+    <string name="dictate__stats_words" comment="Stat card label: total words transcribed">字數</string>
+    <string name="dictate__stats_chars" comment="Stat card label: total characters transcribed">字元數</string>
+    <string name="dictate__stats_spoken" comment="Stat card label: total time spent speaking">說話總時間</string>
+    <string name="dictate__stats_avg_words" comment="Stat card label: average words per dictation">平均字數／次</string>
+    <string name="dictate__stats_pace" comment="Stat card label: speaking pace">說話速度</string>
+    <string name="dictate__stats_pace_unit" comment="Unit abbreviation for speaking pace (words per minute)">字/分</string>
+    <string name="dictate__stats_rewordings" comment="Stat card label: number of AI rewordings applied">改寫次數</string>
+    <string name="dictate__stats_streak" comment="Stat card label: consecutive-day dictation streak">連續使用天數</string>
+    <string name="dictate__stats_streak_best" comment="Sub-label showing the best day streak; %d is the number">最佳紀錄：%d</string>
+    <string name="dictate__stats_activity" comment="Title of the 7-day activity chart">過去 7 天</string>
+    <string name="dictate__stats_since" comment="Caption showing when tracking started; %s is a date">自 %s 起開始統計</string>
+    <string name="dictate__stats_reset" comment="Button to reset all statistics">重設統計資料</string>
+    <string name="dictate__stats_reset_confirm_title" comment="Reset-statistics confirmation dialog title">確定要重設統計資料嗎？</string>
+    <string name="dictate__stats_reset_confirm_msg" comment="Reset-statistics confirmation dialog message">這會永久清除所有語音輸入統計資料，且無法復原。</string>
+    <string name="dictate__stats_share" comment="Button to share your statistics">分享</string>
     <string name="dictate__stats_share_text" comment="Shared text; %1$s time saved, %2$s dictations, %3$s words">我用 Dictate 節省了 %1$s — %2$s 次語音輸入、%3$s 個字。🎤</string>
-    <string name="dictate__stats_view" comment="Button that opens the statistics screen">View statistics</string>
-    <string name="dictate__stats_milestones_title" comment="Toggle title for one-time milestone celebrations">Milestone celebrations</string>
-    <string name="dictate__stats_milestones_summary" comment="Toggle summary for milestone celebrations">Celebrate once when you reach a saved-time or dictation milestone</string>
-    <string name="dictate__stats_milestone_title" comment="Milestone celebration dialog title">Milestone reached 🎉</string>
-    <string name="dictate__stats_milestone_time" comment="Milestone dialog body for a saved-time milestone; %s is a duration">You’ve saved %s with Dictate — nice work!</string>
-    <string name="dictate__stats_milestone_count" comment="Milestone dialog body for a dictation-count milestone; %s is a number">You’ve reached %s dictations with Dictate!</string>
-    <string name="dictate__rewording_summary_on" comment="Summary when rewording is enabled">On – reword, translate and format with AI</string>
-    <string name="dictate__rewording_summary_off" comment="Summary when rewording is disabled">Off</string>
-    <string name="dictate__rewording_enabled_title" comment="Setting: master toggle for rewording">Enable rewording</string>
-    <string name="dictate__rewording_enabled_summary" comment="Summary for the rewording master toggle">Reword, translate and format your text with an AI model</string>
-    <string name="dictate__rewording_provider_group" comment="Group title for the rewording provider settings">AI provider</string>
-    <string name="dictate__rewording_provider_title" comment="Label for the rewording provider selector">Rewording provider</string>
-    <string name="dictate__rewording_api_key_title" comment="Label for the rewording API key field">Rewording API key</string>
-    <string name="dictate__rewording_api_key_reuse" comment="Summary shown when no separate rewording key is set">Same as transcription key</string>
-    <string name="dictate__rewording_model_title" comment="Label for the rewording model field">Rewording model</string>
-    <string name="dictate__manage_prompts_title" comment="Setting: open the prompt management screen">Manage prompts</string>
-    <string name="dictate__manage_prompts_summary" comment="Summary showing how many prompts exist. {count} is a number.">{count} prompts</string>
-    <string name="dictate__manage_prompts_summary_loading" comment="Summary shown while the prompt count is loading">Add, edit and remove your prompts</string>
-    <string name="dictate__command_word_title" comment="Setting: a spoken word that turns a dictation into an instruction">Command word</string>
-    <string name="dictate__command_word_off" comment="Summary shown when no command word is set, i.e. the feature is off">Off</string>
-    <string name="dictate__command_word_summary" comment="Summary for the command word setting. {word} is the word the user picked.">Dictations starting with “{word}” run as a live prompt</string>
+    <string name="dictate__stats_view" comment="Button that opens the statistics screen">檢視統計資料</string>
+    <string name="dictate__stats_milestones_title" comment="Toggle title for one-time milestone celebrations">里程碑慶祝</string>
+    <string name="dictate__stats_milestones_summary" comment="Toggle summary for milestone celebrations">當達成節省時間或語音輸入次數里程碑時慶祝一次</string>
+    <string name="dictate__stats_milestone_title" comment="Milestone celebration dialog title">達成里程碑 🎉</string>
+    <string name="dictate__stats_milestone_time" comment="Milestone dialog body for a saved-time milestone; %s is a duration">你用 Dictate 省下了 %s —— 做得好！</string>
+    <string name="dictate__stats_milestone_count" comment="Milestone dialog body for a dictation-count milestone; %s is a number">你已用 Dictate 完成 %s 次語音輸入！</string>
+    <string name="dictate__rewording_summary_on" comment="Summary when rewording is enabled">開啟 – 以 AI 改寫、翻譯與格式化文字</string>
+    <string name="dictate__rewording_summary_off" comment="Summary when rewording is disabled">關閉</string>
+    <string name="dictate__rewording_enabled_title" comment="Setting: master toggle for rewording">啟用改寫</string>
+    <string name="dictate__rewording_enabled_summary" comment="Summary for the rewording master toggle">使用 AI 模型改寫、翻譯與格式化你的文字</string>
+    <string name="dictate__rewording_provider_group" comment="Group title for the rewording provider settings">AI 服務商</string>
+    <string name="dictate__rewording_provider_title" comment="Label for the rewording provider selector">改寫服務商</string>
+    <string name="dictate__rewording_api_key_title" comment="Label for the rewording API key field">改寫 API 金鑰</string>
+    <string name="dictate__rewording_api_key_reuse" comment="Summary shown when no separate rewording key is set">與轉錄金鑰相同</string>
+    <string name="dictate__rewording_model_title" comment="Label for the rewording model field">改寫模型</string>
+    <string name="dictate__manage_prompts_title" comment="Setting: open the prompt management screen">管理提示</string>
+    <string name="dictate__manage_prompts_summary" comment="Summary showing how many prompts exist. {count} is a number.">{count} 個提示</string>
+    <string name="dictate__manage_prompts_summary_loading" comment="Summary shown while the prompt count is loading">新增、編輯與移除你的提示</string>
+    <string name="dictate__command_word_title" comment="Setting: a spoken word that turns a dictation into an instruction">指令詞</string>
+    <string name="dictate__command_word_off" comment="Summary shown when no command word is set, i.e. the feature is off">關閉</string>
+    <string name="dictate__command_word_summary" comment="Summary for the command word setting. {word} is the word the user picked.">以「{word}」開頭的語音輸入將作為即時提示執行</string>
     <string name="dictate__command_word_placeholder" comment="Example command word shown in the empty input field">Jarvis</string>
-    <string name="dictate__command_word_info_title" comment="Title of the info box explaining the command word">About the command word</string>
-    <string name="dictate__command_word_info_description" comment="Info box explaining what the command word does">Normally Dictate writes down what you say. With a command word set, a dictation that begins with it becomes an instruction instead: the word is removed and the rest is sent to the AI, together with the selected text if there is any.\n\n“Jarvis, make this more formal” rewrites the selection. “Jarvis, what is the capital of Japan” writes the answer into the field. It is the Live prompt button, reached by saying its name instead of tapping it.\n\nThe word only counts at the very start of a dictation and only as a whole word, so pick something you rarely begin a sentence with.</string>
-    <string name="dictate__auto_formatting_title" comment="Setting: turn spoken formatting cues into Markdown">Auto-formatting</string>
-    <string name="dictate__auto_formatting_summary" comment="Summary for the auto-formatting setting">Turn spoken formatting cues into Markdown (headings, lists, …)</string>
-    <string name="dictate__system_prompt_title" comment="Setting: base instruction sent with every rewording request">Rewording instruction</string>
-    <string name="dictate__system_prompt_custom_title" comment="Label for the custom system prompt field">Custom system prompt</string>
-    <string name="dictate__system_prompt_custom_placeholder" comment="Placeholder for the custom system prompt field">Guidance added to every rewording request</string>
-    <string name="dictate__system_prompt_info_title" comment="Row that reveals the built-in default rewording instruction">View default instruction</string>
-    <string name="dictate__system_prompt_info_description" comment="Explanation shown above the default rewording instruction">This instruction is added to every rewording request so the AI returns only the result you asked for — with no extra text before or after.</string>
+    <string name="dictate__command_word_info_title" comment="Title of the info box explaining the command word">關於指令詞</string>
+    <string name="dictate__command_word_info_description" comment="Info box explaining what the command word does">一般情況下，Dictate 會照實寫下你說的內容。設定指令詞後，只要語音輸入以該詞開頭，就會改為執行指令：系統會拿掉這個指令詞，並把剩餘內容連同你已選取的文字（若有）一併送給 AI。\n\n例如說「Jarvis, 把這段改得更正式」會改寫已選取的文字；說「Jarvis, 日本的首都是哪裡」則會直接把答案寫入欄位。這就相當於用說的來觸發「即時提示」按鈕，而不必用手點。\n\n只有當該詞出現在語音輸入的最開頭、且為完整字詞時才會觸發，因此建議挑選你平常很少用來起頭的詞。</string>
+    <string name="dictate__auto_formatting_title" comment="Setting: turn spoken formatting cues into Markdown">自動格式化</string>
+    <string name="dictate__auto_formatting_summary" comment="Summary for the auto-formatting setting">將口述的格式提示轉換為 Markdown（標題、清單等）</string>
+    <string name="dictate__system_prompt_title" comment="Setting: base instruction sent with every rewording request">改寫指令</string>
+    <string name="dictate__system_prompt_custom_title" comment="Label for the custom system prompt field">自訂系統提示</string>
+    <string name="dictate__system_prompt_custom_placeholder" comment="Placeholder for the custom system prompt field">每次改寫請求都會附加的引導說明</string>
+    <string name="dictate__system_prompt_info_title" comment="Row that reveals the built-in default rewording instruction">檢視預設指令</string>
+    <string name="dictate__system_prompt_info_description" comment="Explanation shown above the default rewording instruction">每次改寫請求都會加上這段指令，讓 AI 只回傳你要求的結果 —— 不在前後多加任何說明文字。</string>
 
     <!-- Dictate prompt management (CRUD) -->
-    <string name="dictate__prompts_title" comment="Title of the prompt management screen">Prompts</string>
-    <string name="dictate__prompts_empty" comment="Shown when no prompts exist yet">No prompts yet. Tap the button below to add one.</string>
-    <string name="dictate__prompt_add" comment="Title for adding a new prompt">Add prompt</string>
-    <string name="dictate__prompt_edit" comment="Title for editing an existing prompt">Edit prompt</string>
-    <string name="dictate__prompt_name_title" comment="Label for the prompt name field">Name</string>
-    <string name="dictate__prompt_name_placeholder" comment="Placeholder for the prompt name field">e.g. Fix grammar</string>
-    <string name="dictate__prompt_text_title" comment="Label for the prompt instruction field">Prompt</string>
-    <string name="dictate__prompt_text_placeholder" comment="Hint inside the prompt field: shown in place of the label while the field is empty and untouched, and as the placeholder afterwards. The brackets are the literal snippet syntax and must stay.">Instruction for the AI — or [text in brackets] to insert it as-is</string>
-    <string name="dictate__prompt_trigger_title" comment="Label for the typed shortcut field in the prompt editor">Typing shortcut (optional)</string>
-    <string name="dictate__prompt_trigger_placeholder" comment="Placeholder for the typed shortcut field, an example shortcut">e.g. ;sig</string>
-    <string name="dictate__prompt_trigger_error_invalid" comment="Error under the typing shortcut field when it contains spaces or is too long">A shortcut is one word without spaces, up to 32 characters.</string>
-    <string name="dictate__prompt_trigger_error_duplicate" comment="Error under the typing shortcut field when another prompt already uses it. {name} is that prompt’s name.">Already used by “{name}”.</string>
-    <string name="dictate__prompt_requires_selection_title" comment="Switch: prompt operates on the selected text">Requires selection</string>
-    <string name="dictate__prompt_requires_selection_summary" comment="Summary for the requires-selection switch">Operates on the selected text and replaces it</string>
-    <string name="dictate__prompt_auto_apply_title" comment="Switch: run the prompt automatically after each transcription">Apply automatically</string>
-    <string name="dictate__prompt_auto_apply_summary" comment="Summary for the auto-apply switch">Run this prompt on every transcription automatically</string>
-    <string name="dictate__prompt_reasoning_title" comment="Label for the per-prompt reasoning-effort dropdown in the prompt editor">Reasoning</string>
-    <string name="dictate__prompt_reasoning_default" comment="A prompt's reasoning option: use the reasoning effort set in the rewording provider's settings">Provider setting</string>
-    <string name="dictate__prompt_reasoning_little" comment="A prompt's reasoning option: the model should think a little, whatever the provider calls that">Little thinking</string>
-    <string name="dictate__prompt_reasoning_much" comment="A prompt's reasoning option: the model should think a lot, whatever the provider calls that">Much thinking</string>
-    <string name="dictate__prompt_badge_selection" comment="Accessibility label for the prompt list icon: prompt needs a selection">Requires selection</string>
-    <string name="dictate__prompt_badge_auto" comment="Accessibility label for the prompt list icon: prompt runs automatically">Applies automatically</string>
+    <string name="dictate__prompts_title" comment="Title of the prompt management screen">提示</string>
+    <string name="dictate__prompts_empty" comment="Shown when no prompts exist yet">還沒有任何提示。點一下下方按鈕新增一個。</string>
+    <string name="dictate__prompt_add" comment="Title for adding a new prompt">新增提示</string>
+    <string name="dictate__prompt_edit" comment="Title for editing an existing prompt">編輯提示</string>
+    <string name="dictate__prompt_name_title" comment="Label for the prompt name field">名稱</string>
+    <string name="dictate__prompt_name_placeholder" comment="Placeholder for the prompt name field">例如：修正文法</string>
+    <string name="dictate__prompt_text_title" comment="Label for the prompt instruction field">提示內容</string>
+    <string name="dictate__prompt_text_placeholder" comment="Hint inside the prompt field: shown in place of the label while the field is empty and untouched, and as the placeholder afterwards. The brackets are the literal snippet syntax and must stay.">給 AI 的指令 —— 或輸入 [方括號內的文字] 直接原樣插入</string>
+    <string name="dictate__prompt_trigger_title" comment="Label for the typed shortcut field in the prompt editor">打字捷徑（選填）</string>
+    <string name="dictate__prompt_trigger_placeholder" comment="Placeholder for the typed shortcut field, an example shortcut">例如：;sig</string>
+    <string name="dictate__prompt_trigger_error_invalid" comment="Error under the typing shortcut field when it contains spaces or is too long">捷徑必須是單一無空格的詞，最多 32 個字元。</string>
+    <string name="dictate__prompt_trigger_error_duplicate" comment="Error under the typing shortcut field when another prompt already uses it. {name} is that prompt’s name.">已被「{name}」使用。</string>
+    <string name="dictate__prompt_requires_selection_title" comment="Switch: prompt operates on the selected text">需要選取文字</string>
+    <string name="dictate__prompt_requires_selection_summary" comment="Summary for the requires-selection switch">對已選取的文字執行並取代它</string>
+    <string name="dictate__prompt_auto_apply_title" comment="Switch: run the prompt automatically after each transcription">自動套用</string>
+    <string name="dictate__prompt_auto_apply_summary" comment="Summary for the auto-apply switch">每次轉錄後自動執行此提示</string>
+    <string name="dictate__prompt_reasoning_title" comment="Label for the per-prompt reasoning-effort dropdown in the prompt editor">推理</string>
+    <string name="dictate__prompt_reasoning_default" comment="A prompt's reasoning option: use the reasoning effort set in the rewording provider's settings">依服務商設定</string>
+    <string name="dictate__prompt_reasoning_little" comment="A prompt's reasoning option: the model should think a little, whatever the provider calls that">少量思考</string>
+    <string name="dictate__prompt_reasoning_much" comment="A prompt's reasoning option: the model should think a lot, whatever the provider calls that">深度思考</string>
+    <string name="dictate__prompt_badge_selection" comment="Accessibility label for the prompt list icon: prompt needs a selection">需要選取文字</string>
+    <string name="dictate__prompt_badge_auto" comment="Accessibility label for the prompt list icon: prompt runs automatically">自動套用</string>
     <!-- Default example prompts seeded on a fresh install. A useful starter set covering all three
          prompt types: rewrite-the-selection editors, free generators and literal [snippets]. Resolved
          from string resources so they are localized at seed time. -->
     <!-- Rewrite-the-selection prompts (operate on the highlighted / dictated text). -->
-    <string name="dictate__example_prompt_fix_grammar_name">Fix Grammar</string>
-    <string name="dictate__example_prompt_fix_grammar_prompt">Correct all spelling, grammar and punctuation mistakes in the text. Keep the original wording, tone and language as much as possible and do not add new information. Return only the corrected text, without quotation marks or explanations.</string>
-    <string name="dictate__example_prompt_improve_name">Improve Writing</string>
-    <string name="dictate__example_prompt_improve_prompt">Rewrite the text so it reads more clearly and flows better, while keeping its meaning, tone and language. Do not add new information. Return only the improved text, without quotation marks or explanations.</string>
-    <string name="dictate__example_prompt_formal_name">Make Formal</string>
-    <string name="dictate__example_prompt_formal_prompt">Rewrite the text in a polite, professional and formal tone. Keep its meaning and language and add no new information. Return only the rewritten text, without quotation marks or explanations.</string>
-    <string name="dictate__example_prompt_friendly_name">Make Friendly</string>
-    <string name="dictate__example_prompt_friendly_prompt">Rewrite the text in a warm, friendly and casual tone. Keep its meaning and language and add no new information. Return only the rewritten text, without quotation marks or explanations.</string>
-    <string name="dictate__example_prompt_shorter_name">Make Shorter</string>
-    <string name="dictate__example_prompt_shorter_prompt">Make the text noticeably shorter and more concise while keeping all important information, its tone and its language. Return only the shortened text, without quotation marks or explanations.</string>
-    <string name="dictate__example_prompt_translate_name">Translate to English</string>
-    <string name="dictate__example_prompt_translate_prompt">Translate the text into natural, fluent English. Keep the original meaning and tone. Return only the translation, without quotation marks or explanations.</string>
+    <string name="dictate__example_prompt_fix_grammar_name">修正文法</string>
+    <string name="dictate__example_prompt_fix_grammar_prompt">修正文字中的所有拼字、文法與標點符號錯誤。盡可能保留原本的用詞、語氣與語言，不要加入新資訊。只回傳修正後的文字，不要加引號或任何說明。</string>
+    <string name="dictate__example_prompt_improve_name">潤飾文字</string>
+    <string name="dictate__example_prompt_improve_prompt">改寫文字使其更清晰流暢，同時保留原意、語氣與語言。不要加入新資訊。只回傳潤飾後的文字，不要加引號或任何說明。</string>
+    <string name="dictate__example_prompt_formal_name">改為正式語氣</string>
+    <string name="dictate__example_prompt_formal_prompt">以禮貌、專業且正式的語氣改寫文字。保留原意與語言，不要加入新資訊。只回傳改寫後的文字，不要加引號或任何說明。</string>
+    <string name="dictate__example_prompt_friendly_name">改為親切語氣</string>
+    <string name="dictate__example_prompt_friendly_prompt">以溫暖、親切且輕鬆的語氣改寫文字。保留原意與語言，不要加入新資訊。只回傳改寫後的文字，不要加引號或任何說明。</string>
+    <string name="dictate__example_prompt_shorter_name">精簡內容</string>
+    <string name="dictate__example_prompt_shorter_prompt">讓文字明顯更簡短精煉，同時保留所有重要資訊、語氣與語言。只回傳精簡後的文字，不要加引號或任何說明。</string>
+    <string name="dictate__example_prompt_translate_name">翻譯為英文</string>
+    <string name="dictate__example_prompt_translate_prompt">將文字翻譯為自然流暢的英文。保留原意與語氣。只回傳譯文，不要加引號或任何說明。</string>
     <!-- Free generators (produce text on their own, no selection needed). -->
-    <string name="dictate__example_prompt_quote_name">Inspiring Quote</string>
-    <string name="dictate__example_prompt_quote_prompt">Generate a single short, original and inspiring quote. Return only the quote itself, without an author, quotation marks or any explanation.</string>
-    <string name="dictate__example_prompt_funfact_name">Fun Fact</string>
-    <string name="dictate__example_prompt_funfact_prompt">Share one surprising and genuinely true fun fact in a single sentence. Return only the fact, without any introduction or explanation.</string>
+    <string name="dictate__example_prompt_quote_name">靈感佳句</string>
+    <string name="dictate__example_prompt_quote_prompt">產生一句簡短、原創且啟發人心的名言佳句。只回傳句子本身，不要附上作者、引號或任何說明。</string>
+    <string name="dictate__example_prompt_funfact_name">趣味冷知識</string>
+    <string name="dictate__example_prompt_funfact_prompt">用一句話分享一個令人驚訝且真實的趣味冷知識。只回傳事實本身，不要加任何引言或說明。</string>
     <!-- Literal snippets (text in [brackets] is inserted as-is, no AI call). -->
-    <string name="dictate__example_prompt_shrug_name">Shrug</string>
+    <string name="dictate__example_prompt_shrug_name">聳肩表情</string>
     <string name="dictate__example_prompt_shrug_prompt">[¯\\_(ツ)_/¯]</string>
-    <string name="dictate__example_prompt_signoff_name">Sign-off</string>
-    <string name="dictate__example_prompt_signoff_prompt">[Best regards,]</string>
-    <string name="dictate__prompt_reorder_hint" comment="Hint shown above the prompt list explaining drag-to-reorder">Long-press and drag a prompt to reorder.</string>
-    <string name="dictate__prompts_export" comment="Toolbar action: export prompts to a JSON file">Export prompts</string>
-    <string name="dictate__prompts_import" comment="Toolbar action: import prompts from a JSON file">Import prompts</string>
+    <string name="dictate__example_prompt_signoff_name">結尾敬語</string>
+    <string name="dictate__example_prompt_signoff_prompt">[敬祝 順心，]</string>
+    <string name="dictate__prompt_reorder_hint" comment="Hint shown above the prompt list explaining drag-to-reorder">長按並拖曳提示即可重新排序。</string>
+    <string name="dictate__prompts_export" comment="Toolbar action: export prompts to a JSON file">匯出提示</string>
+    <string name="dictate__prompts_import" comment="Toolbar action: import prompts from a JSON file">匯入提示</string>
     <string name="dictate__prompts_export_filename" comment="Default file name for the prompt export">dictate_prompts.json</string>
-    <string name="dictate__prompts_export_success" comment="Toast after a successful export">Prompts exported</string>
-    <string name="dictate__prompts_export_failed" comment="Toast after a failed export">Export failed</string>
-    <string name="dictate__prompts_import_success" comment="Toast after a successful import">Prompts imported</string>
-    <string name="dictate__prompts_import_failed" comment="Toast after a failed import">Import failed</string>
-    <string name="dictate__prompts_import_no_prompts" comment="Toast when the imported file has no usable prompts">No prompts found in file</string>
-    <string name="dictate__prompts_import_mode_title" comment="Title of the import-mode dialog">Import prompts</string>
-    <string name="dictate__prompts_import_mode_message" comment="Message of the import-mode dialog">Replace your existing prompts, or add the imported prompts to them?</string>
-    <string name="dictate__prompts_import_mode_replace" comment="Import-mode dialog button: replace existing prompts">Replace</string>
-    <string name="dictate__prompts_import_mode_add" comment="Import-mode dialog button: add to existing prompts">Add</string>
+    <string name="dictate__prompts_export_success" comment="Toast after a successful export">已匯出提示</string>
+    <string name="dictate__prompts_export_failed" comment="Toast after a failed export">匯出失敗</string>
+    <string name="dictate__prompts_import_success" comment="Toast after a successful import">已匯入提示</string>
+    <string name="dictate__prompts_import_failed" comment="Toast after a failed import">匯入失敗</string>
+    <string name="dictate__prompts_import_no_prompts" comment="Toast when the imported file has no usable prompts">檔案中找不到提示</string>
+    <string name="dictate__prompts_import_mode_title" comment="Title of the import-mode dialog">匯入提示</string>
+    <string name="dictate__prompts_import_mode_message" comment="Message of the import-mode dialog">要取代現有提示，還是將匯入的提示新增到現有清單中？</string>
+    <string name="dictate__prompts_import_mode_replace" comment="Import-mode dialog button: replace existing prompts">取代</string>
+    <string name="dictate__prompts_import_mode_add" comment="Import-mode dialog button: add to existing prompts">新增</string>
 
     <!-- Dictate community prompt library (issue #105): browse and import prompts shared by others -->
-    <string name="dictate__prompt_library_title" comment="Title of the community prompt library screen">Community library</string>
-    <string name="dictate__prompt_library_menu" comment="Prompts screen menu item that opens the community library">Browse community library</string>
-    <string name="dictate__prompt_library_search" comment="Placeholder in the library search field">Search prompts</string>
-    <string name="dictate__prompt_library_all" comment="Filter chip that shows prompts of every category">All</string>
-    <string name="dictate__prompt_library_add" comment="Button that imports a library prompt into the user\'s own list">Add</string>
-    <string name="dictate__prompt_library_added" comment="Marker/label shown once a library prompt has been imported">Added</string>
-    <string name="dictate__prompt_library_add_again" comment="Confirm button in the preview dialog for a prompt that is already in the user\'s list; adds a second copy">Add again</string>
-    <string name="dictate__prompt_library_empty" comment="Shown when no library prompt matches the search/filter">No prompts match your search.</string>
-    <string name="dictate__prompt_library_error" comment="Shown when the community library could not be downloaded">Couldn\'t load the community library. Check your connection and try again.</string>
-    <string name="dictate__prompt_library_retry" comment="Button to retry loading the community library">Retry</string>
-    <string name="dictate__prompt_library_close" comment="Button that closes the prompt preview dialog">Close</string>
-    <string name="dictate__prompt_library_author" comment="Attribution line in the prompt preview; {author} is the author name">by {author}</string>
+    <string name="dictate__prompt_library_title" comment="Title of the community prompt library screen">社群提示庫</string>
+    <string name="dictate__prompt_library_menu" comment="Prompts screen menu item that opens the community library">瀏覽社群提示庫</string>
+    <string name="dictate__prompt_library_search" comment="Placeholder in the library search field">搜尋提示</string>
+    <string name="dictate__prompt_library_all" comment="Filter chip that shows prompts of every category">全部</string>
+    <string name="dictate__prompt_library_add" comment="Button that imports a library prompt into the user\'s own list">新增</string>
+    <string name="dictate__prompt_library_added" comment="Marker/label shown once a library prompt has been imported">已新增</string>
+    <string name="dictate__prompt_library_add_again" comment="Confirm button in the preview dialog for a prompt that is already in the user\'s list; adds a second copy">再次新增</string>
+    <string name="dictate__prompt_library_empty" comment="Shown when no library prompt matches the search/filter">找不到符合搜尋條件的提示。</string>
+    <string name="dictate__prompt_library_error" comment="Shown when the community library could not be downloaded">無法載入社群提示庫。請檢查你的網路連線後再試一次。</string>
+    <string name="dictate__prompt_library_retry" comment="Button to retry loading the community library">重試</string>
+    <string name="dictate__prompt_library_close" comment="Button that closes the prompt preview dialog">關閉</string>
+    <string name="dictate__prompt_library_author" comment="Attribution line in the prompt preview; {author} is the author name">作者：{author}</string>
 
     <!-- Dictate: contribute one of your own prompts back to the community library (issue #105) -->
-    <string name="dictate__prompt_share_title" comment="Action/dialog title for contributing a prompt to the community">Share to community</string>
-    <string name="dictate__prompt_share_message" comment="Explains what happens when the user contributes a prompt">This opens GitHub in your browser with your prompt pre-filled as a submission. Sign in and confirm to open a pull request that adds it to the community library. A free GitHub account is required; nothing is uploaded until you confirm on GitHub.</string>
-    <string name="dictate__prompt_share_continue" comment="Confirm button that opens GitHub to submit the prompt">Open GitHub</string>
-    <string name="dictate__prompt_share_category" comment="Label above the category chips in the share dialog">Category (optional)</string>
-    <string name="dictate__prompt_share_description" comment="Label for the optional description field in the share dialog">Description (optional)</string>
-    <string name="dictate__prompt_share_description_placeholder" comment="Placeholder for the share description field">e.g. Cleans up grammar without changing the meaning</string>
+    <string name="dictate__prompt_share_title" comment="Action/dialog title for contributing a prompt to the community">分享到社群</string>
+    <string name="dictate__prompt_share_message" comment="Explains what happens when the user contributes a prompt">這會在瀏覽器中開啟 GitHub，並預先填好你的提示作為投稿內容。登入並確認後，即可建立 Pull Request 將它加入社群提示庫。此操作需要免費的 GitHub 帳號；在你於 GitHub 確認之前，不會上傳任何內容。</string>
+    <string name="dictate__prompt_share_continue" comment="Confirm button that opens GitHub to submit the prompt">開啟 GitHub</string>
+    <string name="dictate__prompt_share_category" comment="Label above the category chips in the share dialog">分類（選填）</string>
+    <string name="dictate__prompt_share_description" comment="Label for the optional description field in the share dialog">說明（選填）</string>
+    <string name="dictate__prompt_share_description_placeholder" comment="Placeholder for the share description field">例如：在不改變原意的情況下修正文法</string>
 
     <!-- Dictate file transcription (long-press the mic to pick an audio/video file) -->
-    <string name="dictate__file_preparing" comment="Toast shown while the picked file is copied to the cache">Preparing file…</string>
-    <string name="dictate__file_too_large" comment="Toast when the chosen file exceeds the provider upload limit">File is too large – the provider accepts at most 25 MB.</string>
-    <string name="dictate__file_read_error" comment="Toast when the chosen file could not be read">Could not read the selected file.</string>
+    <string name="dictate__file_preparing" comment="Toast shown while the picked file is copied to the cache">準備檔案中…</string>
+    <string name="dictate__file_too_large" comment="Toast when the chosen file exceeds the provider upload limit">檔案過大 – 服務商最多接受 25 MB。</string>
+    <string name="dictate__file_read_error" comment="Toast when the chosen file could not be read">無法讀取選取的檔案。</string>
 
     <!-- Share → Dictate for audio and video (issue #301): a shared voice message is transcribed on a
          screen of its own, because a share has no text field for the transcript to go into. -->
-    <string name="dictate__import_share_label" comment="Label of the Dictate entry in the system share sheet for audio and video files. One word: the sheet already shows the app name next to it, and another Dictate entry handles images.">Transcribe</string>
-    <string name="dictate__import_title" comment="Title of the screen that transcribes a shared or picked audio file">Transcribe file</string>
-    <string name="dictate__import_menu" comment="Entry on the Dictate settings home that opens the file picker">Transcribe a file</string>
-    <string name="dictate__import_menu_summary" comment="Summary under the \'Transcribe a file\' entry">Pick an audio or video file and read what it says</string>
+    <string name="dictate__import_share_label" comment="Label of the Dictate entry in the system share sheet for audio and video files. One word: the sheet already shows the app name next to it, and another Dictate entry handles images.">轉錄</string>
+    <string name="dictate__import_title" comment="Title of the screen that transcribes a shared or picked audio file">轉錄檔案</string>
+    <string name="dictate__import_menu" comment="Entry on the Dictate settings home that opens the file picker">轉錄檔案</string>
+    <string name="dictate__import_menu_summary" comment="Summary under the \'Transcribe a file\' entry">挑選音訊或影片檔案並讀取其中的對話內容</string>
     <!-- The steps of an import, listed from the start and ticked off as they finish (issue #337). One
          "Preparing…" used to cover four different jobs, which made the longest of them look like a hang. -->
-    <string name="dictate__import_step_copy" comment="Step in the import progress list: the shared file is copied out of the temporary share into the app">Receiving the file</string>
-    <string name="dictate__import_step_extract" comment="Step in the import progress list: the sound track is taken out of a shared video">Extracting the audio</string>
-    <string name="dictate__import_step_prepare" comment="Step in the import progress list: the audio is decoded and cut into pieces small enough to send">Preparing the audio</string>
-    <string name="dictate__import_step_upload" comment="Step in the import progress list: the audio is being sent to the transcription service">Uploading</string>
-    <string name="dictate__import_step_transcribe" comment="Step in the import progress list; {provider} is the transcription service, e.g. Gemini">Transcribing with {provider}</string>
-    <string name="dictate__import_step_transcribe_local" comment="Step in the import progress list when transcription runs offline on the phone itself">Transcribing on this device</string>
-    <string name="dictate__import_step_finish" comment="Step in the import progress list: the transcript is saved to the history">Finishing up</string>
+    <string name="dictate__import_step_copy" comment="Step in the import progress list: the shared file is copied out of the temporary share into the app">正在接收檔案</string>
+    <string name="dictate__import_step_extract" comment="Step in the import progress list: the sound track is taken out of a shared video">正在擷取音訊</string>
+    <string name="dictate__import_step_prepare" comment="Step in the import progress list: the audio is decoded and cut into pieces small enough to send">正在準備音訊</string>
+    <string name="dictate__import_step_upload" comment="Step in the import progress list: the audio is being sent to the transcription service">正在上傳</string>
+    <string name="dictate__import_step_transcribe" comment="Step in the import progress list; {provider} is the transcription service, e.g. Gemini">正在透過 {provider} 轉錄</string>
+    <string name="dictate__import_step_transcribe_local" comment="Step in the import progress list when transcription runs offline on the phone itself">正在這台裝置上轉錄</string>
+    <string name="dictate__import_step_finish" comment="Step in the import progress list: the transcript is saved to the history">即將完成</string>
     <string name="dictate__import_step_percent" comment="Progress of the step currently running; {v} is a number between 0 and 100">{v}%</string>
-    <string name="dictate__import_step_part" comment="Which piece of a split file is being worked on; {current} is the piece, {total} how many there are">Part {current} of {total}</string>
-    <string name="dictate__import_result_label" comment="Label above the editable transcript on the import screen">Transcript</string>
-    <string name="dictate__import_prompt_button" comment="Button that opens the menu of prompts to run over the transcript">Rewording</string>
-    <string name="dictate__import_revert" comment="Button that puts the raw transcript back after a prompt rewrote it">Undo</string>
-    <string name="dictate__import_copy" comment="Button that copies the transcript. One word: it sits in a row of four and the screen holds exactly one piece of text.">Copy</string>
-    <string name="dictate__import_copied" comment="Shown on the copy button for a moment after the transcript was copied">Copied!</string>
-    <string name="dictate__import_save" comment="Button that writes the transcript to a text file the user picks">Save as file</string>
-    <string name="dictate__import_saved" comment="Toast after the transcript was written to a file">Transcript saved.</string>
-    <string name="dictate__import_save_failed" comment="Toast when the transcript could not be written">Could not save the transcript.</string>
-    <string name="dictate__import_search" comment="Button and field label for searching inside the transcript">Search transcript</string>
+    <string name="dictate__import_step_part" comment="Which piece of a split file is being worked on; {current} is the piece, {total} how many there are">第 {current} / {total} 段</string>
+    <string name="dictate__import_result_label" comment="Label above the editable transcript on the import screen">轉錄內容</string>
+    <string name="dictate__import_prompt_button" comment="Button that opens the menu of prompts to run over the transcript">改寫</string>
+    <string name="dictate__import_revert" comment="Button that puts the raw transcript back after a prompt rewrote it">復原</string>
+    <string name="dictate__import_copy" comment="Button that copies the transcript. One word: it sits in a row of four and the screen holds exactly one piece of text.">複製</string>
+    <string name="dictate__import_copied" comment="Shown on the copy button for a moment after the transcript was copied">已複製！</string>
+    <string name="dictate__import_save" comment="Button that writes the transcript to a text file the user picks">另存為檔案</string>
+    <string name="dictate__import_saved" comment="Toast after the transcript was written to a file">已儲存轉錄內容。</string>
+    <string name="dictate__import_save_failed" comment="Toast when the transcript could not be written">無法儲存轉錄內容。</string>
+    <string name="dictate__import_search" comment="Button and field label for searching inside the transcript">搜尋轉錄內容</string>
     <string name="dictate__import_search_hits" comment="Match counter next to the search field; {current} is the match you are on, {total} how many there are">{current}/{total}</string>
     <string name="dictate__import_search_none" comment="Match counter when the search text appears nowhere">0/0</string>
-    <string name="dictate__import_retry" comment="Button that starts the transcription over after it failed">Try again</string>
-    <string name="dictate__import_no_file" comment="Shown when the share carried nothing we could read">No audio file was shared.</string>
-    <string name="dictate__import_not_audio" comment="Shown when the shared file turned out to hold no sound at all">This file contains no audio.</string>
-    <string name="dictate__import_only_first" comment="Shown when several files were shared at once; {count} is how many were left out">Only the first file is transcribed – {count} more were left out.</string>
+    <string name="dictate__import_retry" comment="Button that starts the transcription over after it failed">重試</string>
+    <string name="dictate__import_no_file" comment="Shown when the share carried nothing we could read">沒有分享音訊檔案。</string>
+    <string name="dictate__import_not_audio" comment="Shown when the shared file turned out to hold no sound at all">此檔案不包含任何音訊。</string>
+    <string name="dictate__import_only_first" comment="Shown when several files were shared at once; {count} is how many were left out">僅轉錄第一個檔案 – 其餘 {count} 個已略過。</string>
 
     <!-- Dictate onboarding step -->
-    <string name="dictate__setup_description" comment="Onboarding text inviting the user to set up Dictate">Set up your AI provider and API key so you can start dictating with the mic.</string>
-    <string name="dictate__setup_configure_btn" comment="Onboarding button opening the Dictate settings">Configure Dictate</string>
-    <string name="setup__grant_mic_permission__title" comment="Title of the microphone permission onboarding step">Microphone access</string>
-    <string name="setup__grant_mic_permission__description" comment="Onboarding: ask for microphone permission for dictation">Dictate needs microphone access to record your voice for transcription.</string>
-    <string name="setup__grant_mic_permission__btn" comment="Onboarding button to grant the microphone permission">Grant microphone permission</string>
+    <string name="dictate__setup_description" comment="Onboarding text inviting the user to set up Dictate">設定你的 AI 服務商與 API 金鑰，即可開始使用麥克風進行語音輸入。</string>
+    <string name="dictate__setup_configure_btn" comment="Onboarding button opening the Dictate settings">設定 Dictate</string>
+    <string name="setup__grant_mic_permission__title" comment="Title of the microphone permission onboarding step">麥克風權限</string>
+    <string name="setup__grant_mic_permission__description" comment="Onboarding: ask for microphone permission for dictation">Dictate 需要麥克風權限才能錄製你的聲音並進行轉錄。</string>
+    <string name="setup__grant_mic_permission__btn" comment="Onboarding button to grant the microphone permission">授予麥克風權限</string>
 
     <!-- ============================== Changelog ============================== -->
-    <string name="changelog__dialog_title" comment="Title of the what's-new dialog shown after an update">What\'s new</string>
-    <string name="changelog__view_all" comment="Button that opens the full changelog/releases page online">View all changes</string>
-    <string name="changelog__intro" comment="Brief intro line at the top of the what's-new dialog, before the per-version notes">Dictate has been updated. Here\'s what\'s new:</string>
-    <string name="changelog__version_header" comment="Header shown above one release's notes. {version} is e.g. 4.0.0">Version {version}</string>
-    <string name="changelog__donate" comment="Tappable invitation to donate, shown at the bottom of the what's-new dialog">Enjoying Dictate? Tap here to support development ♥</string>
+    <string name="changelog__dialog_title" comment="Title of the what's-new dialog shown after an update">最新功能</string>
+    <string name="changelog__view_all" comment="Button that opens the full changelog/releases page online">檢視所有變更</string>
+    <string name="changelog__intro" comment="Brief intro line at the top of the what's-new dialog, before the per-version notes">Dictate 已更新。以下是最新內容：</string>
+    <string name="changelog__version_header" comment="Header shown above one release's notes. {version} is e.g. 4.0.0">版本 {version}</string>
+    <string name="changelog__donate" comment="Tappable invitation to donate, shown at the bottom of the what's-new dialog">喜歡 Dictate 嗎？點這裡贊助開發 ♥</string>
     <!-- Per-release notes. To announce a new version, add a changelog__vX_Y_Z string here and a matching
          entry in DictateChangelog.kt. changelog__current holds the notes for the initial 4.0.0 release. -->
-    <string name="changelog__current" comment="What's-new text for the 4.0.0 release. One change per line.">• Brand-new keyboard: Dictate now ships as a full multi-language layout keyboard with a dedicated mic key that opens the voice panel.\n• Bring your own AI: pick any OpenAI-compatible provider and enter your API key under Settings → Dictate.\n• Smart formatting and rewording powered by your chosen model.\n• Your settings from the previous Dictate app are imported automatically.</string>
-    <string name="changelog__v4_1_0" comment="What's-new text for the 4.1.0 release. One change per line.">• New: search emoji right from the keyboard.\n• New transcription provider: Soniox.\n• Re-insert your last dictation, and recover recordings interrupted when the keyboard closed.\n• The prompt bar now refreshes live — long-press a prompt to edit it.\n• The AI providers screen now shows both your active transcription and rewording providers.\n• Bigger, easier-to-hit record button.\n• Fixes: a support prompt could get stuck and block the bar in some languages; backup no longer fails when prompts, keyboard or theme are selected; saved API keys are kept when upgrading.</string>
-    <string name="changelog__v5_0_0" comment="What\'s-new text for the 5.0.0 release. One change per line.">• NEW: Glide typing — swipe across the keys to type whole words, with per-language dictionaries that download on demand. 👆\n• NEW: Word suggestions &amp; autocorrect — typos get fixed automatically and the word you typed stays one tap away. ✨\n• NEW: Real-time transcription — watch your words appear as you speak, with OpenAI, Deepgram, Soniox, AssemblyAI and ElevenLabs. ⚡\n• NEW: Three more transcription providers — ElevenLabs Scribe, Deepgram and AssemblyAI. ☁️\n• NEW: Classic dictation layout — the keyboard-free voice screen from Dictate 3 is back, locked or just a swipe away. 🎙️\n• NEW: Community prompt library — browse and share rewording prompts. 📚\n• NEW: Dictation statistics with milestones. 📊\n• NEW: Offline model NVIDIA Parakeet, plus a silence filter that skips empty recordings. 📴\n• More: a steadier floating button, reasoning-effort control, haptic feedback, a new E-Reader theme and dozens of fixes. 🛠️</string>
-    <string name="changelog__v4_3_0" comment="What\'s-new text for the 4.3.0 release. One change per line.">• NEW: On-device transcription — dictate completely offline. No internet needed and nothing leaves your phone. Download a speech model once in Settings ▸ Dictate ▸ Providers. 📴\n• NEW: Wear OS keyboard — dictate straight from your watch, through your phone or fully on its own. ⌚\n• NEW: Find &amp; replace rules — automatically fix recurring words, names or phrases in every transcript. Set them up in Settings ▸ Dictate ▸ Custom mappings. 🔁\n• NEW: Single-call mode — let one capable AI model transcribe and format in a single request, faster and often cheaper. Turn it on per provider. ⚡\n• NEW: Smartbar actions to jump back to your previous keyboard or open the system keyboard picker. ⌨️\n• The keyboard\'s accent color now follows the color you pick in Settings ▸ Theme. 🎨\n• Added an optional undo button to the floating dictation button. ↩️\n• Various fixes and stability improvements. 🛠️</string>
-    <string name="changelog__v4_2_0" comment="What's-new text for the 4.2.0 release. One change per line.">• NEW: Floating dictation button — dictate straight into any app, even when another keyboard is active. Pick from three styles (Pill, Ring, Orb), watch a live waveform while you speak, drag it anywhere with edge-snapping, set its color and size, and long-press to reword. Turn it on in Settings ▸ Dictate ▸ Floating button.\n• NEW: Google Gemini — bring your own AI Studio API key for both transcription and rewording.\n• Prompts now appear in an always-on row above the keys by default.\n• More reliable text insertion across apps, including browsers and other keyboards.</string>
-    <string name="changelog__v4_1_1" comment="What's-new text for the 4.1.1 release. One change per line.">• Fix: the accent color could appear green on some devices — keys and buttons are back to the Dictate blue.</string>
+    <string name="changelog__current" comment="What's-new text for the 4.0.0 release. One change per line.">• 全新鍵盤：Dictate 現已進化為完整的多語言配置鍵盤，並附帶專用的麥克風鍵以開啟語音面板。\n• 自備 AI 服務：選擇任何相容於 OpenAI 的服務商，並在「設定 → Dictate」中輸入你的 API 金鑰。\n• 由你所選的模型驅動的智慧格式化與改寫功能。\n• 自動匯入你在舊版 Dictate 應用程式中的設定。</string>
+    <string name="changelog__v4_1_0" comment="What's-new text for the 4.1.0 release. One change per line.">• 新增：直接從鍵盤搜尋表情符號。\n• 新增轉錄服務商：Soniox。\n• 重新插入上次語音輸入，並可恢復鍵盤關閉時中斷的錄音。\n• 提示列現可即時更新 —— 長按提示即可編輯。\n• 「AI 服務商」畫面現在會同時顯示目前使用的轉錄與改寫服務商。\n• 更大、更容易點擊的錄音按鈕。\n• 修正：部分語言下贊助提示可能卡住並擋住操作列的問題；同時勾選提示、鍵盤或佈景主題時備份不再失敗；升級時保留已儲存的 API 金鑰。</string>
+    <string name="changelog__v5_0_0" comment="What\'s-new text for the 5.0.0 release. One change per line.">• 新增：滑動輸入 —— 在按鍵上滑動即可輸入整個單字，並支援按需下載的各語言字典。👆\n• 新增：單字建議與自動更正 —— 自動修正錯字，你原本輸入的字也只需點一下即可保留。✨\n• 新增：即時轉錄 —— 支援 OpenAI、Deepgram、Soniox、AssemblyAI 與 ElevenLabs，說話時文字即時浮現。⚡\n• 新增：三家轉錄服務商 —— ElevenLabs Scribe、Deepgram 與 AssemblyAI。☁️\n• 新增：經典語音輸入版面 —— Dictate 3 的純語音無鍵盤畫面回來了，可固定使用或滑動切換。🎙️\n• 新增：社群提示庫 —— 瀏覽並分享改寫提示。📚\n• 新增：含里程碑的語音輸入統計資料。📊\n• 新增：離線模型 NVIDIA Parakeet，以及自動略過無聲錄音的靜音過濾器。📴\n• 更多改進：更穩定的浮動按鈕、推理深度控制、觸覺回饋、全新電子書閱讀器佈景主題與數十項修正。🛠️</string>
+    <string name="changelog__v4_3_0" comment="What\'s-new text for the 4.3.0 release. One change per line.">• 新增：裝置端轉錄 —— 完全離線進行語音輸入，不需網路連線，資料絕不離開手機。在「設定 ▸ Dictate ▸ 服務商」下載一次語音模型即可使用。📴\n• 新增：Wear OS 鍵盤 —— 直接從手錶進行語音輸入，可透過手機轉傳或完全獨立運作。⌚\n• 新增：尋找與取代規則 —— 在每次轉錄結果中自動修正反覆出現的字詞、姓名或片語。在「設定 ▸ Dictate ▸ 自訂替換規則」設定。🔁\n• 新增：單次呼叫模式 —— 讓單一強大的 AI 模型在同一次請求中完成轉錄與格式化，更快也往往更省錢。可在各服務商設定中開啟。⚡\n• 新增：智慧列動作，可快速跳回上一個鍵盤或開啟系統鍵盤選擇器。⌨️\n• 鍵盤的強調色現在會跟隨你在「設定 ▸ 佈景主題」中選取的顏色。🎨\n• 為浮動語音輸入按鈕新增可選的復原按鈕。↩️\n• 多項錯誤修正與穩定性改進。🛠️</string>
+    <string name="changelog__v4_2_0" comment="What's-new text for the 4.2.0 release. One change per line.">• 新增：浮動語音輸入按鈕 —— 即使正在使用其他鍵盤，也能直接語音輸入到任何應用程式。提供三種樣式（藥丸、環、球體）、說話時顯示即時波形、支援任意拖曳並貼齊邊緣、可自訂顏色與大小，並可長按進行改寫。在「設定 ▸ Dictate ▸ 浮動按鈕」中開啟。\n• 新增：Google Gemini —— 可自備 AI Studio API 金鑰進行轉錄與改寫。\n• 提示現在預設顯示在按鍵上方的常駐列中。\n• 提升跨應用程式（包括瀏覽器與其他鍵盤）插入文字的可靠度。</string>
+    <string name="changelog__v4_1_1" comment="What's-new text for the 4.1.1 release. One change per line.">• 修正：強調色在部分裝置上可能顯示為綠色的問題 —— 按鍵與按鈕已恢復為 Dictate 藍色。</string>
 
     <!-- On-device translation (issue #424). Language names come from the system and need no strings. -->
-    <string name="settings__translation__title" comment="Title of the translation settings screen and its entry on the settings home">Translation</string>
-    <string name="translate__settings_intro" comment="The one line at the top of the translation settings. Say where the feature is opened: use the same word for the Smartbar as settings__smartbar__title and for the button as quick_action__translate.">Translates right on your phone, and nothing you type leaves it. Open it with Translate in the Smartbar.</string>
-    <string name="translate__group_installed" comment="Settings group: the translation languages already on the phone">Downloaded</string>
-    <string name="translate__group_available" comment="Settings group: the translation languages that can be downloaded">Available</string>
-    <string name="translate__english_included" comment="Subtitle of the English row: English needs no download, every language carries it">Always included</string>
-    <string name="translate__size_installed" comment="Subtitle of a downloaded language. {size} is e.g. 72 MB">{size} on this device</string>
-    <string name="translate__size_download" comment="Subtitle of a language not yet downloaded. {download} is what the download costs, {size} what stays on the phone, e.g. 52 MB / 72 MB">{download} download · {size} on this device</string>
-    <string name="translate__hint" comment="Placeholder in the translate bar's input line, above the keyboard">Type to translate</string>
-    <string name="translate__detect" comment="Language chip: the source language is detected automatically">Detect language</string>
-    <string name="translate__detected" comment="Language chip once detection has settled, e.g. German (detected)">{language} (detected)</string>
-    <string name="translate__swap" comment="Accessibility label of the button that swaps source and target language">Swap languages</string>
-    <string name="translate__no_languages" comment="Shown in the translate bar when no language is downloaded">No language downloaded yet</string>
-    <string name="translate__get_languages" comment="Button in the translate bar that opens the translation settings">Get languages</string>
-    <string name="translate__more_languages" comment="Last chip in the translate bar's language list, opens the settings to download more">More languages</string>
-    <string name="translate__missing" comment="{language} is one or more language names">{language} is not downloaded</string>
-    <string name="translate__failed">Translation failed</string>
-    <string name="translate__unsupported">Translation is not available on this device</string>
+    <string name="settings__translation__title" comment="Title of the translation settings screen and its entry on the settings home">翻譯</string>
+    <string name="translate__settings_intro" comment="The one line at the top of the translation settings. Say where the feature is opened: use the same word for the Smartbar as settings__smartbar__title and for the button as quick_action__translate.">直接在你的手機上翻譯，輸入的內容絕不離開裝置。可透過智慧列中的「翻譯」開啟。</string>
+    <string name="translate__group_installed" comment="Settings group: the translation languages already on the phone">已下載</string>
+    <string name="translate__group_available" comment="Settings group: the translation languages that can be downloaded">可下載</string>
+    <string name="translate__english_included" comment="Subtitle of the English row: English needs no download, every language carries it">一律包含</string>
+    <string name="translate__size_installed" comment="Subtitle of a downloaded language. {size} is e.g. 72 MB">裝置上佔用 {size}</string>
+    <string name="translate__size_download" comment="Subtitle of a language not yet downloaded. {download} is what the download costs, {size} what stays on the phone, e.g. 52 MB / 72 MB">下載 {download} · 裝置上佔用 {size}</string>
+    <string name="translate__hint" comment="Placeholder in the translate bar's input line, above the keyboard">輸入文字以進行翻譯</string>
+    <string name="translate__detect" comment="Language chip: the source language is detected automatically">偵測語言</string>
+    <string name="translate__detected" comment="Language chip once detection has settled, e.g. German (detected)">{language}（已偵測）</string>
+    <string name="translate__swap" comment="Accessibility label of the button that swaps source and target language">對調語言</string>
+    <string name="translate__no_languages" comment="Shown in the translate bar when no language is downloaded">尚未下載任何語言</string>
+    <string name="translate__get_languages" comment="Button in the translate bar that opens the translation settings">取得語言</string>
+    <string name="translate__more_languages" comment="Last chip in the translate bar's language list, opens the settings to download more">更多語言</string>
+    <string name="translate__missing" comment="{language} is one or more language names">尚未下載 {language}</string>
+    <string name="translate__failed">翻譯失敗</string>
+    <string name="translate__unsupported">此裝置不支援翻譯功能</string>
 </resources>

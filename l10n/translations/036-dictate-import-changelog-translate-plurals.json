@@ -1,0 +1,90 @@
+{
+  "dictate__import_copied": "已複製！",
+  "dictate__import_save": "另存為檔案",
+  "dictate__import_saved": "已儲存轉錄內容。",
+  "dictate__import_save_failed": "無法儲存轉錄內容。",
+  "dictate__import_search": "搜尋轉錄內容",
+  "dictate__import_search_hits": "{current}/{total}",
+  "dictate__import_search_none": "0/0",
+  "dictate__import_retry": "重試",
+  "dictate__import_no_file": "沒有分享音訊檔案。",
+  "dictate__import_not_audio": "此檔案不包含任何音訊。",
+  "dictate__import_only_first": "僅轉錄第一個檔案 – 其餘 {count} 個已略過。",
+  "dictate__setup_description": "設定你的 AI 服務商與 API 金鑰，即可開始使用麥克風進行語音輸入。",
+  "dictate__setup_configure_btn": "設定 Dictate",
+  "setup__grant_mic_permission__title": "麥克風權限",
+  "setup__grant_mic_permission__description": "Dictate 需要麥克風權限才能錄製你的聲音並進行轉錄。",
+  "setup__grant_mic_permission__btn": "授予麥克風權限",
+  "changelog__dialog_title": "最新功能",
+  "changelog__view_all": "檢視所有變更",
+  "changelog__intro": "Dictate 已更新。以下是最新內容：",
+  "changelog__version_header": "版本 {version}",
+  "changelog__donate": "喜歡 Dictate 嗎？點這裡贊助開發 ♥",
+  "changelog__current": "• 全新鍵盤：Dictate 現已進化為完整的多語言配置鍵盤，並附帶專用的麥克風鍵以開啟語音面板。\\n• 自備 AI 服務：選擇任何相容於 OpenAI 的服務商，並在「設定 → Dictate」中輸入你的 API 金鑰。\\n• 由你所選的模型驅動的智慧格式化與改寫功能。\\n• 自動匯入你在舊版 Dictate 應用程式中的設定。",
+  "changelog__v4_1_0": "• 新增：直接從鍵盤搜尋表情符號。\\n• 新增轉錄服務商：Soniox。\\n• 重新插入上次語音輸入，並可恢復鍵盤關閉時中斷的錄音。\\n• 提示列現可即時更新 —— 長按提示即可編輯。\\n• 「AI 服務商」畫面現在會同時顯示目前使用的轉錄與改寫服務商。\\n• 更大、更容易點擊的錄音按鈕。\\n• 修正：部分語言下贊助提示可能卡住並擋住操作列的問題；同時勾選提示、鍵盤或佈景主題時備份不再失敗；升級時保留已儲存的 API 金鑰。",
+  "changelog__v5_0_0": "• 新增：滑動輸入 —— 在按鍵上滑動即可輸入整個單字，並支援按需下載的各語言字典。👆\\n• 新增：單字建議與自動更正 —— 自動修正錯字，你原本輸入的字也只需點一下即可保留。✨\\n• 新增：即時轉錄 —— 支援 OpenAI、Deepgram、Soniox、AssemblyAI 與 ElevenLabs，說話時文字即時浮現。⚡\\n• 新增：三家轉錄服務商 —— ElevenLabs Scribe、Deepgram 與 AssemblyAI。☁️\\n• 新增：經典語音輸入版面 —— Dictate 3 的純語音無鍵盤畫面回來了，可固定使用或滑動切換。🎙️\\n• 新增：社群提示庫 —— 瀏覽並分享改寫提示。📚\\n• 新增：含里程碑的語音輸入統計資料。📊\\n• 新增：離線模型 NVIDIA Parakeet，以及自動略過無聲錄音的靜音過濾器。📴\\n• 更多改進：更穩定的浮動按鈕、推理深度控制、觸覺回饋、全新電子書閱讀器佈景主題與數十項修正。🛠️",
+  "changelog__v4_3_0": "• 新增：裝置端轉錄 —— 完全離線進行語音輸入，不需網路連線，資料絕不離開手機。在「設定 ▸ Dictate ▸ 服務商」下載一次語音模型即可使用。📴\\n• 新增：Wear OS 鍵盤 —— 直接從手錶進行語音輸入，可透過手機轉傳或完全獨立運作。⌚\\n• 新增：尋找與取代規則 —— 在每次轉錄結果中自動修正反覆出現的字詞、姓名或片語。在「設定 ▸ Dictate ▸ 自訂替換規則」設定。🔁\\n• 新增：單次呼叫模式 —— 讓單一強大的 AI 模型在同一次請求中完成轉錄與格式化，更快也往往更省錢。可在各服務商設定中開啟。⚡\\n• 新增：智慧列動作，可快速跳回上一個鍵盤或開啟系統鍵盤選擇器。⌨️\\n• 鍵盤的強調色現在會跟隨你在「設定 ▸ 佈景主題」中選取的顏色。🎨\\n• 為浮動語音輸入按鈕新增可選的復原按鈕。↩️\\n• 多項錯誤修正與穩定性改進。🛠️",
+  "changelog__v4_2_0": "• 新增：浮動語音輸入按鈕 —— 即使正在使用其他鍵盤，也能直接語音輸入到任何應用程式。提供三種樣式（藥丸、環、球體）、說話時顯示即時波形、支援任意拖曳並貼齊邊緣、可自訂顏色與大小，並可長按進行改寫。在「設定 ▸ Dictate ▸ 浮動按鈕」中開啟。\\n• 新增：Google Gemini —— 可自備 AI Studio API 金鑰進行轉錄與改寫。\\n• 提示現在預設顯示在按鍵上方的常駐列中。\\n• 提升跨應用程式（包括瀏覽器與其他鍵盤）插入文字的可靠度。",
+  "changelog__v4_1_1": "• 修正：強調色在部分裝置上可能顯示為綠色的問題 —— 按鍵與按鈕已恢復為 Dictate 藍色。",
+  "settings__translation__title": "翻譯",
+  "translate__settings_intro": "直接在你的手機上翻譯，輸入的內容絕不離開裝置。可透過智慧列中的「翻譯」開啟。",
+  "translate__group_installed": "已下載",
+  "translate__group_available": "可下載",
+  "translate__english_included": "一律包含",
+  "translate__size_installed": "裝置上佔用 {size}",
+  "translate__size_download": "下載 {download} · 裝置上佔用 {size}",
+  "translate__hint": "輸入文字以進行翻譯",
+  "translate__detect": "偵測語言",
+  "translate__detected": "{language}（已偵測）",
+  "translate__swap": "對調語言",
+  "translate__no_languages": "尚未下載任何語言",
+  "translate__get_languages": "取得語言",
+  "translate__more_languages": "更多語言",
+  "translate__missing": "尚未下載 {language}",
+  "translate__failed": "翻譯失敗",
+  "translate__unsupported": "此裝置不支援翻譯功能",
+  "unit__hours__written": {
+    "one": "{v} 小時",
+    "other": "{v} 小時"
+  },
+  "unit__minutes__written": {
+    "one": "{v} 分鐘",
+    "other": "{v} 分鐘"
+  },
+  "unit__seconds__written": {
+    "one": "{v} 秒",
+    "other": "{v} 秒"
+  },
+  "unit__items__written": {
+    "one": "{v} 個項目",
+    "other": "{v} 個項目"
+  },
+  "unit__characters__written": {
+    "one": "{v} 個字元",
+    "other": "{v} 個字元"
+  },
+  "unit__words__written": {
+    "one": "{v} 個字",
+    "other": "{v} 個字"
+  },
+  "unit__candidates__written": {
+    "one": "{v} 個候選字",
+    "other": "{v} 個候選字"
+  },
+  "dictate__providers_check_credentials_ok": {
+    "one": "憑證驗證成功 · {count} 個模型",
+    "other": "憑證驗證成功 · {count} 個模型"
+  },
+  "dictate__providers_check_endpoint_ok": {
+    "one": "已連線至伺服器 · {count} 個模型",
+    "other": "已連線至伺服器 · {count} 個模型"
+  },
+  "dictate__model_picker_count": {
+    "one": "{count} 個模型",
+    "other": "{count} 個模型"
+  },
+  "dictate__local_model_languages": {
+    "one": "{count} 種語言",
+    "other": "{count} 種語言"
+  }
+}
