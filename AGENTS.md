@@ -51,11 +51,12 @@ Fork 的兩個目的：
 
 1. **改任何檔案前先更新工作表的 checkbox** —— 那是進度唯一的權威來源。
 2. **翻譯基底是英文**（`values/strings.xml`），**不是** `values-zh-rCN`。用 zh-rCN 再轉會變「二手 AI 轉譯」，與上游未來自做的 zh-TW 打架。
-3. **必須保留** `comment="..."` 翻譯指引屬性（base 有 **1614** 條）與所有 placeholder（`{app_name}` / `%1$s` / `{count}`）。
+3. **必須保留** `comment="..."` 翻譯指引屬性（2026-11-20 實查 base 有 **1618** 條；**以當下 base 為準，不寫死數字**）與所有 placeholder（`{app_name}` / `%1$s` / `{count}`）。
 4. **必改 Kotlin 一行**：`app/src/main/kotlin/dev/patrickgold/florisboard/app/settings/advanced/OtherScreen.kt` 的語言 tag 清單（上游有 App 語言選擇器，40 個 tag + `auto`，靠 `createConfigurationContext` 即時切換）→ 加 `"zh-TW"`。
    > 工作表裡原寫「不改 Kotlin 碼、零衝突」是**錯的**，已更正。
 5. **不要碰 `values/strings_dont_translate.xml`**（32 條）。
 6. **本 repo 與叢集無關** —— 沒有 helm / kubectl / kustomize 這回事。
+7. **wear 的語言跟「手錶系統語言」，不跟手機 App 的 in-app 語言選擇器**（wear 模組無任何 Locale/Configuration 覆寫）→ 走查 wear 畫面前先確認手錶系統語言，別誤判成「沒翻譯」。詳見工作表 1.2.1。
 
 ---
 
@@ -76,7 +77,8 @@ GitHub Secret 不可逆讀取（API 回 404），且**本機與 Nextcloud 都沒
 
 ```bash
 # 資源 key 集合與 placeholder 必須與 base 完全對齊（基準：base vs zh-rCN mismatch = 0）
-#   工具待建立（Phase B5）
+#   工具待建立（Phase B0b / B5）
+python3 tools/check-l10n.py
 
 # XML 合法性
 xmllint --noout app/src/main/res/values-zh-rTW/strings.xml
@@ -88,9 +90,9 @@ xmllint --noout app/src/main/res/values-zh-rTW/strings.xml
 gh workflow run build-apk.yml --ref feat/zh-tw-ui
 ```
 
-⚠️ workflow 會 `gh release upload --clobber` 到 Release。
-`main` → `v6.4.0-apk`；分支 → `v6.4.0-apk-<分支名>`（已修正，不會互相覆蓋）。
-但 `main` 的 tag 仍會被 `main` 的新 build 覆蓋 —— 動手前先備份既有 asset。
+⚠️ Release 資產：**在分支上跑不會覆蓋 `v6.4.0-apk`**（已修：分支用獨立 tag `v6.4.0-apk-<分支名>`）。
+只有**刻意在 `main` 上跑**才會 `--clobber` 掉 `v6.4.0-apk`（= 手機上裝的那個）→ 不要在 `main` 上隨手觸發。
+（2026-11-20 複查修正：舊版「動手前先備份既有 asset」的說法已過時。）
 
 ---
 

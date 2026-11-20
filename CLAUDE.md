@@ -34,16 +34,17 @@
 
 1. **改任何檔案前先更新工作表的 checkbox** —— 這是進度唯一的權威來源。
 2. **翻譯基底是英文**（`values/strings.xml`），不是 `values-zh-rCN`。用 `values-zh-rCN` 再轉會變「二手 AI 轉譯」，與上游未來自做的 zh-TW 打架。
-3. **必須保留** `comment="..."` 翻譯指引屬性（base 有 1614 條）與所有 placeholder（`{app_name}` / `%1$s` / `{count}`）。
+3. **必須保留** `comment="..."` 翻譯指引屬性（2026-11-20 實查 base 有 1618 條；**以當下 base 為準，不寫死數字**）與所有 placeholder（`{app_name}` / `%1$s` / `{count}`）。
 4. **必改 Kotlin 一行**：`OtherScreen.kt` 的語言 tag 清單加 `"zh-TW"`（上游有 App 語言選擇器，40 個 tag + `auto`）。工作表裡原寫「不改 Kotlin 碼」是錯的，已更正。
 5. **不要碰 `values/strings_dont_translate.xml`**（32 條）。
 6. **不要用 `kubectl apply` / `helm` 之類** —— 本 repo 與叢集無關。
+7. **wear 的語言跟「手錶系統語言」，不跟手機 App 的 in-app 語言選擇器**（wear 模組無任何 Locale/Configuration 覆寫）→ 走查 wear 畫面前先確認手錶系統語言，別誤判成「沒翻譯」。詳見工作表 1.2.1。
 
 ## 驗證（不可腦補）
 
 ```bash
 # 資源 key 集合與 placeholder 必須與 base 完全對齊
-python3 tools/check_zh_tw.py    # 待建立（Phase B5）
+python3 tools/check-l10n.py    # 待建立（Phase B0b/B5；app + wear 兩個模組）
 
 # lint
 ./gradlew :app:lintDebug        # 需本機 JDK 21 + Android SDK
@@ -52,8 +53,9 @@ python3 tools/check_zh_tw.py    # 待建立（Phase B5）
 gh workflow run build-apk.yml --ref feat/zh-tw-ui
 ```
 
-⚠️ `build-apk.yml` 會 `gh release upload --clobber` 到 `v6.4.0-apk` → **覆蓋既有 Release 資產**。
-手機上裝的就是那個（Nextcloud `文件/app-debug.apk`）。動手前先備份 asset。
+⚠️ Release 資產：**在分支上跑不會覆蓋 `v6.4.0-apk`**（已修：分支用獨立 tag `v6.4.0-apk-<分支名>`）。
+只有**刻意在 `main` 上跑**才會 `--clobber` 掉 `v6.4.0-apk`（= 手機上裝的那個，Nextcloud `文件/app-debug.apk`）→ 不要在 `main` 上隨手觸發。
+（此說明已與工作表 A4 同步，2026-11-20 複查修正。）
 
 ## 🔑 簽章金鑰（單點故障，零備份）
 

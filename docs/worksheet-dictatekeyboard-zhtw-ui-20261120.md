@@ -21,6 +21,8 @@
 | Phase A | ✅ A0/A1/A2 完成；⬜ A3（給作者的說明文件）、A4（Actions 實跑驗證）未做 |
 | Phase B–F | ⬜ 全部未開始 |
 | 工作區 | 乾淨，無未提交改動 |
+| 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
+| 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
 
 ### 下一步（建議順序）
 
@@ -41,6 +43,22 @@ C3  裝機實測：設定 → 其他 → 語言 → 選「繁體中文」→ 確
 **Step 2 — 補完全量翻譯**（Phase B 全量 → Phase D 用語校訂）
 
 **Step 3 — 提 issue → 提 PR**（Phase E）
+
+### 2026-11-20 二次複查修正（同日第二次 review，本節為權威）
+
+| # | 落差 | 修正位置 |
+|---|---|---|
+| 1 | 驗證腳本檔名不一致（`tools/check_zh_tw.py` vs `tools/check-l10n.py`） | **統一為 `tools/check-l10n.py`**（要同時驗 app + wear 兩個模組）；CLAUDE.md 已同步 |
+| 2 | Part 0 的建議順序與 Part 2 的 Phase 分組順序矛盾 | **新增 2.0.1 權威執行順序**，明訂「Phase 分組的排列順序不具權威性」 |
+| 3 | B5 硬編碼「comment 保留數 = 1614」（1.2 已更新為 1618） | B5 改為**與 base 動態比對** |
+| 4 | wear 的語言來源從未驗證 | 新增 **1.2.1**（wear 資源跟手錶系統語言，**不跟**手機 in-app 語言）；B3、C3 加註 |
+| 5 | B0 驗收標準只有 `xmllint`（那是 B0b 的事） | B0 驗收改為**綁定 C3 的「B0 階段驗收」** |
+| 6 | A4 與 C2 重疊（都是跑 build-apk.yml） | A4 定性為**無改動冒煙測試**、C2 定性為**帶改動的正式產出** |
+| 7 | Part 4 Q5 引用的 `TODO.md` 不在 repo 裡 | Q5 補註位置待確認 |
+| 8 | CLAUDE.md 的簽章警告與 A4 實情相反 | CLAUDE.md 已同步（A4 實情：分支 tag 已分離，**不必**備份 asset） |
+| 9 | 「台灣使用者今天看到英文」與「加 picker 條目」被混為一談 | 新增 **2.4.1**：兩層論述拆開（系統語言命中 vs in-app 選擇器），E2b 開 issue 用得上 |
+
+> 複查當下（2026-11-20）另確認：上游 `values-zh-rCN` 仍是唯一中文目錄、issue #483 仍 OPEN / 0 回覆、`minSdk=26`（≥24，script-aware fallback 保證成立）。
 
 ### 三個不要重新踩的坑
 
@@ -194,6 +212,20 @@ compare kuniakil:main...main  →  fork_ahead 4 / fork_behind 6
 - 上游 `LearnedWordsStore.note()` **只被 `LatinLanguageProvider`（打字）呼叫**，dictation 文字確實沒進學詞庫 → P4 前提成立。
 - 倉頡輸入：上游有 `zh_TW_cangjielarge` 形碼語言包（`hanShapeBasedKeyCode = "abcdefghijklmnopqrstuvwxyz&"`），但 `org.florisboard.layouts` 的 `characters/` 下 **沒有倉頡 layout**（只有 qwerty/dvorak/… 等 65 個西文/韓文 layout）→ P2 需自建 layout，難度比原估高。
 - 上游 `tools/` **沒有** l10n/translation 腳本 → 翻譯流程不在 repo 裡，無法直接沿用。
+
+#### 1.2.1 wear 的語言來源（2026-11-20 複查新查證）
+
+`wear/src/main/kotlin/` 下**完全沒有** `Locale` / `Configuration` / `createConfigurationContext` 的使用（grep = 0 命中）。
+
+→ **wear App 的資源解析跟的是「手錶自己的系統語言」，不會跟手機 App 的 in-app 語言選擇器。**
+
+| 影響 | 說明 |
+|---|---|
+| **B3（wear 69 條）** | 翻完也不一定看得到 —— 只有當**手錶的系統語言**是 zh-TW 時才會命中 `wear/.../values-zh-rTW/` |
+| **C3 走查「wear 設定」** | 若只看手機 in-app 切換後的 wear 畫面，會誤判成「wear 沒翻譯」。**必須另外用手錶系統語言驗一次** |
+| **證據截圖（C4）** | wear 的截圖要標註「手錶系統語言 = 繁體中文（台灣）」，否則會誤導作者 |
+
+> ⚠️ 這是**本次複查才發現**的落差，原工作表未涵蓋。**B3 開工前先決定驗證方式**（手錶系統語言 vs 放棄 wear 截圖）。
 
 ---
 
@@ -413,6 +445,26 @@ fi
 | **D3** | **翻譯基底由英文翻**（不用 zh-rCN 再轉） | 見 2.3 的取捨分析 |
 | **D4** | **先證明可用 → 提 issue → 提 PR 附證據** | 證據鏈升格為正式交付項 → 見 2.4 |
 
+### 2.0.1 權威執行順序（2026-11-20 複查新增）
+
+> ⚠️ **本節的順序優先於下方 Phase 分組的排列順序。** Phase A→B→C→D→E→F 只是**工作分類**，不是執行先後 —— 照字母順序走會先翻完 2547 條才驗證資源目錄命名，把風險押到最後。
+
+| # | 步驟 | 對應 checkbox | 為什麼在這個位置 |
+|---|---|---|---|
+| 1 | 產出最小可行 zh-TW 資源（30–50 條） | **B0** | 便宜的第一次實機驗證 |
+| 2 | 建驗證腳本 | **B0b** | 後面每一批翻譯都要靠它擋錯 |
+| 3 | picker 加 `"zh-TW"`（1 行 Kotlin） | **C1** | 與 B0 一起構成最小可測組合 |
+| 4 | 雲端編譯**冒煙測試**（無改動） | **A4** | 先確認 Actions 這條路本身是通的 |
+| 5 | 雲端編譯 + 裝機實測（帶改動） | **C2 → C3** | **B0 的真正驗收點**：命名與 fallback 生效才算過 |
+| 6 | 台灣用語 glossary | **B1** | 全量翻譯前先立規範 |
+| 7 | 全量翻譯 app | **B2** | 分批，每批過 B0b |
+| 8 | 翻譯 wear | **B3** | 見 1.2.1 的語言來源限制 |
+| 9 | 用語校訂 | **D1–D3** | 全量完成後才有意義 |
+| 10 | 與上游接觸 | **E1–E3** | 需要 5 的實機截圖證據 |
+| 11 | 之後才做 | **F1–F4** | — |
+
+**硬規則**：第 5 步（C3 的「B0 階段驗收」）**未通過前，不得進入第 7 步（B2 全量）**。
+
 ### 2.1 分支策略（D2 的落實）
 
 #### 問題
@@ -508,10 +560,11 @@ git push origin pr/zh-tw-ui
 - ℹ️ **B5 補充**：`app/lint.xml` 把 `ExtraTranslation` 設為 warning，lint 不保證擋住缺漏 → 驗證要靠自寫的 key／placeholder 比對腳本，不靠 lint。
 - ℹ️ **同步上游**：B2 開工前先 `git merge upstream/main`（上游 `strings.xml` 11 月改了 30 次），並以當下 base 重算基準數字。
 - [ ] **A3** 建 `docs/zh-TW-ui-contribution.md`（給作者看的說明；未來 PR 會帶上去）
-- [ ] **A4** 確認 Actions 可出 APK：`gh workflow run build-apk.yml --ref feat/zh-tw-ui`
+- [ ] **A4** 確認 Actions 可出 APK（**無改動的冒煙測試**）：`gh workflow run build-apk.yml --ref feat/zh-tw-ui`
       ✅ 2026-11-20 修正：tag 撞名已修（`7843e539`）。在 `feat/zh-tw-ui` 跑會發到
       `v6.4.0-apk-feat-zh-tw-ui`，**不會**動 `v6.4.0-apk`（舊版，仍指向 `e4c41fe`）。
-      只有在 `main` 上跑才會 `--clobber` 掉 `v6.4.0-apk`。無需特別備份。
+      只有在 `main` 上跑才會 `--clobber` 掉 `v6.4.0-apk`。**無需特別備份 asset。**
+      ℹ️ 與 C2 的分工：**A4 = 這條 CI 路徑本身通不通**（不含 zh-TW 改動）；**C2 = 帶 zh-TW 改動的正式產出**。兩者都會跑同一支 workflow，但目的不同。
       ℹ️ debug 版 applicationId 有 `.debug` 後綴，與 Play 版是兩個獨立 App，設定需另外輸入。
 
 ### 2.3 Phase B — 翻譯（D3：基底由英文翻）
@@ -534,22 +587,30 @@ git push origin pr/zh-tw-ui
 - [ ] **B0** 最小可行驗證（先於 B1–B6；目的：證明 `values-zh-rTW` 命名與 fallback 可用）
   - 建 `app/src/main/res/values-zh-rTW/strings.xml`，只含約 40 條：`pref__other__settings_language__label`、設定首頁標題、Dictate 主要頁面標題、含 `%1$s` / `{app_name}` 的字串、1 個 plural
   - 保留 `comment` 屬性與 placeholder；其餘未翻條目**刻意不放**（用來驗證退回英文）
-  - 驗收：`xmllint --noout` 通過
-- [ ] **B0b** 建驗證腳本 `tools/check-l10n.py`：比對 key 集合、placeholder、`comment` 保留數、plurals（B5 的前置；基準數字以其輸出為準）
+  - 語法層：`xmllint --noout` 通過
+  - **⚠️ 真正的驗收不在這裡**：語法通過**不等於**命名有效。**B0 的驗收點 = C3 的「B0 階段驗收」**（見 2.4）—— 裝機後確認「已翻條目顯示繁中、未翻條目退回英文、無崩潰」。
+    → 依 2.0.1，C3 未通過前不得進入 B2 全量。
+- [ ] **B0b** 建驗證腳本 **`tools/check-l10n.py`**：比對 key 集合、placeholder、`comment` 保留數、plurals
+  - ⚠️ **檔名已統一為 `tools/check-l10n.py`**（2026-11-20 複查修正；原 CLAUDE.md 寫的 `tools/check_zh_tw.py` 已改）。理由：要同時驗 app + wear 兩個模組，名字得是通用的。
+  - **基準數字一律動態取自當下的 base**（不要寫死任何數字 —— 上游還在動，`strings.xml` 11 月改了 30 次）。輸出為準。
 - [ ] **B1** 建立台灣用語 glossary（英文 → 台灣繁中），以 1.3 對照表為底
 - [ ] **B2** 批次翻譯 `values/strings.xml` → `values-zh-rTW/strings.xml`
   - 執行方式：由 agent 分批直接翻（每批約 100–200 條），每批過 `tools/check-l10n.py`，不使用外部翻譯 API
   - 輸入：英文原文 + `comment="..."` 翻譯指引（1614 條）
   - **必須保留**：`comment` 屬性、placeholder（`{app_name}` / `%1$s` / `{count}`）、XML 轉義
-  - 輸出結構與 base 完全對齊（2547 strings + 11 plurals）
+  - 輸出結構與 base 完全對齊（**數字動態取自當下 base**；2026-11-20 實查 = 2547 strings + 11 plurals）
 - [ ] **B3** 翻譯 `wear/src/main/res/values/strings.xml` → `values-zh-rTW/strings.xml`（base 69 條）
+  - ⚠️ **wear 的資源跟「手錶系統語言」，不跟手機 App 的 in-app 語言選擇器**（見 1.2.1，wear 模組無任何 Locale/Configuration 覆寫）
+  - **開工前先決定驗證方式**：① 手錶系統語言設為 zh-TW 實測；或 ② 放棄 wear 截圖，只交付資源檔並在 PR 說明中標註此限制
+  - 若走 ①，截圖須標註「手錶系統語言 = 繁體中文（台灣）」，避免誤導作者
 - [ ] **B4** `strings_dont_translate.xml`（32 條）**不翻**
 - [ ] **B5** 驗證：
-  - [ ] key 集合與 base 完全一致（2547 + 11 plurals）
+  - [ ] key 集合與 base 完全一致（當下 base 的 string + plurals 全數；數字動態取，不得寫死 2547 / 11）
   - [ ] placeholder 逐條比對，mismatch = 0（基準：base vs zh-rCN 實測為 0）
-  - [ ] `comment` 屬性保留數 = base 的 1614
+  - [ ] `comment` 屬性保留數 **= base 的當下 comment 數**（動態比對；2026-11-20 實查 base = 1618 —— 原寫的 1614 已過時，**不可寫死**）
   - [ ] XML 合法（`xmllint`）
   - [ ] lint 無 `MissingTranslation`
+  - [ ] wear 模組同樣跑一次 `tools/check-l10n.py`
 - [ ] **B6** 台灣用語複查（掃描殘留大陸用語，歸零）
 
 ### 2.4 Phase C — 讓繁中介面真的出現（D4 的關鍵：證明可用）
@@ -557,17 +618,20 @@ git push origin pr/zh-tw-ui
 > 這是整個計畫的**樞紐**。沒有這一步，後面的 issue 與 PR 都只是「我打算做」。
 
 - [ ] **C1** 在 `OtherScreen.kt` 的語言 tag 清單加入 `"zh-TW"`（清單目前 40 個 tag，`zh-CN` 在最後）
-  - `FlorisLocale.fromTag("zh-TW")` 會解析成 `Locale("zh","TW")` ✅
+  - `FlorisLocale.fromTag("zh-TW")` 會解析成 `Locale("zh","TW")` ✅（複查確認：`DELIMITER_SPLITTER` 同時接受 `-` 與 `_`；`languageTag()` 回傳 `"zh-TW"`，與既有 `"zh-CN"` 同一格式）
   - 顯示名稱由 `locale.displayName()` 產生，無需自訂
   - `FlorisAppActivity.kt:101-105` 已監聽 `prefs.other.settingsLanguage` 並即時 `createConfigurationContext` → **不需重啟 App 即生效**
-- [ ] **C2** 走 Actions 出 APK（本機未確認有 Android SDK，不採本機建置）
+  - ℹ️ 插入位置：`OtherScreen.kt:161` 的 `"zh-CN",` 之後（清單為字母序，`zh-TW` 應在 `zh-CN` 後）
+- [ ] **C2** 走 Actions 出 APK（本機未確認有 Android SDK，不採本機建置）—— **帶 zh-TW 改動的正式產出**
   - 我們的 `build-apk.yml` 是 `workflow_dispatch` 手動觸發 ✅
   - 分支建置發到 `v6.4.0-apk-<分支名>`，不會覆蓋 `v6.4.0-apk`（已修正，見 A4）
+  - 與 A4 的分工見 2.0.1：A4 是無改動冒煙測試，本項是正式產出
 - [ ] **C3** 裝機實測（證據鏈起點）
   - [ ] App → 設定 → 其他 → 語言 → 選「繁體中文」→ 確認 UI 立即切換
-  - [ ] 走查：設定首頁 / Dictate / providers / prompts / backup / learned words / wear 設定
+  - [ ] 走查：設定首頁 / Dictate / providers / prompts / backup / learned words
+  - [ ] **wear 設定走查**：⚠️ wear 跟的是**手錶系統語言**，不跟手機 in-app 選擇器（見 1.2.1）→ 必須另外用手錶系統語言 = zh-TW 實測一次，否則不要判定為失敗
   - [ ] 確認無殘留英文、placeholder 顯示正常（`%1$s` 插值）、無崩潰
-  - [ ] **B0 階段驗收**：選繁中後，已翻條目顯示繁中、未翻條目退回英文、無崩潰；順便記錄 picker 顯示名稱（如「Chinese (Taiwan)」或「中文（台灣）」）
+  - [ ] **B0 階段驗收（= B0 的正式驗收點，見 2.0.1）**：選繁中後，已翻條目顯示繁中、未翻條目退回英文、無崩潰；順便記錄 picker 顯示名稱（如「Chinese (Taiwan)」或「中文（台灣）」）
 - [ ] **C4** **產出證據（截圖集）**
   - 語言選擇器（含 "繁體中文（台灣）" 選項）
   - 設定首頁（繁中）
@@ -575,8 +639,21 @@ git push origin pr/zh-tw-ui
   - providers / prompts 頁（繁中）
   - learned words 頁（繁中）
   - **對照組**：同一頁的英文版與簡中版（用 `zh-CN` 切一次）→ 三語並列最有說服力
+  - ⚠️ wear 截圖（若有）：必須標註「手錶系統語言 = 繁體中文（台灣）」，不可讓人誤以為是手機 in-app 選擇器帶動的
 
 > 💡 證據的呈現方式：issue 用截圖，PR 用截圖 + 說明。**重點是讓作者一眼看出「這是台灣使用者實際看到的畫面」，而不是抽象的翻譯檔案。**
+
+#### 2.4.1 兩層論述要拆開（2026-11-20 複查新增 —— E2b 開 issue 時直接用）
+
+原工作表把「台灣使用者今天看到英文」與「要加 picker 條目」混為一件事。實際上是**兩層**，混著講會被作者挑掉：
+
+| 層 | 命題 | 需要什麼才能成立 |
+|---|---|---|
+| **層 1 — 資源層（不需改 Kotlin）** | 台灣使用者（**系統語言 = zh-TW**）打開 App 看到的是**英文**，因為上游只有 `values-zh-rCN`，而 zh-rCN 隱含 script=Hans，**不會**被 zh-Hant 裝置匹配 | 只需新增 `values-zh-rTW/` 資源目錄。**與 picker 無關** |
+| **層 2 — 選擇器層（需改 1 行 Kotlin）** | 即使系統語言不是中文，使用者也**無法**在 App 內把介面切成繁中 —— picker 的 40 個 tag 裡沒有 zh-TW | 需要 C1 那 1 行 |
+
+→ **層 1 是 issue 的主論點**（不需要作者先接受任何 Kotlin 改動，純資源貢獻）；**層 2 是 PR 的完整度訴求**。
+→ 另可佐證層 1：`minSdk = 26`（≥ API 24）→ script-aware 資源解析保證成立，不存在「舊 Android 掉進簡體」的例外。
 
 ### 2.5 Phase D — 台灣用語校訂
 
@@ -619,6 +696,8 @@ git push origin pr/zh-tw-ui
   - 附帶說明我們已完成 zh-TW UI 介面、正在準備貢獻
 - [ ] **E2b** **新開 issue**「Traditional Chinese (zh-TW) UI translation」，內容：
   1. 台灣用戶目前拿到**英文**（附資源解析規則與 `createConfigurationContext` 機制）
+     - ⚠️ **依 2.4.1 拆成兩層寫**：層 1（資源層，不需要改 Kotlin）是主論點；層 2（picker 少一個 tag）才是需要動 Kotlin 的部分
+     - 佐證：上游已有 20 個 locale 目錄，但 `ast` / `sq` / `ur` / `et` **有資源卻不在 picker 清單** → 上游並不要求 picker 與資源目錄一致，可作為「資源層先行」的論述
   2. 我們已做好的 zh-TW 介面 + **實機截圖證據**
   3. 我們的維護方案（見 2.7）
 - [ ] **E2c** 等待作者回應（作者活躍，issue 與 PR 都有回覆；他的習慣是先談再收）
@@ -676,6 +755,7 @@ git push origin pr/zh-tw-ui
 | **PR #97 的先例**（低） | 社群翻譯 PR 曾被無留言關閉 | 先開 issue 建立關係（D4）；且 2.7 的交付型態與 #97（純檔案）不同 |
 | **`values-zh-rTW` 涵蓋範圍**（低） | `zh-rTW` 隱含 script=Hant，但 **zh-HK / zh-MO 不會匹配** | 跟上游全用 legacy `r<REGION>` 命名（`zh-rCN` / `ko-KR` / `pt-BR` / `lv-LV`）的慣例一致 → 先用 `values-zh-rTW`；取捨在 E2b 跟作者談 |
 | **上游 Kotlin 碼衝突**（低） | 改 `OtherScreen.kt` 會與上游未來改動衝突 | 已驗證上游那 4 個 commit 都没動 `OtherScreen.kt`；E1d 提 PR 前 rebase |
+| **wear 語言來源**（低-中） | wear 資源跟**手錶系統語言**，不跟手機 App 的 in-app 語言選擇器 → 翻了可能看不到，C3 走查易誤判 | 見 1.2.1：B3 前先定驗證方式（手錶系統語言實測，或放棄 wear 截圖並在 PR 說明）；截圖需標註語言來源 |
 
 ---
 
@@ -686,8 +766,10 @@ git push origin pr/zh-tw-ui
 | Q1 | 翻譯基底 | ✅ **由英文 base 翻**（理由見 2.3：與上游 AI 批次流程同源，相容性高） |
 | Q2 | 分支 | ✅ **開分支，專供未來提 PR**；採單分支 + 提 PR 前剝離（2.1） |
 | Q3 | 執行順序 | ✅ **自己先做 → 證明可用 → 提 issue → 提 PR 附證據**（D4） |
-| Q4 | wear（69 條） | ✅ 一併做（B3），但排在主 App 之後 |
-| Q5 | TODO.md 的 P1 條目 | ⬜ 待更新（原文「零衝突不改 Kotlin 碼」需更正為「需動 `OtherScreen.kt` 一行」） |
+| Q4 | wear（69 條） | ✅ 一併做（B3），但排在主 App 之後。⚠️ 補充（2026-11-20 複查）：wear 資源跟**手錶系統語言**，不跟手機 in-app 選擇器 → B3 前先定驗證方式（見 1.2.1） |
+| Q5 | TODO.md 的 P1 條目 | ⬜ 待更新（原文「零衝突不改 Kotlin 碼」需更正為「需動 `OtherScreen.kt` 一行」）<br>⚠️ **2026-11-20 複查：`TODO.md` 不在本 repo 內**（`ls TODO.md docs/TODO.md` → 不存在）→ 需先確認它在哪裡（可能是 repo 外的私人文件），否則本項無法執行、應刪除 |
+| Q6 | 驗證腳本檔名 | ✅ **統一為 `tools/check-l10n.py`**（2026-11-20 複查；原 CLAUDE.md 的 `tools/check_zh_tw.py` 已同步更正） |
+| Q7 | Release 資產備份 | ✅ **不必備份**（2026-11-20 複查）：分支建置已用獨立 tag `v6.4.0-apk-<分支名>`，不會動 `v6.4.0-apk`；只有刻意在 `main` 上跑才會 clobber。CLAUDE.md 的舊警告已同步移除 |
 
 ---
 
@@ -740,6 +822,46 @@ find ~ -maxdepth 7 -name ".git" -type d -not -path "*/Library/*" 2>/dev/null \
 mdfind "kMDItemFSName == '*ictate*'c" | grep -v kubernetes
 ```
 
+### 2026-11-20 二次複查新增的可重跑指令
+
+```bash
+# wear 模組是否有任何 Locale / Configuration 覆寫（答案：沒有 → wear 跟手錶系統語言）
+grep -rn "Locale\|createConfigurationContext\|setLocale" wear/src/main/kotlin --include="*.kt"
+# → 0 命中
+
+# picker 的 tag 清單（zh-CN 在最後一行，插 "zh-TW" 在其後）
+grep -n '"zh-CN"' app/src/main/kotlin/dev/patrickgold/florisboard/app/settings/advanced/OtherScreen.kt
+# → 161:  "zh-CN",
+
+# FlorisLocale.fromTag 的分隔符規則（- 與 _ 都接受 → "zh-TW" 可用）
+grep -n "DELIMITER_SPLITTER\|DELIMITER_LANGUAGE_TAG" \
+  app/src/main/kotlin/dev/patrickgold/florisboard/lib/FlorisLocale.kt
+
+# minSdk（≥24 才保證 script-aware 資源解析）
+grep -n "projectMinSdk" gradle.properties
+# → projectMinSdk=26
+
+# base / zh-rCN 的 key 集合差異（動態取數，不寫死）
+python3 - <<'EOF'
+import re
+def names(p):
+    return set(re.findall(r'<(?:string|plurals)\s[^>]*name="([^"]+)"', open(p,encoding='utf-8').read()))
+b = names('app/src/main/res/values/strings.xml')
+c = names('app/src/main/res/values-zh-rCN/strings.xml')
+print('base:',len(b),'zh-CN:',len(c),'missing:',len(b-c),'extra:',len(c-b))
+EOF
+
+# comment 屬性數量（動態取數）
+grep -o ' comment="' app/src/main/res/values/strings.xml | wc -l
+# → 1618（2026-11-20）
+
+# 上游現況（複查當下）
+gh api repos/DevEmperor/DictateKeyboard/contents/app/src/main/res --jq '[.[].name]|map(select(test("zh")))'
+# → ["values-zh-rCN"]
+gh issue view 483 -R DevEmperor/DictateKeyboard --json state,comments --jq '{s:.state,c:(.comments|length)}'
+# → {"s":"OPEN","c":0}
+```
+
 ---
 
-*本文件由 Claude Code 撰寫，數據皆為 2026-11-20 實查。Part 2 於同日依使用者決策（D1–D4）修訂。*
+*本文件由 Claude Code 撰寫，數據皆為 2026-11-20 實查。Part 2 於同日依使用者決策（D1–D4）修訂，並於同日第二次 review 補上 9 項落差修正（見 Part 0「2026-11-20 二次複查修正」）。*
