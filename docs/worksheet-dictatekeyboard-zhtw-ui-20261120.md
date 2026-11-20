@@ -18,14 +18,14 @@
 | 本機 repo | ✅ `~/DictateKeyboard`（origin = 我們的 fork，upstream = 上游） |
 | 當前分支 | `feat/zh-tw-ui`（Phase B 全量翻譯 + wear + Phase D 台灣用語校訂已完成） |
 | `main` | ✅ 已 merge `upstream/main`（diff vs 上游只剩 2 個純新增檔案） |
-| Phase A | ✅ A0/A1/A2 完成；⬜ A3（給作者的說明文件）未做 |
+| Phase A | ✅ A0/A1/A2/A3 完成（`docs/zh-TW-ui-contribution.md` 已建立） |
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
-| Phase C | ✅ C1/C2 完成；⬜ C3/C4 待實測截圖 |
-| Phase E–F | ⬜ 尚未開始 |
+| Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對） |
+| Phase E–F | 🔄 **E1a–E1e 已完成**（乾淨分支 `pr/zh-tw-ui` 與草稿 `docs/upstream-outreach-drafts-20261120.md` 已備妥，待使用者發 issue／PR） |
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
 | 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
 
-### 🔵 當前階段（2026-11-20，全量 zh-TW APK 建置完成 → 待 C3 實機測試）
+### 🔵 當前階段（2026-11-20，實機驗證與截圖完成 → 待 Phase E2/E3 對上游發 issue / PR）
 
 | 步驟 | 狀態 |
 |---|---|
@@ -35,7 +35,8 @@
 | **C2（B0 驗證版）** 觸發 Actions 出 APK | ✅ 完成（run `44660451431`，commit `2d5c2f23`，**建置耗時 9 分 12 秒**） |
 | **B1–B6 + D1–D3** 全量翻譯 + glossary + wear + 用語校訂 | ✅ 完成（app 2558/2558、wear 69/69、`check-l10n.py --strict` 與 `xmllint` 通過） |
 | **C2（全量版）** 觸發 Actions 出 APK | ✅ 完成（run `44668198901`，commit `be4913ed`，**建置耗時 13 分 41 秒**，資產 `174,483,318 bytes`，簽章指紋固定為 `AD:52:6F:35:...74:31:A3`，`v6.4.0-apk` 完全未動） |
-| **C3** 裝機實測（**需使用者本人操作**） | ⬜ APK 已備妥，待使用者安裝實測 |
+| **C3 / C4** 裝機實測與截圖 | ✅ 完成（實機確認 picker 顯示 `中文 (台灣)`、繁中切換與排版正常；12 張截圖存於 Nextcloud `/mnt/kuniaki/文件/DictateKeyboard`；另發現 `zh-TW-*` 預設貨幣仍為 `yen`，已記進 F2） |
+| **A3 + E1a–E1e** 上游文件、草稿與乾淨 PR 分支 | ✅ 完成（`docs/zh-TW-ui-contribution.md`、`docs/upstream-outreach-drafts-20261120.md`、`origin/pr/zh-tw-ui` 已就緒） |
 
 ### C2 建置結果（2026-11-20）
 
@@ -626,7 +627,7 @@ git push origin pr/zh-tw-ui
 - ℹ️ **注意**：`docs/zh-TW-setup.md` 只存在於 `main`，**`feat/zh-tw-ui` 上沒有**。要引用前先 `git checkout origin/main -- docs/zh-TW-setup.md`；E1b 的 PR 檔案清單不得帶入。
 - ℹ️ **B5 補充**：`app/lint.xml` 把 `ExtraTranslation` 設為 warning，lint 不保證擋住缺漏 → 驗證要靠自寫的 key／placeholder 比對腳本，不靠 lint。
 - ℹ️ **同步上游**：B2 開工前先 `git merge upstream/main`（上游 `strings.xml` 11 月改了 30 次），並以當下 base 重算基準數字。
-- [ ] **A3** 建 `docs/zh-TW-ui-contribution.md`（給作者看的說明；未來 PR 會帶上去）
+- [x] **A3** 建 `docs/zh-TW-ui-contribution.md`（給作者看的說明；未來 PR 會帶上去）
 - [ ] **A4** 確認 Actions 可出 APK（**無改動的冒煙測試**）：`gh workflow run build-apk.yml --ref feat/zh-tw-ui`
       ✅ 2026-11-20 修正：tag 撞名已修（`7843e539`）。在 `feat/zh-tw-ui` 跑會發到
       `v6.4.0-apk-feat-zh-tw-ui`，**不會**動 `v6.4.0-apk`（舊版，仍指向 `e4c41fe`）。
@@ -702,20 +703,20 @@ git push origin pr/zh-tw-ui
   - 我們的 `build-apk.yml` 是 `workflow_dispatch` 手動觸發 ✅
   - 分支建置發到 `v6.4.0-apk-<分支名>`，不會覆蓋 `v6.4.0-apk`（已修正，見 A4）
   - 與 A4 的分工見 2.0.1：A4 是無改動冒煙測試，本項是正式產出
-- [ ] **C3** 裝機實測（證據鏈起點）
-  - [ ] App → 設定 → 其他 → 語言 → 選「繁體中文」→ 確認 UI 立即切換
-  - [ ] 走查：設定首頁 / Dictate / providers / prompts / backup / learned words
-  - [ ] **wear 設定走查**：⚠️ wear 跟的是**手錶系統語言**，不跟手機 in-app 選擇器（見 1.2.1）→ 必須另外用手錶系統語言 = zh-TW 實測一次，否則不要判定為失敗
-  - [ ] 確認無殘留英文、placeholder 顯示正常（`%1$s` 插值）、無崩潰
-  - [ ] **B0 階段驗收（= B0 的正式驗收點，見 2.0.1）**：選繁中後，已翻條目顯示繁中、未翻條目退回英文、無崩潰；順便記錄 picker 顯示名稱（如「Chinese (Taiwan)」或「中文（台灣）」）
-- [ ] **C4** **產出證據（截圖集）**
-  - 語言選擇器（含 "繁體中文（台灣）" 選項）
+- [x] **C3** 裝機實測（證據鏈起點）
+  - [x] App → 設定 → 其他 → 語言 → 選「中文 (台灣)」→ 確認 UI 立即切換
+  - [x] 走查：設定首頁 / Dictate / providers / 佈景主題 / 剪貼簿 / 使用者字典 / learned words
+  - [ ] **wear 設定走查**：⚠️ wear 跟的是**手錶系統語言**，不跟手機 in-app 選擇器（見 1.2.1）→ 本輪略過實錶走查，於 issue/PR 說明此限制（採用 B3 方案②）
+  - [x] 確認無殘留英文、placeholder 顯示正常（`%1$s` / `{v}` 插值）、無崩潰
+  - [x] **B0 階段驗收（= B0 的正式驗收點，見 2.0.1）**：全量繁中實測通過，無崩潰；picker 顯示名稱實測為 **`中文 (台灣)`**
+- [x] **C4** **產出證據（截圖集）**（已存於 Nextcloud `/mnt/kuniaki/文件/DictateKeyboard`，共 12 張，隱私已檢查無外洩）
+  - 語言選擇器（拍到「中文 (中國)」與「中文 (台灣)」並列）
   - 設定首頁（繁中）
   - Dictate 設定頁（繁中）
-  - providers / prompts 頁（繁中）
+  - providers / 佈景主題 / 剪貼簿 / 使用者字典 頁（繁中）
   - learned words 頁（繁中）
-  - **對照組**：同一頁的英文版與簡中版（用 `zh-CN` 切一次）→ 三語並列最有說服力
-  - ⚠️ wear 截圖（若有）：必須標註「手錶系統語言 = 繁體中文（台灣）」，不可讓人誤以為是手機 in-app 選擇器帶動的
+  - **對照組**：同一「其他」頁的英文版、簡中版與繁中版三語對照（`12-12-47` / `12-13-01` / `12-13-10`）
+  - ⚠️ wear 截圖（若有）：必須標註「手錶系統語言 = 繁體中文（台灣）」，不可讓人誤以為是手機 in-app 選擇器帶動的（本輪略過）
 
 > 💡 證據的呈現方式：issue 用截圖，PR 用截圖 + 說明。**重點是讓作者一眼看出「這是台灣使用者實際看到的畫面」，而不是抽象的翻譯檔案。**
 
@@ -756,13 +757,13 @@ git push origin pr/zh-tw-ui
 
 #### E1 — 提 PR 的乾淨分支準備（可與 Phase C 並行準備，最後才推）
 
-- [ ] **E1a** 從 `upstream/main` 拉出 `pr/zh-tw-ui`
-- [ ] **E1b** 只帶入在地化改動（排除我們的 CI commit）：
+- [x] **E1a** 從 `upstream/main` 拉出 `pr/zh-tw-ui`
+- [x] **E1b** 只帶入在地化改動（排除我們的 CI commit）：
       `app/src/main/res/values-zh-rTW/`、`wear/src/main/res/values-zh-rTW/`、`OtherScreen.kt`（1 行）、`docs/zh-TW-ui-contribution.md`
-- [ ] **E1c** 驗證 diff 乾淨：`git diff upstream/main --stat` 應只有上述 4 項
-- [ ] **E1d** rebase 到最新 `upstream/main`（消除 C 階段期間上游的新 commit）
-- [ ] **E1e** 推上去：`git push origin pr/zh-tw-ui`（推到**我們的 fork**）
-- [ ] **E1f** 開 PR：compare `DevEmperor:main` ← `kuniakil:pr/zh-tw-ui`
+- [x] **E1c** 驗證 diff 乾淨：`git diff upstream/main --stat` 應只有上述 4 項
+- [x] **E1d** rebase 到最新 `upstream/main`（已於最新 `upstream/main` `84adfa99` 上切出，無新 commit）
+- [x] **E1e** 推上去：`git push origin pr/zh-tw-ui`（推到**我們的 fork**）
+- [ ] **E1f** 開 PR：compare `DevEmperor:main` ← `kuniakil:pr/zh-tw-ui`（⚠️ 待 E2 issue 討論後再執行；文案見 `docs/upstream-outreach-drafts-20261120.md`）
 
 #### E2 — 先在 issue #483 留言建立連結
 
@@ -813,7 +814,7 @@ git push origin pr/zh-tw-ui
 ### 2.8 Phase F — 之後才做（順序不變）
 
 - [ ] **F1**（原 P3）繁中實用 Rewording Prompts → 依 `schema.json` 放進 `prompt-library` 的 `submissions/` → 提 PR（CI 跑 `validate.py`）。**注意：此項與 Phase E 的上游互動經驗直接相關，應在 E 之後。**
-- [ ] **F2**（原 P2）倉頡字根顯示 → **先開 issue 討論再寫碼**。需自建 `characters/cangjie.json`（label=字根、code=字母）+ 接進 `extension.json` + 確認 Kotlin 版 layout loader 行為。上游本來就沒倉頡 layout，屬「上游可能不收」類型。
+- [ ] **F2**（原 P2）倉頡字根顯示 + `zh-TW-*` 預設貨幣修正 → **先開 issue 討論再寫碼**。需自建 `characters/cangjie.json`（label=字根、code=字母）+ 接進 `extension.json` + 確認 Kotlin 版 layout loader 行為（上游本來就沒倉頡 layout，屬「上游可能不收」類型）。另已於 2026-11-20 實測查證：`app/src/main/assets/ime/keyboard/org.florisboard.localization/extension.json` 第 775 行（`zh-TW-boshiamy`）與第 790 行（`zh-TW-cangjielarge`）將 `currencySet` 設為 `org.florisboard.currencysets:yen`（$ 顯示為 ¥）而非 `org.florisboard.currencysets:dollar`；故意不混入 `pr/zh-tw-ui`，留待本項或獨立小 PR 處理（手機端可先於「設定 → 語言與配置 → 子類型 → 貨幣符號集」改選 `Dollar ($)`）。
 - [ ] **F3**（原 P4）Feature request：dictation 文字進學詞庫 + 社群共享字典。前提已驗證成立（`LearnedWordsStore.note()` 只被 `LatinLanguageProvider` 呼叫）。
 - [ ] **F4** OpenTypeless 備份清理（`~/Library/Application Support/com.opentypeless.app/backups/`，實測 4.4 MB，2026-11-17 建立）→ 觀察 1–2 週穩定後可刪
 
