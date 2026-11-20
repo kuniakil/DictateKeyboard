@@ -41,7 +41,7 @@
   "settings__search__clear_recent": "清除最近搜尋",
   "dictate__settings_unreadable_card": "無法讀取你的設定，因此 Dictate 以預設值啟動。點這裡即可還原。",
   "dictate__settings_unreadable_title": "還原設定？",
-  "dictate__settings_unreadable_message": "Dictate 啟動時無法讀取設定檔。它保留了該檔案未做更動，並以預設值啟動。還原會把你的服務供應商、金鑰、提示與設定恢復原樣；刪除則會移除舊檔案。",
+  "dictate__settings_unreadable_message": "Dictate 啟動時無法讀取設定檔。它保留了該檔案未做更動，並以預設值啟動。還原會把你的服務商、金鑰、提示與設定恢復原樣；刪除則會移除舊檔案。",
   "dictate__settings_restore_failed": "舊設定仍然無法讀取。",
   "settings__search__popular": "常用",
   "settings__search__no_results": "找不到設定",

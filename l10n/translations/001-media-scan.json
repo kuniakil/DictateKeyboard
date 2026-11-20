@@ -36,7 +36,7 @@
   "gif__setup_needed": "請在設定中加入免費的 KLIPY API 金鑰以搜尋 GIF",
   "gif__setup_needed_action": "設定 GIF 搜尋",
   "gif__search_off": "GIF 搜尋已關閉",
-  "gif__copied_to_clipboard": "GIF 已複製到剪貼簿 —— 長壓即可貼上",
+  "gif__copied_to_clipboard": "GIF 已複製到剪貼簿 —— 長按即可貼上",
   "gif__insert_failed": "無法插入 GIF",
   "scan__take_photo": "拍照",
   "scan__pick_image": "選擇圖片",

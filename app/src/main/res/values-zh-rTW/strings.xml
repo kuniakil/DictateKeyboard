@@ -42,7 +42,7 @@
     <string name="gif__setup_needed" comment="Empty state prompting the user to add a key">請在設定中加入免費的 KLIPY API 金鑰以搜尋 GIF</string>
     <string name="gif__setup_needed_action" comment="Button to open settings">設定 GIF 搜尋</string>
     <string name="gif__search_off" comment="Empty state of the GIF panel while the user has switched GIF search off in the settings">GIF 搜尋已關閉</string>
-    <string name="gif__copied_to_clipboard" comment="Toast when a GIF is copied as a fallback">GIF 已複製到剪貼簿 —— 長壓即可貼上</string>
+    <string name="gif__copied_to_clipboard" comment="Toast when a GIF is copied as a fallback">GIF 已複製到剪貼簿 —— 長按即可貼上</string>
     <string name="gif__insert_failed" comment="Toast when a GIF could not be inserted or copied">無法插入 GIF</string>
     <!-- Scan text (issue #390) -->
     <string name="scan__take_photo" comment="Button in the scan panel, opens the system camera">拍照</string>
@@ -91,7 +91,7 @@
     <string name="sticker__folder_pick_failed" comment="Toast when the folder permission could not be kept">無法保留對該資料夾的存取權限</string>
     <string name="sticker__rescan_done" comment="Toast after a manual rescan; {n} is the number of stickers found">找到 {n} 個貼圖</string>
     <string name="sticker__rescan_done_converted" comment="Toast after a rescan that also converted files; {n} stickers found, {converted} of them brought into the sticker shape">找到 {n} 個貼圖，其中 {converted} 個已轉換</string>
-    <string name="sticker__copied_to_clipboard" comment="Toast when the target app refuses images and the sticker is copied instead">這個應用程式不接受貼圖 —— 已複製到剪貼簿，長壓即可貼上</string>
+    <string name="sticker__copied_to_clipboard" comment="Toast when the target app refuses images and the sticker is copied instead">這個應用程式不接受貼圖 —— 已複製到剪貼簿，長按即可貼上</string>
     <string name="sticker__insert_failed" comment="Toast when a sticker could not be inserted or copied">無法插入貼圖</string>
     <string name="prefs__media__sticker_add" comment="Preference title, opens a picker to copy images into the sticker folder">新增貼圖</string>
     <string name="prefs__media__sticker_add__summary" comment="Preference summary; mentions the share sheet as the other way in">將圖片複製到資料夾。你也可以從任何應用程式把圖片分享到 Dictate。</string>
@@ -129,15 +129,15 @@
     <string name="sticker__source_hint" comment="Note under the list; explains why some apps are missing from it">這些只是起點，並不保證存在 —— 若找不到對應的資料夾，檔案選擇器仍會照常開啟。像三星鍵盤這類把貼圖藏在自己專用空間的應用程式，只能用分享的方式傳到 Dictate。</string>
     <string name="sticker__import_progress" comment="Preference title while copying; {done} of {total} files handled">正在複製 {done} / {total}</string>
     <string name="sticker__import_cancel" comment="Preference summary while copying; tapping stops it">點一下即可停止。已複製的內容會保留。</string>
-    <string name="sticker__refused_declares_nothing" comment="Toast when the target app accepts no rich content at all">這個應用程式不接受鍵盤傳送的圖片 —— 已複製到剪貼簿，長壓即可貼上</string>
-    <string name="sticker__refused_accepts_only" comment="Toast naming the formats the app accepts; {accepted} is a list of types, {own} the sticker\'s own">這個應用程式只接受 {accepted}，而這個貼圖是 {own} —— 已複製到剪貼簿，長壓即可貼上</string>
+    <string name="sticker__refused_declares_nothing" comment="Toast when the target app accepts no rich content at all">這個應用程式不接受鍵盤傳送的圖片 —— 已複製到剪貼簿，長按即可貼上</string>
+    <string name="sticker__refused_accepts_only" comment="Toast naming the formats the app accepts; {accepted} is a list of types, {own} the sticker\'s own">這個應用程式只接受 {accepted}，而這個貼圖是 {own} —— 已複製到剪貼簿，長按即可貼上</string>
     <string name="sticker__move_to_pack" comment="Long-press action, moves a sticker into another pack">移到貼圖包</string>
     <string name="sticker__pack_none" comment="Entry that moves a sticker out of every pack, back into the main folder">不放入任何貼圖包</string>
     <string name="sticker__move_failed" comment="Toast when a sticker could not be moved">無法移動貼圖</string>
     <string name="sticker__pack_new" comment="Button that creates a pack">建立貼圖包</string>
     <string name="sticker__pack_name" comment="Text field label for the pack name">貼圖包名稱</string>
     <string name="sticker__pack_rename" comment="Button and icon label for renaming a pack">重新命名</string>
-    <string name="sticker__pack_reorder_hint" comment="Hint above the pack list, explaining how the tab order is changed">長壓貼圖包即可移動</string>
+    <string name="sticker__pack_reorder_hint" comment="Hint above the pack list, explaining how the tab order is changed">長按貼圖包即可移動</string>
     <string name="sticker__pack_icon_set" comment="Long-press action, makes this sticker the little picture on its pack's tab">設為貼圖包圖示</string>
     <string name="sticker__pack_icon_clear" comment="Long-press action, takes this sticker back off its pack's tab">移除貼圖包圖示</string>
     <string name="sticker__pack_delete" comment="Icon label and title of the delete confirmation">刪除貼圖包</string>
@@ -180,7 +180,7 @@
     <string name="emoji__category__flags" comment="Emoji category name">國旗</string>
     <string name="emoji__history__empty_message" comment="Message if the emoji history is empty">找不到最近使用的表情符號。一旦你開始使用表情符號，它們就會自動出現在這裡。</string>
     <string name="emoji__history__phone_locked_message" comment="Message to show if phone is locked">若要存取你的表情符號紀錄，請先解鎖裝置。</string>
-    <string name="emoji__history__usage_tip" comment="Feature discoverability for actions of emoji history">小提醒：長壓表情符號紀錄中的表情符號，即可釘選或移除！</string>
+    <string name="emoji__history__usage_tip" comment="Feature discoverability for actions of emoji history">小提醒：長按表情符號紀錄中的表情符號，即可釘選或移除！</string>
     <string name="emoji__history__removal_success_message" comment="Toast message if user has used the delete action on an emoji in the emoji history">已從表情符號紀錄中移除 {emoji}</string>
     <string name="emoji__history__pinned">已釘選</string>
     <string name="emoji__history__recent">最近使用</string>
@@ -302,7 +302,7 @@
     <string name="settings__search__clear_recent" comment="Button to clear the recent searches">清除最近搜尋</string>
     <string name="dictate__settings_unreadable_card" comment="Red card on the settings home screen, shown after the app could not read its settings file at start and started with the defaults. Tapping it offers to restore the old file.">無法讀取你的設定，因此 Dictate 以預設值啟動。點這裡即可還原。</string>
     <string name="dictate__settings_unreadable_title" comment="Title of the dialog offering to restore the settings that could not be read. One line of about 18 characters at most; it is cut off beyond that.">還原設定？</string>
-    <string name="dictate__settings_unreadable_message" comment="Body of that dialog. The buttons are Restore, Delete and Cancel; use the same words as those buttons.">Dictate 啟動時無法讀取設定檔。它保留了該檔案未做更動，並以預設值啟動。還原會把你的服務供應商、金鑰、提示與設定恢復原樣；刪除則會移除舊檔案。</string>
+    <string name="dictate__settings_unreadable_message" comment="Body of that dialog. The buttons are Restore, Delete and Cancel; use the same words as those buttons.">Dictate 啟動時無法讀取設定檔。它保留了該檔案未做更動，並以預設值啟動。還原會把你的服務商、金鑰、提示與設定恢復原樣；刪除則會移除舊檔案。</string>
     <string name="dictate__settings_restore_failed" comment="Toast when restoring the settings file failed because it still cannot be read">舊設定仍然無法讀取。</string>
     <string name="settings__search__popular" comment="Header above a small list of popular settings shortcuts">常用</string>
     <string name="settings__search__no_results" comment="Shown when a settings search returns nothing">找不到設定</string>
@@ -1030,7 +1030,7 @@
     <string name="apptour53__designs_body">浮動按鈕的兩種新設計，兩者都是活著的而非插畫：光在球體內流動，以及由光點構成、會自行串連、隨你的聲音泛起漣漪並在運作時扭轉的球體。兩者都會跟隨你的強調色。</string>
     <string name="apptour53__prediction_eyebrow">更少的按鍵</string>
     <string name="apptour53__prediction_title">下一個字，在你打出來之前</string>
-    <string name="apptour53__prediction_body">建議列現在會依你的寫作習慣提供接下來常出現的字。而任何長壓的字都可以加入你的字典，讓你的姓名與專用術語不再被更正。</string>
+    <string name="apptour53__prediction_body">建議列現在會依你的寫作習慣提供接下來常出現的字。而任何長按的字都可以加入你的字典，讓你的姓名與專用術語不再被更正。</string>
     <string name="apptour53__ownserver_eyebrow">你自己的伺服器</string>
     <string name="apptour53__ownserver_title">自架，現在也支援即時轉錄</string>
     <string name="apptour53__ownserver_body">你自己的伺服器也能驅動即時轉錄，只要它支援 OpenAI 即時通訊協定。若它位於一台會休眠的機器前面，Dictate 可以提早喚醒它，讓第一個請求不會卡在等待開機。</string>
@@ -1572,7 +1572,7 @@
     <string name="ext__validation__enter_positive_number">請輸入非負數（&gt;=0）</string>
     <string name="ext__validation__enter_percent_size">請輸入百分比大小</string>
     <string name="ext__validation__enter_number_between_0_100">請輸入 0 到 100 之間的數值</string>
-    <string name="ext__validation__hint_value_above_50_percent">任何高於 50% 的值都會 behaves like 50%，建議把百分比大小調低</string>
+    <string name="ext__validation__hint_value_above_50_percent">任何高於 50% 的值實際效果皆等同於 50%，建議將百分比大小調低</string>
     <string name="ext__update_box__internet_permission_hint">由於這個應用程式沒有網際網路權限，已安裝擴充功能的更新必須手動檢查。</string>
     <string name="ext__update_box__search_for_updates">搜尋更新</string>
     <string name="ext__addon_management_box__managing_placeholder">正在管理 {extensions}</string>
@@ -1604,8 +1604,8 @@
     <string name="action__discard_confirm_message">你確定要捨棄尚未儲存的變更嗎？這個動作一旦執行就無法復原。</string>
     <string name="action__edit">編輯</string>
     <string name="action__export">匯出</string>
-    <string name="action__export_file">匯入檔案</string>
-    <string name="action__export_files">匯入多個檔案</string>
+    <string name="action__export_file">匯出檔案</string>
+    <string name="action__export_files">匯出多個檔案</string>
     <string name="action__import">匯入</string>
     <string name="action__import_file">匯入檔案</string>
     <string name="action__import_files">匯入多個檔案</string>
@@ -2592,7 +2592,7 @@
     <string name="dictate__history_export_all_result" comment="Summary after an export-everything run. {written}, {skipped} and {failed} are counts">已寫入 {written} 筆，{skipped} 筆已存在，{failed} 筆失敗</string>
     <string name="dictate__history_export_last_failure" comment="Warning that a dictation could not be written to the folder. {when} is a relative time like 5 minutes ago">{when}有一筆寫入失敗。點「立即全部匯出」可補齊遺漏項目。</string>
     <string name="dictate__history_export_warning_title" comment="Title of the dialog shown before the export folder is picked for the first time">會寫入哪些內容</string>
-    <string name="dictate__history_export_warning_message" comment="Body of the dialog shown before the export folder is picked for the first time">從現在起，這個資料夾會保存你每次語音輸入的文字；若你開啟了匯出錄音，也會一併保存音訊檔。任何會同步此資料夾的程式 —— 如雲端硬碟用戶端、備份工具或其他應用程式 —— 都會把這些轉錄內容帶離這台裝置。\n\n在你中斷連結之前，Dictate 會持續寫入，且永遠不會從資料夾刪除任何檔案：即使紀錄因上限而從 App 內移除，仍會留在資料夾中。密碼與無痕欄位永遠不會被記錄，因此也不會被匯出。</string>
+    <string name="dictate__history_export_warning_message" comment="Body of the dialog shown before the export folder is picked for the first time">從現在起，這個資料夾會保存你每次語音輸入的文字；若你開啟了匯出錄音，也會一併保存音訊檔。任何會同步此資料夾的程式 —— 如雲端同步工具、備份工具或其他應用程式 —— 都會把這些轉錄內容帶離這台裝置。\n\n在你中斷連結之前，Dictate 會持續寫入，且永遠不會從資料夾刪除任何檔案：即使紀錄因上限而從 App 內移除，仍會留在資料夾中。密碼與無痕欄位永遠不會被記錄，因此也不會被匯出。</string>
     <string name="dictate__history_export_needs_history" comment="Shown when the export is opened while the history is switched off">資料夾匯出寫入的是紀錄中的內容，因此必須先開啟紀錄功能才能使用。</string>
     <string name="dictate__history_export_enable_history" comment="Button that switches the history on from the export dialog">開啟紀錄</string>
     <string name="dictate__history_export_pick_failed" comment="Toast shown when Android refused write access to the picked folder">無法取得該資料夾的寫入權限</string>

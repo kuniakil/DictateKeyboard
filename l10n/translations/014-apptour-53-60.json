@@ -20,7 +20,7 @@
   "apptour53__designs_body": "浮動按鈕的兩種新設計，兩者都是活著的而非插畫：光在球體內流動，以及由光點構成、會自行串連、隨你的聲音泛起漣漪並在運作時扭轉的球體。兩者都會跟隨你的強調色。",
   "apptour53__prediction_eyebrow": "更少的按鍵",
   "apptour53__prediction_title": "下一個字，在你打出來之前",
-  "apptour53__prediction_body": "建議列現在會依你的寫作習慣提供接下來常出現的字。而任何長壓的字都可以加入你的字典，讓你的姓名與專用術語不再被更正。",
+  "apptour53__prediction_body": "建議列現在會依你的寫作習慣提供接下來常出現的字。而任何長按的字都可以加入你的字典，讓你的姓名與專用術語不再被更正。",
   "apptour53__ownserver_eyebrow": "你自己的伺服器",
   "apptour53__ownserver_title": "自架，現在也支援即時轉錄",
   "apptour53__ownserver_body": "你自己的伺服器也能驅動即時轉錄，只要它支援 OpenAI 即時通訊協定。若它位於一台會休眠的機器前面，Dictate 可以提早喚醒它，讓第一個請求不會卡在等待開機。",

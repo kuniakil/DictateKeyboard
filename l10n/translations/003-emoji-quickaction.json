@@ -15,7 +15,7 @@
   "emoji__category__flags": "國旗",
   "emoji__history__empty_message": "找不到最近使用的表情符號。一旦你開始使用表情符號，它們就會自動出現在這裡。",
   "emoji__history__phone_locked_message": "若要存取你的表情符號紀錄，請先解鎖裝置。",
-  "emoji__history__usage_tip": "小提醒：長壓表情符號紀錄中的表情符號，即可釘選或移除！",
+  "emoji__history__usage_tip": "小提醒：長按表情符號紀錄中的表情符號，即可釘選或移除！",
   "emoji__history__removal_success_message": "已從表情符號紀錄中移除 {emoji}",
   "emoji__history__pinned": "已釘選",
   "emoji__history__recent": "最近使用",

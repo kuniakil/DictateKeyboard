@@ -20,7 +20,7 @@
   "dictate__history_export_all_result": "已寫入 {written} 筆，{skipped} 筆已存在，{failed} 筆失敗",
   "dictate__history_export_last_failure": "{when}有一筆寫入失敗。點「立即全部匯出」可補齊遺漏項目。",
   "dictate__history_export_warning_title": "會寫入哪些內容",
-  "dictate__history_export_warning_message": "從現在起，這個資料夾會保存你每次語音輸入的文字；若你開啟了匯出錄音，也會一併保存音訊檔。任何會同步此資料夾的程式 —— 如雲端硬碟用戶端、備份工具或其他應用程式 —— 都會把這些轉錄內容帶離這台裝置。\\n\\n在你中斷連結之前，Dictate 會持續寫入，且永遠不會從資料夾刪除任何檔案：即使紀錄因上限而從 App 內移除，仍會留在資料夾中。密碼與無痕欄位永遠不會被記錄，因此也不會被匯出。",
+  "dictate__history_export_warning_message": "從現在起，這個資料夾會保存你每次語音輸入的文字；若你開啟了匯出錄音，也會一併保存音訊檔。任何會同步此資料夾的程式 —— 如雲端同步工具、備份工具或其他應用程式 —— 都會把這些轉錄內容帶離這台裝置。\\n\\n在你中斷連結之前，Dictate 會持續寫入，且永遠不會從資料夾刪除任何檔案：即使紀錄因上限而從 App 內移除，仍會留在資料夾中。密碼與無痕欄位永遠不會被記錄，因此也不會被匯出。",
   "dictate__history_export_needs_history": "資料夾匯出寫入的是紀錄中的內容，因此必須先開啟紀錄功能才能使用。",
   "dictate__history_export_enable_history": "開啟紀錄",
   "dictate__history_export_pick_failed": "無法取得該資料夾的寫入權限",

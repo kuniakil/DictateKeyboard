@@ -11,28 +11,31 @@
 
 ## Part 0 — 交接說明（新 session 從這裡開始）
 
-### 當前狀態（2026-11-20 結束時）
+### 當前狀態（2026-11-20 持續更新）
 
 | 項目 | 狀態 |
 |---|---|
 | 本機 repo | ✅ `~/DictateKeyboard`（origin = 我們的 fork，upstream = 上游） |
-| 當前分支 | `feat/zh-tw-ui`（工作區乾淨，已與 `origin/feat/zh-tw-ui` 同步） |
+| 當前分支 | `feat/zh-tw-ui`（Phase B 全量翻譯 + wear + Phase D 台灣用語校訂已完成） |
 | `main` | ✅ 已 merge `upstream/main`（diff vs 上游只剩 2 個純新增檔案） |
-| Phase A | ✅ A0/A1/A2 完成；⬜ A3（給作者的說明文件）、A4（Actions 實跑驗證）未做 |
-| Phase B–F | ⬜ 全部未開始 |
-| 工作區 | 乾淨，無未提交改動 |
+| Phase A | ✅ A0/A1/A2 完成；⬜ A3（給作者的說明文件）未做 |
+| Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
+| Phase C | ✅ C1 完成；⬜ **C2 全量版 APK 建置中**、C3/C4 待實測截圖 |
+| Phase E–F | ⬜ 尚未開始 |
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
 | 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
 
-### 🔴 本 session 進行中（2026-11-20，Step 1 最小可行驗證鏈路）
+### 🔵 當前階段（2026-11-20，全量 zh-TW 翻譯完成 → C2 雲端出包）
 
 | 步驟 | 狀態 |
 |---|---|
 | **B0** 產出最小 `values-zh-rTW/strings.xml`（約 40 條） | ✅ 完成（45 strings + 3 plurals、41 條 comment、`xmllint` 通過） |
 | **B0b** 建 `tools/check-l10n.py` | ✅ 完成（寬鬆/strict 雙模式、app+wear、三種錯誤負向測試通過） |
 | **C1** `OtherScreen.kt` 加 `"zh-TW"` | ✅ 完成（`OtherScreen.kt:162`，tag 40 → 41 + `auto` = 42 項，無重複） |
-| **push → C2** 觸發 Actions 出 APK（**跳過 A4**，見下方理由） | ✅ 完成（run `44660451431`，commit `2d5c2f23`，**建置耗時 9 分 12 秒**） |
-| **C3** 裝機實測（**需使用者本人操作**） | ⬜ 未開始（APK 已備妥，等使用者下載） |
+| **C2（B0 驗證版）** 觸發 Actions 出 APK | ✅ 完成（run `44660451431`，commit `2d5c2f23`，**建置耗時 9 分 12 秒**） |
+| **B1–B6 + D1–D3** 全量翻譯 + glossary + wear + 用語校訂 | ✅ 完成（app 2558/2558、wear 69/69、`check-l10n.py --strict` 與 `xmllint` 通過） |
+| **C2（全量版）** 觸發 Actions 出 APK | 🔄 準備推送與觸發 |
+| **C3** 裝機實測（**需使用者本人操作**） | ⬜ 待全量 APK 產出後由使用者實測 |
 
 ### C2 建置結果（2026-11-20）
 
@@ -663,24 +666,24 @@ git push origin pr/zh-tw-ui
   - ⚠️ **檔名已統一為 `tools/check-l10n.py`**（2026-11-20 複查修正；原 CLAUDE.md 寫的 `tools/check_zh_tw.py` 已改）。理由：要同時驗 app + wear 兩個模組，名字得是通用的。
   - **基準數字一律動態取自當下的 base**（不要寫死任何數字 —— 上游還在動，`strings.xml` 11 月改了 30 次）。輸出為準。
 - [x] **B1** 建立台灣用語 glossary（英文 → 台灣繁中），以 1.3 對照表為底（已建立 `l10n/glossary-zh-tw.json`）
-- [ ] **B2** 批次翻譯 `values/strings.xml` → `values-zh-rTW/strings.xml`（進行中）
+- [x] **B2** 批次翻譯 `values/strings.xml` → `values-zh-rTW/strings.xml`（`000`–`036` 共 37 批，2558 / 2558 條全數譯完）
   - 執行方式：由 agent 分批直接翻（每批約 100–200 條），每批過 `tools/check-l10n.py`，不使用外部翻譯 API
   - 輸入：英文原文 + `comment="..."` 翻譯指引（1614 條）
   - **必須保留**：`comment` 屬性、placeholder（`{app_name}` / `%1$s` / `{count}`）、XML 轉義
   - 輸出結構與 base 完全對齊（**數字動態取自當下 base**；2026-11-20 實查 = 2547 strings + 11 plurals）
-- [ ] **B3** 翻譯 `wear/src/main/res/values/strings.xml` → `values-zh-rTW/strings.xml`（base 69 條）
+- [x] **B3** 翻譯 `wear/src/main/res/values/strings.xml` → `values-zh-rTW/strings.xml`（`l10n/wear-zh-tw.json`，69 / 69 條）
   - ⚠️ **wear 的資源跟「手錶系統語言」，不跟手機 App 的 in-app 語言選擇器**（見 1.2.1，wear 模組無任何 Locale/Configuration 覆寫）
   - **開工前先決定驗證方式**：① 手錶系統語言設為 zh-TW 實測；或 ② 放棄 wear 截圖，只交付資源檔並在 PR 說明中標註此限制
   - 若走 ①，截圖須標註「手錶系統語言 = 繁體中文（台灣）」，避免誤導作者
 - [x] **B4** `strings_dont_translate.xml`（32 條）**不翻**（已確認原封不動，且 `values-zh-rTW/` 不建立同名檔案）
-- [ ] **B5** 驗證：
-  - [ ] key 集合與 base 完全一致（當下 base 的 string + plurals 全數；數字動態取，不得寫死 2547 / 11）
-  - [ ] placeholder 逐條比對，mismatch = 0（基準：base vs zh-rCN 實測為 0）
-  - [ ] `comment` 屬性保留數 **= base 的當下 comment 數**（動態比對；2026-11-20 實查 base = 1618 —— 原寫的 1614 已過時，**不可寫死**）
-  - [ ] XML 合法（`xmllint`）
-  - [ ] lint 無 `MissingTranslation`
-  - [ ] wear 模組同樣跑一次 `tools/check-l10n.py`
-- [ ] **B6** 台灣用語複查（掃描殘留大陸用語，歸零）
+- [x] **B5** 驗證：
+  - [x] key 集合與 base 完全一致（當下 base 的 string + plurals 全數；數字動態取，不得寫死 2547 / 11）
+  - [x] placeholder 逐條比對，mismatch = 0（基準：base vs zh-rCN 實測為 0）
+  - [x] `comment` 屬性保留數 **= base 的當下 comment 數**（動態比對；實查 `app` = 1618 / 1618、`wear` = 0 / 0）
+  - [x] XML 合法（`xmllint`）
+  - [ ] lint 無 `MissingTranslation`（本機無 JDK/Android SDK；改由 Actions `assembleDebug` / `aapt2` 資源合併驗證）
+  - [x] wear 模組同樣跑一次 `tools/check-l10n.py`（`--strict` 通過）
+- [x] **B6** 台灣用語複查（掃描殘留大陸用語，歸零；並統一 `長壓` → `長按`、修正 `024` 未譯片段與錯字）
 
 ### 2.4 Phase C — 讓繁中介面真的出現（D4 的關鍵：證明可用）
 
@@ -727,9 +730,9 @@ git push origin pr/zh-tw-ui
 
 ### 2.5 Phase D — 台灣用語校訂
 
-- [ ] **D1** 依 1.3 對照表 + glossary 逐條套用
-- [ ] **D2** 重新掃描殘留大陸用語，確認歸零
-- [ ] **D3** 依 `comment="..."` 的語氣要求複查（1614 條中與 Dictate 功能相關者優先）
+- [x] **D1** 依 1.3 對照表 + glossary 逐條套用
+- [x] **D2** 重新掃描殘留大陸用語，確認歸零（另清除殘留英語片語與 Big5/繁體字元外之簡體字）
+- [x] **D3** 依 `comment="..."` 的語氣要求複查（`dictate__*` 長度/用詞一致性已抽查核對）
 
 ### 2.6 Phase E — 與上游接觸（D4：issue → PR 附證據）
 
