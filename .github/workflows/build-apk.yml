@@ -32,29 +32,31 @@ jobs:
         env:
           KEYSTORE_B64: ${{ secrets.ANDROID_DEBUG_KEYSTORE_B64 }}
         run: |
-          mkdir -p "$HOME/.android"
-          printf "%s" "$KEYSTORE_B64" | base64 -d > "$HOME/.android/debug.keystore"
-          keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android >/dev/null
+          set -euo pipefail
+          KS="$HOME/.android/debug.keystore"
+          mkdir -p "$(dirname "$KS")"
+          printf "%s" "$KEYSTORE_B64" | base64 -d > "$KS"
+          keytool -list -keystore "$KS" -storepass android >/dev/null
+          # AGP 在這台 runner 上實際採用的是 $XDG_CONFIG_HOME/.android/debug.keystore
+          # （runner 映像有設 XDG_CONFIG_HOME=/home/runner/.config），不是 $HOME/.android。
+          # 同一把金鑰複製一份過去，兩條路徑都對（見工作表 1.5 節的實測）。
+          if [ -n "${XDG_CONFIG_HOME:-}" ]; then
+            mkdir -p "$XDG_CONFIG_HOME/.android"
+            cp "$KS" "$XDG_CONFIG_HOME/.android/debug.keystore"
+          fi
+          echo "ANDROID_USER_HOME=$HOME/.android" >> "$GITHUB_ENV"
+          echo "DEBUG_KEYSTORE=$KS" >> "$GITHUB_ENV"
+          echo "--- 還原回來的金鑰 ---"
+          keytool -list -v -keystore "$KS" -storepass android \
+            | grep -E "Alias name:|SHA256:" | head -4
+          echo "XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-（未設定）}"
 
       - name: Diagnose signing key
         run: |
-          echo "HOME=$HOME"
-          env | grep -i -E "^ANDROID" || echo "(無 ANDROID_* 變數)"
-          echo "--- ~/.android 內容 ---"
-          ls -la "$HOME/.android" 2>&1 || true
-          echo "--- 還原回來的金鑰：別名 + 憑證指紋 ---"
-          keytool -list -v -keystore "$HOME/.android/debug.keystore" -storepass android \
-            | grep -E "Alias name:|Entry type:|SHA256:|SHA-256:" | head -20
-          echo "--- AGP 預設會選哪一把？ ---"
+          echo "ANDROID_USER_HOME=${ANDROID_USER_HOME:-（未設定）}"
+          echo "--- AGP 實際會用哪一把？ ---"
           ./gradlew :app:signingReport --no-daemon 2>&1 \
-            | grep -E "Variant: debug|Config:|Store:|Alias:|SHA-256:|SHA256:" | head -20
-          echo "--- 加上 injected signing 參數後呢？ ---"
-          ./gradlew :app:signingReport --no-daemon \
-            -Pandroid.injected.signing.store.file="$HOME/.android/debug.keystore" \
-            -Pandroid.injected.signing.store.password=android \
-            -Pandroid.injected.signing.key.alias=androiddebugkey \
-            -Pandroid.injected.signing.key.password=android 2>&1 \
-            | grep -E "Variant: debug|Config:|Store:|Alias:|SHA-256:|SHA256:" | head -20
+            | grep -E "Variant: debug|Config:|Store:|Alias:|SHA-256:|SHA256:" | head -12
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -66,11 +68,9 @@ jobs:
         run: bash tools/bergamot/build-android.sh
 
       - name: Build Debug APK
-        env:
-          ANDROID_USER_HOME: $HOME/.android
         run: |
           ./gradlew assembleDebug --no-daemon \
-            -Pandroid.injected.signing.store.file="$HOME/.android/debug.keystore" \
+            -Pandroid.injected.signing.store.file="$DEBUG_KEYSTORE" \
             -Pandroid.injected.signing.store.password=android \
             -Pandroid.injected.signing.key.alias=androiddebugkey \
             -Pandroid.injected.signing.key.password=android
