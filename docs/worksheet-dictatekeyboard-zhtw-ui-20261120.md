@@ -20,12 +20,12 @@
 | `main` | ✅ 已 merge `upstream/main`（diff vs 上游只剩 2 個純新增檔案） |
 | Phase A | ✅ A0/A1/A2 完成；⬜ A3（給作者的說明文件）未做 |
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
-| Phase C | ✅ C1 完成；⬜ **C2 全量版 APK 建置中**、C3/C4 待實測截圖 |
+| Phase C | ✅ C1/C2 完成；⬜ C3/C4 待實測截圖 |
 | Phase E–F | ⬜ 尚未開始 |
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
 | 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
 
-### 🔵 當前階段（2026-11-20，全量 zh-TW 翻譯完成 → C2 雲端出包）
+### 🔵 當前階段（2026-11-20，全量 zh-TW APK 建置完成 → 待 C3 實機測試）
 
 | 步驟 | 狀態 |
 |---|---|
@@ -34,18 +34,20 @@
 | **C1** `OtherScreen.kt` 加 `"zh-TW"` | ✅ 完成（`OtherScreen.kt:162`，tag 40 → 41 + `auto` = 42 項，無重複） |
 | **C2（B0 驗證版）** 觸發 Actions 出 APK | ✅ 完成（run `44660451431`，commit `2d5c2f23`，**建置耗時 9 分 12 秒**） |
 | **B1–B6 + D1–D3** 全量翻譯 + glossary + wear + 用語校訂 | ✅ 完成（app 2558/2558、wear 69/69、`check-l10n.py --strict` 與 `xmllint` 通過） |
-| **C2（全量版）** 觸發 Actions 出 APK | 🔄 準備推送與觸發 |
-| **C3** 裝機實測（**需使用者本人操作**） | ⬜ 待全量 APK 產出後由使用者實測 |
+| **C2（全量版）** 觸發 Actions 出 APK | ✅ 完成（run `44668198901`，commit `be4913ed`，**建置耗時 13 分 41 秒**，資產 `174,483,318 bytes`，簽章指紋固定為 `AD:52:6F:35:...74:31:A3`，`v6.4.0-apk` 完全未動） |
+| **C3** 裝機實測（**需使用者本人操作**） | ⬜ APK 已備妥，待使用者安裝實測 |
 
 ### C2 建置結果（2026-11-20）
 
 | 項目 | 結果 |
 |---|---|
-| Actions run | `44660451431` → **success** |
-| 建置耗時 | **9 分 12 秒**（02:23:32 → 02:32:44 UTC）← 首次實測，可作為往後的基準 |
-| 產物 | Release `v6.4.0-apk-feat-zh-tw-ui` → `app-debug.apk`（174,326,814 bytes） |
-| `v6.4.0-apk`（main 的資產） | ✅ **完全未動**（仍是 2026-11-17 的 174,324,306 bytes）—— 分支獨立 tag 的機制生效 |
-| APK 內的 zh-TW 資源 | ✅ 已驗證（見下） |
+| B0 驗證版 Actions run | `44660451431` → **success**（9 分 12 秒，commit `2d5c2f23`） |
+| **全量版 Actions run** | `44668198901` → **success**（commit `be4913ed`） |
+| 建置耗時 | **13 分 41 秒**（03:30:34 → 03:44:19 UTC） |
+| 產物 | Release `v6.4.0-apk-feat-zh-tw-ui` → `app-debug.apk`（`174,483,318 bytes`） |
+| 簽章指紋確認 | ✅ Restored keystore 與 AGP `Variant: debug` 皆為 `AD:52:6F:35:D6:3D:10:18:FA:BD:C0:8D:CA:54:18:7C:11:40:B6:F8:2A:15:0D:8B:5E:92:B5:DF:4D:74:31:A3` |
+| `v6.4.0-apk`（main 的資產） | ✅ **完全未動**（仍是 2026-11-17 的 `174,324,306 bytes`）—— 分支獨立 tag 的機制生效 |
+| APK 內的 zh-TW 資源 | ✅ B0 資源與全量資源皆通過 `--strict` 與 `aapt2` 建置驗證 |
 
 > ℹ️ `gh` CLI 預設會把 workflow 認成**上游**的 repo（404）。觸發時必須加 `-R kuniakil/DictateKeyboard`。
 
@@ -695,7 +697,8 @@ git push origin pr/zh-tw-ui
   - 顯示名稱由 `locale.displayName()` 產生，無需自訂
   - `FlorisAppActivity.kt:101-105` 已監聽 `prefs.other.settingsLanguage` 並即時 `createConfigurationContext` → **不需重啟 App 即生效**
   - ℹ️ 插入位置：`OtherScreen.kt:161` 的 `"zh-CN",` 之後（清單為字母序，`zh-TW` 應在 `zh-CN` 後）
-- [ ] **C2** 走 Actions 出 APK（本機未確認有 Android SDK，不採本機建置）—— **帶 zh-TW 改動的正式產出**
+- [x] **C2** 走 Actions 出 APK（本機未確認有 Android SDK，不採本機建置）—— **帶 zh-TW 改動的正式產出**
+  - ✅ 2026-11-20 完成全量版建置：run `44668198901`（commit `be4913ed`，耗時 `13m41s`），發佈至 Release `v6.4.0-apk-feat-zh-tw-ui`（`174,483,318` bytes），並驗證固定簽章 SHA-256 `AD:52:6F:35:D6:3D:10:18:FA:BD:C0:8D:CA:54:18:7C:11:40:B6:F8:2A:15:0D:8B:5E:92:B5:DF:4D:74:31:A3`
   - 我們的 `build-apk.yml` 是 `workflow_dispatch` 手動觸發 ✅
   - 分支建置發到 `v6.4.0-apk-<分支名>`，不會覆蓋 `v6.4.0-apk`（已修正，見 A4）
   - 與 A4 的分工見 2.0.1：A4 是無改動冒煙測試，本項是正式產出
