@@ -31,8 +31,33 @@
 | **B0** 產出最小 `values-zh-rTW/strings.xml`（約 40 條） | ✅ 完成（45 strings + 3 plurals、41 條 comment、`xmllint` 通過） |
 | **B0b** 建 `tools/check-l10n.py` | ✅ 完成（寬鬆/strict 雙模式、app+wear、三種錯誤負向測試通過） |
 | **C1** `OtherScreen.kt` 加 `"zh-TW"` | ✅ 完成（`OtherScreen.kt:162`，tag 40 → 41 + `auto` = 42 項，無重複） |
-| **push → C2** 觸發 Actions 出 APK（**跳過 A4**，見下方理由） | 🔄 進行中 |
-| **C3** 裝機實測（**需使用者本人操作**） | ⬜ 未開始 |
+| **push → C2** 觸發 Actions 出 APK（**跳過 A4**，見下方理由） | ✅ 完成（run `44660451431`，commit `2d5c2f23`，**建置耗時 9 分 12 秒**） |
+| **C3** 裝機實測（**需使用者本人操作**） | ⬜ 未開始（APK 已備妥，等使用者下載） |
+
+### C2 建置結果（2026-11-20）
+
+| 項目 | 結果 |
+|---|---|
+| Actions run | `44660451431` → **success** |
+| 建置耗時 | **9 分 12 秒**（02:23:32 → 02:32:44 UTC）← 首次實測，可作為往後的基準 |
+| 產物 | Release `v6.4.0-apk-feat-zh-tw-ui` → `app-debug.apk`（174,326,814 bytes） |
+| `v6.4.0-apk`（main 的資產） | ✅ **完全未動**（仍是 2026-11-17 的 174,324,306 bytes）—— 分支獨立 tag 的機制生效 |
+| APK 內的 zh-TW 資源 | ✅ 已驗證（見下） |
+
+> ℹ️ `gh` CLI 預設會把 workflow 認成**上游**的 repo（404）。觸發時必須加 `-R kuniakil/DictateKeyboard`。
+
+### APK 層級的資源驗證（不用手機就能驗的部分）
+
+直接解析 APK 內的 `resources.arsc`（自寫極簡 ResTable 解析器），確認：
+
+| 檢查 | 結果 |
+|---|---|
+| 我們的 45 條譯值有進全域字串池 | ✅ 全部（位於 pool 尾端 `60839`–`60888` 一帶） |
+| 譯值被 **zh-TW 的 type chunk** 引用 | ✅ `lang='zh' country='TW'`，chunk 位於 arsc 尾端（`6152548`–`6166604`） |
+| 英文預設值仍被 **default chunk** 引用 | ✅ 40 條全對（英文介面沒被影響） |
+| **zh-CN 簡中值**仍被 zh-CN chunk 引用 | ✅ 40 條全對（**簡中沒有被我們蓋掉**） |
+
+> ⚠️ 這只能證明「**資源被打包進去、且掛在正確的 locale config 上**」，**不能**證明「執行時的 fallback 解析正確」→ 那一環仍然要靠 C3 實機。
 
 > ℹ️ **為什麼跳過 A4（無改動冒煙測試）**：實查 `git log e4c41fe..upstream/main -- gradle/ build.gradle.kts app/build.gradle.kts wear/build.gradle.kts gradle.properties tools/bergamot tools/fetch-sherpa-onnx.sh` → **空**。上游自 2026-11-17 那次成功建置後沒動過任何建置相關檔案 → CI 路徑壞掉的機率很低 → 省一次建置時間，直接跑 C2。若 C2 失敗再回頭做 A4 判斷歸屬。
 >
