@@ -60,16 +60,11 @@ Fork 的兩個目的：
 
 ---
 
-## 🔑 簽章金鑰（單點故障，零備份）
+## 🔑 簽章金鑰（已固定並完成本機備份）
 
-金鑰**不在 repo 裡、不會被 clone 回來**，只存在於 GitHub Secret `ANDROID_DEBUG_KEYSTORE_B64`。
-GitHub Secret 不可逆讀取（API 回 404），且**本機與 Nextcloud 都沒有任何副本**。
+金鑰**不在 repo 裡、不會被 clone 回來**，存在於 GitHub Secret `ANDROID_DEBUG_KEYSTORE_B64`，且已於 2026-11-20 **加密匯出並備份至本機 `~/DictateKeyboard-secrets/debug.keystore`**（只存於這台 Mac，檔案 SHA-256 `92212e70...`、憑證指紋 `AD:52:6F:35:...74:31:A3`）。
 
-遺失後果：無法再生產相同簽章 → 手機上必須 uninstall 重裝 → **App 設定與自訂詞庫全毀**。
-
-簽名一致性的機制：workflow 每次 CI 從 secret 還原金鑰到 `~/.android/debug.keystore`，而 debug buildType 沒指定 `signingConfig` → Gradle 自動採用該預設金鑰。
-
-**使用者指示**：暫緩補備份，先做 zh-TW；之後要補時**只放本機**（`~/DictateKeyboard-secrets/`）。詳見工作表 1.5 節。
+`main` 與 `feat/zh-tw-ui` 兩條分支的 `.github/workflows/build-apk.yml` 皆已修好固定簽章機制（同時寫入 `$HOME/.android` 與 `$XDG_CONFIG_HOME/.android` 並注入 Gradle signing properties），日後建置的 APK 皆可直接覆蓋升級。詳見工作表 1.5 節。
 
 ---
 

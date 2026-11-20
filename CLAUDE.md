@@ -57,15 +57,11 @@ gh workflow run build-apk.yml --ref feat/zh-tw-ui
 只有**刻意在 `main` 上跑**才會 `--clobber` 掉 `v6.4.0-apk`（= 手機上裝的那個，Nextcloud `文件/app-debug.apk`）→ 不要在 `main` 上隨手觸發。
 （此說明已與工作表 A4 同步，2026-11-20 複查修正。）
 
-## 🔑 簽章金鑰（單點故障，零備份）
+## 🔑 簽章金鑰（已固定並完成本機備份）
 
-金鑰**不在 repo 裡、不會被 clone 回來**，只存在於 GitHub Secret `ANDROID_DEBUG_KEYSTORE_B64`。
-GitHub Secret 不可逆讀取（API 回 404），且**本機與 Nextcloud 都沒有任何副本**。
+金鑰**不在 repo 裡、不會被 clone 回來**，存在於 GitHub Secret `ANDROID_DEBUG_KEYSTORE_B64`，且已於 2026-11-20 **加密匯出並備份至本機 `~/DictateKeyboard-secrets/debug.keystore`**（只存於這台 Mac，檔案 SHA-256 `92212e70...`、憑證指紋 `AD:52:6F:35:...74:31:A3`）。
 
-遺失的後果：無法再生產相同簽章 → 手機上必須 uninstall 重裝 → **App 設定與自訂詞庫全毀**。
-
-使用者的指示：**暫緩補備份，先做 zh-TW；之後要補時只放本機**（`~/DictateKeyboard-secrets/`）。
-→ 詳見工作表 1.5 節（含補備份的做法）。
+`main` 與 `feat/zh-tw-ui` 兩條分支的 `.github/workflows/build-apk.yml` 皆已修好固定簽章機制（同時寫入 `$HOME/.android` 與 `$XDG_CONFIG_HOME/.android` 並注入 Gradle signing properties），日後建置的 APK 皆可直接覆蓋升級。詳見工作表 1.5 節。
 
 ## 與上游互動的關鍵背景
 

@@ -1,10 +1,9 @@
 # Upstream Outreach Drafts (Fork Working Doc — Do NOT Include in PR)
 
-> **Purpose**: Ready-to-use drafts for Phase E2 & E3. Post in order:
-> 1. **Draft 1** → Comment on existing issue [#483](https://github.com/DevEmperor/DictateKeyboard/issues/483) (`Dictation in traditional chinese`)
-> 2. **Draft 2** → Open a new issue `Traditional Chinese (zh-TW) UI translation` (drag screenshots from Nextcloud `/mnt/kuniaki/文件/DictateKeyboard` into GitHub)
-> 3. **Wait for maintainer reply** (`DevEmperor` prefers discussing in an issue before reviewing a PR)
-> 4. **Draft 3** → Open PR from `kuniakil:pr/zh-tw-ui` to `DevEmperor:main`
+> **Status (2026-11-20)**:
+> - **Draft 1 (#483 comment)** → ✅ Posted: https://github.com/DevEmperor/DictateKeyboard/issues/483#issuecomment-7030540460
+> - **Draft 2 (New Issue #492)** → ✅ Posted: https://github.com/DevEmperor/DictateKeyboard/issues/492 (screenshots hosted on orphan branch `kuniakil/DictateKeyboard@assets/zh-tw-screenshots`)
+> - **Draft 3 (PR `kuniakil:pr/zh-tw-ui` → `DevEmperor:main`)** → ⏳ Ready to post after maintainer replies on `#492`.
 
 ---
 
@@ -95,7 +94,7 @@ l10n: add Traditional Chinese (zh-TW) UI translation
 
 **Body**:
 ```markdown
-Closes #<NEW_ISSUE_NUMBER> (and relates to #483).
+Closes #492 (and relates to #483).
 
 ### Summary
 Adds full Traditional Chinese (Taiwan, `zh-TW`) UI localization, translated directly from the English base (`values/strings.xml`) with Taiwan terminology rather than converted from `zh-rCN`.
@@ -115,9 +114,9 @@ Adds full Traditional Chinese (Taiwan, `zh-TW`) UI localization, translated dire
 
 | English | Simplified Chinese (`zh-CN`) | Traditional Chinese (`zh-TW`) |
 | :---: | :---: | :---: |
-| UPLOAD: Screenshot_2026-11-20-12-12-47-185_net.devemperor.dictate.debug.jpg | UPLOAD: Screenshot_2026-11-20-12-13-01-258_net.devemperor.dictate.debug.jpg | UPLOAD: Screenshot_2026-11-20-12-13-10-072_net.devemperor.dictate.debug.jpg |
+| <img src="https://raw.githubusercontent.com/kuniakil/DictateKeyboard/assets/zh-tw-screenshots/other-en.jpg" width="260" alt="Other settings in English" /> | <img src="https://raw.githubusercontent.com/kuniakil/DictateKeyboard/assets/zh-tw-screenshots/other-zh-cn.jpg" width="260" alt="Other settings in Simplified Chinese" /> | <img src="https://raw.githubusercontent.com/kuniakil/DictateKeyboard/assets/zh-tw-screenshots/other-zh-tw.jpg" width="260" alt="Other settings in Traditional Chinese" /> |
 
 | Language Picker (`中文 (台灣)`) | Dictate Settings | Learned Words |
 | :---: | :---: | :---: |
-| UPLOAD: Screenshot_2026-11-20-12-07-51-076_net.devemperor.dictate.debug.jpg | UPLOAD: Screenshot_2026-11-20-12-09-10-648_net.devemperor.dictate.debug.jpg | UPLOAD: Screenshot_2026-11-20-12-12-02-360_net.devemperor.dictate.debug.jpg |
+| <img src="https://raw.githubusercontent.com/kuniakil/DictateKeyboard/assets/zh-tw-screenshots/language-picker-zh-tw.jpg" width="260" alt="Language picker showing 中文 (台灣)" /> | <img src="https://raw.githubusercontent.com/kuniakil/DictateKeyboard/assets/zh-tw-screenshots/dictate-settings-zh-tw.jpg" width="260" alt="Dictate settings in Traditional Chinese" /> | <img src="https://raw.githubusercontent.com/kuniakil/DictateKeyboard/assets/zh-tw-screenshots/learned-words-zh-tw.jpg" width="260" alt="Learned words screen in Traditional Chinese" /> |
 ```

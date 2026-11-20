@@ -20,23 +20,42 @@
 | `main` | ✅ 已 merge `upstream/main`（diff vs 上游只剩 2 個純新增檔案） |
 | Phase A | ✅ A0/A1/A2/A3 完成（`docs/zh-TW-ui-contribution.md` 已建立） |
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
-| Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對） |
-| Phase E–F | 🔄 **E1a–E1e 已完成**（乾淨分支 `pr/zh-tw-ui` 與草稿 `docs/upstream-outreach-drafts-20261120.md` 已備妥，待使用者發 issue／PR） |
+| Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對，並建置乾淨圖床分支 `assets/zh-tw-screenshots`） |
+| Phase E | 🔄 **E1a–E1e、E2a、E2b 已完成** —— 已於 #483 留言並開立 [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)，目前 **E2c 等待作者回覆**（`pr/zh-tw-ui` 已就緒，尚未開 PR） |
+| 簽章金鑰與 `main` | ✅ **`main` 已同步固定簽章 workflow**（`6a5a8112`）；**金鑰已加密匯出並備份至本機 `~/DictateKeyboard-secrets/debug.keystore`**（SHA-256 驗證通過，臨時分支與 run 已刪除） |
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
 | 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
 
-### 🔵 當前階段（2026-11-20，實機驗證與截圖完成 → 待 Phase E2/E3 對上游發 issue / PR）
+### 🔵 當前階段（2026-11-20，上游已接洽 → 等待 `DevEmperor` 回覆 `#492`）
 
 | 步驟 | 狀態 |
 |---|---|
-| **B0** 產出最小 `values-zh-rTW/strings.xml`（約 40 條） | ✅ 完成（45 strings + 3 plurals、41 條 comment、`xmllint` 通過） |
-| **B0b** 建 `tools/check-l10n.py` | ✅ 完成（寬鬆/strict 雙模式、app+wear、三種錯誤負向測試通過） |
-| **C1** `OtherScreen.kt` 加 `"zh-TW"` | ✅ 完成（`OtherScreen.kt:162`，tag 40 → 41 + `auto` = 42 項，無重複） |
-| **C2（B0 驗證版）** 觸發 Actions 出 APK | ✅ 完成（run `44660451431`，commit `2d5c2f23`，**建置耗時 9 分 12 秒**） |
-| **B1–B6 + D1–D3** 全量翻譯 + glossary + wear + 用語校訂 | ✅ 完成（app 2558/2558、wear 69/69、`check-l10n.py --strict` 與 `xmllint` 通過） |
-| **C2（全量版）** 觸發 Actions 出 APK | ✅ 完成（run `44668198901`，commit `be4913ed`，**建置耗時 13 分 41 秒**，資產 `174,483,318 bytes`，簽章指紋固定為 `AD:52:6F:35:...74:31:A3`，`v6.4.0-apk` 完全未動） |
-| **C3 / C4** 裝機實測與截圖 | ✅ 完成（實機確認 picker 顯示 `中文 (台灣)`、繁中切換與排版正常；12 張截圖存於 Nextcloud `/mnt/kuniaki/文件/DictateKeyboard`；另發現 `zh-TW-*` 預設貨幣仍為 `yen`，已記進 F2） |
-| **A3 + E1a–E1e** 上游文件、草稿與乾淨 PR 分支 | ✅ 完成（`docs/zh-TW-ui-contribution.md`、`docs/upstream-outreach-drafts-20261120.md`、`origin/pr/zh-tw-ui` 已就緒） |
+| **B0–B6 + D1–D3** 全量翻譯 + glossary + wear + 用語校訂 | ✅ 完成（app 2558/2558、wear 69/69、`check-l10n.py --strict` 與 `xmllint` 通過） |
+| **C1–C4** 語言選擇器 + 雲端出包 + 實機走查 + 截圖 | ✅ 完成（Run `44668198901`，固定簽章 `AD:52:6F:35:...74:31:A3`；實機顯示 `中文 (台灣)`） |
+| **簽章備份與 `main` 同步** | ✅ 完成（`main` commit `6a5a8112` 不觸發 CI、`v6.4.0-apk` 未動；本機備份 `~/DictateKeyboard-secrets/debug.keystore` 雜湊驗證通過） |
+| **A3 + E1a–E1e** 貢獻指南、草稿與乾淨分支 `pr/zh-tw-ui` | ✅ 完成（嚴格 4 檔，`e952b131` 已推 `origin/pr/zh-tw-ui`） |
+| **E2a + E2b** #483 留言 + 開立新 Issue `#492` | ✅ 完成（[#483 留言](https://github.com/DevEmperor/DictateKeyboard/issues/483#issuecomment-7030540460) ＋ [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492) 含 6 張對照截圖） |
+| **E2c → E3 / F** 等待作者回覆後開 PR 或收尾 | ⏳ **交棒給下個 session**（見下方決策表） |
+
+### 🧭 作者回覆後的應對決策表（下個 session 接手指南）
+
+> **下個 session 啟動 3 指令**（開工先檢查上游最新回覆與進度）：
+> ```bash
+> gh issue view 492 -R DevEmperor/DictateKeyboard --comments
+> gh issue view 483 -R DevEmperor/DictateKeyboard --comments
+> git fetch upstream && git log --oneline upstream/main -5
+> ```
+
+| 作者（`DevEmperor`）可能的回覆情境 | 下一步行動 | 具體做法 / 參考指令 |
+|---|---|---|
+| **情境 1：歡迎直接提 PR（含 `docs/zh-TW-ui-contribution.md`）** | 執行 **E1d → E1f / E3** | 若 `upstream/main` 有新 commit，將 `pr/zh-tw-ui` rebase 到最新 `upstream/main`（`git checkout pr/zh-tw-ui && git rebase upstream/main && git push --force-with-lease origin pr/zh-tw-ui`），確認仍只有 4 檔後對 `DevEmperor:main` 開 PR，文案直接用 `docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3**。 |
+| **情境 2：要收 PR，但希望只改資源檔 + `OtherScreen.kt`，不要 `docs/zh-TW-ui-contribution.md`** | 調整 `pr/zh-tw-ui` 後開 **E3** PR | 在 `pr/zh-tw-ui` 執行 `git rm docs/zh-TW-ui-contribution.md && git commit --amend --no-edit && git push --force-with-lease origin pr/zh-tw-ui`，再將 glossary / prompt 規則直接貼進 PR 內文即可。 |
+| **情境 3：只願先收資源層 `values-zh-rTW/`，暫不改 `OtherScreen.kt`** | 調整 `pr/zh-tw-ui` 後開 PR | 從 `pr/zh-tw-ui` revert `OtherScreen.kt`（保留 `app/` 與 `wear/` 的 `values-zh-rTW/strings.xml`），確保 `git diff upstream/main --stat` 只剩 2 個 XML 檔後提 PR；我們自己的 `feat/zh-tw-ui` 仍保留 `OtherScreen.kt` 供自用。 |
+| **情境 4：要求更換沒有左下角 AccuBattery 電流數字的截圖** | 補拍乾淨截圖覆蓋圖床 | 關閉 AccuBattery 浮動電流監控重拍同 6 張圖，推送覆蓋 `assets/zh-tw-screenshots` 分支（同一檔名，`#492` 與 PR 圖片會自動更新），再通知作者。 |
+| **情境 5：回覆「我自己用 AI 批次流程重新產生 `values-zh-rTW`，謝謝你的 glossary」** | 關閉互動、視同達成目標 | 若他已採納 glossary 並加入 `values-zh-rTW`：感謝他、關閉 `#492`；等上游 commit 進來後，將 `feat/zh-tw-ui` merge `upstream/main` 並持續用自己的 APK 或追隨上游（不需再人工維護 2547 條）。 |
+| **情境 6：對特定用語、標點或目錄命名（如 `values-zh-rTW` vs `values-b+zh+Hant`）提出調整意見** | 修改 `l10n/` → 重建 → 更新 `pr/zh-tw-ui` | 先在 `feat/zh-tw-ui` 修改 `l10n/translations/*.json`（或資料夾結構）並重跑 `python3 tools/build-zh-tw-strings.py --strict && python3 tools/check-l10n.py --strict`，再把產出同步到 `pr/zh-tw-ui` 推上。 |
+| **情境 7：超過 2 週未獲任何回覆** | 保持 fork 自用並推進 Phase F | 在 `#492` 禮貌 ping 一次或維持靜默；我們的 `feat/zh-tw-ui` 與 `main` 皆已具備固定簽章雲端出包能力，可定期 `git merge upstream/main` 同步新功能，並獨立推進 **F1**（繁中 prompt 投稿）、**F2**（倉頡字根顯示 + `zh-TW-*` 預設貨幣 `yen`→`dollar`）。 |
+| **收尾備忘（PR 合併後）** | 清理圖床與更新 `main` | 若 `#492` 與 PR 已結案，可視需要保留或刪除 `assets/zh-tw-screenshots`（建議保留，避免已關閉的 issue/PR 破圖），並將 `upstream/main` merge 回 `main` 與 `feat/zh-tw-ui`。 |
 
 ### C2 建置結果（2026-11-20）
 
@@ -417,29 +436,17 @@ Nextcloud `文件/` 內有 `app-debug.apk`（174 MB，2026-11-17 03:30）與 `ba
 
 > 註：`keystore.properties.template` 是**上游給 Play 發行用的 upload key** 模板，與我們這把 debug 金鑰是**兩把不同的鑰匙**，別搞混。上游的 upload key 不在我們手上，也不該有。
 
-#### ⚠️ 風險：金鑰是單點故障，且零備份
+#### ✅ 金鑰備份已補齊（2026-11-20 更新）
 
-**GitHub Secret 是不可逆的（write-only）** —— 實測 `GET /actions/secrets/{name}/value` 回 **404 Not Found**（該端點對一般 token 不開放讀取）。
+原本 **GitHub Secret 是不可逆的（write-only）** —— 實測 `GET /actions/secrets/{name}/value` 回 **404 Not Found**，本機與 Nextcloud 原本也皆無副本。
 
-且已查證：
-- 本機**沒有**任何副本（`find ~ -maxdepth 6 -name "*.keystore" -o -name "*.jks"` → 只找到 OneDrive 的無關檔案）
-- Nextcloud `文件/` **沒有**任何簽章檔
-- `~/.android/` **不存在**
+**2026-11-20 已透過臨時一次性非對稱加密流程完成備份與雙向雜湊驗證**：
+1. 本機產生一次性 RSA-4096 金鑰對，僅將公鑰放進臨時分支 `tmp/backup-keystore` 的一次性 workflow。
+2. Runner 還原 Secret、輸出檔案 SHA-256 與憑證指紋後，以 CMS AES-256 加密上傳 artifact。
+3. 本機下載解密至 `~/DictateKeyboard-secrets/debug.keystore`（權限 `600`，`2714` bytes），驗證檔案 SHA-256 與 runner 一致（`92212e7009491e07ec8f14dcf65383422374ff41cd38c7fe079b6300f91f58da`）、憑證指紋 `AD:52:6F:35:D6:3D:10:18:FA:BD:C0:8D:CA:54:18:7C:11:40:B6:F8:2A:15:0D:8B:5E:92:B5:DF:4D:74:31:A3`。
+4. 隨即刪除臨時私鑰、臨時 workflow 分支 `tmp/backup-keystore`（遠端與本機）與該次 Actions run（`44675406201`），並已同步固定簽章修復版 `.github/workflows/build-apk.yml` 回 `main`（commit `6a5a8112`）。
 
-**若金鑰遺失**（GitHub 帳號被鎖 / secret 被誤刪 / 無法登入）：
-→ 只能重新產生一把新金鑰 → 簽名不一致 → **手機上必須 uninstall 重裝** → **App 內所有設定與自訂詞庫全毀**
-→ 且既有 `v6.4.0-apk` Release 資產的簽章將無法再生產。
-
-#### 使用者決策（2026-11-20）
-
-**暫緩建立備份，先做 zh-TW 主線。** 之後若要補，指定存放位置為：**只放本機（不離開這台 Mac）**。
-
-補備份的做法（需另開 workflow 事後刪除）：
-1. 臨時加一支 workflow：還原金鑰 → 加密（用一個只有我們知道的 passphrase）→ 上傳成 Release asset 或 `workflow_dispatch` artifact
-2. 本機下載後解密存到 `~/DictateKeyboard-secrets/`
-3. 刪除該臨時 workflow
-
-> **待辦提醒**：這是本專案唯一「遺失即永久損失」的資產。zh-TW 完成後應優先回頭處理。
+> **目前資產位置**：`~/DictateKeyboard-secrets/debug.keystore` + `README.txt`（僅存本機 Mac，不入 git、不傳雲端）。
 
 ### 1.6 分支架構的最終定案（2026-11-20 已實作）
 
@@ -767,17 +774,19 @@ git push origin pr/zh-tw-ui
 
 #### E2 — 先在 issue #483 留言建立連結
 
-- [ ] **E2a** 在 **#483「Dictation in traditional chinese」**（2026-11-15 開，0 回覆，作者 `crazywing`）留言
+- [x] **E2a** 在 **#483「Dictation in traditional chinese」**（2026-11-15 開，原 0 回覆，作者 `crazywing`）留言
+  - ✅ 2026-11-20 已發佈：https://github.com/DevEmperor/DictateKeyboard/issues/483#issuecomment-7030540460
   - 給出繁中 STT 的實際解法：`Punctuation & style → Custom style prompt` 填繁中引導句 + `Rewording → Manage prompts` 開 `Apply automatically`
   - 這正是 `docs/zh-TW-setup.md` 驗證過的組合 → **展示我們真的在用這個 App**
-  - 附帶說明我們已完成 zh-TW UI 介面、正在準備貢獻
-- [ ] **E2b** **新開 issue**「Traditional Chinese (zh-TW) UI translation」，內容：
+  - 附帶說明我們已完成 zh-TW UI 介面並附上 `#492` 連結
+- [x] **E2b** **新開 issue**「Traditional Chinese (zh-TW) UI translation」
+  - ✅ 2026-11-20 已開立：https://github.com/DevEmperor/DictateKeyboard/issues/492 （圖床分支：`assets/zh-tw-screenshots`）
   1. 台灣用戶目前拿到**英文**（附資源解析規則與 `createConfigurationContext` 機制）
      - ⚠️ **依 2.4.1 拆成兩層寫**：層 1（資源層，不需要改 Kotlin）是主論點；層 2（picker 少一個 tag）才是需要動 Kotlin 的部分
      - 佐證：上游已有 20 個 locale 目錄，但 `ast` / `sq` / `ur` / `et` **有資源卻不在 picker 清單** → 上游並不要求 picker 與資源目錄一致，可作為「資源層先行」的論述
-  2. 我們已做好的 zh-TW 介面 + **實機截圖證據**
-  3. 我們的維護方案（見 2.7）
-- [ ] **E2c** 等待作者回應（作者活躍，issue 與 PR 都有回覆；他的習慣是先談再收）
+  2. 我們已做好的 zh-TW 介面 + **實機截圖證據**（三語並列 3 張 + 語言選擇器 + Dictate 設定 + 已學習的字詞，共 6 張）
+  3. 我們的維護方案（見 2.7，`docs/zh-TW-ui-contribution.md`）
+- [ ] **E2c** 等待作者回應（作者活躍，issue 與 PR 都有回覆；他的習慣是先談再收；回應後的對策見 Part 0「作者回覆後的應對決策表」）
 
 #### E3 — 提 PR
 
