@@ -1455,237 +1455,237 @@
     <string name="devtools__show_input_state_overlay__summary" comment="Summary of Show input cache overlay in Devtools">以浮層顯示目前的輸入狀態以便除錯</string>
     <string name="devtools__show_spelling_overlay__label" comment="Label of Show spelling overlay in Devtools">顯示拼字浮層</string>
     <string name="devtools__show_spelling_overlay__summary" comment="Summary of Show spelling overlay in Devtools">以浮層顯示目前的拼字結果以便除錯</string>
-    <string name="devtools__show_inline_autofill_overlay__label">Show inline autofill overlay</string>
-    <string name="devtools__show_inline_autofill_overlay__summary">Overlays the current inline autofill results for debugging</string>
-    <string name="devtools__show_key_touch_boundaries__label" comment="Label of Show key touch boundaries in Devtools">Show key touch boundaries</string>
-    <string name="devtools__force_legacy_insertion__label" comment="Label of the debug switch that makes the floating button insert the pre-Android-13 way">Floating button: insert like Android 12</string>
-    <string name="devtools__force_legacy_insertion__summary" comment="Summary of that debug switch">Pretend the accessibility input connection does not exist, so inserts go through the node and the clipboard the way they must on Android 12 and older. Debug builds only.</string>
-    <string name="devtools__show_key_touch_boundaries__summary" comment="Summary of Show key touch boundaries in Devtools">Outline the key touch boundaries in red</string>
-    <string name="devtools__show_drag_and_drop_helpers__label" comment="Label of Show drag and drop helpers in Devtools">Show drag&amp;drop helpers</string>
-    <string name="devtools__show_drag_and_drop_helpers__summary" comment="Summary of Show drag and drop helpers in Devtools">Render otherwise invisible helpers in drag&amp;drop screens for debugging</string>
-    <string name="devtools__clear_udm_internal_database__label" comment="Label of Clear internal user dictionary database in Devtools">Clear internal user dictionary database</string>
-    <string name="devtools__clear_udm_internal_database__summary" comment="Summary of Clear internal user dictionary database in Devtools">Clears all words from the dictionary database table</string>
-    <string name="devtools__reset_quick_actions_to_default__label">Reset Smartbar quick actions</string>
-    <string name="devtools__reset_quick_actions_to_default__summary">Reset Smartbar quick actions to default arrangement</string>
-    <string name="devtools__reset_quick_actions_to_default__toast_success">Successfully reset Smartbar quick actions to default</string>
-    <string name="devtools__reset_flag__label" comment="Label of Reset flag preferences in Devtools">Reset \"{flag_name}\" flag</string>
-    <string name="devtools__reset_flag_is_ime_set_up__summary" comment="Summary of Reset is IME set up flag in Devtools">Debug action to re-show the setup screen</string>
-    <string name="devtools__test_crash_report__label" comment="Label of Test Crash Report in Devtools">Test crash report screen</string>
-    <string name="devtools__test_crash_report__summary" comment="Summary of Test Crash Report in Devtools">Debug action to purposely produce a crash</string>
-    <string name="devtools__group_ime_window_tools__title" comment="Title of IME window tools group in Devtools">IME window tools</string>
-    <string name="devtools__show_window_resize_handle_boundaries__label">Show window resize handle boundaries</string>
-    <string name="devtools__show_window_resize_handle_boundaries__summary">Show window resize handle boundaries for debugging</string>
-    <string name="devtools__reset_window_config__label">Reset window config</string>
-    <string name="devtools__reset_window_config__summary">Resets the window config (fixed/floating mode, paddings, offsets) to default</string>
-    <string name="devtools__reset_window_config__toast_success">Successfully reset window config to default</string>
-    <string name="devtools__reset_window_config__toast_failure">Failed to reset window config to default: {message}</string>
-    <string name="devtools__group_android__title" comment="Title of Android group in Devtools">Android system tools</string>
-    <string name="devtools__android_settings_global__title" comment="Title of Android settings (global) screen">Global Android settings</string>
-    <string name="devtools__android_settings_secure__title" comment="Title of Android settings (secure) screen">Secure Android settings</string>
-    <string name="devtools__android_settings_system__title" comment="Title of Android settings (system) screen">System Android settings</string>
-    <string name="devtools__android_locales__title" comment="Title of Android locales screen">System locales</string>
-    <string name="devtools__debuglog__title">Debug log</string>
-    <string name="devtools__debuglog__copied_to_clipboard">Copied debug log to clipboard</string>
-    <string name="devtools__debuglog__copy_log">Copy log</string>
-    <string name="devtools__debuglog__copy_for_github">Copy log (GitHub formatting)</string>
-    <string name="devtools__debuglog__loading">Loading…</string>
+    <string name="devtools__show_inline_autofill_overlay__label">顯示內嵌自動填入浮層</string>
+    <string name="devtools__show_inline_autofill_overlay__summary">以浮層顯示目前的內嵌自動填入結果以便除錯</string>
+    <string name="devtools__show_key_touch_boundaries__label" comment="Label of Show key touch boundaries in Devtools">顯示按鍵觸控邊界</string>
+    <string name="devtools__force_legacy_insertion__label" comment="Label of the debug switch that makes the floating button insert the pre-Android-13 way">浮動按鈕：以 Android 12 的方式插入</string>
+    <string name="devtools__force_legacy_insertion__summary" comment="Summary of that debug switch">假裝無障礙輸入連線不存在，讓插入像 Android 12 與更早版本那樣經由節點與剪貼簿進行。僅限除錯版本。</string>
+    <string name="devtools__show_key_touch_boundaries__summary" comment="Summary of Show key touch boundaries in Devtools">以紅色框出按鍵的觸控邊界</string>
+    <string name="devtools__show_drag_and_drop_helpers__label" comment="Label of Show drag and drop helpers in Devtools">顯示拖放輔助線</string>
+    <string name="devtools__show_drag_and_drop_helpers__summary" comment="Summary of Show drag and drop helpers in Devtools">在除錯時顯示拖放畫面中原本看不見的輔助線</string>
+    <string name="devtools__clear_udm_internal_database__label" comment="Label of Clear internal user dictionary database in Devtools">清除內建使用者字典資料庫</string>
+    <string name="devtools__clear_udm_internal_database__summary" comment="Summary of Clear internal user dictionary database in Devtools">清除字典資料庫表格中的所有字詞</string>
+    <string name="devtools__reset_quick_actions_to_default__label">重設智慧列快速動作</string>
+    <string name="devtools__reset_quick_actions_to_default__summary">將智慧列快速動作重設為預設排列</string>
+    <string name="devtools__reset_quick_actions_to_default__toast_success">已成功將智慧列快速動作重設為預設</string>
+    <string name="devtools__reset_flag__label" comment="Label of Reset flag preferences in Devtools">重設「{flag_name}」旗標</string>
+    <string name="devtools__reset_flag_is_ime_set_up__summary" comment="Summary of Reset is IME set up flag in Devtools">除錯動作，可重新顯示設定畫面</string>
+    <string name="devtools__test_crash_report__label" comment="Label of Test Crash Report in Devtools">測試當機報告畫面</string>
+    <string name="devtools__test_crash_report__summary" comment="Summary of Test Crash Report in Devtools">除錯動作，刻意製造一次當機</string>
+    <string name="devtools__group_ime_window_tools__title" comment="Title of IME window tools group in Devtools">輸入法視窗工具</string>
+    <string name="devtools__show_window_resize_handle_boundaries__label">顯示視窗調整大小控制桿邊界</string>
+    <string name="devtools__show_window_resize_handle_boundaries__summary">顯示視窗調整大小控制桿邊界以便除錯</string>
+    <string name="devtools__reset_window_config__label">重設視窗設定</string>
+    <string name="devtools__reset_window_config__summary">將視窗設定（固定／浮動模式、邊距、偏移）重設為預設值</string>
+    <string name="devtools__reset_window_config__toast_success">已成功將視窗設定重設為預設值</string>
+    <string name="devtools__reset_window_config__toast_failure">無法將視窗設定重設為預設值：{message}</string>
+    <string name="devtools__group_android__title" comment="Title of Android group in Devtools">Android 系統工具</string>
+    <string name="devtools__android_settings_global__title" comment="Title of Android settings (global) screen">Android 全域設定</string>
+    <string name="devtools__android_settings_secure__title" comment="Title of Android settings (secure) screen">Android 安全性設定</string>
+    <string name="devtools__android_settings_system__title" comment="Title of Android settings (system) screen">Android 系統設定</string>
+    <string name="devtools__android_locales__title" comment="Title of Android locales screen">系統語系</string>
+    <string name="devtools__debuglog__title">除錯紀錄</string>
+    <string name="devtools__debuglog__copied_to_clipboard">已將除錯紀錄複製到剪貼簿</string>
+    <string name="devtools__debuglog__copy_log">複製紀錄</string>
+    <string name="devtools__debuglog__copy_for_github">複製紀錄（GitHub 格式）</string>
+    <string name="devtools__debuglog__loading">載入中…</string>
 
 
     <!-- Extension strings -->
-    <string name="ext__home__title">Addons &amp; Extensions</string>
-    <string name="ext__list__ext_theme">Theme extensions</string>
-    <string name="ext__list__ext_keyboard">Keyboard extensions</string>
-    <string name="ext__list__ext_languagepack">Language pack extensions</string>
-    <string name="ext__meta__authors">Authors</string>
-    <string name="ext__meta__components">Bundled components</string>
-    <string name="ext__meta__components_theme">Bundled themes</string>
-    <string name="ext__meta__components_language_pack">Bundled language packs</string>
-    <string name="ext__meta__components_none_found">This extension archive does not contain any bundled components.</string>
-    <string name="ext__meta__description">Description</string>
-    <string name="ext__meta__homepage">Homepage</string>
+    <string name="ext__home__title">增益與擴充功能</string>
+    <string name="ext__list__ext_theme">佈景主題擴充功能</string>
+    <string name="ext__list__ext_keyboard">鍵盤擴充功能</string>
+    <string name="ext__list__ext_languagepack">語言套件擴充功能</string>
+    <string name="ext__meta__authors">作者</string>
+    <string name="ext__meta__components">內含元件</string>
+    <string name="ext__meta__components_theme">內含佈景主題</string>
+    <string name="ext__meta__components_language_pack">內含語言套件</string>
+    <string name="ext__meta__components_none_found">這個擴充功能壓縮檔沒有包含任何內嵌元件。</string>
+    <string name="ext__meta__description">說明</string>
+    <string name="ext__meta__homepage">首頁</string>
     <string name="ext__meta__id">ID</string>
-    <string name="ext__meta__issue_tracker">Issue tracker</string>
-    <string name="ext__meta__keywords">Keywords</string>
-    <string name="ext__meta__label">Label</string>
-    <string name="ext__meta__license">License</string>
-    <string name="ext__meta__maintainers">Maintainers</string>
-    <string name="ext__meta__maintainers_by">By: {maintainers}</string>
-    <string name="ext__meta__title">Title</string>
-    <string name="ext__meta__version">Version</string>
-    <string name="ext__error__not_found_title">Extension not found</string>
-    <string name="ext__error__not_found_description">No extension with ID “{id}” could be found.</string>
-    <string name="ext__editor__title_create_any">Create extension</string>
-    <string name="ext__editor__title_create_keyboard">Create keyboard extension</string>
-    <string name="ext__editor__title_create_theme">Create theme extension</string>
-    <string name="ext__editor__title_edit_any">Edit extension</string>
-    <string name="ext__editor__title_edit_keyboard">Edit keyboard extension</string>
-    <string name="ext__editor__title_edit_theme">Edit theme extension</string>
-    <string name="ext__editor__metadata__title">Manage meta data</string>
-    <string name="ext__editor__metadata__title_invalid">Invalid meta data</string>
-    <string name="ext__editor__metadata__message_invalid">The meta data for this extension is not valid, please check the meta data editor for details!</string>
-    <string name="ext__editor__dependencies__title">Manage dependencies</string>
-    <string name="ext__editor__files__title">Manage archive files</string>
-    <string name="ext__editor__files__type_fonts">Fonts</string>
-    <string name="ext__editor__files__type_images">Images</string>
-    <string name="ext__editor__create_component__title">Create component</string>
-    <string name="ext__editor__create_component__title_theme">Create theme</string>
-    <string name="ext__editor__create_component__from_empty">Empty</string>
-    <string name="ext__editor__create_component__from_existing">From existing</string>
-    <string name="ext__editor__create_component__from_empty_warning">Creating and configuring an empty component may be hard if you are new to {app_name} or if you are unfamiliar with the specifics. Consider copying an existing component and modifying it to your likings if that is the case.</string>
-    <string name="ext__editor__edit_component__title">Edit component</string>
-    <string name="ext__editor__edit_component__title_theme">Edit theme component</string>
-    <string name="ext__export__success">Successfully exported extension!</string>
-    <string name="ext__export__failure">Failed to export extension: {error_message}</string>
-    <string name="ext__import__success">Successfully imported extension!</string>
-    <string name="ext__import__failure">Failed to import extension: {error_message}</string>
-    <string name="ext__import__ext_any" comment="Title of Importer screen for import of any supported Dictate Keyboard extension">Import extension</string>
-    <string name="ext__import__ext_keyboard" comment="Title of Importer screen for keyboard extension import">Import keyboard extension</string>
-    <string name="ext__import__ext_theme" comment="Title of Importer screen for theme extension import">Import theme extension</string>
-    <string name="ext__import__ext_languagepack" comment="Title of Importer screen for language pack extension import">Import language pack extension</string>
-    <string name="ext__import__file_skip" comment="Label when a file cannot be imported in the current context. The actual reason string is in a separate text view below this string.">File can not be imported. Reason:</string>
-    <string name="ext__import__file_skip_unsupported" comment="Reason string when file is unsupported">Unsupported or unrecognized file type.</string>
-    <string name="ext__import__file_skip_ext_core" comment="Reason string when ext has core extension ID">Unable to replace or update default extension packages provided with the app core assets. Consider updating the app itself if you intend to use a newer version of a core extension package.</string>
-    <string name="ext__import__file_skip_ext_corrupted" comment="Reason string when file seems to be ext but is corrupted">File appears to be an extension archive but parsing of the archive data failed. Either the archive is corrupted or this file is not an extension at all.</string>
-    <string name="ext__import__file_skip_ext_incorrect_type" comment="Reason string when file is of incorrect extension serial type">Expected an extension archive of serial type \"{expected_serial_type}\" but was \"{actual_serial_type}\".</string>
-    <string name="ext__import__file_skip_ext_not_supported" comment="Reason string when file is loaded in incorrect context">Expected a media file (image, audio, font, etc.) but found an extension archive.</string>
-    <string name="ext__import__file_skip_media_not_supported" comment="Reason string when file is loaded in incorrect context">Expected an extension archive but found a media file (image, audio, font, etc.).</string>
-    <string name="ext__import__error_unexpected_exception" comment="Label when an error occurred during import. The error message will be appended below this text view">An unexpected error occurred during import. The following details were provided:</string>
-    <string name="ext__validation__enter_package_name">Please enter a package name</string>
-    <string name="ext__validation__error_package_name">Package name does not match regex {id_regex}</string>
-    <string name="ext__validation__enter_version">Please enter a version</string>
-    <string name="ext__validation__enter_title">Please enter a title</string>
-    <string name="ext__validation__enter_maintainer">Please enter at least one valid maintainer</string>
-    <string name="ext__validation__enter_license">Please enter a license identifier</string>
-    <string name="ext__validation__enter_component_id">Please enter a component ID</string>
-    <string name="ext__validation__error_component_id">Please enter a component ID matching {component_id_regex}</string>
-    <string name="ext__validation__enter_component_label">Please enter a component label</string>
-    <string name="ext__validation__hint_component_label_to_long">Your component label is quite long, which may lead to clipping in the UI</string>
-    <string name="ext__validation__error_author">Please enter at least one valid author</string>
-    <string name="ext__validation__error_stylesheet_path_blank">The stylesheet path must not be blank</string>
-    <string name="ext__validation__error_stylesheet_path">Please enter a valid stylesheet path matching {stylesheet_path_regex}</string>
-    <string name="ext__validation__enter_property">Please enter a variable name</string>
-    <string name="ext__validation__error_property">Please enter a valid variable name matching {variable_name_regex}</string>
-    <string name="ext__validation__enter_color">Please enter a color string</string>
-    <string name="ext__validation__error_color">Please enter a valid color string</string>
-    <string name="ext__validation__enter_dp_size">Please enter a dp size</string>
-    <string name="ext__validation__enter_valid_number">Please enter a valid number</string>
-    <string name="ext__validation__enter_positive_number">Please enter a positive number (>=0)</string>
-    <string name="ext__validation__enter_percent_size">Please enter a percent size</string>
-    <string name="ext__validation__enter_number_between_0_100">Please enter a positive number between 0 and 100</string>
-    <string name="ext__validation__hint_value_above_50_percent">Any value above 50% will behave as if you set 50%, consider lowering your percent size</string>
-    <string name="ext__update_box__internet_permission_hint">Since this app does not have Internet permission, updates for installed extensions must be checked manually.</string>
-    <string name="ext__update_box__search_for_updates">Search for Updates</string>
-    <string name="ext__addon_management_box__managing_placeholder">Managing {extensions}</string>
-    <string name="ext__addon_management_box__addon_manager_info">All tasks related to importing, exporting, creating, customizing, and removing extensions can be handled through the centralized addon manager.</string>
-    <string name="ext__addon_management_box__go_to_page">Go to {ext_home_title}</string>
-    <string name="ext__home__info">Extensions add themes, keyboard layouts and language packs. Import an extension file to add one; the ones you have are listed below.</string>
-    <string name="ext__home__visit_store">Visit Addons Store</string>
-    <string name="ext__home__manage_extensions">Manage installed extensions</string>
-    <string name="ext__list__view_details">View details</string>
-    <string name="ext__check_updates__title">Check for Updates</string>
+    <string name="ext__meta__issue_tracker">問題追蹤系統</string>
+    <string name="ext__meta__keywords">關鍵字</string>
+    <string name="ext__meta__label">標籤</string>
+    <string name="ext__meta__license">授權</string>
+    <string name="ext__meta__maintainers">維護者</string>
+    <string name="ext__meta__maintainers_by">由：{maintainers}</string>
+    <string name="ext__meta__title">標題</string>
+    <string name="ext__meta__version">版本</string>
+    <string name="ext__error__not_found_title">找不到擴充功能</string>
+    <string name="ext__error__not_found_description">找不到 ID 為「{id}」的擴充功能。</string>
+    <string name="ext__editor__title_create_any">建立擴充功能</string>
+    <string name="ext__editor__title_create_keyboard">建立鍵盤擴充功能</string>
+    <string name="ext__editor__title_create_theme">建立佈景主題擴充功能</string>
+    <string name="ext__editor__title_edit_any">編輯擴充功能</string>
+    <string name="ext__editor__title_edit_keyboard">編輯鍵盤擴充功能</string>
+    <string name="ext__editor__title_edit_theme">編輯佈景主題擴充功能</string>
+    <string name="ext__editor__metadata__title">管理中繼資料</string>
+    <string name="ext__editor__metadata__title_invalid">無效的中繼資料</string>
+    <string name="ext__editor__metadata__message_invalid">這個擴充功能的中繼資料無效，詳情請查看中繼資料編輯器！</string>
+    <string name="ext__editor__dependencies__title">管理相依項目</string>
+    <string name="ext__editor__files__title">管理壓縮檔案</string>
+    <string name="ext__editor__files__type_fonts">字型</string>
+    <string name="ext__editor__files__type_images">圖片</string>
+    <string name="ext__editor__create_component__title">建立元件</string>
+    <string name="ext__editor__create_component__title_theme">建立佈景主題</string>
+    <string name="ext__editor__create_component__from_empty">空白</string>
+    <string name="ext__editor__create_component__from_existing">從現有的開始</string>
+    <string name="ext__editor__create_component__from_empty_warning">若你剛接觸 {app_name} 或不熟悉其中的細節，建立並設定一個空白元件可能會很困難。這種情況下，建議複製一個現有元件，再依你的需求修改。</string>
+    <string name="ext__editor__edit_component__title">編輯元件</string>
+    <string name="ext__editor__edit_component__title_theme">編輯佈景主題元件</string>
+    <string name="ext__export__success">擴充功能已成功匯出！</string>
+    <string name="ext__export__failure">無法匯出擴充功能：{error_message}</string>
+    <string name="ext__import__success">擴充功能已成功匯入！</string>
+    <string name="ext__import__failure">無法匯入擴充功能：{error_message}</string>
+    <string name="ext__import__ext_any" comment="Title of Importer screen for import of any supported Dictate Keyboard extension">匯入擴充功能</string>
+    <string name="ext__import__ext_keyboard" comment="Title of Importer screen for keyboard extension import">匯入鍵盤擴充功能</string>
+    <string name="ext__import__ext_theme" comment="Title of Importer screen for theme extension import">匯入佈景主題擴充功能</string>
+    <string name="ext__import__ext_languagepack" comment="Title of Importer screen for language pack extension import">匯入語言套件擴充功能</string>
+    <string name="ext__import__file_skip" comment="Label when a file cannot be imported in the current context. The actual reason string is in a separate text view below this string.">無法匯入這個檔案。原因：</string>
+    <string name="ext__import__file_skip_unsupported" comment="Reason string when file is unsupported">不支援或無法辨識的檔案類型。</string>
+    <string name="ext__import__file_skip_ext_core" comment="Reason string when ext has core extension ID">無法取代或更新應用程式核心資源所附的預設擴充功能套件。若你想使用核心擴充功能套件的新版本，請考慮直接更新應用程式。</string>
+    <string name="ext__import__file_skip_ext_corrupted" comment="Reason string when file seems to be ext but is corrupted">這個檔案看起來是擴充功能壓縮檔，但解析壓縮檔資料時失敗。要麼壓縮檔已損毀，要麼它根本不是擴充功能。</string>
+    <string name="ext__import__file_skip_ext_incorrect_type" comment="Reason string when file is of incorrect extension serial type">預期為序列類型「{expected_serial_type}」的擴充功能壓縮檔，但實際是「{actual_serial_type}」。</string>
+    <string name="ext__import__file_skip_ext_not_supported" comment="Reason string when file is loaded in incorrect context">預期為媒體檔案（圖片、音訊、字型等），但找到的是擴充功能壓縮檔。</string>
+    <string name="ext__import__file_skip_media_not_supported" comment="Reason string when file is loaded in incorrect context">預期為擴充功能壓縮檔，但找到的是媒體檔案（圖片、音訊、字型等）。</string>
+    <string name="ext__import__error_unexpected_exception" comment="Label when an error occurred during import. The error message will be appended below this text view">匯入時發生未預期的錯誤。詳細資訊如下：</string>
+    <string name="ext__validation__enter_package_name">請輸入套件名稱</string>
+    <string name="ext__validation__error_package_name">套件名稱不符合規則運算式 {id_regex}</string>
+    <string name="ext__validation__enter_version">請輸入版本</string>
+    <string name="ext__validation__enter_title">請輸入標題</string>
+    <string name="ext__validation__enter_maintainer">請至少輸入一位有效的維護者</string>
+    <string name="ext__validation__enter_license">請輸入授權識別碼</string>
+    <string name="ext__validation__enter_component_id">請輸入元件 ID</string>
+    <string name="ext__validation__error_component_id">請輸入符合 {component_id_regex} 的元件 ID</string>
+    <string name="ext__validation__enter_component_label">請輸入元件標籤</string>
+    <string name="ext__validation__hint_component_label_to_long">你的元件標籤偏長，可能會在介面中被截斷</string>
+    <string name="ext__validation__error_author">請至少輸入一位有效的作者</string>
+    <string name="ext__validation__error_stylesheet_path_blank">樣式表路徑不可留空</string>
+    <string name="ext__validation__error_stylesheet_path">請輸入符合 {stylesheet_path_regex} 的樣式表路徑</string>
+    <string name="ext__validation__enter_property">請輸入變數名稱</string>
+    <string name="ext__validation__error_property">請輸入符合 {variable_name_regex} 的有效變數名稱</string>
+    <string name="ext__validation__enter_color">請輸入顏色字串</string>
+    <string name="ext__validation__error_color">請輸入有效的顏色字串</string>
+    <string name="ext__validation__enter_dp_size">請輸入 dp 大小</string>
+    <string name="ext__validation__enter_valid_number">請輸入有效的數值</string>
+    <string name="ext__validation__enter_positive_number">請輸入非負數（&gt;=0）</string>
+    <string name="ext__validation__enter_percent_size">請輸入百分比大小</string>
+    <string name="ext__validation__enter_number_between_0_100">請輸入 0 到 100 之間的數值</string>
+    <string name="ext__validation__hint_value_above_50_percent">任何高於 50% 的值都會 behaves like 50%，建議把百分比大小調低</string>
+    <string name="ext__update_box__internet_permission_hint">由於這個應用程式沒有網際網路權限，已安裝擴充功能的更新必須手動檢查。</string>
+    <string name="ext__update_box__search_for_updates">搜尋更新</string>
+    <string name="ext__addon_management_box__managing_placeholder">正在管理 {extensions}</string>
+    <string name="ext__addon_management_box__addon_manager_info">所有與匯入、匯出、建立、自訂及移除擴充功能相關的工作，都能透過集中的增益管理工具處理。</string>
+    <string name="ext__addon_management_box__go_to_page">前往 {ext_home_title}</string>
+    <string name="ext__home__info">擴充功能可以加入佈景主題、鍵盤配置與語言套件。匯入擴充功能檔案即可新增；你已有的擴充功能列在下方。</string>
+    <string name="ext__home__visit_store">造訪增益商店</string>
+    <string name="ext__home__manage_extensions">管理已安裝的擴充功能</string>
+    <string name="ext__list__view_details">查看詳細資訊</string>
+    <string name="ext__check_updates__title">檢查更新</string>
 
     <!-- Action strings -->
-    <string name="action__add">Add</string>
-    <string name="action__apply">Apply</string>
+    <string name="action__add">新增</string>
+    <string name="action__apply">套用</string>
     <string name="action__back" comment="Screen reader label for the button that leaves a search and returns to where it was opened from">返回</string>
-    <string name="action__back_up">Back up</string>
+    <string name="action__back_up">備份</string>
     <string name="action__cancel">取消</string>
-    <string name="action__clear" comment="Screen reader label for the button that empties a search field">Clear</string>
-    <string name="action__create">Create</string>
+    <string name="action__clear" comment="Screen reader label for the button that empties a search field">清除</string>
+    <string name="action__create">建立</string>
     <string name="action__default">預設</string>
-    <string name="action__delete">Delete</string>
-    <string name="action__delete_confirm_title">Confirm delete</string>
-    <string name="action__delete_confirm_message">Are you sure you want to delete \"{name}\"? This action can not be undone once executed.</string>
-    <string name="action__reset">Reset</string>
-    <string name="action__reset_confirm_title">Confirm reset</string>
-    <string name="action__reset_confirm_message">Are you sure you want to reset \"{name}\"? This action can not be undone once executed.</string>
-    <string name="action__discard">Discard</string>
-    <string name="action__discard_confirm_title">Unsaved changes</string>
-    <string name="action__discard_confirm_message">Are you sure you want to discard your unsaved changes? This action can not be undone once executed.</string>
-    <string name="action__edit">Edit</string>
-    <string name="action__export">Export</string>
-    <string name="action__export_file">Import file</string>
-    <string name="action__export_files">Import files</string>
-    <string name="action__import">Import</string>
-    <string name="action__import_file">Import file</string>
-    <string name="action__import_files">Import files</string>
-    <string name="action__no">No</string>
+    <string name="action__delete">刪除</string>
+    <string name="action__delete_confirm_title">確認刪除</string>
+    <string name="action__delete_confirm_message">你確定要刪除「{name}」嗎？這個動作一旦執行就無法復原。</string>
+    <string name="action__reset">重設</string>
+    <string name="action__reset_confirm_title">確認重設</string>
+    <string name="action__reset_confirm_message">你確定要重設「{name}」嗎？這個動作一旦執行就無法復原。</string>
+    <string name="action__discard">捨棄</string>
+    <string name="action__discard_confirm_title">未儲存的變更</string>
+    <string name="action__discard_confirm_message">你確定要捨棄尚未儲存的變更嗎？這個動作一旦執行就無法復原。</string>
+    <string name="action__edit">編輯</string>
+    <string name="action__export">匯出</string>
+    <string name="action__export_file">匯入檔案</string>
+    <string name="action__export_files">匯入多個檔案</string>
+    <string name="action__import">匯入</string>
+    <string name="action__import_file">匯入檔案</string>
+    <string name="action__import_files">匯入多個檔案</string>
+    <string name="action__no">否</string>
     <string name="action__ok">確定</string>
-    <string name="action__done">Done</string>
-    <string name="action__restore">Restore</string>
-    <string name="action__save">Save</string>
-    <string name="action__select">Select</string>
-    <string name="action__select_dir">Select directory</string>
-    <string name="action__select_dirs">Select directories</string>
-    <string name="action__select_file">Select file</string>
-    <string name="action__select_files">Select files</string>
-    <string name="action__yes">Yes</string>
+    <string name="action__done">完成</string>
+    <string name="action__restore">還原</string>
+    <string name="action__save">儲存</string>
+    <string name="action__select">選取</string>
+    <string name="action__select_dir">選取資料夾</string>
+    <string name="action__select_dirs">選取多個資料夾</string>
+    <string name="action__select_file">選取檔案</string>
+    <string name="action__select_files">選取多個檔案</string>
+    <string name="action__yes">是</string>
 
     <!-- Error strings (generic) -->
-    <string name="error__title">Error</string>
-    <string name="error__details">Details</string>
-    <string name="error__invalid">Invalid</string>
-    <string name="error__snackbar_message">Something went wrong</string>
-    <string name="error__snackbar_message_template">Something went wrong: {error_message}</string>
+    <string name="error__title">錯誤</string>
+    <string name="error__details">詳細資訊</string>
+    <string name="error__invalid">無效</string>
+    <string name="error__snackbar_message">發生錯誤</string>
+    <string name="error__snackbar_message_template">發生錯誤：{error_message}</string>
 
     <!-- General strings -->
-    <string name="general__example_given" comment="This string is used where an example will be inserted in the {example} block. When translating, use the abbreviation used in your language for 'example given'.">e.g. {example}</string>
-    <string name="general__no_browser_app_found_for_url">No browser app found for handling URL {url}</string>
-    <string name="general__select_dropdown_value_placeholder">&#45; select &#45;</string>
-    <string name="general__unlimited">Unlimited</string>
-    <string name="general__file_name">File name</string>
-    <string name="general__properties">Properties</string>
-    <string name="general__auto" comment="Generic shorthand for 'Automatic' value">Auto</string>
+    <string name="general__example_given" comment="This string is used where an example will be inserted in the {example} block. When translating, use the abbreviation used in your language for 'example given'.">例如 {example}</string>
+    <string name="general__no_browser_app_found_for_url">找不到可開啟網址 {url} 的瀏覽器應用程式</string>
+    <string name="general__select_dropdown_value_placeholder">- 請選擇 -</string>
+    <string name="general__unlimited">無上限</string>
+    <string name="general__file_name">檔案名稱</string>
+    <string name="general__properties">屬性</string>
+    <string name="general__auto" comment="Generic shorthand for 'Automatic' value">自動</string>
 
     <!-- Screen orientation strings -->
-    <string name="screen_orientation__portrait">Portrait</string>
-    <string name="screen_orientation__landscape">Landscape</string>
-    <string name="screen_orientation__vertical">Vertical</string>
-    <string name="screen_orientation__horizontal">Horizontal</string>
+    <string name="screen_orientation__portrait">直向</string>
+    <string name="screen_orientation__landscape">橫向</string>
+    <string name="screen_orientation__vertical">垂直</string>
+    <string name="screen_orientation__horizontal">水平</string>
 
     <!-- State strings -->
-    <string name="state__disabled">Disabled</string>
-    <string name="state__enabled">Enabled</string>
-    <string name="state__no_dir_selected">No directory selected</string>
-    <string name="state__no_dirs_selected">No directories selected</string>
-    <string name="state__no_file_selected">No file selected</string>
-    <string name="state__no_files_selected">No files selected</string>
+    <string name="state__disabled">已停用</string>
+    <string name="state__enabled">已啟用</string>
+    <string name="state__no_dir_selected">尚未選擇資料夾</string>
+    <string name="state__no_dirs_selected">尚未選擇資料夾</string>
+    <string name="state__no_file_selected">尚未選擇檔案</string>
+    <string name="state__no_files_selected">尚未選擇檔案</string>
 
 
     <!-- Enum label and description strings -->
-    <string name="enum__candidates_display_mode__classic" comment="Enum value label">Classic (3 columns)</string>
-    <string name="enum__candidates_display_mode__dynamic" comment="Enum value label">Dynamic width</string>
-    <string name="enum__candidates_display_mode__dynamic_scrollable" comment="Enum value label">Dynamic width &amp; scrollable</string>
+    <string name="enum__candidates_display_mode__classic" comment="Enum value label">經典（3 欄）</string>
+    <string name="enum__candidates_display_mode__dynamic" comment="Enum value label">動態寬度</string>
+    <string name="enum__candidates_display_mode__dynamic_scrollable" comment="Enum value label">動態寬度且可捲動</string>
 
-    <string name="enum__capitalization_behavior__capslock_by_double_tap" comment="Enum value label">Enable Capslock by double tapping shift</string>
-    <string name="enum__capitalization_behavior__capslock_by_cycle" comment="Enum value label">Switch to the next capitalization step each time the shift key is pressed</string>
+    <string name="enum__capitalization_behavior__capslock_by_double_tap" comment="Enum value label">連點兩下 Shift 啟動 Caps Lock</string>
+    <string name="enum__capitalization_behavior__capslock_by_cycle" comment="Enum value label">每次按 Shift 就切換到下一個大小寫層級</string>
 
-    <string name="enum__clipboard_sync_behavior__no_events" comment="Enum value label">No events</string>
-    <string name="enum__clipboard_sync_behavior__no_events__description" comment="Enum value description">No events are synced in this direction. In this mode, sync excludes text content.</string>
-    <string name="enum__clipboard_sync_behavior__only_clear_events" comment="Enum value label">Only clear events</string>
-    <string name="enum__clipboard_sync_behavior__only_clear_events__description" comment="Enum value description">Only events clearing clip data are synced in this direction. In this mode, sync excludes text content.</string>
-    <string name="enum__clipboard_sync_behavior__only_set_events" comment="Enum value label">Only set events</string>
-    <string name="enum__clipboard_sync_behavior__only_set_events__description" comment="Enum value description">Only events setting clip data are synced in this direction. In this mode, sync includes text content.</string>
-    <string name="enum__clipboard_sync_behavior__all_events" comment="Enum value label">All events</string>
-    <string name="enum__clipboard_sync_behavior__all_events__description" comment="Enum value description">Both events setting and clearing clip data are synced in this direction. In this mode, sync includes text content.</string>
+    <string name="enum__clipboard_sync_behavior__no_events" comment="Enum value label">不同步任何事件</string>
+    <string name="enum__clipboard_sync_behavior__no_events__description" comment="Enum value description">這個方向不會同步任何事件。在此模式下，同步不包含文字內容。</string>
+    <string name="enum__clipboard_sync_behavior__only_clear_events" comment="Enum value label">只同步清除事件</string>
+    <string name="enum__clipboard_sync_behavior__only_clear_events__description" comment="Enum value description">這個方向只同步清除剪貼資料的事件。在此模式下，同步不包含文字內容。</string>
+    <string name="enum__clipboard_sync_behavior__only_set_events" comment="Enum value label">只同步設定事件</string>
+    <string name="enum__clipboard_sync_behavior__only_set_events__description" comment="Enum value description">這個方向只同步設定剪貼資料的事件。在此模式下，同步包含文字內容。</string>
+    <string name="enum__clipboard_sync_behavior__all_events" comment="Enum value label">同步所有事件</string>
+    <string name="enum__clipboard_sync_behavior__all_events__description" comment="Enum value description">這個方向會同步設定與清除剪貼資料的事件。在此模式下，同步包含文字內容。</string>
 
-    <string name="enum__color_representation__hex" comment="Enum value label">Hexadecimal</string>
-    <string name="enum__color_representation__rgb" comment="Enum value label">Red Green Blue</string>
-    <string name="enum__color_representation__hsv" comment="Enum value label">Hue Saturation Value</string>
+    <string name="enum__color_representation__hex" comment="Enum value label">十六進位</string>
+    <string name="enum__color_representation__rgb" comment="Enum value label">紅 綠 藍</string>
+    <string name="enum__color_representation__hsv" comment="Enum value label">色相 飽和度 明度</string>
 
-    <string name="enum__display_kbd_after_dialogs__always" comment="Enum value label">Always show</string>
-    <string name="enum__display_kbd_after_dialogs__always__description" comment="Enum value description">Always show the keyboard after closing any editor dialog</string>
-    <string name="enum__display_kbd_after_dialogs__never" comment="Enum value label">Never show</string>
-    <string name="enum__display_kbd_after_dialogs__never__description" comment="Enum value description">Never show the keyboard after closing any editor dialog</string>
-    <string name="enum__display_kbd_after_dialogs__remember" comment="Enum value label">Remember last state</string>
-    <string name="enum__display_kbd_after_dialogs__remember__description" comment="Enum value description">Only show the keyboard after closing any editor dialog if it was previously visible</string>
+    <string name="enum__display_kbd_after_dialogs__always" comment="Enum value label">一律顯示</string>
+    <string name="enum__display_kbd_after_dialogs__always__description" comment="Enum value description">關閉任何編輯對話框後一律顯示鍵盤</string>
+    <string name="enum__display_kbd_after_dialogs__never" comment="Enum value label">一律不顯示</string>
+    <string name="enum__display_kbd_after_dialogs__never__description" comment="Enum value description">關閉任何編輯對話框後一律不顯示鍵盤</string>
+    <string name="enum__display_kbd_after_dialogs__remember" comment="Enum value label">記住上次狀態</string>
+    <string name="enum__display_kbd_after_dialogs__remember__description" comment="Enum value description">只有在先前顯示過鍵盤時，關閉編輯對話框後才顯示鍵盤</string>
 
-    <string name="enum__display_language_names_in__system_locale" comment="Enum value label">System locale</string>
-    <string name="enum__display_language_names_in__system_locale__description" comment="Enum value description">Language names across the app and keyboard UI are displayed in the locale which is set for the whole device</string>
-    <string name="enum__display_language_names_in__native_locale" comment="Enum value label">Native locale</string>
-    <string name="enum__display_language_names_in__native_locale__description" comment="Enum value description">Language names across the app and keyboard UI are displayed in the locale referred by itself</string>
+    <string name="enum__display_language_names_in__system_locale" comment="Enum value label">系統語系</string>
+    <string name="enum__display_language_names_in__system_locale__description" comment="Enum value description">應用程式與鍵盤介面中的語言名稱，會以整台裝置設定的語系顯示</string>
+    <string name="enum__display_language_names_in__native_locale" comment="Enum value label">該語言本身</string>
+    <string name="enum__display_language_names_in__native_locale__description" comment="Enum value description">應用程式與鍵盤介面中的語言名稱，會以該語言自身的語系顯示</string>
 
-    <string name="enum__emoji_history_update_strategy__auto_sort_prepend" comment="Enum value label">Auto sort (prepend)</string>
+    <string name="enum__emoji_history_update_strategy__auto_sort_prepend" comment="Enum value label">自動排序（前置）</string>
     <string name="enum__emoji_history_update_strategy__auto_sort_prepend__description" comment="Enum value description">Automatically reorder emojis on emoji usage. New emojis are added to the start.</string>
     <string name="enum__emoji_history_update_strategy__auto_sort_append" comment="Enum value label">Auto sort (append)</string>
     <string name="enum__emoji_history_update_strategy__auto_sort_append__description" comment="Enum value description">Automatically reorder emojis on emoji usage. New emojis are added to the end.</string>
