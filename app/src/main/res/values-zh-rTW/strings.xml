@@ -802,77 +802,77 @@
     <string name="settings__learned__forget_all_confirm" comment="Confirmation question before deleting all learned words">要忘記所有已學習的字詞嗎？已經加入字典的字詞會保留。</string>
     <string name="settings__learned__tier_remembered" comment="Short name of the first learning stage, used as a folder title">已注意到</string>
     <string name="settings__learned__tier_suggested" comment="Short name of the second learning stage, used as a folder title">已建議</string>
-    <string name="settings__learned__tier_promoted" comment="Short name of the third learning stage, used as a folder title">In your dictionary</string>
-    <string name="settings__learned__forget_tier" comment="Button that removes every word at one learning stage">Forget these</string>
-    <string name="settings__learned__forget_tier_confirm" comment="Confirmation question before deleting the words at one stage. The placeholder inserts a already-pluralised word count, e.g. &quot;3 words&quot;.">Forget {words}? Nothing else is touched.</string>
-    <string name="settings__learned__forget_promoted_confirm" comment="Stronger confirmation before deleting words that reached the personal dictionary. The placeholder inserts an already-pluralised word count, e.g. &quot;3 words&quot;.">Forget {words}? What is at this stage is part of your dictionary — autocorrect leaves it alone, and forgetting it takes it out of the dictionary too.</string>
-    <string name="settings__learned__add_now" comment="Button that promotes a learned word into the personal dictionary immediately">Add to dictionary</string>
-    <string name="settings__learned__how_it_works" comment="Explanation shown at the top of the learned words screen">A word is only remembered once it looks deliberate rather than mistyped. It is suggested from the second time you type it, and added to your dictionary at the third — from then on autocorrect leaves it alone.\n\nEverything stays on this device. Nothing is learned in incognito mode, in password fields, or from dictation — only from what you actually typed.</string>
-    <string name="suggestion__forgot_word" comment="Toast after forgetting a learned word. The placeholder inserts the word.">Forgot “{word}”</string>
+    <string name="settings__learned__tier_promoted" comment="Short name of the third learning stage, used as a folder title">已在你的字典中</string>
+    <string name="settings__learned__forget_tier" comment="Button that removes every word at one learning stage">忘記這些</string>
+    <string name="settings__learned__forget_tier_confirm" comment="Confirmation question before deleting the words at one stage. The placeholder inserts a already-pluralised word count, e.g. &quot;3 words&quot;.">要忘記 {words} 嗎？其他內容不受影響。</string>
+    <string name="settings__learned__forget_promoted_confirm" comment="Stronger confirmation before deleting words that reached the personal dictionary. The placeholder inserts an already-pluralised word count, e.g. &quot;3 words&quot;.">要忘記 {words} 嗎？這個階段的字詞是你字典的一部分 —— 自動更正不會動它，忘記它也會一併從字典中移除。</string>
+    <string name="settings__learned__add_now" comment="Button that promotes a learned word into the personal dictionary immediately">加入字典</string>
+    <string name="settings__learned__how_it_works" comment="Explanation shown at the top of the learned words screen">一個字要確實像是刻意輸入、而不是打錯，才會被記住。第二次輸入時就會開始建議，第三次則會加入你的字典 —— 從那之後自動更正就不會動它。\n\n所有資料都留在這台裝置上。無痕模式、密碼欄位與語音輸入都不會學習 —— 只有你實際打出來的字才會。</string>
+    <string name="suggestion__forgot_word" comment="Toast after forgetting a learned word. The placeholder inserts the word.">已忘記「{word}」</string>
 
-    <string name="settings__udm__title_floris" comment="Title of the User Dictionary Manager activity for internal">Internal User Dictionary</string>
-    <string name="settings__udm__title_system" comment="Title of the User Dictionary Manager activity for system">System User Dictionary</string>
-    <string name="settings__udm__no_words_in_dictionary" comment="String to show if no words are present in the dictionary">This user dictionary does not contain any words.</string>
-    <string name="settings__udm__word_summary_freq" comment="Summary label for a word entry. The decimal placeholder inserts the frequency for the word it summarizes.">Frequency: {freq}</string>
-    <string name="settings__udm__word_summary_freq_shortcut" comment="Summary label for a word entry. The first placeholder inserts the frequency for the word it summarizes, the second placeholder the shortcut defined.">Frequency: {freq} | Shortcut: {shortcut}</string>
-    <string name="settings__udm__all_languages" comment="Label of the For all languages entry in the language list">For all languages</string>
-    <string name="settings__udm__open_system_manager_ui" comment="Label of the Open system manager UI menu option">Open system manager UI</string>
-    <string name="settings__udm__dictionary_import_success" comment="Message for dictionary import success">User dictionary imported successfully!</string>
-    <string name="settings__udm__dictionary_export_success" comment="Message for dictionary export success">User dictionary exported successfully!</string>
-    <string name="settings__udm__add_from_contacts" comment="Menu option that opens the system contact picker so the chosen contact\'s name is added to the personal dictionary. No permission is involved – the user picks the one contact.">Add a name from your contacts</string>
-    <string name="settings__udm__import_from_contacts_file" comment="Menu option that reads the names out of a contacts file (.vcf) the user exported from their contacts app.">Import names from a contacts file</string>
-    <string name="settings__udm__contacts_confirm_message" comment="Dialog message before names from a contacts file are written to the dictionary. The placeholder inserts how many names were found.">Found {count} names in this file. Add them to your dictionary?</string>
-    <string name="settings__udm__contacts_added_one" comment="Toast after exactly one name was added. The placeholder inserts that name.">Added {name} to your dictionary</string>
-    <string name="settings__udm__contacts_added_many" comment="Toast after several names were added. The placeholder inserts how many.">Added {count} names to your dictionary</string>
-    <string name="settings__udm__contacts_added_none" comment="Toast when a contact or file yielded no name that was not already in the dictionary.">No new names found</string>
-    <string name="settings__udm__contacts_file_unreadable" comment="Toast when the chosen file could not be read at all.">That file could not be read</string>
-    <string name="settings__udm__contacts_no_picker" comment="Toast when the device has no app that can show a contact picker.">No contacts app found</string>
-    <string name="settings__udm__dialog__title_add" comment="Label for the title (when in adding mode) in the user dictionary add/edit dialog">Add word</string>
-    <string name="settings__udm__dialog__title_edit" comment="Label for the title (when in editing mode) in the user dictionary add/edit dialog">Edit word</string>
-    <string name="settings__udm__dialog__word_label" comment="Label for the word in the user dictionary add/edit dialog">Word</string>
-    <string name="settings__udm__dialog__word_error_empty" comment="Error label for the word in the user dictionary add/edit dialog">Please enter a word</string>
-    <string name="settings__udm__dialog__word_error_invalid" comment="Error label for the word in the user dictionary add/edit dialog. Shown when the input is more than a single word.">This field takes a single word — no spaces, commas or semicolons. For a whole phrase or a multi-line text, add a snippet under Prompts instead.</string>
-    <string name="settings__udm__dialog__freq_label" comment="Label for the frequency in the user dictionary add/edit dialog. The two decimal placeholders are the minimum and maximum frequency, both inclusive.">Frequency (between {f_min} and {f_max})</string>
-    <string name="settings__udm__dialog__freq_error_empty" comment="Error label for the frequency in the user dictionary add/edit dialog">Please enter a frequency value</string>
-    <string name="settings__udm__dialog__freq_error_invalid" comment="Error label for the frequency in the user dictionary add/edit dialog">Please enter a valid number within the specified bounds</string>
-    <string name="settings__udm__dialog__shortcut_label" comment="Label for the shortcut in the user dictionary add/edit dialog">Shortcut (optional)</string>
-    <string name="settings__udm__dialog__shortcut_error_invalid" comment="Error label for the shortcut in the user dictionary add/edit dialog. Shown when the input is more than a single word.">A shortcut is a single word — no spaces, commas or semicolons.</string>
-    <string name="settings__udm__dialog__locale_label" comment="Label for the language code in the user dictionary add/edit dialog">Language code (optional)</string>
-    <string name="settings__udm__dialog__locale_error_invalid" comment="Error label for the language code in the user dictionary add/edit dialog">This language code does not conform to the expected syntax. The code must either be a language only (like en), a language and country (like en_US) or a language, country, and script (like en_US-script).</string>
+    <string name="settings__udm__title_floris" comment="Title of the User Dictionary Manager activity for internal">內建使用者字典</string>
+    <string name="settings__udm__title_system" comment="Title of the User Dictionary Manager activity for system">系統使用者字典</string>
+    <string name="settings__udm__no_words_in_dictionary" comment="String to show if no words are present in the dictionary">這個使用者字典沒有任何字詞。</string>
+    <string name="settings__udm__word_summary_freq" comment="Summary label for a word entry. The decimal placeholder inserts the frequency for the word it summarizes.">出現頻率：{freq}</string>
+    <string name="settings__udm__word_summary_freq_shortcut" comment="Summary label for a word entry. The first placeholder inserts the frequency for the word it summarizes, the second placeholder the shortcut defined.">出現頻率：{freq} | 快速字：{shortcut}</string>
+    <string name="settings__udm__all_languages" comment="Label of the For all languages entry in the language list">所有語言</string>
+    <string name="settings__udm__open_system_manager_ui" comment="Label of the Open system manager UI menu option">開啟系統管理介面</string>
+    <string name="settings__udm__dictionary_import_success" comment="Message for dictionary import success">使用者字典匯入成功！</string>
+    <string name="settings__udm__dictionary_export_success" comment="Message for dictionary export success">使用者字典匯出成功！</string>
+    <string name="settings__udm__add_from_contacts" comment="Menu option that opens the system contact picker so the chosen contact\'s name is added to the personal dictionary. No permission is involved – the user picks the one contact.">從通訊錄新增姓名</string>
+    <string name="settings__udm__import_from_contacts_file" comment="Menu option that reads the names out of a contacts file (.vcf) the user exported from their contacts app.">從通訊錄檔案匯入姓名</string>
+    <string name="settings__udm__contacts_confirm_message" comment="Dialog message before names from a contacts file are written to the dictionary. The placeholder inserts how many names were found.">在這個檔案中找到 {count} 個姓名。要把他們加入你的字典嗎？</string>
+    <string name="settings__udm__contacts_added_one" comment="Toast after exactly one name was added. The placeholder inserts that name.">已將 {name} 加入你的字典</string>
+    <string name="settings__udm__contacts_added_many" comment="Toast after several names were added. The placeholder inserts how many.">已將 {count} 個姓名加入你的字典</string>
+    <string name="settings__udm__contacts_added_none" comment="Toast when a contact or file yielded no name that was not already in the dictionary.">找不到新的姓名</string>
+    <string name="settings__udm__contacts_file_unreadable" comment="Toast when the chosen file could not be read at all.">無法讀取該檔案</string>
+    <string name="settings__udm__contacts_no_picker" comment="Toast when the device has no app that can show a contact picker.">找不到通訊錄應用程式</string>
+    <string name="settings__udm__dialog__title_add" comment="Label for the title (when in adding mode) in the user dictionary add/edit dialog">新增字詞</string>
+    <string name="settings__udm__dialog__title_edit" comment="Label for the title (when in editing mode) in the user dictionary add/edit dialog">編輯字詞</string>
+    <string name="settings__udm__dialog__word_label" comment="Label for the word in the user dictionary add/edit dialog">字詞</string>
+    <string name="settings__udm__dialog__word_error_empty" comment="Error label for the word in the user dictionary add/edit dialog">請輸入一個字詞</string>
+    <string name="settings__udm__dialog__word_error_invalid" comment="Error label for the word in the user dictionary add/edit dialog. Shown when the input is more than a single word.">這個欄位只能填一個字詞 —— 不能有空格、逗號或分號。若要輸入整句或跨行文字，請改在提示中新增片段。</string>
+    <string name="settings__udm__dialog__freq_label" comment="Label for the frequency in the user dictionary add/edit dialog. The two decimal placeholders are the minimum and maximum frequency, both inclusive.">出現頻率（介於 {f_min} 與 {f_max} 之間）</string>
+    <string name="settings__udm__dialog__freq_error_empty" comment="Error label for the frequency in the user dictionary add/edit dialog">請輸入出現頻率</string>
+    <string name="settings__udm__dialog__freq_error_invalid" comment="Error label for the frequency in the user dictionary add/edit dialog">請輸入範圍內的有效數值</string>
+    <string name="settings__udm__dialog__shortcut_label" comment="Label for the shortcut in the user dictionary add/edit dialog">快速字（選填）</string>
+    <string name="settings__udm__dialog__shortcut_error_invalid" comment="Error label for the shortcut in the user dictionary add/edit dialog. Shown when the input is more than a single word.">快速字只能是單一字詞 —— 不能有空格、逗號或分號。</string>
+    <string name="settings__udm__dialog__locale_label" comment="Label for the language code in the user dictionary add/edit dialog">語言代碼（選填）</string>
+    <string name="settings__udm__dialog__locale_error_invalid" comment="Error label for the language code in the user dictionary add/edit dialog">這個語言代碼不符合預期的格式。代碼必須是單一語言（如 en）、語言加國家或地區（如 en_US），或語言、國家或地區加書寫系統（如 en_US-script）。</string>
 
-    <string name="settings__gestures__title" comment="Title of Gestures screen">Gestures</string>
-    <string name="pref__glide__title" comment="Preference group title">Glide typing</string>
-    <string name="pref__glide__enabled__label" comment="Preference title">Enable glide typing</string>
-    <string name="pref__glide__enabled__summary" comment="Preference summary">Type in a word by sliding your finger through its letters</string>
-    <string name="pref__glide__show_trail__label" comment="Preference title">Show glide trail</string>
-    <string name="pref__glide__show_trail__summary" comment="Preference summary">Will disappear after each word</string>
-    <string name="pref__glide_trail_fade_duration">Glide trail fade time</string>
-    <string name="pref__glide_preview_refresh_delay">Preview refresh delay</string>
-    <string name="pref__glide__show_preview">Show preview while glide typing</string>
-    <string name="pref__glide__show_preview__summary" comment="Preference summary; requires the suggestion bar to be visible">Show the top word in the suggestion bar while gliding</string>
-    <string name="pref__glide__immediate_backspace_deletes_word__label">Always delete word</string>
-    <string name="pref__glide__immediate_backspace_deletes_word__summary">Pressing delete right after a glide deletes the whole word</string>
-    <string name="pref__gestures__general_title" comment="Preference group title">General gestures</string>
-    <string name="pref__gestures__space_bar_title" comment="Preference group title">Space bar gestures</string>
-    <string name="pref__gestures__other_title" comment="Preference group title">Other gestures</string>
-    <string name="pref__gestures__swipe_up__label" comment="Preference title">Swipe up</string>
-    <string name="pref__gestures__swipe_down__label" comment="Preference title">Swipe down</string>
-    <string name="pref__gestures__swipe_left__label" comment="Preference title">Swipe left</string>
-    <string name="pref__gestures__swipe_right__label" comment="Preference title">Swipe right</string>
-    <string name="pref__gestures__space_bar_swipe_up__label" comment="Preference title">Space bar swipe up</string>
-    <string name="pref__gestures__space_bar_swipe_down__label" comment="Preference title">Space bar swipe down</string>
-    <string name="pref__gestures__space_bar_swipe_left__label" comment="Preference title">Space bar swipe left</string>
-    <string name="pref__gestures__space_bar_swipe_right__label" comment="Preference title">Space bar swipe right</string>
-    <string name="pref__gestures__space_bar_long_press__label" comment="Preference title">Space bar long press</string>
-    <string name="pref__gestures__momentary_layer__label" comment="Preference title, keep short">Hold to peek at a layer</string>
-    <string name="pref__gestures__momentary_layer__summary" comment="Preference summary, keep short (one line)">Hold ?123, slide onto a character and let go — it is inserted and the letters come back</string>
-    <string name="pref__gestures__delete_key_swipe_left__label" comment="Preference title">Delete key swipe left</string>
-    <string name="pref__gestures__delete_key_long_press__label" comment="Preference title">Delete key long press</string>
-    <string name="pref__gestures__swipe_velocity_threshold__label" comment="Preference title">Swipe velocity threshold</string>
-    <string name="pref__gestures__swipe_distance_threshold__label" comment="Preference title">Swipe distance threshold</string>
+    <string name="settings__gestures__title" comment="Title of Gestures screen">手勢</string>
+    <string name="pref__glide__title" comment="Preference group title">滑行輸入</string>
+    <string name="pref__glide__enabled__label" comment="Preference title">啟用滑行輸入</string>
+    <string name="pref__glide__enabled__summary" comment="Preference summary">用手指滑過字母的方式打出單字</string>
+    <string name="pref__glide__show_trail__label" comment="Preference title">顯示滑行軌跡</string>
+    <string name="pref__glide__show_trail__summary" comment="Preference summary">每個字打完後就會消失</string>
+    <string name="pref__glide_trail_fade_duration">滑行軌跡淡出時間</string>
+    <string name="pref__glide_preview_refresh_delay">預覽更新延遲</string>
+    <string name="pref__glide__show_preview">滑行輸入時顯示預覽</string>
+    <string name="pref__glide__show_preview__summary" comment="Preference summary; requires the suggestion bar to be visible">滑行時在建議列顯示最上方的字</string>
+    <string name="pref__glide__immediate_backspace_deletes_word__label">一律刪除整個字</string>
+    <string name="pref__glide__immediate_backspace_deletes_word__summary">滑行後立即按刪除鍵會刪除整個字</string>
+    <string name="pref__gestures__general_title" comment="Preference group title">一般手勢</string>
+    <string name="pref__gestures__space_bar_title" comment="Preference group title">空白鍵手勢</string>
+    <string name="pref__gestures__other_title" comment="Preference group title">其他手勢</string>
+    <string name="pref__gestures__swipe_up__label" comment="Preference title">向上滑</string>
+    <string name="pref__gestures__swipe_down__label" comment="Preference title">向下滑</string>
+    <string name="pref__gestures__swipe_left__label" comment="Preference title">向左滑</string>
+    <string name="pref__gestures__swipe_right__label" comment="Preference title">向右滑</string>
+    <string name="pref__gestures__space_bar_swipe_up__label" comment="Preference title">空白鍵向上滑</string>
+    <string name="pref__gestures__space_bar_swipe_down__label" comment="Preference title">空白鍵向下滑</string>
+    <string name="pref__gestures__space_bar_swipe_left__label" comment="Preference title">空白鍵向左滑</string>
+    <string name="pref__gestures__space_bar_swipe_right__label" comment="Preference title">空白鍵向右滑</string>
+    <string name="pref__gestures__space_bar_long_press__label" comment="Preference title">長按空白鍵</string>
+    <string name="pref__gestures__momentary_layer__label" comment="Preference title, keep short">長按預覽圖層</string>
+    <string name="pref__gestures__momentary_layer__summary" comment="Preference summary, keep short (one line)">長按 ?123、滑到某個字元後放開 —— 該字元會被輸入，字母則回到畫面</string>
+    <string name="pref__gestures__delete_key_swipe_left__label" comment="Preference title">刪除鍵向左滑</string>
+    <string name="pref__gestures__delete_key_long_press__label" comment="Preference title">長按刪除鍵</string>
+    <string name="pref__gestures__swipe_velocity_threshold__label" comment="Preference title">滑動速度門檻</string>
+    <string name="pref__gestures__swipe_distance_threshold__label" comment="Preference title">滑動距離門檻</string>
 
-    <string name="settings__help__title" comment="Row on the settings home screen that opens the online user guide (a wiki with explanations and screenshots)">Help</string>
-    <string name="settings__other__title" comment="Title of Other settings">Other</string>
+    <string name="settings__help__title" comment="Row on the settings home screen that opens the online user guide (a wiki with explanations and screenshots)">說明</string>
+    <string name="settings__other__title" comment="Title of Other settings">其他</string>
     <string name="pref__other__settings_theme__label" comment="Label of Settings theme preference in Other">設定佈景主題</string>
     <string name="pref__other__settings_theme__auto_amoled" comment="Possible value of Settings theme preference in Other">系統預設（AMOLED）</string>
     <string name="pref__other__settings_theme__light" comment="Possible value of Settings theme preference in Other">淺色</string>
@@ -890,338 +890,338 @@
     <string name="pref__other__clear_cache__message" comment="Dialog text before the cache is emptied. Names what survives, because \'clear\' next to a keyboard that stores dictation history needs defusing.">刪除這個 App 可以重新產生的暫存檔案：正在轉錄的共用檔案、已下載的 GIF 與貼圖、已解碼的圖片。你的語音輸入紀錄、錄音、設定與字典都不受影響。目前正在進行的錄音或轉錄可能會被中斷。</string>
 
     <!-- About UI strings -->
-    <string name="about__title" comment="Title of About activity">About</string>
+    <string name="about__title" comment="Title of About activity">關於</string>
     <string name="about__app_icon_content_description" comment="Content description of app icon in About">{app_name} 的應用程式圖示</string>
-    <string name="about__view_licenses" comment="Label of View licenses button in About">Open source licenses</string>
-    <string name="about__view_privacy_policy" comment="Label of View privacy policy button in About">Privacy policy</string>
-    <string name="about__view_source_code" comment="Label of View source code button in About">Source code</string>
+    <string name="about__view_licenses" comment="Label of View licenses button in About">開放原始碼授權</string>
+    <string name="about__view_privacy_policy" comment="Label of View privacy policy button in About">隱私權政策</string>
+    <string name="about__view_source_code" comment="Label of View source code button in About">原始碼</string>
 
-    <string name="about__license__title" comment="Title of Open-source licenses dialog">Open-source licenses</string>
+    <string name="about__license__title" comment="Title of Open-source licenses dialog">開放原始碼授權</string>
 
-    <string name="about__version__title" comment="Preference title">Version</string>
-    <string name="about__version_copied__title" comment="Title of the toast for copying the version string">Version copied to clipboard</string>
-    <string name="about__version_copied__error" comment="Title of the error toast for copying the version string">Something went wrong: {error_message}</string>
-    <string name="about__whats_new__title" comment="Section/search label for the What\'s new tours">What’s new</string>
-    <string name="about__whats_new__versioned" comment="Preference title reopening a specific version\'s tour; {version} e.g. 5.1">What’s new in {version}</string>
-    <string name="about__whats_new__summary" comment="Preference summary">Take the feature tour again</string>
-    <string name="about__changelog__title" comment="Preference title">Changelog</string>
-    <string name="about__changelog__summary" comment="Preference summary">What\'s new</string>
+    <string name="about__version__title" comment="Preference title">版本</string>
+    <string name="about__version_copied__title" comment="Title of the toast for copying the version string">版本已複製到剪貼簿</string>
+    <string name="about__version_copied__error" comment="Title of the error toast for copying the version string">發生錯誤：{error_message}</string>
+    <string name="about__whats_new__title" comment="Section/search label for the What\'s new tours">最新功能</string>
+    <string name="about__whats_new__versioned" comment="Preference title reopening a specific version\'s tour; {version} e.g. 5.1">{version} 的最新功能</string>
+    <string name="about__whats_new__summary" comment="Preference summary">再次瀏覽功能導覽</string>
+    <string name="about__changelog__title" comment="Preference title">變更紀錄</string>
+    <string name="about__changelog__summary" comment="Preference summary">最新功能</string>
     <!-- What's-new tour (in-app 5.0 feature carousel) -->
-    <string name="apptour__skip" comment="Button to dismiss the What\'s new tour">Skip</string>
-    <string name="apptour__next" comment="Button to advance to the next tour page">Next</string>
-    <string name="apptour__start" comment="Button on the intro page to start the tour">Let’s go</string>
-    <string name="apptour__done" comment="Button on the last tour page to finish">Done</string>
-    <string name="apptour__badge_highlight" comment="Small badge marking a headline feature">★ Highlight</string>
-    <string name="apptour__intro_eyebrow">Version 5.0</string>
-    <string name="apptour__intro_title">A quick tour</string>
-    <string name="apptour__intro_body">Here’s what’s new in Dictate 5.0 — the highlights in under a minute. Tap “Try it” on any page to jump straight to that setting.</string>
-    <string name="apptour__glide_eyebrow">Keyboard</string>
-    <string name="apptour__glide_title">Swipe to type</string>
-    <string name="apptour__glide_body">Slide your finger from key to key and Dictate turns the path into whole words. Each language brings its own dictionary that downloads on demand — switch it on under Gestures.</string>
-    <string name="apptour__glide_cta">Set up glide typing</string>
-    <string name="apptour__suggestions_eyebrow">Keyboard</string>
-    <string name="apptour__suggestions_title">Autocorrect &amp; suggestions</string>
-    <string name="apptour__suggestions_body">As you type, Dictate suggests fitting words and quietly fixes typos. The word you actually typed stays in the suggestion bar, so a single tap undoes any correction.</string>
-    <string name="apptour__suggestions_cta">Adjust suggestions</string>
-    <string name="apptour__realtime_eyebrow">Transcription</string>
-    <string name="apptour__realtime_title">Real-time transcription</string>
-    <string name="apptour__realtime_body">Watch your words appear live while you’re still speaking, instead of waiting for the recording to finish. Works with OpenAI, Deepgram, Soniox, AssemblyAI and ElevenLabs.</string>
-    <string name="apptour__realtime_cta">Enable real-time</string>
-    <string name="apptour__providers_eyebrow">Transcription</string>
-    <string name="apptour__providers_title">Three new cloud providers</string>
-    <string name="apptour__providers_body">ElevenLabs Scribe, Deepgram and AssemblyAI join the transcription line-up — pick whichever fits your language, accuracy, speed and budget best.</string>
-    <string name="apptour__providers_cta">Choose a provider</string>
-    <string name="apptour__legacy_eyebrow">A classic returns</string>
-    <string name="apptour__legacy_title">Classic dictation layout</string>
-    <string name="apptour__legacy_body">Prefer voice over keys? The keyboard-free screen from Dictate 3 is back — make it your default, or keep it just one swipe away from the full keyboard.</string>
-    <string name="apptour__legacy_cta">Choose a layout</string>
-    <string name="apptour__library_eyebrow">Community</string>
-    <string name="apptour__library_title">Prompt library</string>
-    <string name="apptour__library_body">Browse rewording prompts shared by the community and install them with one tap — or publish your own for others to use.</string>
-    <string name="apptour__library_cta">Open the library</string>
-    <string name="apptour__stats_eyebrow">Insights</string>
-    <string name="apptour__stats_title">Your dictation stats</string>
-    <string name="apptour__stats_body">Track how much you’ve dictated and typed over time, reach milestones, and see a quick summary right on the home screen.</string>
-    <string name="apptour__stats_cta">View statistics</string>
-    <string name="apptour__offline_eyebrow">No cloud</string>
-    <string name="apptour__offline_title">Transcribe offline</string>
-    <string name="apptour__offline_body">Run the NVIDIA Parakeet model entirely on your phone — no internet, nothing leaves the device. A silence filter also skips empty recordings, so you never get stray text.</string>
-    <string name="apptour__offline_cta">Get the offline model</string>
-    <string name="apptour__outro_eyebrow">And more</string>
-    <string name="apptour__outro_title">Polish everywhere</string>
-    <string name="apptour__outro_body">More under the hood: a steadier floating button, a reasoning-effort control for rewording, haptic feedback, a new E-Reader theme and dozens of fixes.</string>
+    <string name="apptour__skip" comment="Button to dismiss the What\'s new tour">略過</string>
+    <string name="apptour__next" comment="Button to advance to the next tour page">下一步</string>
+    <string name="apptour__start" comment="Button on the intro page to start the tour">開始吧</string>
+    <string name="apptour__done" comment="Button on the last tour page to finish">完成</string>
+    <string name="apptour__badge_highlight" comment="Small badge marking a headline feature">★ 重點</string>
+    <string name="apptour__intro_eyebrow">版本 5.0</string>
+    <string name="apptour__intro_title">快速導覽</string>
+    <string name="apptour__intro_body">以下是 Dictate 5.0 的新功能 —— 一分鐘內看完重點。在任一頁點一下「試試看」即可直接跳到該設定。</string>
+    <string name="apptour__glide_eyebrow">鍵盤</string>
+    <string name="apptour__glide_title">滑動就能打字</string>
+    <string name="apptour__glide_body">用手指從一個鍵滑到下一個鍵，Dictate 就會把路徑變成完整的字。每種語言都有自己的字典，會依需求下載 —— 可在手勢設定中開啟。</string>
+    <string name="apptour__glide_cta">設定滑行輸入</string>
+    <string name="apptour__suggestions_eyebrow">鍵盤</string>
+    <string name="apptour__suggestions_title">自動更正與建議</string>
+    <string name="apptour__suggestions_body">在你輸入時，Dictate 會建議合適的字，並悄悄修正打錯的字。你實際打出的字會留在建議列中，點一下就能取消任何更正。</string>
+    <string name="apptour__suggestions_cta">調整建議</string>
+    <string name="apptour__realtime_eyebrow">轉錄</string>
+    <string name="apptour__realtime_title">即時轉錄</string>
+    <string name="apptour__realtime_body">你還在說話時就看見文字出現，不必等錄音結束。支援 OpenAI、Deepgram、Soniox、AssemblyAI 與 ElevenLabs。</string>
+    <string name="apptour__realtime_cta">啟用即時轉錄</string>
+    <string name="apptour__providers_eyebrow">轉錄</string>
+    <string name="apptour__providers_title">三家新的雲端服務</string>
+    <string name="apptour__providers_body">ElevenLabs Scribe、Deepgram 與 AssemblyAI 加入轉錄服務陣容 —— 依你的語言、準確度、速度與需求挑選最合適的一個。</string>
+    <string name="apptour__providers_cta">選擇服務</string>
+    <string name="apptour__legacy_eyebrow">經典回歸</string>
+    <string name="apptour__legacy_title">經典語音輸入版面</string>
+    <string name="apptour__legacy_body">比起打字更喜歡說話？Dictate 3 那個沒有鍵盤的畫面回來了 —— 可以設為預設，也可以讓它只是往完整鍵盤滑一下就能到。</string>
+    <string name="apptour__legacy_cta">選擇版面</string>
+    <string name="apptour__library_eyebrow">社群</string>
+    <string name="apptour__library_title">提示庫</string>
+    <string name="apptour__library_body">瀏覽社群分享的改寫提示，一鍵安裝 —— 或把你自己的提示發布給大家使用。</string>
+    <string name="apptour__library_cta">開啟提示庫</string>
+    <string name="apptour__stats_eyebrow">洞察</string>
+    <string name="apptour__stats_title">你的語音輸入統計</string>
+    <string name="apptour__stats_body">追蹤你隨時間累積的語音輸入與打字量、達成里程碑，並在首頁直接看到快速摘要。</string>
+    <string name="apptour__stats_cta">查看統計</string>
+    <string name="apptour__offline_eyebrow">不需雲端</string>
+    <string name="apptour__offline_title">離線轉錄</string>
+    <string name="apptour__offline_body">完全在你的手機上執行 NVIDIA Parakeet 模型 —— 不需要網路，資料不會離開裝置。另有靜音過濾可略過空白錄音，不會出現多餘文字。</string>
+    <string name="apptour__offline_cta">取得離線模型</string>
+    <string name="apptour__outro_eyebrow">還有更多</string>
+    <string name="apptour__outro_title">處處打磨</string>
+    <string name="apptour__outro_body">底層更多改進：更穩定的浮動按鈕、改寫用的推理強度控制、觸覺回饋、新的電子書閱讀器佈景主題，以及數十項修正。</string>
     <!-- What's-new tour (in-app 5.1 feature carousel) -->
-    <string name="apptour51__cta_try" comment="Button on a 5.1 tour page to jump straight to that feature">Try it</string>
-    <string name="apptour51__continue_to" comment="Button bridging from one tour to the next; {version} is e.g. 5.1">Continue to {version}</string>
-    <string name="apptour51__intro_eyebrow">Version 5.1</string>
-    <string name="apptour51__intro_title">What’s new in 5.1</string>
-    <string name="apptour51__intro_body">Dictate has grown a lot since 5.0. Here are the highlights of 5.1 — tap “Try it” on any page to jump straight to that feature.</string>
-    <string name="apptour51__history_eyebrow">Transcription</string>
-    <string name="apptour51__history_title">Transcription history</string>
-    <string name="apptour51__history_body">Every dictation is now kept in a searchable history. Re-insert any past transcript with a tap, replay the original audio, re-transcribe it, or pin the ones you reuse most. A dedicated screen lets you manage everything, including how long audio recordings are retained.</string>
-    <string name="apptour51__longform_eyebrow">Transcription</string>
-    <string name="apptour51__longform_title">Long-form dictation</string>
-    <string name="apptour51__longform_body">Speak for as long as you like. Long recordings are automatically split into segments and transcribed in the background while you keep going, so you get your text sooner and never run into a length limit. Cut a segment yourself, or let Dictate detect natural pauses.</string>
-    <string name="apptour51__gif_eyebrow">Keyboard</string>
-    <string name="apptour51__gif_title">GIF search</string>
-    <string name="apptour51__gif_body">Find and send GIFs without ever leaving Dictate. Open the GIF panel, search for anything, and drop it straight into your chat — a fast, Gboard-style picker built right in.</string>
-    <string name="apptour51__classic_eyebrow">Classic layout</string>
-    <string name="apptour51__classic_title">Classic layout, reworked</string>
-    <string name="apptour51__classic_body">The keyboard-free dictation screen got a big upgrade: a freely arrangeable action row you build by drag &amp; drop, long-form recording controls, one or two prompt rows, an always-available backspace, a character popup on the Enter key, and an optional second “switch keyboard” button for easier one-handed use.</string>
-    <string name="apptour51__search_eyebrow">Settings</string>
-    <string name="apptour51__search_title">Search the settings</string>
-    <string name="apptour51__search_body">Can’t remember where an option lives? Just search for it. The new settings search finds any setting by name, jumps straight to it and briefly highlights the row — no more digging through menus.</string>
-    <string name="apptour51__models_eyebrow">Models &amp; providers</string>
-    <string name="apptour51__models_title">German offline model &amp; Claude</string>
-    <string name="apptour51__models_body">Two additions for how your speech is handled: a German-specialised on-device model (Parakeet German by primeline) that transcribes entirely offline on your phone, and Anthropic’s Claude joins as a new provider for rewording and formatting your dictations.</string>
-    <string name="apptour51__more_eyebrow">And more</string>
-    <string name="apptour51__more_title">Many more improvements</string>
-    <string name="apptour51__more_body">Plenty of smaller upgrades too: choose the active transcription language in settings, the stop button now truly cancels a running request, a show/hide toggle for API keys, and multilingual typing without cross-language autocorrect — plus many fixes across the classic layout, the number pad and beyond.</string>
-    <string name="apptour51__outro_eyebrow">That’s 5.1</string>
-    <string name="apptour51__outro_title">Enjoy the update</string>
-    <string name="apptour51__outro_body">Thanks for using Dictate! If it helps you every day, a small donation keeps the project going. You can revisit any of these tours anytime under Settings › About.</string>
+    <string name="apptour51__cta_try" comment="Button on a 5.1 tour page to jump straight to that feature">試試看</string>
+    <string name="apptour51__continue_to" comment="Button bridging from one tour to the next; {version} is e.g. 5.1">繼續前往 {version}</string>
+    <string name="apptour51__intro_eyebrow">版本 5.1</string>
+    <string name="apptour51__intro_title">5.1 的新功能</string>
+    <string name="apptour51__intro_body">Dictate 自 5.0 以來成長了非常多。以下是 5.1 的重點 —— 在任一頁點一下「試試看」即可直接跳到該功能。</string>
+    <string name="apptour51__history_eyebrow">轉錄</string>
+    <string name="apptour51__history_title">轉錄紀錄</string>
+    <string name="apptour51__history_body">現在每次語音輸入都會保留在可搜尋的紀錄裡。點一下就能重新插入過去的轉錄、重播原始音訊、重新轉錄，或把你最常用的幾筆釘選起來。另有專屬畫面可管理全部內容，包括音訊錄音保留多久。</string>
+    <string name="apptour51__longform_eyebrow">轉錄</string>
+    <string name="apptour51__longform_title">長篇語音輸入</string>
+    <string name="apptour51__longform_body">想說多久就說多久。長錄音會自動切成片段，並在你說話的同時於背景轉錄，讓你更快拿到文字，也永遠不會碰到長度上限。你可以自行切段，或讓 Dictate 偵測自然的停頓。</string>
+    <string name="apptour51__gif_eyebrow">鍵盤</string>
+    <string name="apptour51__gif_title">GIF 搜尋</string>
+    <string name="apptour51__gif_body">不必離開 Dictate 就能找到並傳送 GIF。開啟 GIF 面板、搜尋任何內容，再直接丟進你的聊天視窗 —— 內建的快速選擇器，風格類似 Gboard。</string>
+    <string name="apptour51__classic_eyebrow">經典版面</string>
+    <string name="apptour51__classic_title">重新打造的經典版面</string>
+    <string name="apptour51__classic_body">沒有鍵盤的語音輸入畫面大幅改版：可自由排列的動作列（以拖放方式組建）、長篇錄音控制、一到兩列提示、隨時可用的退格鍵、Enter 鍵上的字元彈出視窗，以及選用的第二個「切換鍵盤」按鈕，讓單手操作更方便。</string>
+    <string name="apptour51__search_eyebrow">設定</string>
+    <string name="apptour51__search_title">搜尋設定</string>
+    <string name="apptour51__search_body">不記得某個選項在哪裡？直接搜尋就好。新的設定搜尋可依名稱找到任何設定，直接跳到該處並短暫標示該列 —— 不用再翻選單。</string>
+    <string name="apptour51__models_eyebrow">模型與服務</string>
+    <string name="apptour51__models_title">德文離線模型與 Claude</string>
+    <string name="apptour51__models_body">關於語音處理有兩項新增：專為德文打造的裝置端模型（primeline 的 Parakeet German），完全在你的手機上離線轉錄；以及 Anthropic 的 Claude 加入成為新的改寫與格式化服務。</string>
+    <string name="apptour51__more_eyebrow">還有更多</string>
+    <string name="apptour51__more_title">許多其他改進</string>
+    <string name="apptour51__more_body">還有許多想當然的小升級：在設定中選擇要使用的轉錄語言、停止按鈕現在真的會取消執行中的請求、API 金鑰的顯示或隱藏切換，以及跨語言不互相干擾的多語輸入 —— 外加經典版面、數字鍵盤等等地方的許多修正。</string>
+    <string name="apptour51__outro_eyebrow">5.1 就到這裡</string>
+    <string name="apptour51__outro_title">享受這次更新</string>
+    <string name="apptour51__outro_body">感謝你使用 Dictate！若它每天都能幫上忙，一點小額捐款能讓這個專案持續下去。你隨時可以在設定 › 關於中重看這些導覽。</string>
     <!-- What's new tour 5.2 -->
-    <string name="apptour52__cta_try" comment="Button on a 5.2 tour page to jump straight to that feature">Try it</string>
+    <string name="apptour52__cta_try" comment="Button on a 5.2 tour page to jump straight to that feature">試試看</string>
     <string name="apptour52__intro_eyebrow">Dictate 5.2</string>
-    <string name="apptour52__intro_title">Dictate everywhere</string>
-    <string name="apptour52__intro_body">This release takes Dictate beyond its own keyboard: use it as your phone\'s voice input, run a spoken command from anywhere, and let it clean up long dictations for you. Here\'s what\'s new.</string>
-    <string name="apptour52__voiceinput_eyebrow">System-wide voice input</string>
-    <string name="apptour52__voiceinput_title">Use Dictate from any keyboard</string>
-    <string name="apptour52__voiceinput_body">Dictate now registers as a system voice input, so the mic key in other keyboards and apps can transcribe through Dictate — with your provider, your prompts and your on-device models. Enable “Dictate voice input” in your keyboard list and pick it as your voice input method. (Gboard keeps its mic tied to Google, so use a keyboard that honours the system setting.)</string>
-    <string name="apptour52__liveprompt_eyebrow">Freeform voice command</string>
-    <string name="apptour52__liveprompt_title">Tell the AI what to do — anywhere</string>
-    <string name="apptour52__liveprompt_body">Press and hold the floating button to open its menu, then tap “Live prompt” and just say what you want: “write a polite decline for tomorrow\'s meeting”, “translate the text above to Spanish”. Selected text is used as context; with nothing selected the AI writes from scratch.</string>
-    <string name="apptour52__ondevice_eyebrow">Offline on demand</string>
-    <string name="apptour52__ondevice_title">Hold send for the on-device model</string>
-    <string name="apptour52__ondevice_body">Need one dictation to stay on your device? Hold the send button while recording and it is transcribed by your downloaded model instead of the cloud — no switching providers. Turn it on in the on-device model dialog, which now sits at the top of the provider list.</string>
-    <string name="apptour52__trim_eyebrow">Faster, cheaper uploads</string>
-    <string name="apptour52__trim_title">Long pauses get trimmed</string>
-    <string name="apptour52__trim_body">Thinking mid-sentence? Silences longer than a couple of seconds are now cut out before the audio is sent — every spoken word is kept, but the dead air is gone. Shorter uploads mean less waiting and lower cost.</string>
-    <string name="apptour52__paragraphs_eyebrow">Readable long dictations</string>
-    <string name="apptour52__paragraphs_title">Automatic paragraphs</string>
-    <string name="apptour52__paragraphs_body">Long dictations no longer arrive as one wall of text. Set a word count and Dictate starts a new paragraph at the next sentence end — deterministic, and only for plain transcripts, so AI-formatted text is never second-guessed.</string>
-    <string name="apptour52__smartturn_eyebrow">Smarter long-form</string>
-    <string name="apptour52__smartturn_title">Cuts at finished thoughts</string>
-    <string name="apptour52__smartturn_body">Long-form dictation can now use the on-device Smart Turn v3 model to decide when you have actually finished a thought, instead of cutting at every pause. Optional and downloaded on demand.</string>
-    <string name="apptour52__orb_eyebrow">New look</string>
-    <string name="apptour52__orb_title">The cloud orb</string>
-    <string name="apptour52__orb_body">A fourth skin for the floating button: a soft cloud that grows and swirls with your voice, and shows every stage — listening, thinking, done. Pick it under the floating button settings.</string>
-    <string name="apptour52__outro_eyebrow">That\'s 5.2</string>
-    <string name="apptour52__outro_title">Happy dictating</string>
-    <string name="apptour52__outro_body">Plus plenty under the hood: the screen stays awake through a whole dictation, on-device models free their memory when idle, watch dictations survive dropouts, and German autocorrect learned umlauts. You can revisit any tour under Settings › About.</string>
-    <string name="apptour53__cta_try" comment="Button on a 5.3 tour page to jump straight to that feature">Try it</string>
+    <string name="apptour52__intro_title">Dictate 處處可用</string>
+    <string name="apptour52__intro_body">這次發行讓 Dictate 走出自己的鍵盤：把它當成手機的語音輸入、從任何地方下達語音命令，並讓它替你整理長篇語音輸入。以下是本次的新功能。</string>
+    <string name="apptour52__voiceinput_eyebrow">全系統語音輸入</string>
+    <string name="apptour52__voiceinput_title">在任何鍵盤中使用 Dictate</string>
+    <string name="apptour52__voiceinput_body">Dictate 現在會註冊為系統語音輸入，其他鍵盤與應用程式的麥克風鍵都可以透過 Dictate 轉錄 —— 使用你的服務、你的提示與你的裝置端模型。在鍵盤清單中開啟「Dictate 語音輸入」並選為你的語音輸入方式。（Gboard 的麥克風會固定連到 Google，請改用支援系統設定的鍵盤。）</string>
+    <string name="apptour52__liveprompt_eyebrow">自由形式的語音命令</string>
+    <string name="apptour52__liveprompt_title">到處都能告訴 AI 要做什麼</string>
+    <string name="apptour52__liveprompt_body">長按浮動按鈕開啟選單，點一下「即時提示」然後直接說出你想做的事：「幫我寫一段婉拒明天會議的說法」、「把上面的文字翻成西班牙文」。選取的文字會作為上下文；若沒有選取任何文字，AI 就從頭寫起。</string>
+    <string name="apptour52__ondevice_eyebrow">隨時可用的離線模式</string>
+    <string name="apptour52__ondevice_title">長按傳送鍵使用裝置端模型</string>
+    <string name="apptour52__ondevice_body">需要某一次語音輸入留在裝置上嗎？錄音時長按傳送按鈕，就會改用你下載的模型而非雲端來轉錄 —— 不必切換服務。可在裝置端模型對話框中開啟，該對話框現在位於服務清單最上方。</string>
+    <string name="apptour52__trim_eyebrow">上傳更快、更省</string>
+    <string name="apptour52__trim_title">長暫停會被自動修剪</string>
+    <string name="apptour52__trim_body">句中思考？超過數秒的靜音現在會在音訊傳送前自動剪掉 —— 每個說出的字都保留，冗長的空白則消失了。上傳更短意味著等待更少、花費更低。</string>
+    <string name="apptour52__paragraphs_eyebrow">易讀的長篇語音輸入</string>
+    <string name="apptour52__paragraphs_title">自動分段</string>
+    <string name="apptour52__paragraphs_body">長篇語音輸入不再是一整片文字。設定一個字數，Dictate 就會在下一個句末開始新段落 —— 判斷明確，而且只套用於純轉錄文字，AI 排版過的內容絕不會被改動。</string>
+    <string name="apptour52__smartturn_eyebrow">更聰明的長篇輸入</string>
+    <string name="apptour52__smartturn_title">在想法結束處切段</string>
+    <string name="apptour52__smartturn_body">長篇語音輸入現在可以使用裝置端的 Smart Turn v3 模型，判斷你何時真正說完一個想法，而不是每逢停頓就切。可選功能，會依需求下載。</string>
+    <string name="apptour52__orb_eyebrow">新外觀</string>
+    <string name="apptour52__orb_title">雲朵球</string>
+    <string name="apptour52__orb_body">浮動按鈕的第四種外觀：一朵會隨你的聲音起伏、旋轉的柔軟雲朵，並顯示每個階段 —— 聆聽中、思考中、完成。可在浮動按鈕設定中挑選。</string>
+    <string name="apptour52__outro_eyebrow">5.2 就到這裡</string>
+    <string name="apptour52__outro_title">祝語音輸入愉快</string>
+    <string name="apptour52__outro_body">還有許多底層改進：整段語音輸入期間螢幕保持開啟、裝置端模型閒置時會釋放記憶體、手錶語音輸入能度過連線中斷，以及德文自動更正學會了變音符。你可以隨時在設定 › 關於中重看導覽。</string>
+    <string name="apptour53__cta_try" comment="Button on a 5.3 tour page to jump straight to that feature">試試看</string>
     <string name="apptour53__intro_eyebrow">Dictate 5.3</string>
-    <string name="apptour53__intro_title">Hold, speak, done</string>
-    <string name="apptour53__intro_body">This release is about the two things you do most: talking to your phone and typing on it. Both got faster, and both got better at staying out of your way.</string>
-    <string name="apptour53__pushtotalk_eyebrow">Push to talk</string>
-    <string name="apptour53__pushtotalk_title">Hold the mic, release to send</string>
-    <string name="apptour53__pushtotalk_body">Like a voice message: hold the mic key and talk, let go and it is sent. Slide left to throw the recording away, or drag up to lock it hands-free. A quick tap still works the way it always did. Turn it on in the Dictate settings.</string>
-    <string name="apptour53__autocorrect_eyebrow">Autocorrect, rebuilt</string>
-    <string name="apptour53__autocorrect_title">It reads your fingers, not your typos</string>
-    <string name="apptour53__autocorrect_body">Corrections are now decided from where you actually touched the keys, searching the likely words as you go, instead of guessing from the finished word. On our test set it went from 88% correct to 98% — the difference shows up most on fast, sloppy typing.</string>
-    <string name="apptour53__offline_eyebrow">Offline, live</string>
-    <string name="apptour53__offline_title">Words appear while you speak — with no connection</string>
-    <string name="apptour53__offline_body">On-device models can now transcribe as you talk, not just when you finish, in ten languages. And two new models joined: Canary covers English, German, French and Spanish in a third of the space, and GigaAM is specialised in Russian.</string>
-    <string name="apptour53__languages_eyebrow">45 more languages</string>
-    <string name="apptour53__languages_title">Croatian, Bengali, Swahili and 42 more</string>
-    <string name="apptour53__languages_body">The language list had gaps that had nothing to do with what the providers actually support. It is now built from what they can really do — so if your language was missing, look again.</string>
-    <string name="apptour53__designs_eyebrow">Two new looks</string>
-    <string name="apptour53__designs_title">Aurora and Lattice</string>
-    <string name="apptour53__designs_body">Two new designs for the floating button, both alive rather than illustrated: light moving inside a sphere, and a sphere built from dots that wires itself together, ripples with your voice and twists while it works. Both follow your accent colour.</string>
-    <string name="apptour53__prediction_eyebrow">Fewer keystrokes</string>
-    <string name="apptour53__prediction_title">The next word, before you type it</string>
-    <string name="apptour53__prediction_body">The suggestion strip now offers what usually comes next, learned from how you write. And any word you long-press can be added to your dictionary, so your names and jargon stop being corrected.</string>
-    <string name="apptour53__ownserver_eyebrow">Your own server</string>
-    <string name="apptour53__ownserver_title">Self-hosted, now with live transcription</string>
-    <string name="apptour53__ownserver_body">A server of your own can drive live transcription too, if it speaks the OpenAI realtime protocol. And if it sits in front of a machine that sleeps, Dictate can wake it early so the first request is not stuck waiting for it to boot.</string>
-    <string name="apptour53__outro_eyebrow">That\'s 5.3</string>
-    <string name="apptour53__outro_title">Happy dictating</string>
-    <string name="apptour53__outro_body">Plus plenty of smaller things: every provider now carries its own logo, the recording indicator can be still, pulsing or voice-reactive, prompt output can keep the original transcript beside it, and paragraphs stop breaking after abbreviations. You can revisit any tour under Settings › About.</string>
+    <string name="apptour53__intro_title">按住、說話、完成</string>
+    <string name="apptour53__intro_body">這次發行圍繞你最常做的兩件事：跟手機說話，以及在手機上打字。兩者都變快了，也都更懂得不打擾你。</string>
+    <string name="apptour53__pushtotalk_eyebrow">按住說話</string>
+    <string name="apptour53__pushtotalk_title">按住麥克風，放開就送出</string>
+    <string name="apptour53__pushtotalk_body">就像語音訊息：按住麥克風鍵說話，放開就會送出。向左滑可丟棄錄音，向上拖曳則可鎖定為免手持。輕觸一下仍然維持原本的用法。可在 Dictate 設定中開啟。</string>
+    <string name="apptour53__autocorrect_eyebrow">重新打造的自動更正</string>
+    <string name="apptour53__autocorrect_title">它讀的是你的手指，不是你的錯字</string>
+    <string name="apptour53__autocorrect_body">現在的更正是依據你實際觸碰到哪些按鍵來判斷，一邊輸入一邊尋找可能的字，而不是從打完的字去猜。在我們的測試集上，準確率從 88% 提高到 98% —— 差異在快速而隨意的打字時最明顯。</string>
+    <string name="apptour53__offline_eyebrow">離線，即時</string>
+    <string name="apptour53__offline_title">說話時文字就出現 —— 不需連線</string>
+    <string name="apptour53__offline_body">裝置端模型現在可以在你說話時就開始轉錄，不必等說完，支援十種語言。另外加入兩個模型：Canary 以三分之一的空間涵蓋英文、德文、法文與西班牙文，GigaAM 則專精俄文。</string>
+    <string name="apptour53__languages_eyebrow">多 45 種語言</string>
+    <string name="apptour53__languages_title">克羅埃西亞文、孟加拉文、斯瓦希利文等 42 種以上</string>
+    <string name="apptour53__languages_body">語言清單中有一些缺口，與服務實際支援的程度無關。現在是依據服務真正能做的來建立 —— 如果你的語言之前缺席，請再找一次。</string>
+    <string name="apptour53__designs_eyebrow">兩種新外觀</string>
+    <string name="apptour53__designs_title">Aurora 與 Lattice</string>
+    <string name="apptour53__designs_body">浮動按鈕的兩種新設計，兩者都是活著的而非插畫：光在球體內流動，以及由光點構成、會自行串連、隨你的聲音泛起漣漪並在運作時扭轉的球體。兩者都會跟隨你的強調色。</string>
+    <string name="apptour53__prediction_eyebrow">更少的按鍵</string>
+    <string name="apptour53__prediction_title">下一個字，在你打出來之前</string>
+    <string name="apptour53__prediction_body">建議列現在會依你的寫作習慣提供接下來常出現的字。而任何長壓的字都可以加入你的字典，讓你的姓名與專用術語不再被更正。</string>
+    <string name="apptour53__ownserver_eyebrow">你自己的伺服器</string>
+    <string name="apptour53__ownserver_title">自架，現在也支援即時轉錄</string>
+    <string name="apptour53__ownserver_body">你自己的伺服器也能驅動即時轉錄，只要它支援 OpenAI 即時通訊協定。若它位於一台會休眠的機器前面，Dictate 可以提早喚醒它，讓第一個請求不會卡在等待開機。</string>
+    <string name="apptour53__outro_eyebrow">5.3 就到這裡</string>
+    <string name="apptour53__outro_title">祝語音輸入愉快</string>
+    <string name="apptour53__outro_body">還有許多小改進：每個服務都有自己的標誌、錄音指示可設定為靜止、脈動或隨語音反應、提示輸出可以保留原始轉錄並排顯示，以及段落不會在縮寫之後就斷行。你可以隨時在設定 › 關於中重看導覽。</string>
 
     <!-- What's new tour for 6.0 -->
-    <string name="apptour60__cta_try" comment="Button on a what's-new page that opens the settings screen for the feature just described">Try it</string>
-    <string name="apptour60__art_minutes" comment="Label next to a counting number in the credit-pack illustration, e.g. \u201c2200 minutes\u201d">minutes</string>
+    <string name="apptour60__cta_try" comment="Button on a what's-new page that opens the settings screen for the feature just described">試試看</string>
+    <string name="apptour60__art_minutes" comment="Label next to a counting number in the credit-pack illustration, e.g. \u201c2200 minutes\u201d">分鐘</string>
     <string name="apptour60__art_speed" comment="Playback-speed badge in the illustration showing a recording being shortened. Uses the local decimal separator.">1.5×</string>
     <string name="apptour60__intro_eyebrow">Dictate 6.0</string>
-    <string name="apptour60__intro_title">Credit, Chinese, cheaper dictation</string>
-    <string name="apptour60__intro_body">This release adds a second way in — buy credit instead of bringing your own API key — along with Pinyin for Chinese, seven languages that gained a dictionary, and recordings that cost less to transcribe.</string>
-    <string name="apptour60__cloud_eyebrow">New: Dictate Cloud</string>
-    <string name="apptour60__cloud_title">Buy minutes instead of finding a key</string>
-    <string name="apptour60__cloud_body">If you would rather not sign up with a provider, you can now simply buy credit. Yes, that runs through our server — but neither your recordings nor your text are stored there, they are passed straight on. The entire server source is public and can be read. Your own key keeps working exactly as before.</string>
-    <string name="apptour60__speedup_eyebrow">Spend less on the API</string>
-    <string name="apptour60__speedup_title">The same words, fewer minutes</string>
-    <string name="apptour60__speedup_body">Recordings can be sped up before they are uploaded, without your voice going higher. Most providers bill by audio length, so a recording a third shorter costs a third less. Long dictations are packed as well, instead of being turned away.</string>
-    <string name="apptour60__chinese_eyebrow">New: Pinyin</string>
-    <string name="apptour60__chinese_title">Type Chinese the way it is typed</string>
-    <string name="apptour60__chinese_body">Pinyin with a candidate row — until now the only option was Zhengma, which hardly anyone uses. There is also an on-device model genuinely trained on Chinese, and a provider that is reachable from the mainland.</string>
-    <string name="apptour60__emoji_eyebrow">Emoji</string>
-    <string name="apptour60__emoji_title">Search emojis in your own language</string>
-    <string name="apptour60__emoji_body">Emoji search knew six languages. Now it knows over forty — look for \u201cheart\u201d, \u201c心\u201d or \u201cقلب\u201d and you land on the same emoji. The search follows your keyboard\u2019s language.</string>
-    <string name="apptour60__languages_eyebrow">Dictionaries</string>
-    <string name="apptour60__languages_title">Seven languages that had no suggestions</string>
-    <string name="apptour60__languages_body">Arabic, Bengali, Finnish, Hindi, Indonesian, Tamil and Urdu now get word suggestions and autocorrect. Icelandic and Georgian held the wrong languages entirely and were rebuilt. And the long-press characters of 19 layouts now follow what the language actually writes.</string>
-    <string name="apptour60__more_eyebrow">Also</string>
-    <string name="apptour60__more_title">Plenty of small things</string>
-    <string name="apptour60__more_body">Holding stop takes back a transcription that is hanging. The floating button no longer reports a success it could not verify, and goes down with the screen. Glide typing now knows the words you added yourself. And the crash right after updating is fixed.</string>
-    <string name="apptour60__outro_eyebrow">That is 6.0</string>
-    <string name="apptour60__outro_title">Have fun with it</string>
-    <string name="apptour60__outro_body">Whichever way you use Dictate — your own key, your own server, a model on the device, or credit — nothing about the other ways has changed. You can revisit any tour under Settings › About.</string>
-    <string name="apptour61__cta_try" comment="Button on a what\'s-new page that opens the settings screen for the feature just described">Try it</string>
-    <string name="apptour61__art_folder" comment="Folder name shown on the sticker-grid illustration; a plausible folder someone would point the keyboard at">Stickers</string>
-    <string name="apptour61__art_share" comment="Label on the share-sheet card in the illustration, above the app name">Share with</string>
-    <string name="apptour61__art_typed" comment="A misspelled word shown being corrected in the illustration. Should look like a real thumb slip in the target language.">teh</string>
-    <string name="apptour61__art_fixed" comment="The correction of apptour61__art_typed, shown replacing it in the illustration">the</string>
+    <string name="apptour60__intro_title">點數、中文、更便宜的語音輸入</string>
+    <string name="apptour60__intro_body">這次發行新增了另一種用法 —— 購買點數而不必自備 API 金鑰 —— 同時加入中文拼音、七種新增字典的語言，以及轉錄成本更低的錄音。</string>
+    <string name="apptour60__cloud_eyebrow">新增：Dictate Cloud</string>
+    <string name="apptour60__cloud_title">買分鐘，而不是找金鑰</string>
+    <string name="apptour60__cloud_body">若你不想跟服務商註冊，現在可以直接購買點數。是的，那會經過我們的伺服器 —— 但你的錄音與文字都不會儲存在那裡，而是直接轉送出去。整個伺服器的原始碼都是公開的，可以直接閱讀。你自己的金鑰則照舊運作。</string>
+    <string name="apptour60__speedup_eyebrow">在 API 上花更少</string>
+    <string name="apptour60__speedup_title">同樣的字，更少的分鐘</string>
+    <string name="apptour60__speedup_body">錄音可以在上傳前加速，而且不會讓你的聲音變高。多數服務按音訊長度計費，因此短三分之一的錄音就便宜三分之一。長篇語音輸入也會一併壓縮，而不是被拒絕處理。</string>
+    <string name="apptour60__chinese_eyebrow">新增：拼音</string>
+    <string name="apptour60__chinese_title">照中文的打法來打</string>
+    <string name="apptour60__chinese_body">拼音加上候選字列 —— 過去唯一的選擇是幾乎沒人使用的注音。另有真正以中文訓練的裝置端模型，以及一個在中國大陸也能連線的服務。</string>
+    <string name="apptour60__emoji_eyebrow">表情符號</string>
+    <string name="apptour60__emoji_title">用你的語言搜尋表情符號</string>
+    <string name="apptour60__emoji_body">表情符號搜尋過去只懂六種語言，現在超過四十種 —— 搜尋「heart」、「心」或「قلب」都會找到同一個表情符號。搜尋會跟隨你鍵盤的語言。</string>
+    <string name="apptour60__languages_eyebrow">字典</string>
+    <string name="apptour60__languages_title">七種原本沒有建議的語言</string>
+    <string name="apptour60__languages_body">阿拉伯文、孟加拉文、芬蘭文、印地文、印尼文、泰米爾文與烏爾都文現在都有字詞建議與自動更正。冰島文與喬治亞文先前完全放錯語言，已經重建。另有 19 種配置的長按字元現在會依照該語言真正的寫法。</string>
+    <string name="apptour60__more_eyebrow">此外</string>
+    <string name="apptour60__more_title">許多小改進</string>
+    <string name="apptour60__more_body">按住停止鍵可以收回卡住的轉錄。浮動按鈕不再回報它無法確認的成功，也會跟著螢幕一起關閉。滑行輸入現在認得你自己新增的字。更新後立刻崩潰的問題也修好了。</string>
+    <string name="apptour60__outro_eyebrow">6.0 就是這樣</string>
+    <string name="apptour60__outro_title">玩得開心</string>
+    <string name="apptour60__outro_body">不論你用哪一種方式 —— 自己的金鑰、自架伺服器、裝置上的模型，或購買點數 —— 其他方式都不受影響。你可以隨時在設定 › 關於中重看導覽。</string>
+    <string name="apptour61__cta_try" comment="Button on a what\'s-new page that opens the settings screen for the feature just described">試試看</string>
+    <string name="apptour61__art_folder" comment="Folder name shown on the sticker-grid illustration; a plausible folder someone would point the keyboard at">貼圖</string>
+    <string name="apptour61__art_share" comment="Label on the share-sheet card in the illustration, above the app name">分享到</string>
+    <string name="apptour61__art_typed" comment="A misspelled word shown being corrected in the illustration. Should look like a real thumb slip in the target language.">zhogn</string>
+    <string name="apptour61__art_fixed" comment="The correction of apptour61__art_typed, shown replacing it in the illustration">zhong</string>
     <string name="apptour61__intro_eyebrow">Dictate 6.1</string>
-    <string name="apptour61__intro_title">Stickers, voice messages, and an autocorrect that catches the typo</string>
-    <string name="apptour61__intro_body">Point the keyboard at a folder of your own stickers, share a voice message straight to Dictate to find out what it says, and get an autocorrect that finally sees the mistake it was built not to see.</string>
-    <string name="apptour61__stickers_eyebrow">New: your own stickers</string>
-    <string name="apptour61__stickers_title">A folder on your phone, on the keyboard</string>
-    <string name="apptour61__stickers_body">Point Dictate at any folder and its pictures become stickers — subfolders turn into tabs, with favourites and recents of their own. Add one from any app through the share sheet, delete one without leaving the keyboard. What a chat app will actually accept is not what it says it accepts, so each sticker is brought into shape once on the way in and simply sent from there.</string>
-    <string name="apptour61__share_eyebrow">New: share to Dictate</string>
-    <string name="apptour61__share_title">Find out what that voice message says</string>
-    <string name="apptour61__share_body">Dictate now appears in the share sheet for audio and video. Share a voice message to it and a screen opens that starts transcribing by itself — no field to find, no button to press. The transcript is searchable, and long recordings are handled in pieces instead of being turned away.</string>
-    <string name="apptour61__autocorrect_eyebrow">Autocorrect</string>
-    <string name="apptour61__autocorrect_title">The typo it was built not to see</string>
-    <string name="apptour61__autocorrect_body">The rule deciding whether a word could be corrected let through a finger that slid most of the way to the next key — but never one that landed on it squarely, which is the ordinary typo. That is fixed, and how eagerly it corrects is now yours to set. The word space is about to take is marked in your accent colour, and backspace right after a correction gives back exactly what you typed.</string>
-    <string name="apptour61__contacts_eyebrow">Contacts</string>
-    <string name="apptour61__contacts_title">Names it stops underlining</string>
-    <string name="apptour61__contacts_body">Your contacts\' names can go into the personal dictionary, so the keyboard stops treating them as typos and starts suggesting them. It does not ask for access to your address book — you pick the names yourself, or import a vCard. Nothing is read that you did not hand over.</string>
-    <string name="apptour61__models_eyebrow">Gemini and Deepgram Flux</string>
-    <string name="apptour61__models_title">Two providers that got better at listening</string>
-    <string name="apptour61__models_body">Google shipped speech-to-text models of its own, so Gemini no longer transcribes with a chat model under instruction — and it can do it live now too. Deepgram\'s Flux decides for itself when you have stopped talking instead of waiting out a silence timer. And if you speak more than one language, you can now say which ones instead of picking one and hoping.</string>
-    <string name="apptour61__more_eyebrow">Also</string>
-    <string name="apptour61__more_title">A lot of small things</string>
-    <string name="apptour61__more_body">Prompts can be triggered by typing a shortcut, not just by tapping one. Russian can be typed phonetically, and French finds its accents from the plain letters. Very wide tablets get a keyboard in landscape again. And the suggestions switch now really switches suggestions off — including when an app tries to do it for you.</string>
-    <string name="apptour61__outro_eyebrow">That is 6.1</string>
-    <string name="apptour61__outro_title">Same keyboard, fewer edges</string>
-    <string name="apptour61__outro_body">Nothing about how you already dictate has changed — your own key, your own server, or a model on the device. You can revisit any tour under Settings › About.</string>
-    <string name="apptour62__cta_try" comment="Button on a what\'s-new page that opens the settings screen for the feature just described">Try it</string>
-    <string name="apptour62__cta_manage" comment="Button on a what\'s-new page for a feature this release switches ON for everyone; it opens the screen holding the switch, so the label must offer the way out, not the way in">Where to switch it off</string>
-    <string name="apptour62__art_word" comment="A word shown being learned in the illustration. Pick a first name or term that no dictionary in your language would know — short, at most about eight letters.">Zoya</string>
-    <string name="apptour62__art_emoji_word" comment="A word shown being typed in the illustration, for which an emoji is then suggested. Must be an everyday word in your language whose emoji is obvious — keep it short.">cake</string>
+    <string name="apptour61__intro_title">貼圖、語音訊息，以及看得見錯字的自動更正</string>
+    <string name="apptour61__intro_body">把鍵盤指向你自己的一個貼圖資料夾、把語音訊息直接分享給 Dictate 來知道它在說什麼，以及終於能看見那個錯誤的自動更正。</string>
+    <string name="apptour61__stickers_eyebrow">新增：你自己的貼圖</string>
+    <string name="apptour61__stickers_title">手機上的資料夾，出現在鍵盤上</string>
+    <string name="apptour61__stickers_body">把 Dictate 指向任何資料夾，其中的圖片就會變成貼圖 —— 子資料夾會變成分頁，並各自擁有最愛與最近使用。你也可以透過分享面板從任何應用程式新增貼圖，或不離開鍵盤就刪除貼圖。聊天應用程式實際能接受的內容與它宣稱能接受的不一樣，因此每張貼圖在匯入時會先轉換成正確形狀，之後就直接送出。</string>
+    <string name="apptour61__share_eyebrow">新增：分享到 Dictate</string>
+    <string name="apptour61__share_title">知道那段語音訊息在說什麼</string>
+    <string name="apptour61__share_body">Dictate 現在會出現在音訊與影片的分享面板中。把語音訊息分享給它，就會開啟一個自動開始轉錄的畫面 —— 不用找欄位，也不用按按鈕。轉錄內容可以搜尋，長錄音也會分段處理，而不是被拒絕。</string>
+    <string name="apptour61__autocorrect_eyebrow">自動更正</string>
+    <string name="apptour61__autocorrect_title">它原本就看不到的那個錯字</string>
+    <string name="apptour61__autocorrect_body">判斷一個字能否被更正的規則，放行了手指滑向下一個按鍵但沒有真的按上的情況 —— 卻擋下了正中該鍵的誤觸，而那才是最常見的打字錯誤。這一點已修正，而且更正的積極程度現在由你設定。空格鍵即將佔用的位置會用你的強調色標示，更正後立刻按退格鍵就會還原你原本打出的字。</string>
+    <string name="apptour61__contacts_eyebrow">通訊錄</string>
+    <string name="apptour61__contacts_title">它不再加底線的姓名</string>
+    <string name="apptour61__contacts_body">你通訊錄中的姓名可以加入個人字典，鍵盤就不再把他們當成錯字，而會開始建議他們。它不會要求存取你的通訊錄 —— 你自己挑選姓名，或匯入 vCard。你沒有交出去的內容，什麼都不會被讀取。</string>
+    <string name="apptour61__models_eyebrow">Gemini 與 Deepgram Flux</string>
+    <string name="apptour61__models_title">兩個更會聽的服務</string>
+    <string name="apptour61__models_body">Google 推出了自己的語音轉文字模型，因此 Gemini 不再以聊天模型加上指令來轉錄 —— 而且現在也能即時轉錄。Deepgram 的 Flux 會自行判斷你何時說完，不再等待靜音計時器。若你使用多種語言，現在可以明說是哪幾種，而不必選一個然後碰運氣。</string>
+    <string name="apptour61__more_eyebrow">此外</string>
+    <string name="apptour61__more_title">許多小改進</string>
+    <string name="apptour61__more_body">提示除了點擊之外，也可以用輸入快速字來觸發。俄文可以用音打出來，法文也能從一般字母找出重音符號。超寬的平板在橫向時又有鍵盤了。而建議開關現在真的會關掉建議 —— 包括應用程式想替你關閉時。</string>
+    <string name="apptour61__outro_eyebrow">6.1 就是這樣</string>
+    <string name="apptour61__outro_title">同樣的鍵盤，少數稜角</string>
+    <string name="apptour61__outro_body">你原本的語音輸入方式沒有任何改變 —— 你自己的金鑰、自架伺服器，或裝置上的模型。你可以隨時在設定 › 關於中重看導覽。</string>
+    <string name="apptour62__cta_try" comment="Button on a what\'s-new page that opens the settings screen for the feature just described">試試看</string>
+    <string name="apptour62__cta_manage" comment="Button on a what\'s-new page for a feature this release switches ON for everyone; it opens the screen holding the switch, so the label must offer the way out, not the way in">在哪裡關閉</string>
+    <string name="apptour62__art_word" comment="A word shown being learned in the illustration. Pick a first name or term that no dictionary in your language would know — short, at most about eight letters.">小雅</string>
+    <string name="apptour62__art_emoji_word" comment="A word shown being typed in the illustration, for which an emoji is then suggested. Must be an everyday word in your language whose emoji is obvious — keep it short.">蛋糕</string>
     <string name="apptour62__art_emoji" comment="The emoji suggested for apptour62__art_emoji_word in the illustration. Change it only if your word needs a different one.">🍰</string>
     <string name="apptour62__intro_eyebrow">Dictate 6.2</string>
-    <string name="apptour62__intro_title">It learns your words, and it has five new looks</string>
-    <string name="apptour62__intro_body">The keyboard can remember the words you type that no dictionary knows, the keys can let the app show through, and both thumbs can have a half of their own. Plus a handful of small helpers for the things you do every day.</string>
-    <string name="apptour62__learning_eyebrow">New: it learns as you type</string>
-    <string name="apptour62__learning_title">The words no dictionary knows</string>
-    <string name="apptour62__learning_body">Type a name or a term often enough and the keyboard keeps it, so it stops marking it as a mistake and starts suggesting it. This update switches that on for everyone, including anyone who had it off. Nothing is learned in incognito mode, in password fields or from anything you did not type key by key; it all stays on this device, and the button below opens the list — and the switch.</string>
-    <string name="apptour62__themes_eyebrow">Five new designs</string>
-    <string name="apptour62__themes_title">Glass, Sand, Deep and a dark E-Ink</string>
-    <string name="apptour62__themes_body">Dictate Glass lets the app show through the gaps between the keys, while the keys themselves stay solid enough to read on; Glass Clear goes further and looks better, at the price of text showing through in apps that draw behind the keyboard. Sand is a warm light theme, Deep a quiet dark one, and E-Ink finally has a night version — so automatic switching no longer hands you a white keyboard after dark.</string>
-    <string name="apptour62__split_eyebrow">New: split keyboard</string>
-    <string name="apptour62__split_title">Both thumbs, without the stretch</string>
-    <string name="apptour62__split_body">A new quick action, next to one-handed and floating, pulls the rows apart so each thumb keeps to its own half. Every layout splits, not just QWERTY, because the seam is worked out from the key widths rather than written into each layout. And in landscape the app now stays visible whenever there is room for both.</string>
-    <string name="apptour62__emoji_eyebrow">Emoji</string>
-    <string name="apptour62__emoji_title">The word finds its emoji</string>
-    <string name="apptour62__emoji_body">Type a word and the emoji that means it is offered in the strip — in about fifty languages, from the same data the system itself uses. It rides along next to the suggestions instead of taking one of their seats. There is also an optional row of your pinned and recently used emojis above the keys.</string>
-    <string name="apptour62__helpers_eyebrow">Four small helpers</string>
-    <string name="apptour62__helpers_title">Incognito, clean links, and the answer to the sum</string>
-    <string name="apptour62__helpers_body">Incognito mode stops anything being remembered while it is on — nothing learned, nothing kept. Pasted links can have their tracking parameters removed on the way into the field. Type a sum ending in = and the answer appears as a suggestion. And with the number row switched on, the letters show their digits again.</string>
-    <string name="apptour62__selection_eyebrow">Selecting and moving</string>
-    <string name="apptour62__selection_title">See what you have selected</string>
-    <string name="apptour62__selection_body">The row that used to stand empty during a selection now counts its words and characters. New buttons jump to the very start and end of the field, and copying can leave the stray spaces at the edges behind. The actions row steps aside as soon as a selection begins, instead of talking over it.</string>
-    <string name="apptour62__clipboard_eyebrow">Clipboard</string>
-    <string name="apptour62__clipboard_title">Find a clip by what it says</string>
-    <string name="apptour62__clipboard_body">The clipboard can be searched now, across everything in it. What you just copied is offered in the suggestion strip as a pill you can dismiss, and copying the same text twice counts as twice, so it comes back. Deleting a clip now also deletes the file behind it, instead of leaving the picture on your phone.</string>
-    <string name="apptour62__gestures_eyebrow">Gestures</string>
-    <string name="apptour62__gestures_title">Hold ?123, slide, let go</string>
-    <string name="apptour62__gestures_body">Hold the symbol key, slide onto the character you want and let go: it is inserted and the letters are back, without switching in and out. Swiping up on the space bar now reaches the line above, not just the word before it. And the gap between the keys can be set across a range you can actually see.</string>
-    <string name="apptour62__export_eyebrow">New: dictations as files</string>
-    <string name="apptour62__export_title">Every dictation into a folder you choose</string>
-    <string name="apptour62__export_body">Pick a folder once and every finished dictation is also written into it as a plain text file, the moment it is done. Whatever watches that folder — a notes app, a sync tool, your backup — gets your transcripts without Dictate having to learn its language.</string>
-    <string name="apptour62__more_eyebrow">Also</string>
-    <string name="apptour62__more_title">A lot of small things</string>
-    <string name="apptour62__more_body">Suggestions now look at the two words before the cursor in every language, not just in English. A backup can be made without your API keys, so it can be passed on safely. Azure\'s own transcription models are reachable, choosing a model for offline use now switches to the offline engine as well, and every request has a time limit that fits the wait. Dictations appear in the history the moment they are sent, imports say which step they are on and can be cancelled, and text lands more reliably in the apps that were fussy about it.</string>
-    <string name="apptour62__outro_eyebrow">That is 6.2</string>
-    <string name="apptour62__outro_title">Same keyboard, more of it yours</string>
-    <string name="apptour62__outro_body">Nothing about the way you dictate has changed — your own key, your own server, or a model on the device. You can revisit any tour under Settings › About.</string>
-    <string name="apptour63__cta_try" comment="Button on a what\'s-new page that opens the settings screen for the feature just described">Try it</string>
+    <string name="apptour62__intro_title">它會學會你的字，還有五種全新外觀</string>
+    <string name="apptour62__intro_body">鍵盤可以記住你打出來而字典不認識的字，按鍵可以讓底下的應用程式透出來，兩隻拇指也可以各自擁有一半。再加上幾個處理日常小事的小幫手。</string>
+    <string name="apptour62__learning_eyebrow">新增：一邊打一邊學</string>
+    <string name="apptour62__learning_title">字典不認識的字</string>
+    <string name="apptour62__learning_body">同一個姓名或名詞打夠多次，鍵盤就會記住它，於是它不再被標成錯誤，而開始建議它。這次更新為所有人開啟這項功能，包含先前把它關掉的人。無痕模式、密碼欄位，以及不是你一個字一個字打出來的內容都不會被學習；一切都留在這台裝置上，下方的按鈕可以開啟清單與開關。</string>
+    <string name="apptour62__themes_eyebrow">五種新設計</string>
+    <string name="apptour62__themes_title">Glass、Sand、Deep 與深色 E-Ink</string>
+    <string name="apptour62__themes_body">Dictate Glass 讓應用程式從按鍵的縫隙中透出，而按鍵本身仍維持足以閱讀的實心度；Glass Clear 更進一步、外觀也更好，代價是在會畫到鍵盤後方的應用程式中，文字會透出來。Sand 是溫暖的淺色佈景主題，Deep 是沉穩的深色，而 E-Ink 終於有了夜間版本 —— 自動切換不會再在天黑後給你一把白色鍵盤。</string>
+    <string name="apptour62__split_eyebrow">新增：分割鍵盤</string>
+    <string name="apptour62__split_title">兩隻拇指，不必拉扯</string>
+    <string name="apptour62__split_body">新增的快速動作就在單手與浮動旁邊，可把按鍵列拉開，讓每隻拇指各自待在自己那一半。所有配置都能分割，不只 QWERTY，因為接縫是依按鍵寬度算出來的，而不是寫死在每個配置裡。而在橫向時，只要有空間容納兩半，應用程式現在都會保持可見。</string>
+    <string name="apptour62__emoji_eyebrow">表情符號</string>
+    <string name="apptour62__emoji_title">字會找到它的表情符號</string>
+    <string name="apptour62__emoji_body">輸入一個字，代表它的表情符號就會出現在建議列中 —— 支援約五十種語言，資料來源與系統本身相同。它會搭在建議旁邊，而不是佔掉建議的位置。按鍵上方另有一列選用的表情符號，可放你釘選與最近使用的項目。</string>
+    <string name="apptour62__helpers_eyebrow">四個小幫手</string>
+    <string name="apptour62__helpers_title">無痕、乾淨連結，以及算式的答案</string>
+    <string name="apptour62__helpers_body">無痕模式開啟時不會記住任何東西 —— 不會學習，也不會保留。貼上的連結可以在進入欄位時移除追蹤參數。輸入以 = 結尾的算式，答案就會出現在建議中。而開啟數字列後，字母又會顯示它們的數字。</string>
+    <string name="apptour62__selection_eyebrow">選取與移動</string>
+    <string name="apptour62__selection_title">看見你選取到的內容</string>
+    <string name="apptour62__selection_body">過去選取時總是空著的這一列，現在會計算字數與字元數。新增的按鈕可直接跳到欄位的最前與最後，複製時也可以丟掉兩端的空白。選取一開始，動作列就會自動讓路，而不是搶著說話。</string>
+    <string name="apptour62__clipboard_eyebrow">剪貼簿</string>
+    <string name="apptour62__clipboard_title">用內容找剪貼項目</string>
+    <string name="apptour62__clipboard_body">剪貼簿現在可以搜尋了，範圍涵蓋其中所有內容。你剛複製的內容會在建議列中以可關閉的標籤形式出現；同一段文字複製兩次會算成兩次，因此會再次出現。刪除剪貼項目現在也會一併刪掉背後的檔案，不會把圖片留在手機裡。</string>
+    <string name="apptour62__gestures_eyebrow">手勢</string>
+    <string name="apptour62__gestures_title">按住 ?123、滑動、放開</string>
+    <string name="apptour62__gestures_body">按住符號鍵，滑到你要的字元後放開：該字元會被輸入，字母則回到畫面，不必來回切換。空白鍵向上滑現在會到上一行，而不只是前一個字。按鍵之間的間距也可以調整成你真正看得出差異的範圍。</string>
+    <string name="apptour62__export_eyebrow">新增：語音輸入存成檔案</string>
+    <string name="apptour62__export_title">每次語音輸入都存到你選的資料夾</string>
+    <string name="apptour62__export_body">選一次資料夾，之後每次完成的語音輸入都會即時以純文字檔寫入其中。任何監看該資料夾的程式 —— 筆記應用、同步工具、你的備份 —— 都能直接拿到你的轉錄，不必讓 Dictate 去學它的格式。</string>
+    <string name="apptour62__more_eyebrow">此外</string>
+    <string name="apptour62__more_title">許多小改進</string>
+    <string name="apptour62__more_body">建議現在會在每種語言都看游標前的兩個字，不再只有英文。備份可以不包含你的 API 金鑰，因此可以安全地傳給別人。Azure 自己的轉錄模型也能用了，選擇離線使用的模型時也會一併切到離線引擎，每個請求都有符合等待時間的時限。語音輸入一送出演算就會出現在紀錄中，匯入會說明目前進行到哪一步且可以取消，文字也能更可靠地進入那些挑剔的應用程式。</string>
+    <string name="apptour62__outro_eyebrow">6.2 就是這樣</string>
+    <string name="apptour62__outro_title">同樣的鍵盤，更多由你決定</string>
+    <string name="apptour62__outro_body">你原本的語音輸入方式沒有任何改變 —— 你自己的金鑰、自架伺服器，或裝置上的模型。你可以隨時在設定 › 關於中重看導覽。</string>
+    <string name="apptour63__cta_try" comment="Button on a what\'s-new page that opens the settings screen for the feature just described">試試看</string>
     <string name="apptour63__intro_eyebrow">Dictate 6.3</string>
-    <string name="apptour63__intro_title">More of the keyboard, without leaving it</string>
-    <string name="apptour63__intro_body">Point the camera at printed text and it lands in the field. The cursor, the selection and the clipboard finally share one panel. Any Smartbar button can carry a second action under a long press. And offline dictation has models that actually fit on a phone.</string>
-    <string name="apptour63__scan_eyebrow">New: scan text</string>
-    <string name="apptour63__scan_title">Printed text, straight into the field</string>
-    <string name="apptour63__scan_body">An IBAN off a letter, a serial number off a box, an address off a parcel: point the camera at it and the text arrives where you were typing, instead of being read out and typed again. It is recognised on this device — nothing is uploaded and no provider is involved. Dictate never asks for the camera permission either: the system camera takes the photo and hands back that one picture, which is deleted as soon as it has been read.</string>
-    <string name="apptour63__editing_eyebrow">New: editing panel</string>
-    <string name="apptour63__editing_title">Cursor, selection and clipboard in one place</string>
-    <string name="apptour63__editing_body">All of it existed already, spread across eleven keys you had to know were there. Now it is one panel: move by character, word or line, select, copy, paste, undo. Holding a key repeats it instead of asking for eleven taps. And the number pad can be asked for by name now, rather than only being stumbled into by a gesture nobody had bound.</string>
-    <string name="apptour63__second_eyebrow">New: hold for a second action</string>
-    <string name="apptour63__second_title">Two actions in one Smartbar seat</string>
-    <string name="apptour63__second_body">Pair a second action to a button yourself and a long press runs it. Only five or six buttons are ever visible at once, so this is the difference between having a feature and having room for it. A small mark in the corner shows which buttons carry one.</string>
-    <string name="apptour63__floating_eyebrow">Floating button</string>
-    <string name="apptour63__floating_title">A menu on hold, and only where you want it</string>
-    <string name="apptour63__floating_body">Hold the floating button for a short menu — transcribing a file is the first thing in it. You can also tell it which apps it is welcome in, instead of it following you into every one. Stop now stays exactly where start was, and the pill opens smoothly whichever side of the screen it sits on.</string>
-    <string name="apptour63__offline_eyebrow">Offline dictation</string>
-    <string name="apptour63__offline_title">Models that fit on a phone</string>
-    <string name="apptour63__offline_body">English, German and Russian can now be dictated offline with models in the hundred-megabyte range, instead of only the 670 MB ones. Dolphin adds forty Eastern languages the catalogue could answer only badly before. And the picker is ordered by what most people will actually download rather than by architecture — ten rows instead of twenty-four, with the details behind a tap.</string>
-    <string name="apptour63__more_eyebrow">Also</string>
-    <string name="apptour63__more_title">A lot of small things</string>
-    <string name="apptour63__more_body">Your own word list can arrive as a file now, and leave as one. The recording bar draws a waveform, so it is visible when your voice has stopped. A provider account can choose the region its data stays in, and the streaming host moves with it. A dictation survives the microphone it was recording from going away. The connection test says only what it really checked, the provider\'s own key page is one tap from the field where the key goes, and a fresh install opens on what the keyboard is for rather than on the order its features happened to ship in.</string>
-    <string name="apptour63__outro_eyebrow">That is 6.3</string>
-    <string name="apptour63__outro_title">Fewer detours, same keyboard</string>
-    <string name="apptour63__outro_body">Nothing about the way you dictate has changed — your own key, your own server, or a model on the device. You can revisit any tour under Settings › About.</string>
-    <string name="apptour64__cta_languages" comment="Button on the what\'s-new translation page that opens the screen where translation languages are downloaded">Choose languages</string>
-    <string name="apptour64__cta_providers" comment="Button on a what\'s-new page that opens the list of transcription and rewording providers">Show providers</string>
+    <string name="apptour63__intro_title">更多鍵盤功能，不需離開</string>
+    <string name="apptour63__intro_body">把相機對準印刷文字，文字就會進入欄位。游標、選取與剪貼簿終於共用同一個面板。任何智慧列按鈕都可以在長按時執行第二個動作。離線語音輸入也有真正放得進手機的模型。</string>
+    <string name="apptour63__scan_eyebrow">新增：掃描文字</string>
+    <string name="apptour63__scan_title">印刷文字，直接進入欄位</string>
+    <string name="apptour63__scan_body">信件上的 IBAN、盒子上的序號、包裹上的地址：把相機對準它，文字就會出現在你正在打字的位置，而不是唸出來再重打一次。辨識完全在裝置上進行 —— 不會上傳，也不涉及任何服務。Dictate 也從不要求相機權限：由系統相機拍下照片並交回那唯一一張照片，讀完就立刻刪除。</string>
+    <string name="apptour63__editing_eyebrow">新增：編輯面板</string>
+    <string name="apptour63__editing_title">游標、選取與剪貼簿在同一處</string>
+    <string name="apptour63__editing_body">這些功能本來就都有，只是分散在十一個你得記住才找得到的按鍵上。現在合成一個面板：逐字、逐詞或逐行移動，選取、複製、貼上、復原。按住按鍵會重複該動作，而不必連按十一次。數字鍵盤現在也能用名稱叫出來，而不只是靠一個沒人綁定的手勢誤觸。</string>
+    <string name="apptour63__second_eyebrow">新增：長按執行第二動作</string>
+    <string name="apptour63__second_title">一個智慧列位置，兩個動作</string>
+    <string name="apptour63__second_body">自行為按鈕配對第二個動作，長按就會執行它。畫面上一次最多只看得見五六個按鈕，所以這就是「有這個功能」與「有空間放這個功能」的差別。角落的小標記會顯示哪些按鈕帶有第二動作。</string>
+    <string name="apptour63__floating_eyebrow">浮動按鈕</string>
+    <string name="apptour63__floating_title">長按出選單，而且只出現在你想出現的地方</string>
+    <string name="apptour63__floating_body">長按浮動按鈕可叫出短選單 —— 第一項就是轉錄檔案。你也可以指定它歡迎出現在哪些應用程式，而不是跟著你進入每一個。現在停止的位置會精確停在開始的位置，而那個藥丸不論在螢幕哪一側都能順暢地打開。</string>
+    <string name="apptour63__offline_eyebrow">離線語音輸入</string>
+    <string name="apptour63__offline_title">放得進手機的模型</string>
+    <string name="apptour63__offline_body">英文、德文與俄文現在可以用百萬位元組等級的模型離線語音輸入，不必再用那個 670 MB 的版本。Dolphin 新增了四十種東方語言，先前的目錄對它們只能勉強應答。選擇器現在依多數人真正會下載的內容排序，而不是依架構 —— 從二十四列減為十列，細節則收在點擊之後。</string>
+    <string name="apptour63__more_eyebrow">此外</string>
+    <string name="apptour63__more_title">許多小改進</string>
+    <string name="apptour63__more_body">你自己的詞庫現在可以檔案形式匯入，也能以檔案匯出。錄音列會畫出波形，因此你的聲音停住時看得出來。服務帳戶可以選擇資料存放的區域，串流的站台也會跟著移動。麥克風消失後，語音輸入仍能存活。連線測試只說它真正檢查過的部分，服務商自己的金鑰頁面從金鑰輸入欄點一下就能到達，而全新安裝會直接開啟鍵盤本身的用途，而不是功能剛好上線的順序。</string>
+    <string name="apptour63__outro_eyebrow">6.3 就是這樣</string>
+    <string name="apptour63__outro_title">少些迂迴，同樣的鍵盤</string>
+    <string name="apptour63__outro_body">你原本的語音輸入方式沒有任何改變 —— 你自己的金鑰、自架伺服器，或裝置上的模型。你可以隨時在設定 › 關於中重看導覽。</string>
+    <string name="apptour64__cta_languages" comment="Button on the what\'s-new translation page that opens the screen where translation languages are downloaded">選擇語言</string>
+    <string name="apptour64__cta_providers" comment="Button on a what\'s-new page that opens the list of transcription and rewording providers">顯示服務</string>
     <string name="apptour64__intro_eyebrow">Dictate 6.4</string>
-    <string name="apptour64__intro_title">Translated on the phone, symbols of your own</string>
-    <string name="apptour64__intro_body">Type in one language and the field fills up in another, translated on this device. Both symbol pages can hold the keys you choose. There are new providers and a much better offline model, a word you say to turn a dictation into an instruction, and a privacy and security review of the whole app.</string>
-    <string name="apptour64__translate_eyebrow">New: translate</string>
-    <string name="apptour64__translate_title">Translation that never leaves the phone</string>
-    <string name="apptour64__translate_body">Tap Translate in the Smartbar and type into the field above it — the app’s field fills with the translation as you go. Mozilla’s models do the work on this device, in 49 languages, and nothing you type is sent anywhere. Enter puts in the finished translation before it sends, so a message never goes out half translated. Each language is a one-time download, and the list shows its size before you get it.</string>
-    <string name="apptour64__symbols_eyebrow">New: your own symbols</string>
-    <string name="apptour64__symbols_title">The symbols you use, where you want them</string>
-    <string name="apptour64__symbols_body">Under Keyboard › Custom symbols, both symbol pages become yours, in every language. Tap a key in the picture of the page, choose what it types and what its long press offers, and drag those into order. A palette has the symbols your keyboard does not have yet. Until you change a key the pages look exactly like the built-in ones, and a finished layout can be exported to share.</string>
-    <string name="apptour64__providers_eyebrow">Providers and offline models</string>
-    <string name="apptour64__providers_title">New providers, and a better offline model</string>
-    <string name="apptour64__providers_body" comment="Parakeet Ultra and Parakeet TDT 0.6B v3 are model names and stay as they are">xAI’s Grok now transcribes as well, as a file and live, with the same key that rewords. Scaleway and OVHcloud keep audio and text inside the EU. Offline, Parakeet Ultra replaces Parakeet TDT 0.6B v3: the same 670 MB and the same 25 languages, with 29 % fewer errors in German. If you use v3, download Ultra in the list of on-device models and delete the old one — v3 keeps working until you do. And the providers list now shows only the ones you use; all the others are under “Add a provider”, with a search.</string>
-    <string name="apptour64__command_eyebrow">New: command word</string>
-    <string name="apptour64__command_title">Say the word, and the dictation becomes an instruction</string>
-    <string name="apptour64__command_body">Choose a word under Rewording — “Jarvis”, say. A dictation that starts with it runs as a live prompt: on the selected text, or as a question when nothing is selected. Only the first word counts, so a sentence that merely mentions it is written as usual. Automatic prompts also work as intended now: they always get the dictation they run on, and one that is only [text in brackets] is added to the end as written instead of going to the model.</string>
-    <string name="apptour64__privacy_eyebrow">Privacy and security</string>
-    <string name="apptour64__privacy_title">The whole app, checked</string>
-    <string name="apptour64__privacy_body">Every part of Dictate was reviewed for privacy and security, and what turned up is fixed. A dictation into a password or PIN field stays out of the history, now also through the floating button. Android’s cloud backup only takes your API keys end-to-end encrypted. And “Trust user certificates” is now set per provider account rather than for all of them at once.</string>
-    <string name="apptour64__more_eyebrow">Also</string>
-    <string name="apptour64__more_title">Everything else in 6.4</string>
-    <string name="apptour64__more_body">The smaller changes, for anyone who wants the details. Skip ahead if you don’t.</string>
-    <string name="apptour64__more_typing" comment="Heading of a group of small changes on the what\'s-new page">Typing</string>
-    <string name="apptour64__more_typing_slips">Suggestions read slips: a letter on the wrong key, two swapped, a slip in a half-typed word. The word you meant shows up far more often, and every key press is quicker.</string>
-    <string name="apptour64__more_typing_autocorrect">With auto-correct off, fixes still appear in the strip. The switch only decides whether Space swaps the word.</string>
-    <string name="apptour64__more_typing_glide">Glide typing finds words that start or end on an accented letter — in Hungarian, Russian, Finnish, Polish, Turkish and more.</string>
-    <string name="apptour64__more_typing_swipe">A sideways swipe over the letters no longer switches the language, which mostly happened by accident. The globe key still does, and Gestures brings the swipe back.</string>
-    <string name="apptour64__more_typing_punctuation">A punctuation mark right after an auto-correction takes its space, and a glide along the space bar stays on its line.</string>
-    <string name="apptour64__more_typing_calculator">The calculator answers before the “=”, and a tap on the answer completes the line.</string>
-    <string name="apptour64__more_typing_size">The keyboard remembers its size for each language.</string>
-    <string name="apptour64__more_typing_languages">Afrikaans is a full keyboard language. A new layout only needs its language picked — the other fields fill themselves in.</string>
-    <string name="apptour64__more_dictation" comment="Heading of a group of small changes on the what\'s-new page">Dictation</string>
-    <string name="apptour64__more_dictation_stop">Stopping a dictation that is still waiting for the server keeps the recording, ready to send again.</string>
-    <string name="apptour64__more_dictation_timeout">A connection that stalls gives up after one timeout instead of four, and a request the provider refused is not sent again.</string>
-    <string name="apptour64__more_dictation_live">A word you delete during a live dictation stays deleted, and two dictations in a row get a space between them.</string>
-    <string name="apptour64__more_dictation_hold">Holding the mic to talk: a slow tap stays a tap, and a hold shorter than a second is discarded.</string>
-    <string name="apptour64__more_dictation_talkback">TalkBack can find and press the mic, and says what the dictation is doing.</string>
-    <string name="apptour64__more_clipboard" comment="Heading of a group of small changes on the what\'s-new page">Clipboard and emoji</string>
-    <string name="apptour64__more_clipboard_pins">Pinned clips now sit at the bottom, with tabs to jump between the groups. “Pinned items on top” brings the old order back.</string>
-    <string name="apptour64__more_clipboard_chips">The link, email and number chips beside a copied text can be switched off.</string>
-    <string name="apptour64__more_clipboard_emoji">The emoji row scrolls and answers a long press, and the emoji search shows two rows.</string>
-    <string name="apptour64__more_elsewhere" comment="Heading of a group of small changes on the what\'s-new page">Floating button and watch</string>
-    <string name="apptour64__more_elsewhere_bubble">The floating button can wait for a keyboard before it appears, and writes into the web field you tapped.</string>
-    <string name="apptour64__more_elsewhere_watch">On the watch, a dictation finishes the way its field asks — send, search or a check mark — with auto-send if you want it, and the wait shows its seconds.</string>
-    <string name="apptour64__outro_eyebrow">That is 6.4</string>
-    <string name="apptour64__outro_title">More on the phone, more your own</string>
-    <string name="apptour64__outro_body">Translation and the new offline model work without a connection, and everything else still runs the way you set it up — your own key, your own server, or a model on the device. You can revisit any tour under Settings › About.</string>
-    <string name="about__website__title" comment="Preference title linking to the marketing website">Website</string>
-    <string name="about__repository__title" comment="Preference title">Repository (GitHub)</string>
-    <string name="about__repository__summary" comment="Preference summary">Source code, discussions, issues and info</string>
-    <string name="about__based_on_floris__title" comment="Preference title crediting the upstream project Dictate is forked from">Based on FlorisBoard</string>
-    <string name="about__based_on_floris__summary" comment="Preference summary crediting the upstream project">A fork of FlorisBoard by Patrick Goldinger and contributors, Apache 2.0. Tap to open it.</string>
-    <string name="about__made_by" comment="Personal signature shown under the app name in the About header" translatable="false">Made with ❤️ by DevEmperor\nSoli deo gloria ✝️</string>
-    <string name="about__feedback__title" comment="Preference title">Feedback &amp; support</string>
-    <string name="about__feedback__summary" comment="Preference summary">Send an email with questions, bugs or ideas</string>
+    <string name="apptour64__intro_title">在手機上翻譯，符號由你自訂</string>
+    <string name="apptour64__intro_body">用一種語言輸入，欄位會以另一種語言填滿，翻譯就在這台裝置上完成。兩頁符號都能放你自己選的按鍵。還有新的服務與好得多的離線模型、一個用來把語音輸入變成指令的說出關鍵詞，以及對整個應用程式的隱私與安全檢視。</string>
+    <string name="apptour64__translate_eyebrow">新增：翻譯</string>
+    <string name="apptour64__translate_title">絕不離開手機的翻譯</string>
+    <string name="apptour64__translate_body">在智慧列點一下「翻譯」，然後在上方的欄位輸入 —— 應用程式的欄位會隨著你輸入而被翻譯填滿。Mozilla 的模型在這台裝置上完成這些工作，支援 49 種語言，你輸入的內容不會送到任何地方。在送出前按 Enter 會先放入完成的譯文，因此訊息絕不會只翻一半就送出去。每種語言只需下載一次，清單會在取得之前先顯示大小。</string>
+    <string name="apptour64__symbols_eyebrow">新增：你自己的符號</string>
+    <string name="apptour64__symbols_title">你常用的符號，放在你想要的位置</string>
+    <string name="apptour64__symbols_body">在「鍵盤 › 自訂符號」之下，兩頁符號在每種語言中都歸你所有。在頁面圖示中點一下某個按鍵，選擇它打出什麼、長按時提供什麼，再把它們拖曳排序。符號面板裡有你的鍵盤還沒有的符號。在你變更某個按鍵之前，這兩頁看起來與內建的完全相同；完成的版面還可以匯出分享。</string>
+    <string name="apptour64__providers_eyebrow">服務與離線模型</string>
+    <string name="apptour64__providers_title">新的服務，以及更好的離線模型</string>
+    <string name="apptour64__providers_body" comment="Parakeet Ultra and Parakeet TDT 0.6B v3 are model names and stay as they are">xAI 的 Grok 現在也能轉錄了，檔案與即時都行，使用的是與改寫相同的金鑰。Scaleway 與 OVHcloud 讓音訊與文字留在歐盟境內。離線方面，Parakeet Ultra 取代 Parakeet TDT 0.6B v3：同樣是 670 MB、同樣支援 25 種語言，但德文的錯誤減少了 29 %。若你正在使用 v3，請在裝置端模型清單中下載 Ultra 並刪除舊的那個 —— 在你這樣做之前 v3 仍可運作。服務清單現在只顯示你正在使用的服務；其餘全部放在「新增服務」之下，並附搜尋。</string>
+    <string name="apptour64__command_eyebrow">新增：指令關鍵詞</string>
+    <string name="apptour64__command_title">說出那個字，語音輸入就變成指令</string>
+    <string name="apptour64__command_body">在「改寫」之下選一個字 —— 例如「Jarvis」。以它開頭的語音輸入就會當成即時提示執行：作用於選取的文字，若沒有選取任何文字則以提問方式進行。只有第一個字有效，因此只是提到它的句子仍會照常書寫。自動提示現在也如預期運作：它總是拿到它所作用的語音輸入，而只有 [以方括號包住的文字] 的提示會照原文附加在結尾，而不是送給模型。</string>
+    <string name="apptour64__privacy_eyebrow">隱私與安全</string>
+    <string name="apptour64__privacy_title">整個應用程式都查過了</string>
+    <string name="apptour64__privacy_body">Dictate 的每一個部分都做過隱私與安全檢視，發現的問題都已修正。輸入到密碼或 PIN 欄位的語音輸入不會進入紀錄，現在透過浮動按鈕也一樣。Android 的雲端備份只會端對端加密地保留你的 API 金鑰。而「信任使用者憑證」現在是依服務帳戶分別設定，而不是一次對全部生效。</string>
+    <string name="apptour64__more_eyebrow">此外</string>
+    <string name="apptour64__more_title">6.4 的其他所有內容</string>
+    <string name="apptour64__more_body">較小的改動，給想看細節的人。若不想看可以略過。</string>
+    <string name="apptour64__more_typing" comment="Heading of a group of small changes on the what\'s-new page">輸入</string>
+    <string name="apptour64__more_typing_slips">建議會看失手：按錯的鍵、順序顛倒的兩個字母、輸入到一半的失誤。你真正想打的字出現的機率高得多，而每次按鍵也更快。</string>
+    <string name="apptour64__more_typing_autocorrect">關閉自動更正時，更正仍會出現在建議列中。這個開關只決定空白鍵是否會換掉整個字。</string>
+    <string name="apptour64__more_typing_glide">滑行輸入找得到以帶調音符開頭或結尾的字 —— 匈牙利文、俄文、芬蘭文、波蘭文、土耳其文等等。</string>
+    <string name="apptour64__more_typing_swipe">在字母上橫向滑動不再切換語言（那多半是誤觸造成的）。地球鍵仍然可以切換，而手勢設定能把滑動加回來。</string>
+    <string name="apptour64__more_typing_punctuation">自動更正後面的標點符號會取走它的空格，而沿著空白鍵的滑行會留在同一行。</string>
+    <string name="apptour64__more_typing_calculator">計算機在「=」之前就會給出答案，點一下答案即可完成整行。</string>
+    <string name="apptour64__more_typing_size">鍵盤會分別記住每種語言的大小。</string>
+    <string name="apptour64__more_typing_languages">南非荷蘭文已是完整的鍵盤語言。新增配置只需選擇語言 —— 其他欄位會自行填好。</string>
+    <string name="apptour64__more_dictation" comment="Heading of a group of small changes on the what\'s-new page">語音輸入</string>
+    <string name="apptour64__more_dictation_stop">停止仍在等待伺服器的語音輸入時，錄音會保留，隨時可以再次送出。</string>
+    <string name="apptour64__more_dictation_timeout">卡住的連線在一次逾時後就放棄，而不是四次；服務商拒絕的請求也不會再送一次。</string>
+    <string name="apptour64__more_dictation_live">即時語音輸入中刪掉的字會維持刪除狀態，而連續兩次語音輸入之間會加上空格。</string>
+    <string name="apptour64__more_dictation_hold">按住麥克風說話：慢慢點一下仍是點一下，而不到一秒的長按會被丟棄。</string>
+    <string name="apptour64__more_dictation_talkback">TalkBack 可以找到並按下麥克風，也會說出語音輸入目前的狀態。</string>
+    <string name="apptour64__more_clipboard" comment="Heading of a group of small changes on the what\'s-new page">剪貼簿與表情符號</string>
+    <string name="apptour64__more_clipboard_pins">釘選的剪貼項目現在會放在底部，並有分頁可在各組之間切換。「釘選項目置頂」可切回原本的順序。</string>
+    <string name="apptour64__more_clipboard_chips">複製的文字旁邊的連結、郵件與數字標籤可以關掉。</string>
+    <string name="apptour64__more_clipboard_emoji">表情符號列可以捲動並回應長按，表情符號搜尋則會顯示兩列。</string>
+    <string name="apptour64__more_elsewhere" comment="Heading of a group of small changes on the what\'s-new page">浮動按鈕與手錶</string>
+    <string name="apptour64__more_elsewhere_bubble">浮動按鈕可以先等待鍵盤出現再顯示，並直接輸入到你點擊的網頁欄位。</string>
+    <string name="apptour64__more_elsewhere_watch">在手錶上，語音輸入會依欄位要求完成 —— 送出、搜尋或打勾 —— 也可以選擇自動送出，等待時會顯示秒數。</string>
+    <string name="apptour64__outro_eyebrow">6.4 就是這樣</string>
+    <string name="apptour64__outro_title">手機上更多，屬於你更多</string>
+    <string name="apptour64__outro_body">翻譯與新的離線模型不需要連線也能運作，其他一切仍照你設定的方式運作 —— 你自己的金鑰、自架伺服器，或裝置上的模型。你可以隨時在設定 › 關於中重看導覽。</string>
+    <string name="about__website__title" comment="Preference title linking to the marketing website">網站</string>
+    <string name="about__repository__title" comment="Preference title">程式碼倉庫（GitHub）</string>
+    <string name="about__repository__summary" comment="Preference summary">原始碼、討論、問題與資訊</string>
+    <string name="about__based_on_floris__title" comment="Preference title crediting the upstream project Dictate is forked from">基於 FlorisBoard</string>
+    <string name="about__based_on_floris__summary" comment="Preference summary crediting the upstream project">Patrick Goldinger 與貢獻者所開發的 FlorisBoard 的分支，Apache 2.0。點一下即可開啟。</string>
+    <string name="about__made_by" comment="Personal signature shown under the app name in the About header" translatable="false">由 DevEmperor 用 ❤️ 製作\nSoli deo gloria ✝️</string>
+    <string name="about__feedback__title" comment="Preference title">意見回饋與支援</string>
+    <string name="about__feedback__summary" comment="Preference summary">以電子郵件寄送問題、錯誤回報或想法</string>
     <string name="about__feedback__email" translatable="false">contact@devemperor.net</string>
-    <string name="about__feedback__subject" comment="Default subject line of the feedback email" translatable="false">Dictate Feedback</string>
-    <string name="about__privacy_policy__title" comment="Preference title">Privacy policy</string>
-    <string name="about__privacy_policy__summary" comment="Preference summary">The privacy policy for this project</string>
-    <string name="about__project_license__title" comment="Preference title">Project license</string>
+    <string name="about__feedback__subject" comment="Default subject line of the feedback email" translatable="false">Dictate 意見回饋</string>
+    <string name="about__privacy_policy__title" comment="Preference title">隱私權政策</string>
+    <string name="about__privacy_policy__summary" comment="Preference summary">本專案的隱私權政策</string>
+    <string name="about__project_license__title" comment="Preference title">專案授權</string>
     <string name="about__project_license__summary" comment="Preference summary">{app_name} 依 {license_name} 授權</string>
     <string name="about__project_license__error_license_text_failed" comment="Error text for license text loading failure">Error: Failed to load license text.\n-&gt; Reason: {error_message}</string>
     <string name="about__project_license__error_reason_asset_manager_null" comment="Error text if asset manager is null">Asset manager reference is null</string>
