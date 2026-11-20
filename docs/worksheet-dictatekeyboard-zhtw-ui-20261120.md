@@ -893,7 +893,8 @@ git push origin pr/zh-tw-ui
     2. `app/src/main/assets/ime/keyboard/org.florisboard.layouts/extension.json`：在 `layouts.characters` 註冊 `"id": "cangjie", "label": "倉頡 (Cangjie)"`。
     3. `app/src/main/assets/ime/keyboard/org.florisboard.localization/extension.json`：將 `zh-TW-cangjielarge` 的 `preferred.characters` 改為 `org.florisboard.layouts:cangjie`，並將 `zh-TW-boshiamy` 與 `zh-TW-cangjielarge` 的 `currencySet` 由 `org.florisboard.currencysets:yen` 改為 `org.florisboard.currencysets:dollar`。
   - 獨立乾淨分支 `pr/cangjie-layout` 已推上 `origin`（隨時可開獨立 PR），並已單向 `merge` 進 `main` 供自用出包（裝機後舊有子類型需於「設定 → 語言與配置 → 字元配置」改選「倉頡 (Cangjie)」或重加子類型）。
-  - ✅ **雲端建置驗證（2026-11-20）**：於 `main`（`22248d26`）觸發 Actions run `44747287202` → **success**（耗時 `13m51s`），已發布含**繁中 UI ＋ 倉頡字根 ＋ `$` 貨幣**之 `app-debug.apk`（`174,484,075` bytes，SHA-256 `3477b89916a0eb485dc4369bfb465d73cb99fb92443da5371820e7487a402e12`）至 Release `v6.4.0-apk`，固定簽章指紋完全吻合（`AD:52:6F:35:...74:31:A3`），待實機覆蓋安裝測試。
+  - ✅ **雲端建置驗證（2026-11-20）**：於 `main`（`22248d26`）觸發 Actions run `44747287202` → **success**（耗時 `13m51s`），已發布含**繁中 UI ＋ 倉頡字根 ＋ `$` 貨幣**之 `app-debug.apk`（`174,484,075` bytes，SHA-256 `3477b89916a0eb485dc4369bfb465d73cb99fb92443da5371820e7487a402e12`）與同名資產 `app-debug-cangjie-20261120.apk` 至 Release `v6.4.0-apk`（並以 `gh release edit --latest` 設為 `Latest`），固定簽章指紋完全吻合（`AD:52:6F:35:...74:31:A3`）。
+  - ✅ **實機覆蓋安裝與選字列驗證通過（2026-11-20）**：關閉 Smartbar 一次性 SayOVA 推播（`PromoKind.SAYOVA`）並於「設定 → 建議」開啟「忽略關閉建議的應用程式」後，倉頡字根、Shift 切換大寫英文字母、`$` 貨幣符號與候選字清單均正常運作。
 - [ ] **F3**（原 P4）Feature request：dictation 文字進學詞庫 + 社群共享字典。前提已驗證成立（`LearnedWordsStore.note()` 只被 `LatinLanguageProvider` 呼叫）。
 - [ ] **F4** OpenTypeless 備份清理（`~/Library/Application Support/com.opentypeless.app/backups/`，實測 4.4 MB，2026-11-17 建立）→ 觀察 1–2 週穩定後可刪
 
