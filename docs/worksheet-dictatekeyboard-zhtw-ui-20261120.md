@@ -24,6 +24,22 @@
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
 | 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
 
+### 🔴 本 session 進行中（2026-11-20，Step 1 最小可行驗證鏈路）
+
+| 步驟 | 狀態 |
+|---|---|
+| **B0** 產出最小 `values-zh-rTW/strings.xml`（約 40 條） | ✅ 完成（45 strings + 3 plurals、41 條 comment、`xmllint` 通過） |
+| **B0b** 建 `tools/check-l10n.py` | ✅ 完成（寬鬆/strict 雙模式、app+wear、三種錯誤負向測試通過） |
+| **C1** `OtherScreen.kt` 加 `"zh-TW"` | ✅ 完成（`OtherScreen.kt:162`，tag 40 → 41 + `auto` = 42 項，無重複） |
+| **push → C2** 觸發 Actions 出 APK（**跳過 A4**，見下方理由） | 🔄 進行中 |
+| **C3** 裝機實測（**需使用者本人操作**） | ⬜ 未開始 |
+
+> ℹ️ **為什麼跳過 A4（無改動冒煙測試）**：實查 `git log e4c41fe..upstream/main -- gradle/ build.gradle.kts app/build.gradle.kts wear/build.gradle.kts gradle.properties tools/bergamot tools/fetch-sherpa-onnx.sh` → **空**。上游自 2026-11-17 那次成功建置後沒動過任何建置相關檔案 → CI 路徑壞掉的機率很低 → 省一次建置時間，直接跑 C2。若 C2 失敗再回頭做 A4 判斷歸屬。
+>
+> ℹ️ **本機不能編譯**：無 JRE（`java -version` 失敗）、無 Android SDK（`~/Library/Android/sdk` 不存在）→ 只能走 Actions。
+>
+> ⚠️ **必須先 push 再觸發**：workflow 的 `actions/checkout` 抓的是遠端 `feat/zh-tw-ui`。
+
 ### 下一步（建議順序）
 
 **Step 1 — 先做「最小可行 zh-TW」驗證鏈路**（不要一開始就翻 2547 條）
@@ -584,13 +600,20 @@ git push origin pr/zh-tw-ui
 
 #### 流程
 
-- [ ] **B0** 最小可行驗證（先於 B1–B6；目的：證明 `values-zh-rTW` 命名與 fallback 可用）
+- [x] **B0** 最小可行驗證（先於 B1–B6；目的：證明 `values-zh-rTW` 命名與 fallback 可用）
+  - ✅ 2026-11-20 完成：`app/src/main/res/values-zh-rTW/strings.xml` —— **45 strings + 3 plurals**（含 42 條 base 的 comment 指引、含 `{app_name}` / `{count}` / `{size}` / `{license_name}` / `%1$s` / `%2$s` / `%3$s` 各式 placeholder、1 組 plurals）
+  - 涵蓋範圍：設定首頁、「其他」畫面（**語言選擇器所在**）、Dictate 浮動按鈕、Dictate 鍵盤、通用動作、單位複數
+  - **刻意只放 45 條**，其餘留空 → 裝機後可驗「已翻顯示繁中、未翻退回英文」
   - 建 `app/src/main/res/values-zh-rTW/strings.xml`，只含約 40 條：`pref__other__settings_language__label`、設定首頁標題、Dictate 主要頁面標題、含 `%1$s` / `{app_name}` 的字串、1 個 plural
   - 保留 `comment` 屬性與 placeholder；其餘未翻條目**刻意不放**（用來驗證退回英文）
   - 語法層：`xmllint --noout` 通過
   - **⚠️ 真正的驗收不在這裡**：語法通過**不等於**命名有效。**B0 的驗收點 = C3 的「B0 階段驗收」**（見 2.4）—— 裝機後確認「已翻條目顯示繁中、未翻條目退回英文、無崩潰」。
     → 依 2.0.1，C3 未通過前不得進入 B2 全量。
-- [ ] **B0b** 建驗證腳本 **`tools/check-l10n.py`**：比對 key 集合、placeholder、`comment` 保留數、plurals
+- [x] **B0b** 建驗證腳本 **`tools/check-l10n.py`**：比對 key 集合、placeholder、`comment` 保留數、plurals
+  - ✅ 2026-11-20 完成。用法：`python3 tools/check-l10n.py`（寬鬆，B0 階段）/ `--strict`（B5）/ `--module app|wear|all` / `--locale <dirname>`
+  - 檢查：XML 合法性、key 集合（missing/extra）、placeholder（`{name}` 與 `%N$s`）、comment 保留、plurals quantity 結構
+  - 負向測試已做：多出 key ✅ 抓到、placeholder 不符 ✅ 抓到、comment 被丟 ✅ 抓到
+  - ⚠️ **基準數字以本腳本輸出為準**：`grep -o ' comment="'` 會把「XML 註解裡出現的同樣字面文字」也算進去 —— base 兩種算法都是 1618（1614 條在 `<string>`、4 條在 `<plurals>`），但我們的 zh-rTW 檔頭註解裡有 `comment="..."` 這段字 → grep 會算成 42、script 算 41（41 才對）
   - ⚠️ **檔名已統一為 `tools/check-l10n.py`**（2026-11-20 複查修正；原 CLAUDE.md 寫的 `tools/check_zh_tw.py` 已改）。理由：要同時驗 app + wear 兩個模組，名字得是通用的。
   - **基準數字一律動態取自當下的 base**（不要寫死任何數字 —— 上游還在動，`strings.xml` 11 月改了 30 次）。輸出為準。
 - [ ] **B1** 建立台灣用語 glossary（英文 → 台灣繁中），以 1.3 對照表為底
@@ -617,7 +640,8 @@ git push origin pr/zh-tw-ui
 
 > 這是整個計畫的**樞紐**。沒有這一步，後面的 issue 與 PR 都只是「我打算做」。
 
-- [ ] **C1** 在 `OtherScreen.kt` 的語言 tag 清單加入 `"zh-TW"`（清單目前 40 個 tag，`zh-CN` 在最後）
+- [x] **C1** 在 `OtherScreen.kt` 的語言 tag 清單加入 `"zh-TW"`（清單目前 40 個 tag，`zh-CN` 在最後）
+  - ✅ 2026-11-20 完成：`OtherScreen.kt:162`（緊接 `"zh-CN",` 之後）。tag 數 40 → **41**（+ `auto` = 42 項），已確認無重複
   - `FlorisLocale.fromTag("zh-TW")` 會解析成 `Locale("zh","TW")` ✅（複查確認：`DELIMITER_SPLITTER` 同時接受 `-` 與 `_`；`languageTag()` 回傳 `"zh-TW"`，與既有 `"zh-CN"` 同一格式）
   - 顯示名稱由 `locale.displayName()` 產生，無需自訂
   - `FlorisAppActivity.kt:101-105` 已監聽 `prefs.other.settingsLanguage` 並即時 `createConfigurationContext` → **不需重啟 App 即生效**
