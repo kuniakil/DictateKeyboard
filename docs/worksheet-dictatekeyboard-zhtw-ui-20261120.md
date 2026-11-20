@@ -376,17 +376,38 @@ Nextcloud `文件/` 內有 `app-debug.apk`（174 MB，2026-11-17 03:30）與 `ba
 | repo 內是否有簽章檔 | ❌ 無。`git log --all --diff-filter=A` 只找到 `keystore.properties.template` |
 | `.gitignore` | 已排除 `*.jks` / `*.keystore` / `keystore.properties`（第 55–57 行） |
 
-#### 簽名一致的機制（為什麼每次 build 出來的 APK 都能覆蓋升級）
+#### ⚠️ 簽名一致的機制 —— **原推論已被實測推翻（2026-11-20）**
 
-```
-1. build-apk.yml「Restore fixed debug keystore」步驟
-     printf "%s" "$KEYSTORE_B64" | base64 -d > ~/.android/debug.keystore
-     （每次 CI 都從 secret 還原同一把金鑰到同一個路徑）
-2. app/build.gradle.kts 的 debug buildType **沒有指定 signingConfig**
-     → Gradle 自動採用預設的 ~/.android/debug.keystore
-3. 結果：每次 Actions build 產出的 debug APK 簽名完全一致
-   → 手機上可直接覆蓋安裝，App 設定（API Key、Custom words、學詞庫…）全部保留
-```
+> ❌ **舊版寫法（從 workflow 內容推論、從未實測）**：
+> ```
+> 1. build-apk.yml「Restore fixed debug keystore」步驟
+>      printf "%s" "$KEYSTORE_B64" | base64 -d > ~/.android/debug.keystore
+> 2. app/build.gradle.kts 的 debug buildType 沒有指定 signingConfig
+>      → Gradle 自動採用預設的 ~/.android/debug.keystore
+> 3. 結果：每次 Actions build 產生的 debug APK 簽名完全一致  ← ❌ 錯的
+> ```
+>
+> **2026-11-20 實測**（自寫 APK v2 簽章區塊解析器，抽出憑證 DER 後算 SHA-256）：
+>
+> | APK | 來源 | 憑證 SHA-256 |
+> |---|---|---|
+> | `build-0322.apk` | run `44009692941`（11-17 03:22，**還沒有**金鑰還原步驟）＝ Nextcloud `文件/app-debug.apk`（03:30）＝ **使用者手機上原本裝的那個** | `70b532e408b7741366c592b690ff925ac9632e1dc7af2c8da1d4a9be06ca3b4c` |
+> | `build-0438.apk` | run `44018608499`（11-17 04:38）＝ Release `v6.4.0-apk` 的資產 | `99ff6f6eaf6c70c856bb36dd7a4bbbae74ba9dea314ef448cdb1dd1ffc0d176d` |
+> | `new-branch.apk` | run `44660451431`（11-20 02:23，分支 `feat/zh-tw-ui`）＝ `v6.4.0-apk-feat-zh-tw-ui` | `aea57f700f2ec5da2f1ba2f3acbc03611e06902291a7fac6f26b546805e11626` |
+>
+> **三份 APK、三個不同憑證。** 且 Secret 的 `updated_at` 自 2026-11-17T04:36:25Z 起**從未改變**（`gh api .../actions/secrets` 實查）→ 不是 secret 被換掉。
+>
+> **結論（待 CI 診斷 run 最終確認）**：「還原金鑰」步驟寫進了 `$HOME/.android/debug.keystore`，但 **AGP 並沒有用那一把**（推測是 `ANDROID_USER_HOME` 指向 runner 映像裡的另一個路徑，AGP 便在每次全新 runner 上自動產生新的 debug 金鑰）→ **每次 build 的簽章都不同** → **每次升級都得 uninstall**，App 設定與自訂詞庫每次都會消失。
+>
+> **後果（已發生）**：使用者 2026-11-20 從 `v6.4.0-apk-feat-zh-tw-ui` 覆蓋安裝失敗，必須先 uninstall 再裝 → App 設定與自訂詞庫**已遺失一次**。
+>
+> **修法（不改 app 程式碼，避免污染 PR diff）**：
+> - 建置時加上 Gradle 的簽章注入參數，把簽章明確指到還原回來的金鑰：
+>   `-Pandroid.injected.signing.store.file=... -Pandroid.injected.signing.store.password=android`
+>   `-Pandroid.injected.signing.key.alias=androiddebugkey -Pandroid.injected.signing.key.password=android`
+> - 並設 `ANDROID_USER_HOME=$HOME/.android`
+> - 修正後的憑證會是**第四把鑰** → 手機上目前那把（`aea57f70…`）又不匹配 → **還需要再 uninstall 一次**。所以要在大量迭代之前一次修好。
+> - 修好後應把金鑰**備份到本機**（`~/DictateKeyboard-secrets/`）—— 原本「暫緩」的 1.5 節備份作業因此有了實質理由（GitHub Secret 不可逆讀取）。
 
 > 註：`keystore.properties.template` 是**上游給 Play 發行用的 upload key** 模板，與我們這把 debug 金鑰是**兩把不同的鑰匙**，別搞混。上游的 upload key 不在我們手上，也不該有。
 
