@@ -109,6 +109,12 @@
         "direction": "ltr"
       },
       {
+        "id": "cangjie",
+        "label": "倉頡 (Cangjie)",
+        "authors": [ "kuniakil" ],
+        "direction": "ltr"
+      },
+      {
         "id": "catalan",
         "label": "Catalan (QWERTY)",
         "authors": [ "mikelloc" ],
