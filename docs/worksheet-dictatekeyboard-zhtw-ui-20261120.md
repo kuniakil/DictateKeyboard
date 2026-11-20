@@ -17,7 +17,7 @@
 |---|---|
 | 本機 repo | ✅ `~/DictateKeyboard`（origin = 我們的 fork，upstream = 上游） |
 | 當前分支 | `main`（✅ **2026-11-20 架構升級**：已合併 `feat/zh-tw-ui`，升級為「自用全功能整合主幹」= `upstream/main` + CI + `l10n/` 工具鏈 + 工作表 + 繁中 UI） |
-| PR 專用分支 | `pr/zh-tw-ui`（`e952b131`，基於 `upstream/main` `84adfa99`，嚴格 4 檔乾淨 diff；未來新功能比照從 `upstream/main` 獨立切 `pr/<feature>`，並單向 `merge` 回 `main` 自用） |
+| PR 專用分支 | • `pr/zh-tw-ui`（`e952b131`，基於 `upstream/main` `84adfa99`，嚴格 4 檔乾淨 diff）<br>• `pr/cangjie-layout`（`3c3a7a5a`，基於 `upstream/main` `84adfa99`，嚴格 3 檔乾淨 diff：倉頡字根 `cangjie.json` + `zh-TW-*` 貨幣 `dollar`，已單向 `merge` 回 `main`） |
 | Phase A | ✅ A0/A1/A2/A3 完成（`docs/zh-TW-ui-contribution.md` 已建立） |
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
 | Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對，並建置乾淨圖床分支 `assets/zh-tw-screenshots`） |
@@ -887,7 +887,12 @@ git push origin pr/zh-tw-ui
 ### 2.8 Phase F — 之後才做（順序不變）
 
 - [ ] **F1**（原 P3）繁中實用 Rewording Prompts → 依 `schema.json` 放進 `prompt-library` 的 `submissions/` → 提 PR（CI 跑 `validate.py`）。**注意：此項與 Phase E 的上游互動經驗直接相關，應在 E 之後。**
-- [ ] **F2**（原 P2）倉頡字根顯示 + `zh-TW-*` 預設貨幣修正 → **先開 issue 討論再寫碼**。需自建 `characters/cangjie.json`（label=字根、code=字母）+ 接進 `extension.json` + 確認 Kotlin 版 layout loader 行為（上游本來就沒倉頡 layout，屬「上游可能不收」類型）。另已於 2026-11-20 實測查證：`app/src/main/assets/ime/keyboard/org.florisboard.localization/extension.json` 第 775 行（`zh-TW-boshiamy`）與第 790 行（`zh-TW-cangjielarge`）將 `currencySet` 設為 `org.florisboard.currencysets:yen`（$ 顯示為 ¥）而非 `org.florisboard.currencysets:dollar`；故意不混入 `pr/zh-tw-ui`，留待本項或獨立小 PR 處理（手機端可先於「設定 → 語言與配置 → 子類型 → 貨幣符號集」改選 `Dollar ($)`）。
+- [x] **F2**（原 P2）倉頡字根顯示 + `zh-TW-*` 預設貨幣修正 ✅ **2026-11-20 完成實作（分支 `pr/cangjie-layout`，commit `3c3a7a5a`，已單向合入 `main`）**
+  - 經實查現有引擎（`TextKeyData.kt`、`HanShapeBasedLanguageProvider.kt`、`han.sqlite3`）後確認**無需修改 Kotlin 碼**，只新增/調整 3 個 JSON 設定檔：
+    1. 新增 `app/src/main/assets/ime/keyboard/org.florisboard.layouts/layouts/characters/cangjie.json`：採選項 A（`case_selector`）—— 一般狀態顯示標準 Gboard 倉頡字根（手田水口廿卜山戈人心 / 日尸木火土竹十大中 / 重難金女月弓一）並送出小寫 ASCII `a`–`z`；按 Shift 時切換顯示大寫英文字母 `Q`–`M`（`A`–`Z`）。
+    2. `app/src/main/assets/ime/keyboard/org.florisboard.layouts/extension.json`：在 `layouts.characters` 註冊 `"id": "cangjie", "label": "倉頡 (Cangjie)"`。
+    3. `app/src/main/assets/ime/keyboard/org.florisboard.localization/extension.json`：將 `zh-TW-cangjielarge` 的 `preferred.characters` 改為 `org.florisboard.layouts:cangjie`，並將 `zh-TW-boshiamy` 與 `zh-TW-cangjielarge` 的 `currencySet` 由 `org.florisboard.currencysets:yen` 改為 `org.florisboard.currencysets:dollar`。
+  - 獨立乾淨分支 `pr/cangjie-layout` 已推上 `origin`（隨時可開獨立 PR），並已單向 `merge` 進 `main` 供自用出包（裝機後舊有子類型需於「設定 → 語言與配置 → 字元配置」改選「倉頡 (Cangjie)」或重加子類型）。
 - [ ] **F3**（原 P4）Feature request：dictation 文字進學詞庫 + 社群共享字典。前提已驗證成立（`LearnedWordsStore.note()` 只被 `LatinLanguageProvider` 呼叫）。
 - [ ] **F4** OpenTypeless 備份清理（`~/Library/Application Support/com.opentypeless.app/backups/`，實測 4.4 MB，2026-11-17 建立）→ 觀察 1–2 週穩定後可刪
 

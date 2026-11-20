@@ -45,7 +45,7 @@ Fork 的兩個目的：
 | 分支 | 角色 | 能直接開 PR？ |
 |---|---|---|
 | `main` | **自用全功能整合主幹（Integration Branch）** = `upstream/main` + 我們的 CI（`build-apk.yml`）+ 翻譯工具鏈（`l10n/`、`tools/`）+ 工作表/文件 + 所有自用功能（已合入 `feat/zh-tw-ui` 繁中 UI）。Actions 直接在此出全功能繁中 APK（`v6.4.0-apk`）；上游升版時直接在此 `git fetch upstream && git merge upstream/main` | ❌ 含 `build-apk.yml` 與多項自用內容 |
-| `pr/<feature>`（目前：`pr/zh-tw-ui`） | **提 PR 專用乾淨分支（Topic Branches）**，一律從 `upstream/main` 切出，嚴格只含單一功能改動（不含 CI、不含工作表、不含其他功能）。`pr/zh-tw-ui`（`e952b131`）基於 `upstream/main` `84adfa99`，diff 嚴格 4 檔（app XML / wear XML / `OtherScreen.kt` 1 行 / `docs/zh-TW-ui-contribution.md`）。做完後單向 `git merge pr/<feature>` 進 `main` 即可自用，無需等作者回覆；各功能獨立提 PR | ✅ |
+| `pr/<feature>`（目前：`pr/zh-tw-ui`、`pr/cangjie-layout`） | **提 PR 專用乾淨分支（Topic Branches）**，一律從 `upstream/main` 切出，嚴格只含單一功能改動（不含 CI、不含工作表、不含其他功能）。`pr/zh-tw-ui`（`e952b131`）基於 `upstream/main` `84adfa99`，diff 嚴格 4 檔（app XML / wear XML / `OtherScreen.kt` 1 行 / `docs/zh-TW-ui-contribution.md`）；`pr/cangjie-layout`（`3c3a7a5a`）含倉頡字根配置 `cangjie.json` 與 `zh-TW-*` 貨幣 `dollar`（嚴格 3 檔，已單向 merge 進 `main`）。做完後單向 `git merge pr/<feature>` 進 `main` 即可自用，無需等作者回覆；各功能獨立提 PR | ✅ |
 | `feat/zh-tw-ui` | 階段性開發分支（已於 2026-11-20 合併入 `main`；歷史 Release `v6.4.0-apk-feat-zh-tw-ui` 指向此分支，日常作業已轉回 `main`） | ❌ 同 `main` |
 | `assets/zh-tw-screenshots` | 圖床分支（`465ad80a`），6 張截圖供 `#492` / PR 引用 | — |
 
