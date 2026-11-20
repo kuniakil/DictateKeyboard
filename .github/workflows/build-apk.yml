@@ -101,6 +101,6 @@ jobs:
           else
             gh release create "$TAG" "$APK_FILE" \
               --title "DictateKeyboard v${VERSION} (APK)" \
-              --notes "Auto-built Debug APK with fixed signing keystore." \
+              --notes "Unofficial personal fork debug build (for personal use and zh-TW localization testing). Not an official release of DevEmperor/DictateKeyboard — please support the original author by purchasing the official app on Google Play: https://play.google.com/store/apps/details?id=net.devemperor.dictate" \
               --target "$BRANCH"
           fi
