@@ -909,7 +909,7 @@ git push origin pr/zh-tw-ui
 
 ### 2.8 Phase F — 之後才做（順序不變）
 
-- [ ] **F1**（原 P3）繁中實用 Rewording Prompts → 依 `schema.json` 放進 `prompt-library` 的 `submissions/` → 提 PR（CI 跑 `validate.py`）。**注意：此項與 Phase E 的上游互動經驗直接相關，應在 E 之後。**
+- [ ] **F1**（原 P3）繁中實用 Rewording Prompts → 依 `schema.json` 放進 `prompt-library` 的 `submissions/` → 提 PR（CI 跑 `validate.py`）。**注意：此項與 Phase E 的上游互動經驗直接相關，應在 E 之後。**<br>📌 **2026-11-21 戰略定位**：本項是「**把繁中經驗送進上游的低風險通道**」—— 它貢獻的是**素材**（可重複使用的繁中潤色 Prompt），進的是**作者自己建的**社群 prompt library。作者與其他貢獻者皆為西方使用者、東方語系需求不會被自己想到（見 Part 4 Q8 ④），而這條路徑**只會讓他的功能對 zh-TW 使用者更好用**，不涉及 APK 生意 → 貢獻者身分無害、且正是社群該做的事。
 - [x] **F2**（原 P2）倉頡字根顯示 + `zh-TW-*` 預設貨幣修正 ✅ **2026-11-20 完成實作（分支 `pr/cangjie-layout`，commit `3c3a7a5a`，已單向合入 `main`）**
   - 經實查現有引擎（`TextKeyData.kt`、`HanShapeBasedLanguageProvider.kt`、`han.sqlite3`）後確認**無需修改 Kotlin 碼**，只新增/調整 3 個 JSON 設定檔：
     1. 新增 `app/src/main/assets/ime/keyboard/org.florisboard.layouts/layouts/characters/cangjie.json`：採選項 A（`case_selector`）—— 一般狀態顯示標準 Gboard 倉頡字根（手田水口廿卜山戈人心 / 日尸木火土竹十大中 / 重難金女月弓一）並送出小寫 ASCII `a`–`z`；按 Shift 時切換顯示大寫英文字母 `Q`–`M`（`A`–`Z`）。
@@ -951,7 +951,7 @@ git push origin pr/zh-tw-ui
 | Q5 | TODO.md 的 P1 條目 | ✅ **已結案（2026-11-20 補勾）**<br>**TODO.md 位置已確認**：不在本 repo，而在 **`~/kubernetes/TODO.md`**（第 52–65 行的 DictateKeyboard 區塊）。<br>「零衝突不改 Kotlin 碼」的錯誤假設**早已修正並寫入** `~/kubernetes/TODO.md` 第 56 行（明載需動 `OtherScreen.kt` 一行）→ 本項實質工作已完成。<br>（同日亦已把該處 P1 狀態由「進行中」更新為「✅ 已完成（截至 E2）／⏳ 等作者回覆 #492 後開 PR」。） |
 | Q6 | 驗證腳本檔名 | ✅ **統一為 `tools/check-l10n.py`**（2026-11-20 複查；原 CLAUDE.md 的 `tools/check_zh_tw.py` 已同步更正） |
 | Q7 | Release 資產備份 | ✅ **不必備份**（2026-11-20 複查）：分支建置已用獨立 tag `v6.4.0-apk-<分支名>`，不會動 `v6.4.0-apk`；只有刻意在 `main` 上跑才會 clobber。CLAUDE.md 的舊警告已同步移除 |
-| Q8 | 本地 STT 無法輸出繁體（2026-11-21 新增） | ✅ **不向作者開新 issue、不主動要求上游做「本地簡繁轉換」** → 只在 `#483` 回覆 `crazywing` 分享用法（Groq ＋ Gemini 免費額度 ＋ 繁中潤色設定），**不把功能需求丟給作者**。<br>**理由**：① 作者賣的是**付費 APK**，本地/雲端 STT 的取捨是使用者自己的 BYOK 選擇，推廣免費額度用法不會動到他的生意；② 作者更新頻繁、很可能已看到 `#483`，此時主動加需求容易被解讀成搶球；③ 純技術事實（本地無 prompt 通道）對 `crazywing` 而言只是「找不到開關」，不構成對作者的要求。<br>→ 該項改為**我們自己的 TODO（F5）**，技術事實與證據見 **1.7**。 |
+| Q8 | 本地 STT 無法輸出繁體（2026-11-21 新增） | ✅ **不向作者開新 issue、不主動要求上游做「本地簡繁轉換」** → 只在 `#483` 回覆 `crazywing` 分享用法（Groq ＋ Gemini 免費額度 ＋ 繁中潤色設定），**不把功能需求丟給作者**。<br>**理由**：① 作者賣的是**付費 APK**，本地/雲端 STT 的取捨是使用者自己的 BYOK 選擇，推廣免費額度用法不會動到他的生意；② 作者更新頻繁、很可能已看到 `#483`，此時主動加需求容易被解讀成搶球；③ 純技術事實（本地無 prompt 通道）對 `crazywing` 而言只是「找不到開關」，不構成對作者的要求；④ **語系視野外（2026-11-21 判斷）** —— 作者（德國人）與其他貢獻者皆為西方使用者，「繁體中文」這類**東方語系的字形／繁簡問題不在其使用情境內**，**不會被自己想到** → 與其等他靈光一現，更務實的是走「**素材貢獻**」路線（見 **F1**）：把繁中潤色 Prompt 投稿進**他自己建的**社群 prompt library，用「幫他把功能做得好用」的方式貢獻，而不是帶著我們的成品去要求他改。<br>→ 該項改為**我們自己的 TODO（F5）**，技術事實與證據見 **1.7**。 |
 
 ---
 
