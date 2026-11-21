@@ -33,6 +33,17 @@ more speech engines, in the cloud or on your phone.
 
 </div>
 
+> [!NOTE]
+> **This repository is an unofficial fork** of
+> [DevEmperor/DictateKeyboard](https://github.com/DevEmperor/DictateKeyboard), maintained by
+> [@kuniakil](https://github.com/kuniakil) for **Traditional Chinese (Taiwan)** users.
+> It is not affiliated with or endorsed by the upstream author, and it is **free and not for sale** —
+> please support the original author by
+> [buying the app on Google Play](https://play.google.com/store/apps/details?id=net.devemperor.dictate)
+> or [sponsoring him on GitHub](https://github.com/sponsors/DevEmperor).
+> Licensed under Apache-2.0, as the original. See [`README-fork.md`](README-fork.md) for what this fork
+> changes, how to install it, and the attribution notices.
+
 ---
 
 ## 🎬 See it in action

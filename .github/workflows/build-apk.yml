@@ -96,11 +96,45 @@ jobs:
             TAG="v${VERSION}-apk-${SAFE_BRANCH}"
           fi
           APK_FILE=$(ls app/build/outputs/apk/debug/*.apk | head -n 1)
+
+          # Apache-2.0 §4(b)/(d): a binary distribution must state what the fork
+          # changed and ship the upstream attribution notices next to it. Both files
+          # are attached to every release, so the obligations hold for every build
+          # and not only for the ones somebody remembers to document.
+          cp NOTICE NOTICE.txt
+          NOTES_FILE="release-notes.md"
+          cat > "$NOTES_FILE" <<'NOTES'
+          Unofficial personal fork debug build (for personal use and zh-TW localization testing). Not an official release of DevEmperor/DictateKeyboard — please support the original author by purchasing the official app on Google Play: https://play.google.com/store/apps/details?id=net.devemperor.dictate
+
+          ### What this fork changed (Apache-2.0 §4(b))
+
+          The complete file-by-file list is attached as `MODIFICATIONS.md`. In short:
+
+          | # | Area | Change |
+          |---|---|---|
+          | 1 | App UI | New `values-zh-rTW` locale — Traditional Chinese (Taiwan): 2547 strings + 11 plurals |
+          | 2 | Watch UI | New `values-zh-rTW` locale for the watch — 69 strings |
+          | 3 | Language picker | One line added: the `zh-TW` tag, so the app can be switched to 中文 (台灣) |
+          | 4 | Typing layout | New Cangjie (倉頡) radical character layout |
+          | 5 | zh-TW defaults | The `zh-TW-*` typing subtypes use `$` instead of `¥`; Cangjie as default layout |
+          | 6 | Build & release | This workflow — a signed debug APK published on GitHub Releases (upstream publishes no APK there) |
+          | 7 | Toolchain | The localisation scripts, translation data and Taiwan-usage glossary that produced and check the zh-TW strings |
+
+          ### Attribution (Apache-2.0 §4(d))
+
+          The upstream `NOTICE` file is attached to this release unchanged as `NOTICE.txt`; the Apache-2.0 text also ships inside the app (*Settings → About → Open source licenses*).
+
+          Apache-2.0 grants no trademark rights, so this build is marked unofficial, uses the application id `net.devemperor.dictate.debug`, and installs **next to** the official app instead of replacing it. The on-device models are downloaded at runtime from the upstream project's releases — no model weights are redistributed here.
+          NOTES
+
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$APK_FILE" --clobber
+            gh release upload "$TAG" NOTICE.txt --clobber
+            gh release upload "$TAG" docs/fork/MODIFICATIONS.md --clobber
+            gh release edit "$TAG" --notes-file "$NOTES_FILE"
           else
-            gh release create "$TAG" "$APK_FILE" \
+            gh release create "$TAG" "$APK_FILE" NOTICE.txt docs/fork/MODIFICATIONS.md \
               --title "DictateKeyboard v${VERSION} (APK)" \
-              --notes "Unofficial personal fork debug build (for personal use and zh-TW localization testing). Not an official release of DevEmperor/DictateKeyboard — please support the original author by purchasing the official app on Google Play: https://play.google.com/store/apps/details?id=net.devemperor.dictate" \
+              --notes-file "$NOTES_FILE" \
               --target "$BRANCH"
           fi
