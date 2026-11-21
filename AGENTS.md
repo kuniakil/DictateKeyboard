@@ -15,6 +15,7 @@
 > **⚠️ 當前狀態（2026-11-20）**：**繁體中文（台灣）介面已全部完成**（app 2547 strings + 11 plurals、wear 69 條、台灣用語校訂、實機驗收、雲端出包、簽章備份）。
 > **上游互動停在「等作者回覆」**：已於 [#483](https://github.com/DevEmperor/DictateKeyboard/issues/483) 留言並開立 Issue **[#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)**，**PR 尚未開立**（上游 `author:kuniakil` 的 PR 數 = 0）。
 > **📌 已定案（2026-11-20）：不搶先開 PR，等作者回覆。** 分支 `pr/zh-tw-ui` 維持待命，作者回覆歡迎時再開（文案 = `docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3**）。等待期間推進 Phase F。詳見工作表 Part 0「📌 2026-11-20 決策」節與「作者回覆後的應對決策表」（情境 1–7）。
+> **📌 2026-11-21 決策：不向作者追加需求。** 已回覆 `#483` 中 `crazywing` 的回報（只分享 Groq ＋ Gemini 免費額度用法，**不**替他／替作者開功能需求）→ 理由與「本地 STT 無法輸出繁中」的完整證據見工作表 **Part 4 Q8** 與 **Part 1 §1.7**；該功能改列為我們自己的 TODO（**Phase F / F5**）。
 
 Fork 的兩個目的：
 1. **產 APK** —— 作者只在 Play 上架付費版、GitHub Releases 不附 APK。我們用 GitHub Actions 雲端編譯 debug APK（固定簽章 → 可覆蓋升級）。
@@ -27,7 +28,7 @@ Fork 的兩個目的：
 **`docs/worksheet-dictatekeyboard-zhtw-ui-20261120.md`** —— 完整工作表（983 行）。內含：
 
 - **Part 0 交接說明** —— 當前狀態、**作者回覆後的應對決策表（情境 1–7）**、不要再踩的坑 ⬅️ **先看這裡**
-- Part 1 調查結果（三個決定性發現、工程事實、台灣用語表、2026-11-17 操盤歷史查證、簽章金鑰位置、分支架構）
+- Part 1 調查結果（三個決定性發現、工程事實、台灣用語表、2026-11-17 操盤歷史查證、簽章金鑰位置、分支架構、**§1.7 本地 STT 無 prompt 通道**）
 - Part 2 計畫（Phase A–F，每項都是可勾選的 checkbox）
 - Part 3 風險、Part 4 已定案事項、Part 5 可重跑的驗證指令
 

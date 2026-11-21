@@ -77,3 +77,16 @@ OpenClaw, Hermes, Dify, Antigravity, OpenTypeless, Gemini, n8n, K3s, K9s, Docker
 - **下載新版 APK**：直接到本倉庫的 [Releases](https://github.com/kuniakil/DictateKeyboard/releases) 下載 `app-debug.apk`（已使用固定簽章金鑰打包，日後可直接覆蓋升級保留設定）。
 - **上游同步**：在 GitHub 點右上角 `Sync fork` → `Update branch`，再到 Actions 執行 `Build Android APK` 即可。
 - **備份提醒**：App 內的 Backup 若未勾選包含憑證，還原後需重新填入 Groq 與 Gemini API Key。
+
+---
+
+## 7. 本地（離線）轉錄的限制
+
+若把 Transcription 改成**本地模型**（例如 SenseVoice Small）：
+
+- **風格提示對本地模型無效** —— `Custom style prompt` 是送給雲端 STT 的 `prompt` 欄位（Whisper 家族的「前文偏置」）；本地引擎（sherpa-onnx 的離線 SenseVoice / Whisper）**沒有**這個輸入欄位，app 也不會把提示詞交給它。
+- **本地輸出必然是簡體** —— SenseVoice 的中文權重就是簡體，且 app 目前**沒有**簡→繁轉換功能。
+- **但改寫層照樣有效** —— 步驟 5 的「自動套用」提示是跑在**轉錄完成之後**的，與轉錄服務商無關（本地／雲端一視同仁），所以「本地轉錄 ＋ Gemini 潤色」一樣會輸出繁體中文。
+- **純離線（連改寫都不用雲端）**：只能用第 4 步的 Mappings 做簡→繁逐詞替換（離線、精準、零 token），但覆蓋率有限，一對多的字（如 髮/發、乾/幹）仍會錯。
+
+> 延伸閱讀：本 repo 的 `docs/worksheet-dictatekeyboard-zhtw-ui-20261120.md` §1.7 記錄了完整的實查證據（app 層／引擎層／模型層），Phase F 的 **F5** 則是「加一個轉繁體開關」的待辦。

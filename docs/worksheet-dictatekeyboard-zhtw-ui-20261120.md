@@ -27,6 +27,7 @@
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
 | 2026-11-20 二次複查 | ✅ 已完成，9 項落差已修正（清單見下方「二次複查修正」表） |
 | 2026-11-20 三次複查 | ✅ 已完成，**5 項落差已修正**（重點：確認**上游尚無我們的 PR**；清單見下方「三次複查修正」表） |
+| 2026-11-21 上游互動 | 🔄 **已回覆 `#483` 中 `crazywing` 的回報**（分享 Groq ＋ Gemini 免費額度用法與繁中潤色設定）→ **未**向作者提出本地 STT 簡繁轉換功能（決策見 Part 4 Q8）→ 該項列為我們自己的 TODO（**F5**；技術事實與證據見 **1.7**） |
 
 ### 🔵 當前階段（2026-11-20，上游已接洽 → 等待 `DevEmperor` 回覆 `#492`）
 
@@ -551,6 +552,28 @@ fi
 
 實測：`main` → `v6.4.0-apk`（既有資產不動）／`feat/zh-tw-ui` → `v6.4.0-apk-feat-zh-tw-ui`
 
+#### 1.7 本地 STT 無法注入提示詞（2026-11-21 實查 —— **不要重查**）
+
+**結論**：本地（sherpa-onnx）轉錄路徑**沒有 prompt 通道**，且 app **沒有任何簡→繁轉換** → zh-TW 使用者用本地模型只能拿到簡體。這是**引擎層限制**，不是使用者設定沒設對（上游 issue `#483` 的 `crazywing` 即為此情形）。
+
+| 層 | 證據 | 結論 |
+|---|---|---|
+| App | `app/.../dictate/provider/LocalTranscriptionProvider.kt:146-156` —— `transcribe()` 只讀 `request.audioFile` + `request.language` | `request.prompt` **從未被讀**（`DictateController.kt:2229` 有塞，但本地分支 `2236-2246` 整包丟掉） |
+| 引擎 | sherpa-onnx **1.13.3**（`app/build.gradle.kts:283`）：`OfflineSenseVoiceModelConfig` 只有 `model` / `language` / `use_itn` / `qnn_config`；`OfflineWhisperModelConfig` 亦無 prompt 欄位 | **即使 app 端送了，引擎也無處可放** |
+| 模型 | SenseVoice 的中文權重就是簡體；全 repo grep 無 OpenCC / t2s / s2t | 輸出簡體是必然 |
+| 語言碼 | `recognizerLanguage()` 砍掉 region → `"zh-TW"` → `"zh"`；`senseVoiceLanguage("zh")` → `"zh"` | 連 region 都沒了 |
+
+**但「拿不到繁體」≠「沒救」**：`postProcessTranscript`（`DictateController.kt:4851`）**與 provider 無關** → 「本地轉錄 ＋ 雲端改寫（Gemini ＋ 自動套用）」一樣得到繁體。純離線則只能用「自訂替換規則」（`data/mappings/DictateMappings.kt:65`）做簡→繁逐詞替換（覆蓋率有限、一對多字如 髮/發、乾/幹 會錯）。
+
+**順帶查到的四個事實**：
+
+1. 內建**預設** style prompt 已有 zh-TW 繁體版：`DictatePromptDefaults.kt:334` → `"zh-tw" to "你好。非常感謝。"` → 雲端其實不必自訂。
+2. 風格提示是**弱偏置**（Whisper 當它是「前文」，對短句影響最大）→ 保證繁體要靠改寫層。
+3. ⚠️ 改寫層是**有條件的**：Gemini 掛掉／沒 key → 原文（簡體）直接進框，只留一行「改寫失敗 – 已插入原始文字」（`dictate__notice_rewording_failed`）。
+4. ⚠️ 雲端失敗會**自動 fallback 到本地**（`DictateController.kt:2293`）→ 靜默變成簡體，使用者不易察覺。
+
+**可自我驗證的兩個入口**：`Dictate → 統計 → 改寫次數`（每次改寫 +1）與 `Dictate → 歷史`（有改寫時會同時保留**原始 transcript** 與最終文字，可直接比對繁簡）。
+
 ---
 
 ## Part 2 — 計畫（2026-11-20 修訂版）
@@ -897,6 +920,7 @@ git push origin pr/zh-tw-ui
   - ✅ **實機覆蓋安裝與選字列驗證通過（2026-11-20）**：關閉 Smartbar 一次性 SayOVA 推播（`PromoKind.SAYOVA`）並於「設定 → 建議」開啟「忽略關閉建議的應用程式」後，倉頡字根、Shift 切換大寫英文字母、`$` 貨幣符號與候選字清單均正常運作。
 - [ ] **F3**（原 P4）Feature request：dictation 文字進學詞庫 + 社群共享字典。前提已驗證成立（`LearnedWordsStore.note()` 只被 `LatinLanguageProvider` 呼叫）。
 - [ ] **F4** OpenTypeless 備份清理（`~/Library/Application Support/com.opentypeless.app/backups/`，實測 4.4 MB，2026-11-17 建立）→ 觀察 1–2 週穩定後可刪
+- [ ] **F5**（2026-11-21 新增）**本地 STT 的繁中支援**：本地路徑**無 prompt 通道、無簡→繁轉換**（詳見 **1.7**）→ zh-TW 使用者用本地模型只能得到簡體。未來可做：**(a)** 在本地轉錄輸出端加「**轉繁體（台灣用語）**」開關（OpenCC 式字表／轉換器，可在我們的 fork 內完成，不必改引擎）；**(b)** 日後視作者回覆情形，再決定是否向上游提案。📌 **2026-11-21 決策：暫不主動向作者提出**（見 Part 4 Q8），先記為我們自己的 TODO。
 
 ---
 
@@ -927,6 +951,7 @@ git push origin pr/zh-tw-ui
 | Q5 | TODO.md 的 P1 條目 | ✅ **已結案（2026-11-20 補勾）**<br>**TODO.md 位置已確認**：不在本 repo，而在 **`~/kubernetes/TODO.md`**（第 52–65 行的 DictateKeyboard 區塊）。<br>「零衝突不改 Kotlin 碼」的錯誤假設**早已修正並寫入** `~/kubernetes/TODO.md` 第 56 行（明載需動 `OtherScreen.kt` 一行）→ 本項實質工作已完成。<br>（同日亦已把該處 P1 狀態由「進行中」更新為「✅ 已完成（截至 E2）／⏳ 等作者回覆 #492 後開 PR」。） |
 | Q6 | 驗證腳本檔名 | ✅ **統一為 `tools/check-l10n.py`**（2026-11-20 複查；原 CLAUDE.md 的 `tools/check_zh_tw.py` 已同步更正） |
 | Q7 | Release 資產備份 | ✅ **不必備份**（2026-11-20 複查）：分支建置已用獨立 tag `v6.4.0-apk-<分支名>`，不會動 `v6.4.0-apk`；只有刻意在 `main` 上跑才會 clobber。CLAUDE.md 的舊警告已同步移除 |
+| Q8 | 本地 STT 無法輸出繁體（2026-11-21 新增） | ✅ **不向作者開新 issue、不主動要求上游做「本地簡繁轉換」** → 只在 `#483` 回覆 `crazywing` 分享用法（Groq ＋ Gemini 免費額度 ＋ 繁中潤色設定），**不把功能需求丟給作者**。<br>**理由**：① 作者賣的是**付費 APK**，本地/雲端 STT 的取捨是使用者自己的 BYOK 選擇，推廣免費額度用法不會動到他的生意；② 作者更新頻繁、很可能已看到 `#483`，此時主動加需求容易被解讀成搶球；③ 純技術事實（本地無 prompt 通道）對 `crazywing` 而言只是「找不到開關」，不構成對作者的要求。<br>→ 該項改為**我們自己的 TODO（F5）**，技術事實與證據見 **1.7**。 |
 
 ---
 
