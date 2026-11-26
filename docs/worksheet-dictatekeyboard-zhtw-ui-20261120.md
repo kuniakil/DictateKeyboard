@@ -17,11 +17,11 @@
 |---|---|
 | 本機 repo | ✅ `~/DictateKeyboard`（origin = 我們的 fork，upstream = 上游） |
 | 當前分支 | `main`（✅ **2026-11-20 架構升級**：已合併 `feat/zh-tw-ui`，升級為「自用全功能整合主幹」= `upstream/main` + CI + `l10n/` 工具鏈 + 工作表 + 繁中 UI） |
-| PR 專用分支 | • `pr/zh-tw-ui`（`e952b131`，基於 `upstream/main` `84adfa99`，嚴格 4 檔乾淨 diff）<br>• `pr/cangjie-layout`（`3c3a7a5a`，基於 `upstream/main` `84adfa99`，嚴格 3 檔乾淨 diff：倉頡字根 `cangjie.json` + `zh-TW-*` 貨幣 `dollar`，已單向 `merge` 回 `main`） |
+| PR 專用分支 | • `pr/zh-tw-ui`（`e952b131`，**✅ 2026-11-26 已由上游作者直接合併為 `e8e1bdfb` 並隨 `v6.5.0` 釋出**）<br>• `pr/cangjie-layout`（`032c851f`，已 rebase 至 `upstream/main` `v6.5.0` `237a8ccd`，嚴格 3 檔乾淨 diff：倉頡字根 `cangjie.json` + `zh-TW-*` 貨幣 `dollar`，已合入 `main`） |
 | Phase A | ✅ A0/A1/A2/A3 完成（`docs/zh-TW-ui-contribution.md` 已建立） |
 | Phase B / D | ✅ **B0–B6、D1–D3 全數完成**（app 2547 strings + 11 plurals + 1618 comments；wear 69 strings；`--strict` 驗證通過） |
 | Phase C | ✅ **C1–C4 全數完成**（picker 顯示名稱：`中文 (台灣)`；12 張實機截圖已核對，並建置乾淨圖床分支 `assets/zh-tw-screenshots`） |
-| Phase E | 🔄 **E1a–E1e、E2a、E2b 已完成** —— 已於 #483 留言並開立 [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492)，目前 **E2c 等待作者回覆**（`pr/zh-tw-ui` 已就緒待命）。📌 **2026-11-20 決策：不搶先開 PR，等作者回覆**（見 Part 0 決策節） |
+| Phase E | ✅ **E1–E2 已結案** —— 上游作者 `DevEmperor` 於 2026-11-26 回覆 [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492#issuecomment-7187136156)，直接將 `pr/zh-tw-ui` 合併為 `e8e1bdfb`（保留原作者署名），正式將繁體中文（台灣）納入官方維護語言並於 `v6.5.0`（`237a8ccd`）釋出；#483 與 #492 皆已關閉。`main` 已於同日合併 `upstream/main`（`89ceb377`）升級至 `v6.5.0`。 |
 | 🚨 **PR 開立狀態** | ⚠️ **尚未開立 PR** —— 上游目前只有 **Issue `#492`** 與 `#483` 的留言，**沒有我們的 Pull Request**。<br>實查（2026-11-20）：`gh search prs --repo DevEmperor/DictateKeyboard "Traditional"` → 0；`gh api "search/issues?q=repo:DevEmperor/DictateKeyboard+is:pr+author:kuniakil"` → `total_count = 0`；上游 PR 總數 38 筆無 ours。<br>`pr/zh-tw-ui`（`e952b131`）**已推到我們的 fork**，diff 乾淨（4 檔），PR 文案＝`docs/upstream-outreach-drafts-20261120.md` 的 **Draft 3** → 隨時可開。 |
 | 簽章金鑰與 `main` | ✅ **`main` 已同步固定簽章 workflow**（`6a5a8112`）；**金鑰已加密匯出並備份至本機 `~/DictateKeyboard-secrets/debug.keystore`**（SHA-256 驗證通過，臨時分支與 run 已刪除） |
 | 執行順序 | ⚠️ **以 2.0.1「權威執行順序」為準**，不是下方 Phase 的字母順序 |
@@ -38,7 +38,7 @@
 | **簽章備份與 `main` 同步** | ✅ 完成（`main` commit `6a5a8112` 不觸發 CI、`v6.4.0-apk` 未動；本機備份 `~/DictateKeyboard-secrets/debug.keystore` 雜湊驗證通過） |
 | **A3 + E1a–E1e** 貢獻指南、草稿與乾淨分支 `pr/zh-tw-ui` | ✅ 完成（嚴格 4 檔，`e952b131` 已推 `origin/pr/zh-tw-ui`） |
 | **E2a + E2b** #483 留言 + 開立新 Issue `#492` | ✅ 完成（[#483 留言](https://github.com/DevEmperor/DictateKeyboard/issues/483#issuecomment-7030540460) ＋ [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492) 含 6 張對照截圖） |
-| **E2c → E3 / F** 等待作者回覆後開 PR 或收尾 | ⏳ **交棒給下個 session**（見下方決策表）。⚠️ 複查確認：**上游仍無我們的 PR**，`pr/zh-tw-ui` 已就緒待命。📌 **已決定不搶先開 PR**（見上方決策節） |
+| **E2c → E3** 上游合併與結案 | ✅ **2026-11-26 已由作者直接合併並關閉 #492**（commit `e8e1bdfb`，已納入 `v6.5.0` 官方維護語言；#492 已發感謝回覆） |
 
 ### 📌 2026-11-20 決策：**不搶先開 PR，等作者回覆**
 
@@ -870,12 +870,9 @@ git push origin pr/zh-tw-ui
      - 佐證：上游已有 20 個 locale 目錄，但 `ast` / `sq` / `ur` / `et` **有資源卻不在 picker 清單** → 上游並不要求 picker 與資源目錄一致，可作為「資源層先行」的論述
   2. 我們已做好的 zh-TW 介面 + **實機截圖證據**（三語並列 3 張 + 語言選擇器 + Dictate 設定 + 已學習的字詞，共 6 張）
   3. 我們的維護方案（見 2.7，`docs/zh-TW-ui-contribution.md`）
-- [ ] **E2c** 等待作者回應（作者活躍，issue 與 PR 都有回覆；他的習慣是先談再收；回應後的對策見 Part 0「作者回覆後的應對決策表」）
-  - ⚠️ **2026-11-20 複查：上游目前沒有我們的 PR**（`author:kuniakil` 的 PR 數 = 0；上游 PR 總數 38 筆無 ours）。只有 Issue `#492` + `#483` 留言。
-  - 📌 **2026-11-20 決策：已開 issue 就等回覆，不主動開 PR、不主動 ping**
-  - 📌 若 2 週內無回覆（**2026-12-04** 之後）→ 依 Part 0 情境 7 處理（維持 fork 自用、推進 Phase F、或在 `#492` 禮貌 ping 一次）。
+- [x] **E2c** ✅ **2026-11-26 已結案**：作者 `DevEmperor` 於 [#492](https://github.com/DevEmperor/DictateKeyboard/issues/492#issuecomment-7187136156) 回覆並直接合併 `pr/zh-tw-ui` 為 `e8e1bdfb`（納入 `v6.5.0` 官方維護語言，無需再另開 PR）；已於 #492 回覆感謝，且 `main` 已同步 `upstream/main`（`89ceb377`）。
 
-#### E3 — 提 PR
+#### E3 — 提 PR（免執行，已由作者直接合併 `e8e1bdfb`）
 
 - [ ] **E3a** 由 `pr/zh-tw-ui` 對 `DevEmperor/DictateKeyboard:main` 開 PR
 - [ ] **E3b** PR 內容必含：
@@ -921,6 +918,7 @@ git push origin pr/zh-tw-ui
 - [ ] **F3**（原 P4）Feature request：dictation 文字進學詞庫 + 社群共享字典。前提已驗證成立（`LearnedWordsStore.note()` 只被 `LatinLanguageProvider` 呼叫）。
 - [ ] **F4** OpenTypeless 備份清理（`~/Library/Application Support/com.opentypeless.app/backups/`，實測 4.4 MB，2026-11-17 建立）→ 觀察 1–2 週穩定後可刪
 - [ ] **F5**（2026-11-21 新增）**本地 STT 的繁中支援**：本地路徑**無 prompt 通道、無簡→繁轉換**（詳見 **1.7**）→ zh-TW 使用者用本地模型只能得到簡體。未來可做：**(a)** 在本地轉錄輸出端加「**轉繁體（台灣用語）**」開關（OpenCC 式字表／轉換器，可在我們的 fork 內完成，不必改引擎）；**(b)** 日後視作者回覆情形，再決定是否向上游提案。📌 **2026-11-21 決策：暫不主動向作者提出**（見 Part 4 Q8），先記為我們自己的 TODO。
+- [ ] **F6**（2026-11-26 新增）**向上游提出倉頡鍵盤與 `zh-TW` 貨幣修正（`pr/cangjie-layout`）**：分支已 rebase 至 `v6.5.0`（`032c851f`，嚴格 3 檔：`cangjie.json` + `layouts/extension.json` + `localization/extension.json`）。考量作者剛發布 `v6.5.0`，待觀察下一波更新週期時再比照 #492 模式另開獨立 Issue 附上 compare 連結提案，避免剛發版即密集提案。
 
 ---
 
